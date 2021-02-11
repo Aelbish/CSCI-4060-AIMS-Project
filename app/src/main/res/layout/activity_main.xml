@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFACAC"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:outlineSpotShadowColor="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/coordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center_horizontal"
+        android:text="Coordinates"
+        android:textColorHint="#0E0E0E" />
+
+    <EditText
+        android:id="@+id/lat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:ems="10"
+        android:hint="Latitude"
+        android:inputType="textPersonName"
+        android:textColorHint="#0E0E0E" />
+
+    <EditText
+        android:id="@+id/longi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:ems="10"
+        android:hint="Longitude"
+        android:inputType="textPersonName"
+        android:textColorHint="#0E0E0E" />
+
+    <RadioButton
+        android:id="@+id/bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="Latitude"
+        android:inputType="none"
+        android:textColorHint="#0E0E0E" />
+
+    <RadioButton
+        android:id="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="Longitude"
+        android:textColorHint="#0E0E0E" />
+
+    <Button
+        android:id="@+id/btncoordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:text="Show Coordinates" />
+
+    <Button
+        android:id="@+id/btnsavedata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+
+        android:onClick="btnsavedata"
+        android:text="Save Data" />
+
+    <Button
+        android:id="@+id/btnshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+
+        android:onClick="btnshow"
+        android:text="Show data"
+        tools:ignore="OnClick" />
+</LinearLayout>
