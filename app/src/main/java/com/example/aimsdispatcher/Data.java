@@ -17,5 +17,7 @@ public class Data extends AppCompatActivity {
         db.open();
         tvdata.setText(db.getData());
         db.close();
+
     }
+
 }

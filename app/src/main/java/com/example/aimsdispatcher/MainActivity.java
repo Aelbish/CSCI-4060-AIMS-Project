@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     private LocationManager locationManager;
     private LocationListener locationListner;
+    String latitude ="";
+    String longitude ="";
+    EditText city;
     TextView coordinates;
-    EditText lat,longi;
+    RadioGroup group;
     RadioButton bt1, bt2;
     Button btncoordinates,btnsavedata,btnshow;
 
@@ -42,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayShowHomeEnabled(true);
 
         coordinates = (TextView) findViewById(R.id.coordinates);
-        lat=(EditText) findViewById(R.id.lat);
-        longi=(EditText) findViewById(R.id.longi);
+        city = (EditText) findViewById(R.id.city);
+        group = (RadioGroup) findViewById(R.id.group);
         bt1 = (RadioButton) findViewById(R.id.bt1);
         bt2 = (RadioButton) findViewById(R.id.bt2);
         btncoordinates =(Button) findViewById(R.id.btncoordinates);
@@ -51,19 +55,14 @@ public class MainActivity extends AppCompatActivity {
         btnshow= (Button) findViewById(R.id.btnshow);
 
         coordinates.setVisibility(View.GONE);
-        bt1.setVisibility(View.GONE);
-        bt2.setVisibility(View.GONE);
-
 
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListner = new LocationListener() {
             @Override
             public void onLocationChanged(@NonNull Location location) {
-                bt1.setText(location.getLatitude()+"");
-                bt2.setText(location.getLongitude()+"");
-                lat.setText(location.getLatitude()+"");
-                longi.setText(location.getLongitude()+"");
+                latitude=location.getLatitude()+"";
+                longitude=location.getLongitude()+"";
                 coordinates.setText("Latitude: "+location.getLatitude()+" Longitude: "+location.getLongitude());
             }
 
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void configureButton() {
+    public void configureButton() {
         btncoordinates.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
@@ -107,24 +106,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnshow(View v) {
-        Intent intent=new Intent(this,Data.class);
+        Intent intent =new Intent(this, Data.class);
         startActivity(intent);
     }
 
     public void btnsavedata(View v){
-        String latitude=lat.getText().toString().trim();
-        String longitude=longi.getText().toString().trim();
 
-        if((!latitude.isEmpty())&&(!longitude.isEmpty())) {
+        String c = city.getText().toString().trim();
+        String s="";
+        if(bt1.isChecked()){
+            s = bt1.getText().toString().trim();
+        }
+        if(bt2.isChecked()){
+            s=bt2.getText().toString().trim();
+        }
+        if((!latitude.isEmpty())&&(!longitude.isEmpty())&&(!c.isEmpty())&&(!s.isEmpty())) {
             LocationsDB db = new LocationsDB(this);
             db.open();
-            db.createEntry(latitude, longitude);
+            db.createEntry(latitude, longitude,c,s);
             db.close();
             Toast.makeText(this, "Successfully Saved!!", Toast.LENGTH_SHORT).show();
 
         }
         else{
-            Toast.makeText(this, "No data entered!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Incomplete Data!!", Toast.LENGTH_SHORT).show();
         }
     }
 

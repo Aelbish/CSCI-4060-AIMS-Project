@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Aims Dispatcher</string>
     <string name="title_activity_data">Data</string>
+    <string name="no_data_stored">No Data stored</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="tx">TX</string>
+    <string name="la">LA</string>
 
 </resources>

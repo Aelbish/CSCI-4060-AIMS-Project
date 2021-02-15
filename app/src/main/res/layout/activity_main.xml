@@ -18,53 +18,50 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:gravity="center_horizontal"
-        android:text="Coordinates"
+        android:text="@string/coordinates"
         android:textColorHint="#0E0E0E" />
 
     <EditText
-        android:id="@+id/lat"
+        android:id="@+id/city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:ems="10"
-        android:hint="Latitude"
+        android:gravity="center_horizontal"
+        android:hint="@string/enter_your_city"
         android:inputType="textPersonName"
-        android:textColorHint="#0E0E0E" />
+        android:textColor="#171616" />
 
-    <EditText
-        android:id="@+id/longi"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:hint="Longitude"
-        android:inputType="textPersonName"
-        android:textColorHint="#0E0E0E" />
+        android:layout_marginRight="30dp">
 
-    <RadioButton
-        android:id="@+id/bt1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:hint="Latitude"
-        android:inputType="none"
-        android:textColorHint="#0E0E0E" />
+        <RadioButton
+            android:id="@+id/bt1"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/tx"
+            android:textColorHint="#0E0E0E" />
 
-    <RadioButton
-        android:id="@+id/bt2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:hint="Longitude"
-        android:textColorHint="#0E0E0E" />
+        <RadioButton
+            android:id="@+id/bt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/la"
+            android:textColorHint="#0E0E0E" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btncoordinates"
@@ -93,8 +90,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-
         android:onClick="btnshow"
-        android:text="Show data"
-        tools:ignore="OnClick" />
+        android:text="Show data" />
 </LinearLayout>

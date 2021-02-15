@@ -14,6 +14,8 @@ public class LocationsDB {
     public static final String KEY_ROWID="_id";
     public static final String KEY_LATITUDE="_latitute";
     public static final String KEY_LONGITUDE="_longitude";
+    public static  final String KEY_CITY = "_city";
+    public static final String KEY_STATE = "_state";
 
     private final String DATABASE_NAME ="LocationsDB";
     private final String DATABASE_TABLE="LocationsTable";
@@ -37,7 +39,9 @@ public class LocationsDB {
             String sqlCode="CREATE TABLE "+DATABASE_TABLE+"("+
                     KEY_ROWID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                     KEY_LATITUDE+" TEXT NOT NULL, "+
-                    KEY_LONGITUDE+" TEXT NOT NULL);";
+                    KEY_LONGITUDE+" TEXT NOT NULL, "+
+                    KEY_CITY+" TEXT NOT NULL, "+
+                    KEY_STATE+" TEXT NOT NULL);";
             db.execSQL(sqlCode);
         }
 
@@ -60,24 +64,28 @@ public class LocationsDB {
         ourHelper.close();
     }
 
-    public long createEntry(String latitude, String longitude){
+    public long createEntry(String latitude, String longitude, String city, String state){
         ContentValues cv = new ContentValues();
         cv.put(KEY_LATITUDE, latitude);
         cv.put(KEY_LONGITUDE,longitude);
+        cv.put(KEY_CITY,city);
+        cv.put(KEY_STATE,state);
         return ourDatabase.insert(DATABASE_TABLE,null,cv);
     }
 
     public String getData(){
-        String [] columns = new String[] {KEY_ROWID,KEY_LATITUDE,KEY_LONGITUDE};
+        String [] columns = new String[] {KEY_ROWID,KEY_LATITUDE,KEY_LONGITUDE,KEY_CITY,KEY_STATE};
         Cursor c= ourDatabase.query(DATABASE_TABLE,columns,null,null,null,null,null);
         String result="";
         int iRowID = c.getColumnIndex(KEY_ROWID);
-        int iName = c.getColumnIndex(KEY_LATITUDE);
-        int iCell =c.getColumnIndex(KEY_LONGITUDE);
+        int ilatitude = c.getColumnIndex(KEY_LATITUDE);
+        int ilongitude =c.getColumnIndex(KEY_LONGITUDE);
+        int icity = c.getColumnIndex(KEY_CITY);
+        int istate = c.getColumnIndex(KEY_STATE);
         for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
 
-            result= result+c.getString(iRowID).trim()+": "+"Latitude: "+c.getString(iName).trim()+" Longitude: "+
-                    c.getString(iCell).trim()+"\n";
+            result= result+c.getString(iRowID).trim()+": "+"Latitude: "+c.getString(ilatitude).trim()+" Longitude: "+
+                    c.getString(ilongitude).trim()+" City: "+c.getString(icity).trim()+" State: "+c.getString(istate).trim()+"\n";
         }
         c.close();
 
