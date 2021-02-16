@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 //                 return;
 //         }
 
-    }
+//     }
 
     public void configureButton() {
         btncoordinates.setOnClickListener(new View.OnClickListener() {
