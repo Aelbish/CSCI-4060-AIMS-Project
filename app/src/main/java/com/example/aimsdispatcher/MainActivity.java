@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         btnsavedata = (Button) findViewById(R.id.btnsavedata);
         btnshow = (Button) findViewById(R.id.btnshow);
 
-//        coordinates.setVisibility(View.GONE);
         btncoordinates.setVisibility(View.GONE);
 
 
@@ -100,16 +99,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void configureButton() {
 
-//        coordinates.setVisibility(View.VISIBLE);
         locationManager.requestLocationUpdates("gps", 100, 100, locationListner);
-
-//        btncoordinates.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
 
 
     }
