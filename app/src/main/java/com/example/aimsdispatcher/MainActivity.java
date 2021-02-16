@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         };
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.INTERNET},1);
+//             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.INTERNET},1);
             return;
         }
         else {
@@ -82,13 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults){
-        switch(requestCode){
-            case 1:
-                if(grantResults.length>0 && grantResults[0]== PackageManager.PERMISSION_GRANTED)
-                    configureButton();
-                return;
-        }
+//     public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults){
+//         switch(requestCode){
+//             case 1:
+//                 if(grantResults.length>0 && grantResults[0]== PackageManager.PERMISSION_GRANTED)
+//                     configureButton();
+//                 return;
+//         }
 
     }
 
