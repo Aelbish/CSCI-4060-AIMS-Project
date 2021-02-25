@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AimsMobileApp</string>
+    <string name="hint_word">User…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">User not saved because it is empty.</string>
+    <string name="add_word">Add User</string>
 </resources>
