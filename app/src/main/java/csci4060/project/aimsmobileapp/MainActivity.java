@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import csci4060.project.aimsmobileapp.UI.UserListAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

@@ -1,10 +1,12 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI;
 
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
+
+import csci4060.project.aimsmobileapp.Database.User;
 
 public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
 
@@ -20,10 +22,10 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
         User current = getItem(position);
-        holder.bind(Integer.toString(current.getId()));
+        //holder.bind(Integer.toString(current.getId()));
     }
 
-    static class UserDiff extends DiffUtil.ItemCallback<User> {
+    public static class UserDiff extends DiffUtil.ItemCallback<User> {
 
         @Override
         public boolean areItemsTheSame(@NonNull User oldItem, @NonNull User newItem) {
@@ -32,7 +34,8 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
 
         @Override
         public boolean areContentsTheSame(@NonNull User oldItem, @NonNull User newItem) {
-            return oldItem.getId() == (newItem.getId());
+            //return oldItem.getId() == (newItem.getId());
+            return false;
         }
     }
 }

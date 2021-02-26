@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import csci4060.project.aimsmobileapp.R;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
 
