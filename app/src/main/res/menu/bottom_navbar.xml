@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_trips"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:title="@string/first_navButton"/>
+    <item
+        android:id="@+id/nav_route"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="@string/second_navButton"/>
+    <item
+        android:id="@+id/nav_alerts"
+        android:icon="@drawable/ic_baseline_textsms_24"
+        android:title="@string/third_navButton"/>
+</menu>
