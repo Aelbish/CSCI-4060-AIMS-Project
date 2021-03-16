@@ -53,6 +53,7 @@ dependencies {
     // UI
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+
     //Dependency for bottom navigation bar
     implementation 'com.google.android.material:material:1.2.1'
 
@@ -63,4 +64,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+
+    //for Restful api
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 }
