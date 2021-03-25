@@ -33,5 +33,5 @@ public interface LoadDao {
     LiveData<String> getProductRequested(int load_id);
 
     @Query("SELECT requested_quantity FROM Load WHERE load_id = :load_id")
-    LiveData<String> getRequestedQuantity(int load_id);
+    LiveData<Double> getRequestedQuantity(int load_id);
 }

@@ -38,9 +38,15 @@ dependencies {
 
     //Room Database
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
-    
+
+    //Fragment
+    implementation "androidx.fragment:fragment:$rootProject.fragmentVersion"
+
+    //Material Components
+    implementation "com.google.android.material:material:$rootProject.materialComponentsVersion"
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'

@@ -21,5 +21,5 @@ public interface UserDao {
     LiveData<String> getFullName(int driver_id);
 
     @Query("UPDATE User SET full_name = :name WHERE driver_id = :driver_id")
-    LiveData<String> setFullName(int driver_id, String name);
+    void setFullName(int driver_id, String name);
 }

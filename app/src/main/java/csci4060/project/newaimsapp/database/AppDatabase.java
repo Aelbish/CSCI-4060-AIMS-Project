@@ -4,11 +4,13 @@ import android.content.Context;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 import csci4060.project.newaimsapp.database.dao.*;
 import csci4060.project.newaimsapp.database.entity.*;
 
 @androidx.room.Database(entities = {User.class, Trip.class, Load.class, Customer.class, Vendor.class, Container.class, BillOfLading.class, Delivery.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract TripDao tripDao();
@@ -21,7 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
-    static AppDatabase getDatabase(final Context context) {
+    public static AppDatabase getDatabase(final Context context) {
         if(INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 if(INSTANCE == null) {
