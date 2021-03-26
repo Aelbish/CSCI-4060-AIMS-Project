@@ -35,3 +35,14 @@ public class AIMSApp extends Application {
         return DataRepository.getInstance(database);
     }
 }
+
+
+
+
+
+/*
+TODO Display the trips to the driver in a nice format
+TODO send a status update identifying the trip the driver selected
+TODO enter required information for source and site and store it locally
+TODO transmit the stored data
+ */

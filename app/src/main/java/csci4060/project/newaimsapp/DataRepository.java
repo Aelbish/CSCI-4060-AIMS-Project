@@ -2,6 +2,7 @@ package csci4060.project.newaimsapp;
 
 import androidx.lifecycle.LiveData;
 
+import java.util.List;
 import java.util.Queue;
 
 import csci4060.project.newaimsapp.database.AppDatabase;
@@ -104,9 +105,8 @@ public class DataRepository {
         addCustomer(customer);
         addDelivery(delivery);
     }
-}
 
-//TODO I need to add some methods to get data and make them run on the background threads
-//TODO I also need to figure out the best way to initialize and call the repository (https://github.com/android/architecture-components-samples/tree/master/BasicSample/app/src/main)
-//TODO Might want to do AsyncTask? (https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
-//TODO Set up the correct ViewModel classes to be able to view database data in the ui of the app
+    public LiveData<List<Trip>> getAllTrips(){
+        return tripDao.getAllTrips();
+    }
+}
