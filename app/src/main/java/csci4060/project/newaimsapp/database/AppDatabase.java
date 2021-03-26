@@ -49,9 +49,11 @@ public abstract class AppDatabase extends RoomDatabase {
             super.onCreate(db);
 
             databaseWriteExecutor.execute(() -> {
-                LoadDao loadDao = INSTANCE.loadDao();
+                UserDao userDao = INSTANCE.userDao();
 
-                loadDao.addLoad(new Load(1,2,3,4));
+                databaseWriteExecutor.execute(() -> {
+                    userDao.deleteUser(1);
+                });
             });
         }
     };

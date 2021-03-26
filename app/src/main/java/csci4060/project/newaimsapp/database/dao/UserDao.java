@@ -14,8 +14,8 @@ public interface UserDao {
     @Insert
     void addUser(User user);
 
-    @Delete
-    void deleteUser(User user);
+    @Query("DELETE FROM user WHERE driver_id = :driver_id")
+    void deleteUser(int driver_id);
 
     @Query("SELECT full_name FROM User WHERE driver_id = :driver_id")
     LiveData<String> getFullName(int driver_id);

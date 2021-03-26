@@ -37,7 +37,7 @@ public class DataRepository {
 
     public void addLoad() {
         AppDatabase.databaseWriteExecutor.execute(() -> {
-            userDao.addUser(new User(1, "Christian Strickland"));
+            userDao.addUser(new User(3, "Christian Strickland"));
         });
     }
 }
