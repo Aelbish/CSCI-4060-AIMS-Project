@@ -20,14 +20,22 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
         Fragment selectedFragment = null;
         switch (item.getItemId()){
             case R.id.nav_trips:
                 selectedFragment = new TripsFragment();
                 break;
+
+            case R.id.nav_details:
+                selectedFragment = new DetailsFragment();
+                break;
+
+            case R.id.nav_input:
+                selectedFragment = new InputsFragment();
+                break;
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder, selectedFragment);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder, selectedFragment).commit();
 
         return true;
     };

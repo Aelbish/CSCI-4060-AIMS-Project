@@ -2,6 +2,8 @@ package csci4060.project.newaimsapp;
 
 import csci4060.project.newaimsapp.database.AppDatabase;
 import csci4060.project.newaimsapp.database.dao.*;
+import csci4060.project.newaimsapp.database.entity.Load;
+import csci4060.project.newaimsapp.database.entity.User;
 
 public class DataRepository {
     private UserDao userDao;
@@ -14,10 +16,12 @@ public class DataRepository {
     private DeliveryDao deliveryDao;
 
     private static DataRepository instance;
-    private final AppDatabase db;
+    private static AppDatabase db;
 
     private DataRepository(final AppDatabase db) {
-        this.db = db;
+        DataRepository.db = db;
+        userDao = db.userDao();
+        loadDao = db.loadDao();
     }
 
     public static DataRepository getInstance(final AppDatabase db) {
@@ -29,6 +33,12 @@ public class DataRepository {
             }
         }
         return instance;
+    }
+
+    public void addLoad() {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            userDao.addUser(new User(1, "Christian Strickland"));
+        });
     }
 }
 
