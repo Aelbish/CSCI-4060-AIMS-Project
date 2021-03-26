@@ -11,18 +11,20 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import csci4060.project.newaimsapp.APISingleton;
 import csci4060.project.newaimsapp.R;
+import csci4060.project.newaimsapp.TripJSONParser;
 
 public class MainActivity extends AppCompatActivity {
 
     private RequestQueue queue;
-    private String url = "https://run.mocky.io/v3/83dc69b1-f3bf-42ce-aec2-ab19225ef5e1";
+    private String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/GetTripListDetailByDriver/D1?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+    private TripJSONParser parser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.e("ApiGet", response.toString());
+                try {
+                    parser = new TripJSONParser(response.toString());
+                    parser.parseData();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override

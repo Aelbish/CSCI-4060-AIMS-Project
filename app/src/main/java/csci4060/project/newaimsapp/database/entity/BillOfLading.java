@@ -1,3 +1,4 @@
+/*
 package csci4060.project.newaimsapp.database.entity;
 
 import androidx.room.Entity;
@@ -67,3 +68,4 @@ public class BillOfLading {
         this.net_picked_up = net_picked_up;
     }
 }
+*/

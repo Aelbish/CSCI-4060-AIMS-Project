@@ -1,10 +1,11 @@
+/*
 package csci4060.project.newaimsapp.database.entity;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Customer.class, parentColumns = "customer_id", childColumns = "customer_id")})
+@Entity
 public class Container {
     @PrimaryKey
     int container_id;
@@ -69,3 +70,4 @@ public class Container {
         this.special_instructions = special_instructions;
     }
 }
+*/

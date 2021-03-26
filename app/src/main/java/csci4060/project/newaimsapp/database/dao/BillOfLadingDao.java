@@ -1,3 +1,4 @@
+/*
 package csci4060.project.newaimsapp.database.dao;
 
 import androidx.lifecycle.LiveData;
@@ -37,3 +38,4 @@ public interface BillOfLadingDao {
     @Query("SELECT net_picked_up FROM BillOfLading WHERE bill_of_lading_id = :bill_of_lading_id")
     LiveData<Double> getNetPickedUp(int bill_of_lading_id);
 }
+*/

@@ -1,62 +1,116 @@
 package csci4060.project.newaimsapp.database.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Container.class, parentColumns = "container_id", childColumns = "container_id")})
+@Entity//(foreignKeys = {@ForeignKey(entity = Load.class, parentColumns = "sequence_number", childColumns = "sequence_number")})
 public class Customer {
-    @PrimaryKey
-    int customer_id;
-    int container_id;
-    String full_name;
-    String site_name;
-    String site_address;
+    @PrimaryKey @NonNull
+    String destination_code;
+    String destination_name;
+    String site_container_code;
+    String site_container_description;
+    String address_1;
+    String address_2;
+    String city;
+    String state_short;
+    int postal_code;
 
-    public Customer(int customer_id, String full_name, String site_name, String site_address) {
-        this.customer_id = customer_id;
-        this.full_name = full_name;
-        this.site_name = site_name;
-        this.site_address = site_address;
+    //Foreign Key
+    int sequence_number;
+
+    public Customer(@NonNull String destination_code, String destination_name, String site_container_code, String site_container_description, String address_1, String address_2, String city, String state_short, int postal_code, int sequence_number) {
+        this.destination_code = destination_code;
+        this.destination_name = destination_name;
+        this.site_container_code = site_container_code;
+        this.site_container_description = site_container_description;
+        this.address_1 = address_1;
+        this.address_2 = address_2;
+        this.city = city;
+        this.state_short = state_short;
+        this.postal_code = postal_code;
+        this.sequence_number = sequence_number;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public String getDestination_code() {
+        return destination_code;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setDestination_code(String destination_code) {
+        this.destination_code = destination_code;
     }
 
-    public int getContainer_id() {
-        return container_id;
+    public String getDestination_name() {
+        return destination_name;
     }
 
-    public void setContainer_id(int container_id) {
-        this.container_id = container_id;
+    public void setDestination_name(String destination_name) {
+        this.destination_name = destination_name;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getSite_container_code() {
+        return site_container_code;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setSite_container_code(String site_container_code) {
+        this.site_container_code = site_container_code;
     }
 
-    public String getSite_name() {
-        return site_name;
+    public String getSite_container_description() {
+        return site_container_description;
     }
 
-    public void setSite_name(String site_name) {
-        this.site_name = site_name;
+    public void setSite_container_description(String site_container_description) {
+        this.site_container_description = site_container_description;
     }
 
-    public String getSite_address() {
-        return site_address;
+    public String getAddress_1() {
+        return address_1;
     }
 
-    public void setSite_address(String site_address) {
-        this.site_address = site_address;
+    public void setAddress_1(String address_1) {
+        this.address_1 = address_1;
+    }
+
+    public String getAddress_2() {
+        return address_2;
+    }
+
+    public void setAddress_2(String address_2) {
+        this.address_2 = address_2;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState_short() {
+        return state_short;
+    }
+
+    public void setState_short(String state_short) {
+        this.state_short = state_short;
+    }
+
+    public int getPostal_code() {
+        return postal_code;
+    }
+
+    public void setPostal_code(int postal_code) {
+        this.postal_code = postal_code;
+    }
+
+    public int getSequence_number() {
+        return sequence_number;
+    }
+
+    public void setSequence_number(int sequence_number) {
+        this.sequence_number = sequence_number;
     }
 }

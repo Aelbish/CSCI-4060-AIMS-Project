@@ -15,16 +15,16 @@ import java.util.concurrent.Executors;
 import csci4060.project.newaimsapp.database.dao.*;
 import csci4060.project.newaimsapp.database.entity.*;
 
-@Database(entities = {User.class, Trip.class, Load.class, Customer.class, Vendor.class, Container.class, BillOfLading.class, Delivery.class}, version = 1)
+@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class}, version = 7)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract UserDao userDao();
+    public abstract DriverDao userDao();
     public abstract TripDao tripDao();
     public abstract LoadDao loadDao();
     public abstract CustomerDao customerDao();
     public abstract VendorDao vendorDao();
-    public abstract ContainerDao containerDao();
-    public abstract BillOfLadingDao billOfLadingDao();
+    //public abstract ContainerDao containerDao();
+    //public abstract BillOfLadingDao billOfLadingDao();
     public abstract DeliveryDao deliveryDao();
 
     private static AppDatabase INSTANCE;
@@ -36,7 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
         if(INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 if(INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "local_database").addCallback(sRoomDatabaseCallback).build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "local_database").fallbackToDestructiveMigration().build();
                 }
             }
         }
@@ -49,10 +49,10 @@ public abstract class AppDatabase extends RoomDatabase {
             super.onCreate(db);
 
             databaseWriteExecutor.execute(() -> {
-                UserDao userDao = INSTANCE.userDao();
+                DriverDao driverDao = INSTANCE.userDao();
 
                 databaseWriteExecutor.execute(() -> {
-                    userDao.deleteUser(1);
+                    driverDao.deleteDriver("1");
                 });
             });
         }
