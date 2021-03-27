@@ -1,0 +1,27 @@
+csci4060/project/aimsmobileapp/MainScreenActivity.java
+ csci4060.project.aimsmobileapp.MainScreenActivity
+ csci4060.project.aimsmobileapp.MainScreenActivity$1
+csci4060/project/aimsmobileapp/TripActivity.java
+ csci4060.project.aimsmobileapp.TripActivity
+csci4060/project/aimsmobileapp/User.java
+ csci4060.project.aimsmobileapp.User
+csci4060/project/aimsmobileapp/UserViewModel.java
+ csci4060.project.aimsmobileapp.UserViewModel
+csci4060/project/aimsmobileapp/AlertFragment.java
+ csci4060.project.aimsmobileapp.AlertFragment
+csci4060/project/aimsmobileapp/UserDao.java
+ csci4060.project.aimsmobileapp.UserDao
+csci4060/project/aimsmobileapp/UserRoomDatabase.java
+ csci4060.project.aimsmobileapp.UserRoomDatabase
+csci4060/project/aimsmobileapp/BuildConfig.java
+ csci4060.project.aimsmobileapp.BuildConfig
+csci4060/project/aimsmobileapp/MainActivity.java
+ csci4060.project.aimsmobileapp.MainActivity
+ csci4060.project.aimsmobileapp.MainActivity$1
+ csci4060.project.aimsmobileapp.MainActivity$2
+csci4060/project/aimsmobileapp/TripFragment.java
+ csci4060.project.aimsmobileapp.TripFragment
+csci4060/project/aimsmobileapp/UserRepository.java
+ csci4060.project.aimsmobileapp.UserRepository
+csci4060/project/aimsmobileapp/RouteFragment.java
+ csci4060.project.aimsmobileapp.RouteFragment
