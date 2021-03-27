@@ -65,6 +65,6 @@ dependencies {
     })
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
 
-    //for Restful api
-    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    //implementation for making rest api call
+    implementation 'com.android.volley:volley:1.2.0'
 }
