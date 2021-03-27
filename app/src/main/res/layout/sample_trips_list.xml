@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp">
@@ -7,59 +8,59 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DADADA"
         android:orientation="vertical"
+        android:background="#DADADA"
         android:padding="20dp">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/trip_id"
+                android:id="@+id/txtTripId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:drawablePadding="5dp"
-                android:paddingLeft="5dp"
-                android:text="Trip id"
-                android:visibility="visible" />
+                android:text="Trip id"/>
 
             <TextView
-                android:id="@+id/trip_name"
+                android:id="@+id/txtTripName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="Trip name"
-                android:textStyle="bold" />
+                android:text="TripName"
+                android:layout_below="@id/txtTripId"
+                android:textStyle="bold"/>
 
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
 
             <Button
                 android:id="@+id/btn_summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:background="#FFAE1A"
-                android:clickable="true"
-                android:paddingLeft="5dp"
                 android:text="Summary"
+                android:paddingLeft="5dp"
+                android:background="#FFAE1A"
+                android:textColor="#ffffff"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:layout_alignParentStart="true"
+                android:clickable="true"/>
 
         </RelativeLayout>
 
 
+
+
+
     </LinearLayout>
+
 
 
 </RelativeLayout>
