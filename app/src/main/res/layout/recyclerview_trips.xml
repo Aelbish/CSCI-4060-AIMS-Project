@@ -54,7 +54,7 @@
                 android:paddingLeft="5dp"
                 android:text="Select"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff" />-->
 
         </RelativeLayout>
 

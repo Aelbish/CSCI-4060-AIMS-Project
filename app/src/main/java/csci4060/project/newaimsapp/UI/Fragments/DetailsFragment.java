@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import csci4060.project.newaimsapp.AIMSApp;
 import csci4060.project.newaimsapp.R;
 
+/**
+ * Unfinished class that I didn't intend to include anyway, but I needed a placeholder for the navbar
+ */
 public class DetailsFragment extends Fragment {
 
     @Nullable

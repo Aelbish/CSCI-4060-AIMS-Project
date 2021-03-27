@@ -25,7 +25,10 @@ import csci4060.project.newaimsapp.UI.Fragments.InputsFragment;
 import csci4060.project.newaimsapp.UI.Fragments.LoadsFragment;
 import csci4060.project.newaimsapp.UI.Fragments.TripsFragment;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * The main entry point for our app. Currently, this will obtain and parse the data from AIMS for all trips assigned to our driver
+ */
+public class MainActivity extends AppCompatActivity{
 
 
     /**
@@ -37,31 +40,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Sets up the navbar and creates the listener to listen for clicks
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        queue = APISingleton.getInstance(this.getApplicationContext()).getRequestQueue();
+        //Instantiates the ApiCall class to make Api Requests
+        ApiCall call = new ApiCall(this.getApplicationContext());
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    parser = new TripJSONParser(response.toString());
-                    parser.parseData();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("ApiGet", error.toString());
-            }
-        });
-
-        queue.add(jsonObjectRequest);
+        //Gets the trip information from AIMS
+        call.getTripInformation();
     }
 
+    /**
+     * Navbar listener to determine what button on the navbar open which fragment
+     */
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
         Fragment selectedFragment = null;
         switch (item.getItemId()){

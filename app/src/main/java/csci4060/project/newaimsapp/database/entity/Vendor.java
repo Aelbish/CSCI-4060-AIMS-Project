@@ -5,6 +5,11 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+/**
+ * This is the vendor class that Room uses to make a SQLite Table
+ * THE ONLY VALUES IN THESE ENTITY CLASSES ARE VALUES TAKEN FROM THE GET API CALL WHERE WE RECEIVE A BUNCH OF INFORMATION
+ * FOR STORING DELIVERY INFORMATION TO SEND BACK TO AIMS, SEE ****HAVE NOT MADE THESE CLASSES YET****
+ */
 @Entity//(foreignKeys = {@ForeignKey(entity = Load.class, parentColumns = "sequence_number", childColumns = "sequence_number")})
 public class Vendor {
     @PrimaryKey @NonNull

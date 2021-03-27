@@ -11,6 +11,9 @@ import csci4060.project.newaimsapp.database.entity.Load;
 import csci4060.project.newaimsapp.database.entity.Trip;
 import csci4060.project.newaimsapp.database.entity.Vendor;
 
+/**
+ * Parses the trip data we get from AIMS
+ */
 public class TripJSONParser {
     private String input;
     private final JSONObject reader;
@@ -58,6 +61,10 @@ public class TripJSONParser {
         this.input = input;
     }
 
+    /**
+     * This method will separate the JSON response into its individual objects and arrays to iterate over the data
+     * @throws JSONException
+     */
     public void parseData() throws JSONException {
         JSONObject data = reader.getJSONObject("data");
         JSONArray resultSet1 = data.getJSONArray("resultSet1");
@@ -100,6 +107,9 @@ public class TripJSONParser {
         }
     }
 
+    /**
+     * Creates the entities based off the above parsed data and then calls the repository method to add them all to the database
+     */
     private void storeData() {
         Driver driver = new Driver(driver_code, driver_name, truck_id, truck_code,
                 truck_description, trailer_id, trailer_code, trailer_description);

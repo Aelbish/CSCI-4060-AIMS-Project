@@ -4,6 +4,11 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+/**
+ * This is the trip class that Room uses to make a SQLite Table
+ * THE ONLY VALUES IN THESE ENTITY CLASSES ARE VALUES TAKEN FROM THE GET API CALL WHERE WE RECEIVE A BUNCH OF INFORMATION
+ * FOR STORING DELIVERY INFORMATION TO SEND BACK TO AIMS, SEE ****HAVE NOT MADE THESE CLASSES YET****
+ */
 @Entity//(foreignKeys = {@ForeignKey(entity = Driver.class, parentColumns = "driver_code", childColumns = "driver_code")})
 public class Trip {
     //Attributes for this table

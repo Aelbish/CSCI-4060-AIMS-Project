@@ -9,6 +9,10 @@ import java.util.concurrent.Executors;
 
 import csci4060.project.newaimsapp.database.AppDatabase;
 
+/**
+ * This is an extension of Application to allow for our database and repository to be able to be accessed from any class.
+ * If you need to access the repository then just call AIMSapp.repository and you can do any method within the repository
+ */
 public class AIMSApp extends Application {
     private final int NUM_OF_EXECUTOR_THREADS = 4;
 

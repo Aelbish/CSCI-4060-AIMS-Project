@@ -16,6 +16,13 @@ import csci4060.project.newaimsapp.R;
 import csci4060.project.newaimsapp.UI.Adapters.LoadListAdapter;
 import csci4060.project.newaimsapp.UI.ViewModels.LoadViewModel;
 
+
+/**
+ * This is the main fragment class where all of the other helper classes will be called from
+ * This will show the list of loads and automatically update the ui with new loads or changes when they occur
+ *
+ * Much of what happens in this class is irrelevant to the beta-demo and most of it is covered in the trips fragment
+ */
 public class LoadsFragment extends Fragment {
 //TODO remove the hardcoded trip id.
 //TODO add button functionality and find a way to pass trip id from trip summary button press

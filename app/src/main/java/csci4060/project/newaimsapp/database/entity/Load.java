@@ -4,6 +4,11 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+/**
+ * This is the load class that Room uses to make a SQLite Table
+ * THE ONLY VALUES IN THESE ENTITY CLASSES ARE VALUES TAKEN FROM THE GET API CALL WHERE WE RECEIVE A BUNCH OF INFORMATION
+ * FOR STORING DELIVERY INFORMATION TO SEND BACK TO AIMS, SEE ****HAVE NOT MADE THESE CLASSES YET****
+ */
 @Entity//(foreignKeys = {@ForeignKey(entity = Trip.class, parentColumns = "trip_id", childColumns = "trip_id")})
 public class Load {
     @PrimaryKey

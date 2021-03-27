@@ -12,6 +12,10 @@ import csci4060.project.newaimsapp.AIMSApp;
 import csci4060.project.newaimsapp.DataRepository;
 import csci4060.project.newaimsapp.database.entity.Load;
 
+/**
+ * This is the final layer of abstraction to get our data
+ * the last class above the repository that will get our data for use with the holders, adapters, and fragments
+ */
 public class LoadViewModel extends AndroidViewModel {
     private DataRepository repository;
 
