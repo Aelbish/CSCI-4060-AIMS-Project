@@ -12,7 +12,7 @@ public class APISingleton {
     private static Context context;
 
     private APISingleton(Context context) {
-        this.context = context;
+        APISingleton.context = context;
         requestQueue = getRequestQueue();
     }
 

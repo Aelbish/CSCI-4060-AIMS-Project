@@ -11,6 +11,7 @@ public class Trip {
     int trip_id;
     String trip_name;
     String trip_date;
+    int is_selected;
 
     //Foreign Key
     String driver_code;
@@ -53,5 +54,13 @@ public class Trip {
 
     public void setDriver_code(String driver_code) {
         this.driver_code = driver_code;
+    }
+
+    public int getIs_selected() {
+        return is_selected;
+    }
+
+    public void setIs_selected(int is_selected) {
+        this.is_selected = is_selected;
     }
 }

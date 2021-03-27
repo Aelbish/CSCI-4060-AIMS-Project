@@ -17,6 +17,9 @@ import csci4060.project.newaimsapp.UI.Adapters.LoadListAdapter;
 import csci4060.project.newaimsapp.UI.ViewModels.LoadViewModel;
 
 public class LoadsFragment extends Fragment {
+//TODO remove the hardcoded trip id.
+//TODO add button functionality and find a way to pass trip id from trip summary button press
+//TODO find way to connect trip summary button press to get to this fragment
 
     private LoadListAdapter adapter;
 

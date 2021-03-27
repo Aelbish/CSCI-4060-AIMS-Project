@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import csci4060.project.newaimsapp.APISingleton;
+import csci4060.project.newaimsapp.ApiCall;
 import csci4060.project.newaimsapp.R;
 import csci4060.project.newaimsapp.TripJSONParser;
 import csci4060.project.newaimsapp.UI.Fragments.DetailsFragment;
@@ -26,10 +27,11 @@ import csci4060.project.newaimsapp.UI.Fragments.TripsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RequestQueue queue;
-    private String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/GetTripListDetailByDriver/D1?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
-    private TripJSONParser parser;
 
+    /**
+     * Sets up a bottom navbar and also calls the ApiCall class which handles all ApiCalls
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -19,8 +19,6 @@ import csci4060.project.newaimsapp.UI.ViewModels.TripViewModel;
 
 public class TripsFragment extends Fragment {
 
-    //private OnItemSelectedListener listener;
-
     private TripListAdapter adapter;
 
     @Nullable
@@ -34,14 +32,6 @@ public class TripsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_trips2, container, false);
 
-       /*Button summaryButton = (Button) view.findViewById(R.id.btn_summary);
-       summaryButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-                inflater.inflate(R.layout.fragment_loads, container, false);
-           }
-       });*/
-
         return view;
     }
 
@@ -51,32 +41,5 @@ public class TripsFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
-
-    /*public interface OnItemSelectedListener {
-        public void onButtonSelected();
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-        if(context instanceof OnItemSelectedListener) {
-            listener = (OnItemSelectedListener) context;
-        }
-        else {
-            throw new ClassCastException(context.toString() + "must implement TripFragment.OnItemSelectedListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-
-        listener = null;
-    }
-
-    public void activateTripSummary() {
-
-    }*/
 }
 
