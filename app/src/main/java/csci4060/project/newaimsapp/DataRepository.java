@@ -50,17 +50,6 @@ public class DataRepository {
         return instance;
     }
 
-    public void getDriverCode(){
-        /*AppDatabase.databaseWriteExecutor.execute(() -> {
-            queue.add(driverDao.getDriverName("D1"));
-        });
-        return queue.remove();*/
-
-        AppDatabase.databaseWriteExecutor.execute(() -> {
-            driverDao.addDriver(new Driver("1", "1", 1, "1", "1", 1, "1", "1"));
-        });
-    }
-
     public void addDriver(Driver driver) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             driverDao.addDriver(driver);
@@ -108,5 +97,9 @@ public class DataRepository {
 
     public LiveData<List<Trip>> getAllTrips(){
         return tripDao.getAllTrips();
+    }
+
+    public LiveData<List<Load>> getAllLoads(int trip_id) {
+        return loadDao.getLoads(trip_id);
     }
 }

@@ -1,4 +1,4 @@
-package csci4060.project.newaimsapp.UI;
+package csci4060.project.newaimsapp.UI.Adapters;
 
 import android.view.ViewGroup;
 
@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import csci4060.project.newaimsapp.UI.ViewHolders.TripViewHolder;
 import csci4060.project.newaimsapp.database.entity.Trip;
 
 public class TripListAdapter extends ListAdapter<Trip, TripViewHolder> {
@@ -22,10 +23,10 @@ public class TripListAdapter extends ListAdapter<Trip, TripViewHolder> {
     @Override
     public void onBindViewHolder(TripViewHolder holder, int position) {
         Trip current = getItem(position);
-        holder.bind(String.valueOf(current.getTrip_id()));
+        holder.bind(String.valueOf(current.getTrip_id()), current.getTrip_name());
     }
 
-    static class TripDiff extends DiffUtil.ItemCallback<Trip> {
+    public static class TripDiff extends DiffUtil.ItemCallback<Trip> {
 
         @Override
         public boolean areItemsTheSame(@NonNull Trip oldItem, @NonNull Trip newItem) {

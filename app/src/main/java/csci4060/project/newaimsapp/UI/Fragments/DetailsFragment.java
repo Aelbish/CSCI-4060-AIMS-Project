@@ -1,4 +1,4 @@
-package csci4060.project.newaimsapp.UI;
+package csci4060.project.newaimsapp.UI.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

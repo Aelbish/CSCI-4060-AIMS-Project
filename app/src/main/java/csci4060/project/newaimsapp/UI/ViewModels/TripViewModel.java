@@ -1,4 +1,4 @@
-package csci4060.project.newaimsapp.UI;
+package csci4060.project.newaimsapp.UI.ViewModels;
 
 import android.app.Application;
 
@@ -24,7 +24,7 @@ public class TripViewModel extends AndroidViewModel {
         allTrips = repository.getAllTrips();
     }
 
-    LiveData<List<Trip>> getAllTrips() {
+    public LiveData<List<Trip>> getAllTrips() {
         return allTrips;
     }
 }

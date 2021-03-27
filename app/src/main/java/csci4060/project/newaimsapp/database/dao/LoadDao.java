@@ -9,6 +9,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 import csci4060.project.newaimsapp.database.entity.Load;
 
 @Dao
@@ -24,4 +26,7 @@ public interface LoadDao {
 
     @Query("SELECT trip_id FROM Load WHERE sequence_number = :sequence_number")
     LiveData<Integer> getTripId(int sequence_number);
+
+    @Query("SELECT * FROM Load WHERE trip_id = :trip_id")
+    LiveData<List<Load>> getLoads(int trip_id);
 }

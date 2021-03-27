@@ -19,6 +19,10 @@ import org.json.JSONObject;
 import csci4060.project.newaimsapp.APISingleton;
 import csci4060.project.newaimsapp.R;
 import csci4060.project.newaimsapp.TripJSONParser;
+import csci4060.project.newaimsapp.UI.Fragments.DetailsFragment;
+import csci4060.project.newaimsapp.UI.Fragments.InputsFragment;
+import csci4060.project.newaimsapp.UI.Fragments.LoadsFragment;
+import csci4060.project.newaimsapp.UI.Fragments.TripsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.nav_details:
-                selectedFragment = new DetailsFragment();
+                selectedFragment = new LoadsFragment();
                 break;
 
             case R.id.nav_input:
