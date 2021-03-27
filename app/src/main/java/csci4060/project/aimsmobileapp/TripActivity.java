@@ -120,23 +120,23 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtTripId.setText("Trip id: " + TripId);
         txtDriverCode.setText("Driver code: " + DriverCode);
         txtDriverName.setText("Driver name: " + DriverName);
-        txtTruckId.setText("Truck id" + TruckId);
-        txtTruckCode.setText("Truck code" + TruckCode);
+        txtTruckId.setText("Truck id: " + TruckId);
+        txtTruckCode.setText("Truck code: " + TruckCode);
         txtTruckDesc.setText("Truck Desc: " + TruckDesc);
-        txtTrailerId.setText("Trailer id" + TrailerId);
-        txtTrailerCode.setText("Trailer code " + TrailerCode);
-        txtTrailerDesc.setText("Trailer Desc" + TrailerDesc);
-        txtTripName.setText("Trip name " + TripName);
-        txtTripDate.setText("Trip date " + TripDate);
-        txtDestinationCode.setText("Destination code " + DestinationCode);
-        txtAddress.setText("Address1" + Address);
-        txtCity.setText("City " + City);
-        txtPostalCode.setText("Postal code " + PostalCode);
-        txtProductId.setText("Product id" + ProductId);
-        txtProductDesc.setText("Product desc" + ProductDesc);
+        txtTrailerId.setText("Trailer id: " + TrailerId);
+        txtTrailerCode.setText("Trailer code: " + TrailerCode);
+        txtTrailerDesc.setText("Trailer Desc: " + TrailerDesc);
+        txtTripName.setText("Trip name: " + TripName);
+        txtTripDate.setText("Trip date: " + TripDate);
+        txtDestinationCode.setText("Destination code: " + DestinationCode);
+        txtAddress.setText("Address1: " + Address);
+        txtCity.setText("City: " + City);
+        txtPostalCode.setText("Postal code: " + PostalCode);
+        txtProductId.setText("Product id: " + ProductId);
+        txtProductDesc.setText("Product desc: " + ProductDesc);
         txtRequestedQty.setText("Request qunatity: " + RequestedQty);
-        txtUOM.setText("UOM " + UOM);
-        txtFill.setText("Fill " + Fill);
+        txtUOM.setText("UOM: " + UOM);
+        txtFill.setText("Fill: " + Fill);
 
 
     }

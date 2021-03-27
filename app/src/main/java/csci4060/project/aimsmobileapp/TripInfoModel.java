@@ -15,14 +15,14 @@ public class TripInfoModel {
     private String DestinationCode;
     private String Address;
     private String City;
-    private String PostalCode;
+    private int PostalCode;
     private int ProductId;
     private String ProductDesc;
-    private int RequestedQty;
+    private double RequestedQty;
     private String UOM;
     private String Fill;
 
-    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, String destinationCode, String address, String city, String postalCode, int productId, String productDesc, int requestedQty, String UOM, String fill) {
+    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, String destinationCode, String address, String city, int postalCode, int productId, String productDesc, double requestedQty, String UOM, String fill) {
         setTripId(tripId);
         setDriverCode(driverCode);
         setDriverName(driverName);
@@ -158,11 +158,11 @@ public class TripInfoModel {
         City = city;
     }
 
-    public String getPostalCode() {
+    public int getPostalCode() {
         return PostalCode;
     }
 
-    public void setPostalCode(String postalCode) {
+    public void setPostalCode(int postalCode) {
         PostalCode = postalCode;
     }
 
@@ -182,11 +182,11 @@ public class TripInfoModel {
         ProductDesc = productDesc;
     }
 
-    public int getRequestedQty() {
+    public double getRequestedQty() {
         return RequestedQty;
     }
 
-    public void setRequestedQty(int requestedQty) {
+    public void setRequestedQty(double requestedQty) {
         RequestedQty = requestedQty;
     }
 

@@ -1723,6 +1723,7 @@ id TrailerCode
 id TrailerDesc
 id TrailerId
 id TripDate
+id TripId
 id TripName
 id TruckCode
 id TruckDesc
@@ -2126,10 +2127,10 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id trip_heading_relative_layout
-id trip_id
 id trip_info_relative_layout
 id trip_info_scroll_view
-id trip_name
+id txtTripId
+id txtTripName
 id unchecked
 id uniform
 id unlabeled
