@@ -8,6 +8,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class TripActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView
@@ -154,8 +165,26 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btn_start_trip) {
-//            Send put request update to AIMS api
-            Toast.makeText(this, "Send udpate to aims", Toast.LENGTH_SHORT).show();
+            RequestQueue requestQueue;
+            requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.start();
+
+            DateFormat df = new SimpleDateFormat("MM/DD/YY");
+            Date date = new Date();
+            String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/TripStatusPut/" + DriverCode + "/" + TripId + "/ArriveSrc/ Hello /true/" + df.format(date) + "?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+
+            Toast.makeText(this, "Send update to aims", Toast.LENGTH_SHORT).show();
         }
     }
 }
