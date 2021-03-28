@@ -29,5 +29,7 @@ csci4060/project/aimsmobileapp/TripListAdapter.java
  csci4060.project.aimsmobileapp.TripListAdapter
  csci4060.project.aimsmobileapp.TripListAdapter$1
  csci4060.project.aimsmobileapp.TripListAdapter$ItemsViewHolder
+csci4060/project/aimsmobileapp/DriverInputSourceActivity.java
+ csci4060.project.aimsmobileapp.DriverInputSourceActivity
 csci4060/project/aimsmobileapp/RouteFragment.java
  csci4060.project.aimsmobileapp.RouteFragment

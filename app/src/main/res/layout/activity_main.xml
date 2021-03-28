@@ -72,7 +72,7 @@
         app:srcCompat="@drawable/aims_logo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="305dp"
         android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"

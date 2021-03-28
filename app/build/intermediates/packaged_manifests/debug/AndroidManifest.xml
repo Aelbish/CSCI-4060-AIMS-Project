@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light" >
+        <activity android:name="csci4060.project.aimsmobileapp.DriverInputSourceActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.TripActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.MainScreenActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.MainActivity" >
