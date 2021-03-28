@@ -4,12 +4,12 @@
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -40,16 +40,16 @@
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\fragment_trips.xml"
     },
     {
-        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_alerts.xml.flat",
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\fragment_alerts.xml"
     },
     {
-        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_screen.xml.flat",

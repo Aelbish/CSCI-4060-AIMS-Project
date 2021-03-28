@@ -132,6 +132,12 @@ public class TripFragment extends Fragment {
                                         TrailerCode, TrailerDesc, TripName, TripDate, DestinationCode, Address1, City, PostalCode, ProductId,
                                         ProductDesc, RequestedQty, UOM, Fill));
                             }
+
+                            if (tripInfoModelList.size() > 0) {
+                                TripListRecyclerView.setAdapter(new TripListAdapter(tripInfoModelList, getContext()));
+                            } else {
+                                Toast.makeText(getContext(), "List empty, please try again", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -147,11 +153,5 @@ public class TripFragment extends Fragment {
         requestQueue.add(jsonObjectRequest);
 //        Adding a dummy data in the Model list of tripInfoModel for testing the recycler view UI
 //        (Use data fetched from api)
-
-        if (tripInfoModelList.size() > 0) {
-            TripListRecyclerView.setAdapter(new TripListAdapter(tripInfoModelList, getContext()));
-        } else {
-            Toast.makeText(getContext(), "List empty, please try again", Toast.LENGTH_SHORT).show();
-        }
     }
 }
