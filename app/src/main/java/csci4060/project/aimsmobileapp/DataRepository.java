@@ -1,5 +1,7 @@
 package csci4060.project.aimsmobileapp;
 
+import android.app.Application;
+
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Queue;
 import csci4060.project.aimsmobileapp.database.AppDatabase;
 import csci4060.project.aimsmobileapp.database.dao.*;
 import csci4060.project.aimsmobileapp.database.entity.Customer;
+import csci4060.project.aimsmobileapp.database.entity.DeliveredProduct;
 import csci4060.project.aimsmobileapp.database.entity.Delivery;
 import csci4060.project.aimsmobileapp.database.entity.Driver;
 import csci4060.project.aimsmobileapp.database.entity.Load;
@@ -29,6 +32,7 @@ public class DataRepository {
     //private ContainerDao containerDao;
     //private BillOfLadingDao billOfLadingDao;
     private DeliveryDao deliveryDao;
+    private DeliveredProductDao deliveredProductDao;
 
     private static DataRepository instance;
     private static AppDatabase db;
@@ -42,6 +46,7 @@ public class DataRepository {
         customerDao = db.customerDao();
         vendorDao = db.vendorDao();
         deliveryDao = db.deliveryDao();
+        deliveredProductDao = db.deliveredProductDao();
     }
 
     /**
@@ -165,6 +170,96 @@ public class DataRepository {
     public void updateIsSelected(int trip_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             tripDao.updateIsSelected(trip_id);
+        });
+    }
+
+    public void setBOLNumber(int bolNumber, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setBol_number(bolNumber, sequence_id);
+        });
+    }
+
+    public void setFuelProduct(String fuelProduct, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setFuel_product(fuelProduct, sequence_id);
+        });
+    }
+
+    public void setStartLoad(long start_load, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setStart_load(start_load, sequence_id);
+        });
+    }
+
+    public void setEndLoad(long end_load, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setEnd_load(end_load, sequence_id);
+        });
+    }
+
+    public void setGrossPickedUp(double gross_picked_up, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setGross_picked_up(gross_picked_up, sequence_id);
+        });
+    }
+
+    public void setNetPickedUp(double net_picked_up, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setNet_picked_up(net_picked_up, sequence_id);
+        });
+    }
+
+    public void setProductName(String product_name, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setProduct_name(product_name, sequence_id);
+        });
+    }
+
+    public void setGrossDelivered(double gross_Delivered, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setGross_delivered(gross_Delivered, sequence_id);
+        });
+    }
+
+    public void setNetDelivered(double net_delivered, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setNet_delivered(net_delivered, sequence_id);
+        });
+    }
+
+    public void setTicketNum(int ticket_num, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setTicket_num(ticket_num, sequence_id);
+        });
+    }
+
+    public void setStartTruckMeter(double start_truck_meter, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setStart_truck_meter(start_truck_meter, sequence_id);
+        });
+    }
+
+    public void setEndTruckMeter(double end_truck_meter, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setEnd_truck_meter(end_truck_meter, sequence_id);
+        });
+    }
+
+    public void setStartStickMeter(double start_stick_meter, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setStart_stick_meter(start_stick_meter, sequence_id);
+        });
+    }
+
+    public void setEndStickMeter(double end_stick_meter, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setEnd_stick_meter(end_stick_meter, sequence_id);
+        });
+    }
+
+    public void setDeliveryComments(String delivery_comments, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            deliveredProductDao.setDelivery_comments(delivery_comments, sequence_id);
         });
     }
 }

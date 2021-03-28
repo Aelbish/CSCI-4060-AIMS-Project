@@ -21,7 +21,7 @@ import csci4060.project.aimsmobileapp.database.entity.*;
  */
 
 //If you need to add new entity classes or change any of the existing entity classes, then you will need to increment version = # by 1 each time
-@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class}, version = 8)
+@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class, DeliveredProduct.class}, version = 9)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -38,6 +38,7 @@ public abstract class AppDatabase extends RoomDatabase {
     //public abstract ContainerDao containerDao();
     //public abstract BillOfLadingDao billOfLadingDao();
     public abstract DeliveryDao deliveryDao();
+    public abstract  DeliveredProductDao deliveredProductDao();
 
     private static AppDatabase INSTANCE; //This hold an instancce of the database to make sure we only ever have ONE database open
     private static final int NUM_OF_EXECUTOR_THREADS = 4; //The number of threads the database will use when writing data to the database
@@ -52,7 +53,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public static AppDatabase getDatabase(final Context context) {
         if(INSTANCE == null) {
             synchronized (AppDatabase.class) {
-                if(INSTANCE == null) {  //The line below is the actual building of the database                                 //After version increment, it will completely destory the database and rebuild it
+                if(INSTANCE == null) {  //The line below is the actual building of the database                                 //After version increment, it will completely destroy the database and rebuild it
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "local_database").fallbackToDestructiveMigration().build();
                 }
             }
