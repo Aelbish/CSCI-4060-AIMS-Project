@@ -5,11 +5,11 @@
     android:padding="5dp">
 
     <LinearLayout
-        android:layout_width="374dp"
-        android:layout_height="142dp"
+        android:layout_width="395dp"
+        android:layout_height="173dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="0dp"
         android:background="@drawable/trip_info"
         android:orientation="vertical"
         android:padding="20dp">
@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtTripId"
-                android:layout_width="wrap_content"
+                android:layout_width="63dp"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:text="Trip id" />
@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/txtTripSeq"
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@+id/txtTripId"
                 android:layout_marginRight="-256dp"
@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/txtTripWaypoint"
-                android:layout_width="wrap_content"
+                android:layout_width="171dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripId"
                 android:layout_alignRight="@+id/txtTripName"
