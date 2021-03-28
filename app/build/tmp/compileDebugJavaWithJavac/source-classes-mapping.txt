@@ -1,33 +1,61 @@
-csci4060/project/aimsmobileapp/BuildConfig.java
- csci4060.project.aimsmobileapp.BuildConfig
+csci4060/project/aimsmobileapp/database/Converters.java
+ csci4060.project.aimsmobileapp.database.Converters
+csci4060/project/aimsmobileapp/database/dao/LoadDao.java
+ csci4060.project.aimsmobileapp.database.dao.LoadDao
+csci4060/project/aimsmobileapp/database/dao/TripDao.java
+ csci4060.project.aimsmobileapp.database.dao.TripDao
+csci4060/project/aimsmobileapp/database/dao/DeliveredProductDao.java
+ csci4060.project.aimsmobileapp.database.dao.DeliveredProductDao
+csci4060/project/aimsmobileapp/database/dao/CustomerDao.java
+ csci4060.project.aimsmobileapp.database.dao.CustomerDao
 csci4060/project/aimsmobileapp/TripFragment.java
  csci4060.project.aimsmobileapp.TripFragment
  csci4060.project.aimsmobileapp.TripFragment$1
  csci4060.project.aimsmobileapp.TripFragment$2
-csci4060/project/aimsmobileapp/UserRepository.java
- csci4060.project.aimsmobileapp.UserRepository
-csci4060/project/aimsmobileapp/MainScreenActivity.java
- csci4060.project.aimsmobileapp.MainScreenActivity
- csci4060.project.aimsmobileapp.MainScreenActivity$1
+csci4060/project/aimsmobileapp/database/dao/DriverDao.java
+ csci4060.project.aimsmobileapp.database.dao.DriverDao
+csci4060/project/aimsmobileapp/database/entity/Driver.java
+ csci4060.project.aimsmobileapp.database.entity.Driver
+csci4060/project/aimsmobileapp/database/AppDatabase.java
+ csci4060.project.aimsmobileapp.database.AppDatabase
 csci4060/project/aimsmobileapp/TripActivity.java
  csci4060.project.aimsmobileapp.TripActivity
-csci4060/project/aimsmobileapp/User.java
- csci4060.project.aimsmobileapp.User
-csci4060/project/aimsmobileapp/UserViewModel.java
- csci4060.project.aimsmobileapp.UserViewModel
-csci4060/project/aimsmobileapp/AlertFragment.java
- csci4060.project.aimsmobileapp.AlertFragment
-csci4060/project/aimsmobileapp/UserDao.java
- csci4060.project.aimsmobileapp.UserDao
-csci4060/project/aimsmobileapp/UserRoomDatabase.java
- csci4060.project.aimsmobileapp.UserRoomDatabase
-csci4060/project/aimsmobileapp/MainActivity.java
- csci4060.project.aimsmobileapp.MainActivity
+ csci4060.project.aimsmobileapp.TripActivity$1
+ csci4060.project.aimsmobileapp.TripActivity$2
+csci4060/project/aimsmobileapp/database/entity/Vendor.java
+ csci4060.project.aimsmobileapp.database.entity.Vendor
 csci4060/project/aimsmobileapp/TripInfoModel.java
  csci4060.project.aimsmobileapp.TripInfoModel
 csci4060/project/aimsmobileapp/TripListAdapter.java
  csci4060.project.aimsmobileapp.TripListAdapter
  csci4060.project.aimsmobileapp.TripListAdapter$1
  csci4060.project.aimsmobileapp.TripListAdapter$ItemsViewHolder
+csci4060/project/aimsmobileapp/DataRepository.java
+ csci4060.project.aimsmobileapp.DataRepository
+csci4060/project/aimsmobileapp/database/entity/Trip.java
+ csci4060.project.aimsmobileapp.database.entity.Trip
+csci4060/project/aimsmobileapp/database/dao/VendorDao.java
+ csci4060.project.aimsmobileapp.database.dao.VendorDao
+csci4060/project/aimsmobileapp/BuildConfig.java
+ csci4060.project.aimsmobileapp.BuildConfig
+csci4060/project/aimsmobileapp/AIMSApp.java
+ csci4060.project.aimsmobileapp.AIMSApp
+csci4060/project/aimsmobileapp/database/entity/Customer.java
+ csci4060.project.aimsmobileapp.database.entity.Customer
+csci4060/project/aimsmobileapp/database/entity/DeliveredProduct.java
+ csci4060.project.aimsmobileapp.database.entity.DeliveredProduct
+csci4060/project/aimsmobileapp/MainScreenActivity.java
+ csci4060.project.aimsmobileapp.MainScreenActivity
+ csci4060.project.aimsmobileapp.MainScreenActivity$1
+csci4060/project/aimsmobileapp/database/entity/Delivery.java
+ csci4060.project.aimsmobileapp.database.entity.Delivery
+csci4060/project/aimsmobileapp/database/entity/Load.java
+ csci4060.project.aimsmobileapp.database.entity.Load
+csci4060/project/aimsmobileapp/AlertFragment.java
+ csci4060.project.aimsmobileapp.AlertFragment
+csci4060/project/aimsmobileapp/MainActivity.java
+ csci4060.project.aimsmobileapp.MainActivity
+csci4060/project/aimsmobileapp/database/dao/DeliveryDao.java
+ csci4060.project.aimsmobileapp.database.dao.DeliveryDao
 csci4060/project/aimsmobileapp/RouteFragment.java
  csci4060.project.aimsmobileapp.RouteFragment
