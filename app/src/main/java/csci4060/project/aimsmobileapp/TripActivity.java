@@ -23,10 +23,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             txtTripName,
             txtTripDate,
             txtDestinationCode,
+            txtDestinationName,
             txtAddress,
             txtCity,
             txtPostalCode,
             txtProductId,
+            txtProductCode,
             txtProductDesc,
             txtRequestedQty,
             txtUOM,
@@ -45,10 +47,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             TripName,
             TripDate,
             DestinationCode,
+            DestinationName,
             Address,
             City,
             PostalCode,
             ProductId,
+            ProductCode,
             ProductDesc,
             RequestedQty,
             UOM,
@@ -73,10 +77,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtTripName = findViewById(R.id.TripName);
         txtTripDate = findViewById(R.id.TripDate);
         txtDestinationCode = findViewById(R.id.DestinationCode);
+        txtDestinationName = findViewById(R.id.DestinationName);
         txtAddress = findViewById(R.id.Address1);
         txtCity = findViewById(R.id.City);
         txtPostalCode = findViewById(R.id.PostalCode);
         txtProductId = findViewById(R.id.ProductId);
+        txtProductCode = findViewById(R.id.ProductCode);
         txtProductDesc = findViewById(R.id.ProductDesc);
         txtRequestedQty = findViewById(R.id.RequestedQty);
         txtUOM = findViewById(R.id.UOM);
@@ -105,10 +111,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         TripName = bundle.getString("TripName");
         TripDate = bundle.getString("TripDate");
         DestinationCode = bundle.getString("DestinationCode");
+        DestinationName = bundle.getString("DestinationName");
         Address = bundle.getString("Address");
         City = bundle.getString("City");
         PostalCode = bundle.getString("PostalCode");
         ProductId = bundle.getString("ProductId");
+        ProductCode = bundle.getString("ProductCode");
         ProductDesc = bundle.getString("ProductDesc");
         RequestedQty = bundle.getString("RequestedQty");
         UOM = bundle.getString("UOM");
@@ -129,10 +137,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtTripName.setText("Trip name: " + TripName);
         txtTripDate.setText("Trip date: " + TripDate);
         txtDestinationCode.setText("Destination code: " + DestinationCode);
+        txtDestinationName.setText("Destination name: " + DestinationName);
         txtAddress.setText("Address1: " + Address);
         txtCity.setText("City: " + City);
         txtPostalCode.setText("Postal code: " + PostalCode);
         txtProductId.setText("Product id: " + ProductId);
+        txtProductCode.setText("Product code: " + ProductCode);
         txtProductDesc.setText("Product desc: " + ProductDesc);
         txtRequestedQty.setText("Request qunatity: " + RequestedQty);
         txtUOM.setText("UOM: " + UOM);

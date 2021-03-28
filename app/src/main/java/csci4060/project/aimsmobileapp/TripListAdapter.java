@@ -51,21 +51,23 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                     intent.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                     intent.putExtra("DriverCode", tripInfoModel.getDriverCode());
                     intent.putExtra("DriverName", tripInfoModel.getDriverName());
-                    intent.putExtra("TruckId", tripInfoModel.getTruckId());
+                    intent.putExtra("TruckId", Integer.toString(tripInfoModel.getTruckId()));
                     intent.putExtra("TruckCode", tripInfoModel.getTruckCode());
                     intent.putExtra("TruckDesc", tripInfoModel.getTruckDesc());
-                    intent.putExtra("TrailerId", tripInfoModel.getTrailerId());
+                    intent.putExtra("TrailerId", Integer.toString(tripInfoModel.getTrailerId()));
                     intent.putExtra("TrailerCode", tripInfoModel.getTrailerCode());
                     intent.putExtra("TrailerDesc", tripInfoModel.getTrailerDesc());
                     intent.putExtra("TripName", tripInfoModel.getTripName());
                     intent.putExtra("TripDate", tripInfoModel.getTripDate());
                     intent.putExtra("DestinationCode", tripInfoModel.getDestinationCode());
+                    intent.putExtra("DestinationName", tripInfoModel.getDestinationName());
                     intent.putExtra("Address", tripInfoModel.getAddress());
                     intent.putExtra("City", tripInfoModel.getCity());
-                    intent.putExtra("PostalCode", tripInfoModel.getPostalCode());
-                    intent.putExtra("ProductId", tripInfoModel.getProductId());
+                    intent.putExtra("PostalCode", Integer.toString(tripInfoModel.getPostalCode()));
+                    intent.putExtra("ProductId", Integer.toString(tripInfoModel.getProductId()));
+                    intent.putExtra("ProductCode", tripInfoModel.getProductCode());
                     intent.putExtra("ProductDesc", tripInfoModel.getProductDesc());
-                    intent.putExtra("RequestedQty", tripInfoModel.getRequestedQty());
+                    intent.putExtra("RequestedQty", Double.toString(tripInfoModel.getRequestedQty()));
                     intent.putExtra("UOM", tripInfoModel.getUOM());
                     intent.putExtra("Fill", tripInfoModel.getFill());
 

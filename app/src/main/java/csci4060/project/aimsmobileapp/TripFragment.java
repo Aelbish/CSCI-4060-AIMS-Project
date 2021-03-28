@@ -35,6 +35,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import csci4060.project.aimsmobileapp.database.entity.Customer;
+import csci4060.project.aimsmobileapp.database.entity.Delivery;
+import csci4060.project.aimsmobileapp.database.entity.Driver;
+import csci4060.project.aimsmobileapp.database.entity.Load;
+import csci4060.project.aimsmobileapp.database.entity.Trip;
+import csci4060.project.aimsmobileapp.database.entity.Vendor;
+
 //This is trips screen
 
 
@@ -128,9 +135,24 @@ public class TripFragment extends Fragment {
                                 String UOM = resultSet1.getJSONObject(i).getString("UOM");
                                 String Fill = resultSet1.getJSONObject(i).getString("Fill");
 
+                                Driver driver = new Driver(DriverCode, DriverName, TruckId, TruckCode,
+                                        TruckDesc, TrailerId, TrailerCode, TrailerDesc);
+                                Trip trip = new Trip(TripId, TripName, TripDate, DriverCode);
+                                Load load = new Load(SeqNum, WaypointTypeDescription, Latitude, Longitude, TripId);
+                                Vendor vendor = new Vendor(DestinationCode, DestinationName, Address1,
+                                        Address2, City, StateAbbrev, PostalCode, SeqNum);
+                                Customer customer = new Customer(DestinationCode, DestinationName,
+                                        SiteContainerCode, SiteContainerDescription, Address1, Address2, City,
+                                        StateAbbrev, PostalCode, SeqNum);
+                                Delivery delivery = new Delivery(SeqNum, DelReqNum,
+                                        DelReqLineNum, ProductId, ProductCode, ProductDesc,
+                                        RequestedQty, UOM, Fill);
+
+                                AIMSApp.repository.storeData(driver, trip, load, vendor ,customer, delivery);
+
                                 tripInfoModelList.add(new TripInfoModel(TripId, DriverCode, DriverName, TruckId, TruckCode, TruckDesc, TrailerId,
-                                        TrailerCode, TrailerDesc, TripName, TripDate, DestinationCode, Address1, City, PostalCode, ProductId,
-                                        ProductDesc, RequestedQty, UOM, Fill));
+                                        TrailerCode, TrailerDesc, TripName, TripDate, DestinationCode, DestinationName, Address1, City, PostalCode, ProductId,
+                                        ProductCode, ProductDesc, RequestedQty, UOM, Fill));
                             }
 
                             if (tripInfoModelList.size() > 0) {

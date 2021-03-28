@@ -13,16 +13,18 @@ public class TripInfoModel {
     private String TripName;
     private String TripDate;
     private String DestinationCode;
+    private String DestinationName;
     private String Address;
     private String City;
     private int PostalCode;
     private int ProductId;
+    private String ProductCode;
     private String ProductDesc;
     private double RequestedQty;
     private String UOM;
     private String Fill;
 
-    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, String destinationCode, String address, String city, int postalCode, int productId, String productDesc, double requestedQty, String UOM, String fill) {
+    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, String destinationCode,String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill) {
         setTripId(tripId);
         setDriverCode(driverCode);
         setDriverName(driverName);
@@ -35,16 +37,33 @@ public class TripInfoModel {
         setTripName(tripName);
         setTripDate(tripDate);
         setDestinationCode(destinationCode);
+        setDestinationName(destinationName);
         setAddress(address);
         setCity(city);
         setPostalCode(postalCode);
         setProductId(productId);
+        setProductCode(productCode);
         setProductDesc(productDesc);
         setRequestedQty(requestedQty);
         setUOM(UOM);
         setFill(fill);
     }
 
+    public String getDestinationName() {
+        return DestinationName;
+    }
+
+    public void setDestinationName(String destinationName) {
+        DestinationName = destinationName;
+    }
+
+    public String getProductCode() {
+        return ProductCode;
+    }
+
+    public void setProductCode(String productCode) {
+        ProductCode = productCode;
+    }
 
     public int getTripId() {
         return TripId;
