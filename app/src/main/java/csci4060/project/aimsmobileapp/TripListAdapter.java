@@ -43,6 +43,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
         itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
         itemsViewHolder.txtTripName.setText("Trip name: " + tripInfoModel.getTripName());
+        itemsViewHolder.txtTripWaypoint.setText("Location: " + tripInfoModel.getWaypoint());
+        itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
+
         itemsViewHolder.btnSummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +90,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
     public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtTripId, txtTripName;
+        public TextView txtTripId, txtTripName, txtTripWaypoint, txtTripSeq;
         public Button btnSummary;
 
         public ItemsViewHolder(@NonNull View itemView) {
@@ -96,6 +99,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
             txtTripId = itemView.findViewById(R.id.txtTripId);
             txtTripName = itemView.findViewById(R.id.txtTripName);
+            txtTripWaypoint = itemView.findViewById(R.id.txtTripWaypoint);
+            txtTripSeq = itemView.findViewById(R.id.txtTripSeq);
             btnSummary = itemView.findViewById(R.id.btn_summary);
 
 

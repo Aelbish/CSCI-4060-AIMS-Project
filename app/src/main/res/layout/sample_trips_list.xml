@@ -22,7 +22,8 @@
                 android:id="@+id/txtTripId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Trip id"/>
+                android:text="Trip id"
+                android:padding="2dp"/>
 
             <TextView
                 android:id="@+id/txtTripName"
@@ -31,6 +32,24 @@
                 android:text="TripName"
                 android:layout_below="@id/txtTripId"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtTripSeq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/txtTripId"
+                android:layout_marginRight="-256dp"
+                android:text="SeqNum" />
+
+            <TextView
+                android:id="@+id/txtTripWaypoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTripId"
+                android:layout_alignRight="@+id/txtTripName"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="-239dp"
+                android:text="Waypoint" />
 
 
         </RelativeLayout>

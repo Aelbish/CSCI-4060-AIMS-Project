@@ -151,7 +151,7 @@ public class TripFragment extends Fragment {
                                 AIMSApp.repository.storeData(driver, trip, load, vendor ,customer, delivery);
 
                                 tripInfoModelList.add(new TripInfoModel(TripId, DriverCode, DriverName, TruckId, TruckCode, TruckDesc, TrailerId,
-                                        TrailerCode, TrailerDesc, TripName, TripDate, DestinationCode, DestinationName, Address1, City, PostalCode, ProductId,
+                                        TrailerCode, TrailerDesc, TripName, TripDate, SeqNum, WaypointTypeDescription, DestinationCode, DestinationName, Address1, City, PostalCode, ProductId,
                                         ProductCode, ProductDesc, RequestedQty, UOM, Fill));
                             }
 

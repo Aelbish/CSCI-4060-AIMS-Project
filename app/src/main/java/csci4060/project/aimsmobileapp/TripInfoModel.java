@@ -12,6 +12,8 @@ public class TripInfoModel {
     private String TrailerDesc;
     private String TripName;
     private String TripDate;
+    private int  SeqNum;
+    private String Waypoint;
     private String DestinationCode;
     private String DestinationName;
     private String Address;
@@ -24,7 +26,15 @@ public class TripInfoModel {
     private String UOM;
     private String Fill;
 
-    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, String destinationCode,String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill) {
+    public int getSeqNum() {
+        return SeqNum;
+    }
+
+    public void setSeqNum(int seqNum) {
+        SeqNum = seqNum;
+    }
+
+    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, int seqNum, String waypoint, String destinationCode, String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill) {
         setTripId(tripId);
         setDriverCode(driverCode);
         setDriverName(driverName);
@@ -36,6 +46,8 @@ public class TripInfoModel {
         setTrailerDesc(trailerDesc);
         setTripName(tripName);
         setTripDate(tripDate);
+        setSeqNum(seqNum);
+        setWaypoint(waypoint);
         setDestinationCode(destinationCode);
         setDestinationName(destinationName);
         setAddress(address);
@@ -47,6 +59,14 @@ public class TripInfoModel {
         setRequestedQty(requestedQty);
         setUOM(UOM);
         setFill(fill);
+    }
+
+    public String getWaypoint() {
+        return Waypoint;
+    }
+
+    public void setWaypoint(String waypoint) {
+        Waypoint = waypoint;
     }
 
     public String getDestinationName() {
