@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtTripId"
-                android:layout_width="63dp"
+                android:layout_width="94dp"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:text="Trip id" />
@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/txtTripSeq"
-                android:layout_width="140dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@+id/txtTripId"
                 android:layout_marginRight="-256dp"
