@@ -262,4 +262,64 @@ public class DataRepository {
             deliveredProductDao.setDelivery_comments(delivery_comments, sequence_id);
         });
     }
+
+    public int getBOLNumber(int sequence_num) {
+        return deliveredProductDao.getBol_number(sequence_num);
+    }
+
+    public String getFuelProduct(int sequence_num) {
+        return deliveredProductDao.getFuel_product(sequence_num);
+    }
+
+    public Long getStartLoad(int sequence_num) {
+        return deliveredProductDao.getStart_load(sequence_num);
+    }
+
+    public long getEndLoad(int sequence_num) {
+        return deliveredProductDao.getEnd_load(sequence_num);
+    }
+
+    public double getGrossPickedUp(int sequence_num) {
+        return deliveredProductDao.getGross_picked_up(sequence_num);
+    }
+
+    public double getNetPickedUp(int sequence_num) {
+        return deliveredProductDao.getNet_picked_up(sequence_num);
+    }
+
+    public String getProductName(int sequence_num) {
+        return deliveredProductDao.getProduct_name(sequence_num);
+    }
+
+    public double getGrossDelivered(int sequence_num) {
+        return deliveredProductDao.getGross_delivered(sequence_num);
+    }
+
+    public double getNetDelivered(int sequence_num) {
+        return deliveredProductDao.getNet_delivered(sequence_num);
+    }
+
+    public int getTicketNum(int sequence_num) {
+        return deliveredProductDao.getTicket_num(sequence_num);
+    }
+
+    public double getStartTruckMeter(int sequence_num) {
+        return deliveredProductDao.getStart_truck_meter(sequence_num);
+    }
+
+    public double getEndTruckMeter(int sequence_num) {
+        return deliveredProductDao.getEnd_truck_meter(sequence_num);
+    }
+
+    public double getStartStickMeter(int sequence_num) {
+        return deliveredProductDao.getStart_stick_meter(sequence_num);
+    }
+
+    public double getEndStickMeter(int sequence_num) {
+        return deliveredProductDao.getEnd_stick_meter(sequence_num);
+    }
+
+    public String getDeliveryComments(int sequence_num) {
+        return deliveredProductDao.getDelivery_comments(sequence_num);
+    }
 }
