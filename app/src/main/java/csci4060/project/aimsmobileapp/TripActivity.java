@@ -145,7 +145,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view.getId() == R.id.btn_start_trip) {
 //            Send put request update to AIMS api
-            Toast.makeText(this, "Send udpate to aims", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Send update to aims", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -46,7 +46,8 @@
             android:paddingLeft="5dp"
             android:text="Start"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:theme="@style/AppTheme"/>
 
     </RelativeLayout>
 
