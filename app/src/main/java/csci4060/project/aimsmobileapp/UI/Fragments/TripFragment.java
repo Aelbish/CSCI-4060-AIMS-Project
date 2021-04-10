@@ -1,30 +1,21 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Cache;
-import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -35,6 +26,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.TripInfoModel;
+import csci4060.project.aimsmobileapp.UI.TripListAdapter;
 import csci4060.project.aimsmobileapp.database.entity.Customer;
 import csci4060.project.aimsmobileapp.database.entity.Delivery;
 import csci4060.project.aimsmobileapp.database.entity.Driver;

@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.Fragments.AlertFragment;
+import csci4060.project.aimsmobileapp.UI.Fragments.RouteFragment;
+import csci4060.project.aimsmobileapp.UI.Fragments.TripFragment;
 
 //This is the main screen
 public class MainScreenActivity extends AppCompatActivity {

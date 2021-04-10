@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI;
 
 public class TripInfoModel {
     private int TripId;

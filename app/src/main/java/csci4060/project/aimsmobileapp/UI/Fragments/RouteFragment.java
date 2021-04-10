@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import csci4060.project.aimsmobileapp.R;
 
 //This is route screen
 public class RouteFragment extends Fragment {

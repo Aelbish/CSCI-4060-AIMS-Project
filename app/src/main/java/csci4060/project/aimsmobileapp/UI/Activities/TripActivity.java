@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp;
+package csci4060.project.aimsmobileapp.UI.Activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +18,8 @@ import com.android.volley.toolbox.Volley;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import csci4060.project.aimsmobileapp.R;
 
 public class TripActivity extends AppCompatActivity implements View.OnClickListener {
 
