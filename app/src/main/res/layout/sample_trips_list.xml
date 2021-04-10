@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/trip_info"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtTripId"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Trip id" />
+
+            <TextView
+                android:id="@+id/txtTripName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTripId"
+                android:text="TripName"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTripSeq"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/txtTripId"
+                android:layout_marginRight="-256dp"
+                android:text="SeqNum" />
+
+            <TextView
+                android:id="@+id/txtTripWaypoint"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTripId"
+                android:layout_alignRight="@+id/txtTripName"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="-239dp"
+                android:text="Waypoint" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/button"
+                android:clickable="true"
+                android:paddingLeft="5dp"
+                android:text="Summary"
+                android:textAllCaps="false"
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

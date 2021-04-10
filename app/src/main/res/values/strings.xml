@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fuel Dispatcher</string>
+    <string name="first_navButton">Trips</string>
+    <string name="second_navButton">Route</string>
+    <string name="third_navButton">Alerts</string>
+
+    <string-array name="productNames">
+        <item>Fuel 87</item>
+        <item>Fuel 90</item>
+        <item>Biodiesel</item>
+        <item>Diesel</item>
+    </string-array>
+</resources>
