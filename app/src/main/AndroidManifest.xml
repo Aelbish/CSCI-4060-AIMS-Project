@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".UI.Activities.DriverInputSourceActivity"/>
+        <activity android:name=".UI.Activities.DriverInputSiteActivity"/>
         <activity android:name=".UI.Activities.TripActivity" />
         <activity android:name=".UI.Activities.MainScreenActivity" />
         <activity android:name=".UI.Activities.MainActivity">
