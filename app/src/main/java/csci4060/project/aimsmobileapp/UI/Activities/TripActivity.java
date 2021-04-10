@@ -105,8 +105,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
 
 //        reference for buttons
         btnStart = findViewById(R.id.btn_start_trip);
-        btnSiteInput=findViewById(R.id.btn_site_info);
-        btnSourceInput=findViewById(R.id.btn_source_input);
 
 //        Setting on click listener to buttons
         btnStart.setOnClickListener(this);
@@ -197,15 +195,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
 
             Toast.makeText(this, "Send update to aims", Toast.LENGTH_SHORT).show();
         }
-        else if(view.getId()==R.id.btn_source_input){
-            Intent driverSourceInput= new Intent(this, DriverInputSourceActivity.class);
-            driverSourceInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            this.startActivity(driverSourceInput);
-        }
-        else if(view.getId()==R.id.btn_site_info){
-            Intent driverSiteInput= new Intent(this, DriverInputSiteActivity.class);
-            driverSiteInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            this.startActivity(driverSiteInput);
-        }
+
     }
 }
