@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:background="#FFAE1A"
+            android:background="@drawable/my_button"
             android:clickable="true"
             android:paddingLeft="5dp"
             android:text="Start"
@@ -257,6 +257,44 @@
 
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/trip_info_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_source_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/my_button"
+            android:clickable="true"
+            android:paddingLeft="5dp"
+            android:text="Source input"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btn_site_info"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/my_button"
+            android:clickable="true"
+            android:paddingLeft="5dp"
+            android:text="Site input"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>
