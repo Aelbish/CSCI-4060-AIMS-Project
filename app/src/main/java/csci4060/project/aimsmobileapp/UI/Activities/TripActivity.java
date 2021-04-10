@@ -103,7 +103,12 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtUOM = findViewById(R.id.UOM);
         txtFill = findViewById(R.id.Fill);
 
+//        reference for buttons
+        btnStart = findViewById(R.id.btn_start_trip);
 
+//        Setting on click listener to buttons
+        btnStart.setOnClickListener(this);
+        btnStart.setOnClickListener(this);
 
         getSingleTripDetails();
 
