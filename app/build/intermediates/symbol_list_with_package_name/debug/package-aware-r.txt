@@ -1641,13 +1641,13 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable button
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_camera_alt_24
 drawable ic_baseline_format_list_bulleted_24
 drawable ic_baseline_location_on_24
 drawable ic_baseline_textsms_24
@@ -1659,6 +1659,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable image_view_border
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1695,7 +1696,6 @@ drawable notify_panel_notification_icon_bg
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable trip_info
 id ALT
 id Address1
 id BOTTOM_END
@@ -1811,6 +1811,7 @@ id btn_summary
 id buttonFormSubmit
 id buttonLogin
 id buttonPanel
+id buttonTakePicture
 id cache_measures
 id cancel_button
 id center
@@ -1832,7 +1833,6 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
-id color
 id confirm_button
 id container
 id content
@@ -1882,7 +1882,6 @@ id editTextEndTime
 id editTextPassword
 id editTextPickupGrossQuantity
 id editTextPickupNetQuantity
-id editTextProductType
 id editTextStartDate
 id editTextStartMeterReading
 id editTextStartTime
@@ -2078,6 +2077,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinnerProductType
 id spline
 id split_action_bar
 id spread
@@ -3280,6 +3280,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

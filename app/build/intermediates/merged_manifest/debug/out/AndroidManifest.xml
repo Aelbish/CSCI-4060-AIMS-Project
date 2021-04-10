@@ -12,6 +12,10 @@
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- For taking picture of BOL -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name="csci4060.project.aimsmobileapp.AIMSApp"
         android:allowBackup="true"
@@ -24,6 +28,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light" >
+        //
+        <activity
+            android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity"
+            android:exported="true" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainActivity" >
@@ -33,6 +41,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.csci4060.project.aimsmobileapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"

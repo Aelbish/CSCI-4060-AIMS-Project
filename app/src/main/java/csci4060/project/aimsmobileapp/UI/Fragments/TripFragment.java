@@ -28,8 +28,8 @@ import java.util.List;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.R;
-import csci4060.project.aimsmobileapp.UI.TripInfoModel;
-import csci4060.project.aimsmobileapp.UI.TripListAdapter;
+import csci4060.project.aimsmobileapp.model.TripInfoModel;
+import csci4060.project.aimsmobileapp.adapter.TripListAdapter;
 import csci4060.project.aimsmobileapp.database.entity.Customer;
 import csci4060.project.aimsmobileapp.database.entity.Delivery;
 import csci4060.project.aimsmobileapp.database.entity.Driver;

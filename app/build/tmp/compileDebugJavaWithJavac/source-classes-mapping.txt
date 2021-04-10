@@ -2,6 +2,14 @@ csci4060/project/aimsmobileapp/database/Converters.java
  csci4060.project.aimsmobileapp.database.Converters
 csci4060/project/aimsmobileapp/UI/Activities/DriverInputSourceActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$1
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$2
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$3
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$4
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$5
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$6
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$7
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$8
 csci4060/project/aimsmobileapp/UI/Fragments/TripFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.TripFragment
  csci4060.project.aimsmobileapp.UI.Fragments.TripFragment$1
