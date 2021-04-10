@@ -8,9 +8,8 @@
     tools:context=".UI.Fragments.TripFragment">
 
     <RelativeLayout
-        android:layout_width="557dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/display_trips_list_recycler_view"
