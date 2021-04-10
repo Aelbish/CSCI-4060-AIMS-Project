@@ -50,6 +50,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array productNames
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1640,13 +1641,13 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable button
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_camera_alt_24
 drawable ic_baseline_format_list_bulleted_24
 drawable ic_baseline_location_on_24
 drawable ic_baseline_textsms_24
@@ -1658,6 +1659,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable image_view_border
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1694,7 +1696,6 @@ drawable notify_panel_notification_icon_bg
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-drawable trip_info
 id ALT
 id Address1
 id BOTTOM_END
@@ -1807,8 +1808,10 @@ id bottom
 id bounce
 id btn_start_trip
 id btn_summary
+id buttonFormSubmit
 id buttonLogin
 id buttonPanel
+id buttonTakePicture
 id cache_measures
 id cancel_button
 id center
@@ -1872,7 +1875,18 @@ id easeIn
 id easeInOut
 id easeOut
 id editTextAccountId
+id editTextBOLNumber
+id editTextEndDate
+id editTextEndMeterReading
+id editTextEndTime
 id editTextPassword
+id editTextPickupGrossQuantity
+id editTextPickupNetQuantity
+id editTextStartDate
+id editTextStartMeterReading
+id editTextStartTime
+id editTextTrailerGrossQuantity
+id editTextTrailerNetQuantity
 id edit_query
 id elastic
 id end
@@ -2063,6 +2077,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinnerProductType
 id spline
 id split_action_bar
 id spread
@@ -2103,6 +2118,17 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView10
+id textView11
+id textView12
+id textView13
+id textView19
+id textView20
+id textView21
+id textView22
+id textView5
+id textView7
+id textView8
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2207,6 +2233,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_driver_input_source
 layout activity_main
 layout activity_main_screen
 layout activity_trip
@@ -3253,6 +3280,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
