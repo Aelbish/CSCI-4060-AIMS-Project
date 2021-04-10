@@ -16,37 +16,21 @@
         android:padding="20dp">
 
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
                 android:id="@+id/txtTripId"
-                android:layout_width="94dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
                 android:text="Trip id" />
 
             <TextView
-                android:id="@+id/txtTripName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtTripId"
-                android:text="TripName"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtTripSeq"
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/txtTripId"
-                android:layout_marginRight="-256dp"
-                android:text="SeqNum" />
-
-            <TextView
                 android:id="@+id/txtTripWaypoint"
-                android:layout_width="171dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripId"
                 android:layout_alignRight="@+id/txtTripName"
@@ -55,7 +39,31 @@
                 android:text="Waypoint" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtTripName"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTripId"
+                android:text="TripName"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTripSeq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/txtTripId"
+                android:layout_marginRight="-256dp"
+                android:text="SeqNum" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
