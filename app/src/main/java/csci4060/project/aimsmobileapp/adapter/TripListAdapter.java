@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp.UI;
+package csci4060.project.aimsmobileapp.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,6 +16,7 @@ import java.util.List;
 
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Activities.TripActivity;
+import csci4060.project.aimsmobileapp.model.TripInfoModel;
 
 public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsViewHolder> {
 
