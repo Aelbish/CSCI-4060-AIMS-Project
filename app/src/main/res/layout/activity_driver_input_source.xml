@@ -38,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Start Date"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -52,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Start Time"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -67,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="End Date"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -82,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="End Time"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -97,6 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Trailer Gross Quantity"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -104,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -112,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Trailer Net Quantity"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -119,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -127,6 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Beginning Trailer Meter Reading"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -134,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -142,6 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Ending Trailer Meter Reading"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -149,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -157,6 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Pickup Gross Quantity"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -164,7 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -172,6 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Pickup Net Quantity"
+                android:gravity="bottom"
                 />
 
             <EditText
@@ -179,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
             <TextView
@@ -187,6 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Bill of Lading Number"
+
                 />
 
                 <EditText
