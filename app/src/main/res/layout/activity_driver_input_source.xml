@@ -20,13 +20,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Product Type" />
-<!--            <EditText-->
-<!--                android:id="@+id/editTextProductType"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="40dp"-->
-<!--                android:hint="Type product type"-->
-<!--                android:inputType="textPersonName"-->
-<!--                />-->
+            <!--            <EditText-->
+            <!--                android:id="@+id/editTextProductType"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:hint="Type product type"-->
+            <!--                android:inputType="textPersonName"-->
+            <!--                />-->
 
             <Spinner
                 android:id="@+id/spinnerProductType"
@@ -37,8 +37,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Start Date"
-                />
+                android:text="Start Date" />
 
             <EditText
                 android:id="@+id/editTextStartDate"
@@ -189,23 +188,23 @@
                 android:text="Bill of Lading Number"
                 />
 
-                <EditText
-                    android:id="@+id/editTextBOLNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="Enter BOL Number"
-                    android:inputType="number"
-                    />
+            <EditText
+                android:id="@+id/editTextBOLNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Enter BOL Number"
+                android:inputType="number"
+                />
 
-                <Button
-                    android:id="@+id/buttonTakePicture"
-                    android:drawableRight="@drawable/ic_baseline_camera_alt_24"
-                    android:text="Take BOL Picture"
-                    android:theme="@style/AppTheme"
-                    android:layout_width="196dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    />
+            <Button
+                android:id="@+id/buttonTakePicture"
+                android:drawableRight="@drawable/ic_baseline_camera_alt_24"
+                android:text="Take BOL Picture"
+                android:theme="@style/AppTheme"
+                android:layout_width="196dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                />
 
             <ImageView
                 android:background="@drawable/image_view_border"
@@ -216,11 +215,10 @@
                 android:layout_margin="12dp"/>
 
             <Button
-                android:id="@+id/buttonFormSubmit"
+                android:id="@+id/btnSubmitInputSiteData"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:onClick="clickFunction"
                 android:text="Submit"
                 android:theme="@style/AppTheme" />
 
