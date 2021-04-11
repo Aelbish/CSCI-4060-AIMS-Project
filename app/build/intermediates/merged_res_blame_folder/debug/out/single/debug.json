@@ -20,12 +20,16 @@
         "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_site.xml.flat",
+        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_driver_input_site.xml"
     },
     {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
         "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -52,8 +56,16 @@
         "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable\\ic_baseline_camera_alt_24.xml"
     },
     {
+        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_edit_24.xml.flat",
+        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable\\ic_baseline_edit_24.xml"
+    },
+    {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_screen.xml.flat",
         "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_main_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_trip_info.xml.flat",
+        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\drawable\\trip_info.xml"
     },
     {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

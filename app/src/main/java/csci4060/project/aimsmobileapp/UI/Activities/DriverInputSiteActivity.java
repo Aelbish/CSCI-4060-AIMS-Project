@@ -81,7 +81,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_input_source);
+        setContentView(R.layout.activity_driver_input_site);
 
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);

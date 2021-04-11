@@ -16,10 +16,6 @@ csci4060/project/aimsmobileapp/UI/Fragments/TripFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.TripFragment$2
 csci4060/project/aimsmobileapp/database/dao/LoadDao.java
  csci4060.project.aimsmobileapp.database.dao.LoadDao
-csci4060/project/aimsmobileapp/UI/TripListAdapter.java
- csci4060.project.aimsmobileapp.UI.TripListAdapter
- csci4060.project.aimsmobileapp.UI.TripListAdapter$1
- csci4060.project.aimsmobileapp.UI.TripListAdapter$ItemsViewHolder
 csci4060/project/aimsmobileapp/database/dao/TripDao.java
  csci4060.project.aimsmobileapp.database.dao.TripDao
 csci4060/project/aimsmobileapp/database/dao/DeliveredProductDao.java
@@ -28,12 +24,18 @@ csci4060/project/aimsmobileapp/database/dao/CustomerDao.java
  csci4060.project.aimsmobileapp.database.dao.CustomerDao
 csci4060/project/aimsmobileapp/database/dao/DriverDao.java
  csci4060.project.aimsmobileapp.database.dao.DriverDao
+csci4060/project/aimsmobileapp/adapter/TripListAdapter.java
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter$1
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter$2
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter$3
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter$ItemsViewHolder
 csci4060/project/aimsmobileapp/database/entity/Driver.java
  csci4060.project.aimsmobileapp.database.entity.Driver
-csci4060/project/aimsmobileapp/UI/TripInfoModel.java
- csci4060.project.aimsmobileapp.UI.TripInfoModel
 csci4060/project/aimsmobileapp/database/AppDatabase.java
  csci4060.project.aimsmobileapp.database.AppDatabase
+csci4060/project/aimsmobileapp/UI/Activities/Capture.java
+ csci4060.project.aimsmobileapp.UI.Activities.Capture
 csci4060/project/aimsmobileapp/UI/Fragments/RouteFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.RouteFragment
 csci4060/project/aimsmobileapp/database/entity/Vendor.java
@@ -48,12 +50,25 @@ csci4060/project/aimsmobileapp/database/entity/Trip.java
  csci4060.project.aimsmobileapp.database.entity.Trip
 csci4060/project/aimsmobileapp/database/dao/VendorDao.java
  csci4060.project.aimsmobileapp.database.dao.VendorDao
+csci4060/project/aimsmobileapp/UI/Activities/DriverInputSiteActivity.java
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$1
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$2
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$3
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$4
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$5
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$6
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$7
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$8
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$9
 csci4060/project/aimsmobileapp/BuildConfig.java
  csci4060.project.aimsmobileapp.BuildConfig
 csci4060/project/aimsmobileapp/AIMSApp.java
  csci4060.project.aimsmobileapp.AIMSApp
 csci4060/project/aimsmobileapp/database/entity/Customer.java
  csci4060.project.aimsmobileapp.database.entity.Customer
+csci4060/project/aimsmobileapp/model/TripInfoModel.java
+ csci4060.project.aimsmobileapp.model.TripInfoModel
 csci4060/project/aimsmobileapp/database/entity/DeliveredProduct.java
  csci4060.project.aimsmobileapp.database.entity.DeliveredProduct
 csci4060/project/aimsmobileapp/database/entity/Delivery.java
