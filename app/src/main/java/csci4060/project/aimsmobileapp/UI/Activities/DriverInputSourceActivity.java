@@ -1,13 +1,18 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -40,8 +45,10 @@ import java.util.List;
 import csci4060.project.aimsmobileapp.R;
 
 import static android.os.Environment.getExternalStoragePublicDirectory;
+import static android.provider.MediaStore.*;
 
 public class DriverInputSourceActivity extends AppCompatActivity {
+    //TODO Check: Camera not working personal phone but works on Emulator.
     String
             //productType,
             startDate,
@@ -72,6 +79,7 @@ public class DriverInputSourceActivity extends AppCompatActivity {
             editTextPickupNetQuantity,
             editTextBOLNumber;
 
+    /**Bill of Lading Picture*/
     Button buttonTakePicture;
     ImageView imageView;
     String pathToFile;
@@ -79,6 +87,7 @@ public class DriverInputSourceActivity extends AppCompatActivity {
     private Spinner spinnerProductType;
     String yourProduct;
 
+    /**When submit button is pressed**/
     public void clickFunction(View view) {
         //TODO Need to add validation for driver input before allowing the driver to press submit button
         //productType = editTextProductType.getText().toString();
@@ -176,7 +185,7 @@ public class DriverInputSourceActivity extends AppCompatActivity {
         editTextPickupNetQuantity = (EditText) findViewById(R.id.editTextPickupNetQuantity);
         editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
 
-        /**Camera Button**/
+        /**Bill Of Lading Picture and Camera Button**/
         buttonTakePicture = findViewById(R.id.buttonTakePicture);
         if (Build.VERSION.SDK_INT >= 23) {
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
@@ -241,7 +250,7 @@ public class DriverInputSourceActivity extends AppCompatActivity {
 
             if (photoFile != null) {
                 pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(DriverInputSourceActivity.this, "com.csci4060.project.aimsmobileapp.fileprovider", photoFile);
+                Uri photoURI = FileProvider.getUriForFile(DriverInputSourceActivity.this, "csci4060.project.aimsmobileapp.fileprovider", photoFile);
                 takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePicture, 1);
             }

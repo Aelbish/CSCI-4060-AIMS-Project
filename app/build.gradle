@@ -67,4 +67,7 @@ dependencies {
 
     //implementation for making rest api call
     implementation 'com.android.volley:volley:1.2.0'
+
+    //Barcode Scanner
+    implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
 }

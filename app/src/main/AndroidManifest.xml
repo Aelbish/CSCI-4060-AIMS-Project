@@ -4,7 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- For taking picture of BOL -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- For taking picture of BOL -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -16,8 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".UI.Activities.DriverInputSourceActivity"/>
         <activity android:name=".UI.Activities.DriverInputSiteActivity"/>
+        <activity android:name=".UI.Activities.DriverInputSourceActivity" />
         <activity android:name=".UI.Activities.TripActivity" />
         <activity android:name=".UI.Activities.MainScreenActivity" />
         <activity android:name=".UI.Activities.MainActivity">
@@ -28,9 +29,15 @@
             </intent-filter>
         </activity>
 
+<!--        Barcode Scanner-->
+        <activity android:name=".UI.Activities.Capture"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"/>
+
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.csci4060.project.aimsmobileapp.fileprovider"
+            android:authorities="csci4060.project.aimsmobileapp.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
