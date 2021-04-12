@@ -1,55 +1,38 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.database.entity.SiteInput;
-
-import static android.os.Environment.getExternalStoragePublicDirectory;
 
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -221,7 +204,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                 intentIntegrator.setPrompt("Use volume up key for flash");
                 intentIntegrator.setBeepEnabled(true);
                 intentIntegrator.setOrientationLocked(true);
-                intentIntegrator.setCaptureActivity(Capture.class);
+                intentIntegrator.setCaptureActivity(CaptureActivity.class);
                 intentIntegrator.initiateScan();
             }
         });
@@ -343,7 +326,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter site container reading before dropoff", Toast.LENGTH_SHORT).show();
             editTextBeginSiteContainerReading.setError("Please enter site container reading before dropoff");
             editTextBeginSiteContainerReading.requestFocus();
-        } else if (!beginSiteContainerReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!beginSiteContainerReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid site container reading", Toast.LENGTH_SHORT).show();
             editTextBeginSiteContainerReading.setError("Please enter valid site container reading");
             editTextBeginSiteContainerReading.requestFocus();
@@ -351,7 +334,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter site container reading after dropoff", Toast.LENGTH_SHORT).show();
             editTextEndSiteContainerReading.setError("Please enter site container reading after dropoff");
             editTextEndSiteContainerReading.requestFocus();
-        } else if (!endSiteContainerReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!endSiteContainerReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid site container reading", Toast.LENGTH_SHORT).show();
             editTextEndSiteContainerReading.setError("Please enter valid site container reading");
             editTextEndSiteContainerReading.requestFocus();
@@ -363,7 +346,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter beginning meter reading");
             editTextStartMeterReading.requestFocus();
-        } else if (!startMeterReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!startMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter valid beginning meter reading");
             editTextStartMeterReading.requestFocus();
@@ -374,7 +357,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter ending meter reading");
             editTextEndMeterReading.requestFocus();
-        } else if (!endMeterReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!endMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter valid ending meter reading");
             editTextEndMeterReading.requestFocus();
@@ -386,7 +369,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter delivered gross quantity", Toast.LENGTH_SHORT).show();
             editTextDeliveredGrossQuantity.setError("Please enter delivered gross quantity");
             editTextDeliveredGrossQuantity.requestFocus();
-        } else if (!deliveredGrossQuantity.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!deliveredGrossQuantity.matches("[0-9]+\\.?[0-9]*") || deliveredGrossQuantity.matches("[0]+.*")) {
             Toast.makeText(this, "Please enter valid delivered gross quantity", Toast.LENGTH_SHORT).show();
             editTextDeliveredGrossQuantity.setError("Please enter valid delivered gross quantity");
             editTextDeliveredGrossQuantity.requestFocus();
@@ -398,7 +381,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextDeliveredNetQuantity.setError("Please enter pickup net quantity");
             editTextDeliveredNetQuantity.requestFocus();
-        } else if (!deliveredNetQuantity.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!deliveredNetQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextDeliveredNetQuantity.setError("Please enter pickup net quantity");
             editTextDeliveredNetQuantity.requestFocus();
