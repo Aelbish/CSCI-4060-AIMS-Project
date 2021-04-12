@@ -23,28 +23,28 @@ public interface SiteInputDao {
     void setProduct_type(String product_type, int trip_id, int sequence_id);
 
     @Query("SELECT start_date FROM SiteInput WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    long getStart_date(int trip_id, int sequence_id);
+    String getStart_date(int trip_id, int sequence_id);
 
     @Query("UPDATE SiteInput SET start_date = :start_date WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    void setStart_date(long start_date, int trip_id, int sequence_id);
+    void setStart_date(String start_date, int trip_id, int sequence_id);
 
     @Query("SELECT start_time FROM SiteInput WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    long getStart_time(int trip_id, int sequence_id);
+    String getStart_time(int trip_id, int sequence_id);
 
     @Query("UPDATE SiteInput SET start_time = :start_time WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    void setStart_time(long start_time, int trip_id, int sequence_id);
+    void setStart_time(String start_time, int trip_id, int sequence_id);
 
     @Query("SELECT end_date FROM SiteInput WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    long getEnd_date(int trip_id, int sequence_id);
+    String getEnd_date(int trip_id, int sequence_id);
 
     @Query("UPDATE SiteInput SET end_date = :end_date WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    void setEnd_date(long end_date, int trip_id, int sequence_id);
+    void setEnd_date(String end_date, int trip_id, int sequence_id);
 
     @Query("SELECT end_time FROM SiteInput WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    long getEnd_time(int trip_id, int sequence_id);
+    String getEnd_time(int trip_id, int sequence_id);
 
     @Query("UPDATE SiteInput SET end_time = :end_time WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
-    void setEnd_time(long end_time, int trip_id, int sequence_id);
+    void setEnd_time(String end_time, int trip_id, int sequence_id);
 
     @Query("SELECT trailer_gross_quantity FROM SiteInput WHERE trip_id = :trip_id AND sequence_id = :sequence_id")
     double getTrailer_gross_quantity(int trip_id, int sequence_id);
