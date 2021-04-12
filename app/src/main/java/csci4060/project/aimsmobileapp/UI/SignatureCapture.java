@@ -19,7 +19,7 @@ public class SignatureCapture extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signature_capture2);
 
         signaturePad = (SignaturePad)findViewById(R.id.signaturePad);
         saveButton = (Button)findViewById(R.id.saveButton);
@@ -30,7 +30,7 @@ public class SignatureCapture extends AppCompatActivity {
         clearButton.setEnabled(false);
 
         //change screen orientation to landscape mode
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override

@@ -8,7 +8,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
-import csci4060.project.aimsmobileapp.database.entity.SiteInput;
+import csci4060.project.aimsmobileapp.database.entity.SourceInput;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
@@ -17,9 +17,9 @@ import java.lang.SuppressWarnings;
 public final class SourceInputDao_Impl implements SourceInputDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<SiteInput> __insertionAdapterOfSiteInput;
+  private final EntityInsertionAdapter<SourceInput> __insertionAdapterOfSourceInput;
 
-  private final EntityDeletionOrUpdateAdapter<SiteInput> __updateAdapterOfSiteInput;
+  private final EntityDeletionOrUpdateAdapter<SourceInput> __updateAdapterOfSourceInput;
 
   private final SharedSQLiteStatement __preparedStmtOfSetProduct_type;
 
@@ -49,14 +49,14 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   public SourceInputDao_Impl(RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfSiteInput = new EntityInsertionAdapter<SiteInput>(__db) {
+    this.__insertionAdapterOfSourceInput = new EntityInsertionAdapter<SourceInput>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR IGNORE INTO `SiteInput` (`trip_id`,`sequence_id`,`product_type`,`start_date`,`start_time`,`end_date`,`end_time`,`trailer_gross_quantity`,`trailer_net_quantity`,`start_meter_reading`,`end_meter_reading`,`pickup_gross_quantity`,`pickup_net_quantity`,`bol_number`,`pickup_ratio`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR IGNORE INTO `SourceInput` (`trip_id`,`sequence_id`,`product_type`,`start_date`,`start_time`,`end_date`,`end_time`,`trailer_gross_quantity`,`trailer_net_quantity`,`start_meter_reading`,`end_meter_reading`,`pickup_gross_quantity`,`pickup_net_quantity`,`bol_number`,`pickup_ratio`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, SiteInput value) {
+      public void bind(SupportSQLiteStatement stmt, SourceInput value) {
         stmt.bindLong(1, value.getTrip_id());
         stmt.bindLong(2, value.getSequence_id());
         if (value.getProduct_type() == null) {
@@ -64,10 +64,26 @@ public final class SourceInputDao_Impl implements SourceInputDao {
         } else {
           stmt.bindString(3, value.getProduct_type());
         }
-        stmt.bindLong(4, value.getStart_date());
-        stmt.bindLong(5, value.getStart_time());
-        stmt.bindLong(6, value.getEnd_date());
-        stmt.bindLong(7, value.getEnd_time());
+        if (value.getStart_date() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getStart_date());
+        }
+        if (value.getStart_time() == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.getStart_time());
+        }
+        if (value.getEnd_date() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getEnd_date());
+        }
+        if (value.getEnd_time() == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.getEnd_time());
+        }
         stmt.bindDouble(8, value.getTrailer_gross_quantity());
         stmt.bindDouble(9, value.getTrailer_net_quantity());
         stmt.bindDouble(10, value.getStart_meter_reading());
@@ -78,14 +94,14 @@ public final class SourceInputDao_Impl implements SourceInputDao {
         stmt.bindDouble(15, value.getPickup_ratio());
       }
     };
-    this.__updateAdapterOfSiteInput = new EntityDeletionOrUpdateAdapter<SiteInput>(__db) {
+    this.__updateAdapterOfSourceInput = new EntityDeletionOrUpdateAdapter<SourceInput>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `SiteInput` SET `trip_id` = ?,`sequence_id` = ?,`product_type` = ?,`start_date` = ?,`start_time` = ?,`end_date` = ?,`end_time` = ?,`trailer_gross_quantity` = ?,`trailer_net_quantity` = ?,`start_meter_reading` = ?,`end_meter_reading` = ?,`pickup_gross_quantity` = ?,`pickup_net_quantity` = ?,`bol_number` = ?,`pickup_ratio` = ? WHERE `trip_id` = ? AND `sequence_id` = ?";
+        return "UPDATE OR ABORT `SourceInput` SET `trip_id` = ?,`sequence_id` = ?,`product_type` = ?,`start_date` = ?,`start_time` = ?,`end_date` = ?,`end_time` = ?,`trailer_gross_quantity` = ?,`trailer_net_quantity` = ?,`start_meter_reading` = ?,`end_meter_reading` = ?,`pickup_gross_quantity` = ?,`pickup_net_quantity` = ?,`bol_number` = ?,`pickup_ratio` = ? WHERE `trip_id` = ? AND `sequence_id` = ?";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, SiteInput value) {
+      public void bind(SupportSQLiteStatement stmt, SourceInput value) {
         stmt.bindLong(1, value.getTrip_id());
         stmt.bindLong(2, value.getSequence_id());
         if (value.getProduct_type() == null) {
@@ -93,10 +109,26 @@ public final class SourceInputDao_Impl implements SourceInputDao {
         } else {
           stmt.bindString(3, value.getProduct_type());
         }
-        stmt.bindLong(4, value.getStart_date());
-        stmt.bindLong(5, value.getStart_time());
-        stmt.bindLong(6, value.getEnd_date());
-        stmt.bindLong(7, value.getEnd_time());
+        if (value.getStart_date() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getStart_date());
+        }
+        if (value.getStart_time() == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.getStart_time());
+        }
+        if (value.getEnd_date() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getEnd_date());
+        }
+        if (value.getEnd_time() == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.getEnd_time());
+        }
         stmt.bindDouble(8, value.getTrailer_gross_quantity());
         stmt.bindDouble(9, value.getTrailer_net_quantity());
         stmt.bindDouble(10, value.getStart_meter_reading());
@@ -112,102 +144,102 @@ public final class SourceInputDao_Impl implements SourceInputDao {
     this.__preparedStmtOfSetProduct_type = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET product_type = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET product_type = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetStart_date = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET start_date = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET start_date = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetStart_time = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET start_time = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET start_time = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetEnd_date = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET end_date = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET end_date = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetEnd_time = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET end_time = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET end_time = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetTrailer_gross_quantity = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET trailer_gross_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET trailer_gross_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetTrailer_net_quantity = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET trailer_net_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET trailer_net_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetStart_meter_reading = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET start_meter_reading = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET start_meter_reading = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetEnd_meter_reading = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET end_meter_reading = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET end_meter_reading = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetPickup_gross_quantity = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET pickup_gross_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET pickup_gross_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetPickup_net_quantity = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET pickup_net_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET pickup_net_quantity = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetBol_number = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET bol_number = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET bol_number = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
     this.__preparedStmtOfSetPickup_ratio = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "UPDATE SiteInput SET pickup_ratio = ? WHERE trip_id = ? AND sequence_id = ?";
+        final String _query = "UPDATE SourceInput SET pickup_ratio = ? WHERE trip_id = ? AND sequence_id = ?";
         return _query;
       }
     };
   }
 
   @Override
-  public void addSiteInput(final SiteInput siteInput) {
+  public void addSourceInput(final SourceInput sourceInput) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __insertionAdapterOfSiteInput.insert(siteInput);
+      __insertionAdapterOfSourceInput.insert(sourceInput);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -215,11 +247,11 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public void updateSiteInput(final SiteInput siteInput) {
+  public void updateSourceInput(final SourceInput sourceInput) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __updateAdapterOfSiteInput.handle(siteInput);
+      __updateAdapterOfSourceInput.handle(sourceInput);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -251,11 +283,15 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public void setStart_date(final long start_date, final int trip_id, final int sequence_id) {
+  public void setStart_date(final String start_date, final int trip_id, final int sequence_id) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfSetStart_date.acquire();
     int _argIndex = 1;
-    _stmt.bindLong(_argIndex, start_date);
+    if (start_date == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, start_date);
+    }
     _argIndex = 2;
     _stmt.bindLong(_argIndex, trip_id);
     _argIndex = 3;
@@ -271,11 +307,15 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public void setStart_time(final long start_time, final int trip_id, final int sequence_id) {
+  public void setStart_time(final String start_time, final int trip_id, final int sequence_id) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfSetStart_time.acquire();
     int _argIndex = 1;
-    _stmt.bindLong(_argIndex, start_time);
+    if (start_time == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, start_time);
+    }
     _argIndex = 2;
     _stmt.bindLong(_argIndex, trip_id);
     _argIndex = 3;
@@ -291,11 +331,15 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public void setEnd_date(final long end_date, final int trip_id, final int sequence_id) {
+  public void setEnd_date(final String end_date, final int trip_id, final int sequence_id) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfSetEnd_date.acquire();
     int _argIndex = 1;
-    _stmt.bindLong(_argIndex, end_date);
+    if (end_date == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, end_date);
+    }
     _argIndex = 2;
     _stmt.bindLong(_argIndex, trip_id);
     _argIndex = 3;
@@ -311,11 +355,15 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public void setEnd_time(final long end_time, final int trip_id, final int sequence_id) {
+  public void setEnd_time(final String end_time, final int trip_id, final int sequence_id) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfSetEnd_time.acquire();
     int _argIndex = 1;
-    _stmt.bindLong(_argIndex, end_time);
+    if (end_time == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, end_time);
+    }
     _argIndex = 2;
     _stmt.bindLong(_argIndex, trip_id);
     _argIndex = 3;
@@ -498,7 +546,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public String getProduct_type(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT product_type FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT product_type FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -521,8 +569,8 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public long getStart_date(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT start_date FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+  public String getStart_date(final int trip_id, final int sequence_id) {
+    final String _sql = "SELECT start_date FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -531,11 +579,11 @@ public final class SourceInputDao_Impl implements SourceInputDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final long _result;
+      final String _result;
       if(_cursor.moveToFirst()) {
-        _result = _cursor.getLong(0);
+        _result = _cursor.getString(0);
       } else {
-        _result = 0;
+        _result = null;
       }
       return _result;
     } finally {
@@ -545,8 +593,8 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public long getStart_time(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT start_time FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+  public String getStart_time(final int trip_id, final int sequence_id) {
+    final String _sql = "SELECT start_time FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -555,11 +603,11 @@ public final class SourceInputDao_Impl implements SourceInputDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final long _result;
+      final String _result;
       if(_cursor.moveToFirst()) {
-        _result = _cursor.getLong(0);
+        _result = _cursor.getString(0);
       } else {
-        _result = 0;
+        _result = null;
       }
       return _result;
     } finally {
@@ -569,8 +617,8 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public long getEnd_date(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT end_date FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+  public String getEnd_date(final int trip_id, final int sequence_id) {
+    final String _sql = "SELECT end_date FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -579,11 +627,11 @@ public final class SourceInputDao_Impl implements SourceInputDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final long _result;
+      final String _result;
       if(_cursor.moveToFirst()) {
-        _result = _cursor.getLong(0);
+        _result = _cursor.getString(0);
       } else {
-        _result = 0;
+        _result = null;
       }
       return _result;
     } finally {
@@ -593,8 +641,8 @@ public final class SourceInputDao_Impl implements SourceInputDao {
   }
 
   @Override
-  public long getEnd_time(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT end_time FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+  public String getEnd_time(final int trip_id, final int sequence_id) {
+    final String _sql = "SELECT end_time FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -603,11 +651,11 @@ public final class SourceInputDao_Impl implements SourceInputDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final long _result;
+      final String _result;
       if(_cursor.moveToFirst()) {
-        _result = _cursor.getLong(0);
+        _result = _cursor.getString(0);
       } else {
-        _result = 0;
+        _result = null;
       }
       return _result;
     } finally {
@@ -618,7 +666,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getTrailer_gross_quantity(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT trailer_gross_quantity FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT trailer_gross_quantity FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -642,7 +690,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getTrailer_net_quantity(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT trailer_net_quantity FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT trailer_net_quantity FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -666,7 +714,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getStart_meter_reading(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT start_meter_reading FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT start_meter_reading FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -690,7 +738,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getEnd_meter_reading(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT end_meter_reading FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT end_meter_reading FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -714,7 +762,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getPickup_gross_quantity(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT pickup_gross_quantity FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT pickup_gross_quantity FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -738,7 +786,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getPickup_net_quantity(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT pickup_net_quantity FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT pickup_net_quantity FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -762,7 +810,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public int getBol_number(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT bol_number FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT bol_number FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
@@ -786,7 +834,7 @@ public final class SourceInputDao_Impl implements SourceInputDao {
 
   @Override
   public double getPickup_ratio(final int trip_id, final int sequence_id) {
-    final String _sql = "SELECT pickup_ratio FROM SiteInput WHERE trip_id = ? AND sequence_id = ?";
+    final String _sql = "SELECT pickup_ratio FROM SourceInput WHERE trip_id = ? AND sequence_id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, trip_id);
