@@ -30,13 +30,18 @@ import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 
 import static android.os.Environment.getExternalStoragePublicDirectory;
 
@@ -388,9 +393,34 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
             pickupGrossToNetRatio = Double.parseDouble(pickupNetQuantity) / Double.parseDouble(pickupGrossQuantity);
 
+            addSiteInputToDatabase();
+
 //            callApiAndSendData();
 
         }
 
+    }
+
+    private void addSiteInputToDatabase(){
+        Bundle bundle = getIntent().getExtras();
+        DataRepository repository = AIMSApp.repository;
+
+        int trip_id = Integer.parseInt(bundle.getString("TripId"));
+        int load_id = Integer.parseInt(bundle.getString("SeqNum"));
+
+        repository.addSiteInput(new SiteInput(trip_id, load_id));
+        repository.setProductType(yourProduct, trip_id, load_id);
+        repository.setStart_date(startDate, trip_id, load_id);
+        repository.setStart_time(startTime, trip_id, load_id);
+        repository.setEnd_date(endDate, trip_id, load_id);
+        repository.setEnd_time(endTime, trip_id, load_id);
+        repository.setTrailer_gross_quantity(Double.parseDouble(trailerGrossQuantity), trip_id, load_id);
+        repository.setTrailer_net_quantity(Double.parseDouble(trailerNetQuantity), trip_id, load_id);
+        repository.setStart_meter_reading(Double.parseDouble(startMeterReading), trip_id, load_id);
+        repository.setEnd_meter_reading(Double.parseDouble(endMeterReading), trip_id, load_id);
+        repository.setPickup_gross_quantity(Double.parseDouble(pickupGrossQuantity), trip_id, load_id);
+        repository.setPickup_net_quantity(Double.parseDouble(pickupNetQuantity), trip_id, load_id);
+        repository.setBol_number(Integer.parseInt(bolNumber), trip_id, load_id);
+        repository.setPickup_ratio(pickupGrossToNetRatio, trip_id, load_id);
     }
 }

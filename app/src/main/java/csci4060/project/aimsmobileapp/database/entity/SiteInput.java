@@ -7,10 +7,10 @@ public class SiteInput {
     int trip_id;
     int sequence_id;
     String product_type;
-    long start_date;
-    long start_time;
-    long end_date;
-    long end_time;
+    String start_date;
+    String start_time;
+    String end_date;
+    String end_time;
     double trailer_gross_quantity;
     double trailer_net_quantity;
     double start_meter_reading;
@@ -49,35 +49,35 @@ public class SiteInput {
         this.product_type = product_type;
     }
 
-    public long getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(long start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 
-    public long getStart_time() {
+    public String getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(long start_time) {
+    public void setStart_time(String start_time) {
         this.start_time = start_time;
     }
 
-    public long getEnd_date() {
+    public String getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(long end_date) {
+    public void setEnd_date(String end_date) {
         this.end_date = end_date;
     }
 
-    public long getEnd_time() {
+    public String getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(long end_time) {
+    public void setEnd_time(String end_time) {
         this.end_time = end_time;
     }
 

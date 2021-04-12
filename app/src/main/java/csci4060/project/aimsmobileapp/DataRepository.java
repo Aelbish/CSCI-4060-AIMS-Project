@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 import java.util.Queue;
 
+import javax.xml.transform.Source;
+
 import csci4060.project.aimsmobileapp.database.AppDatabase;
 import csci4060.project.aimsmobileapp.database.dao.*;
 import csci4060.project.aimsmobileapp.database.entity.Customer;
@@ -14,6 +16,8 @@ import csci4060.project.aimsmobileapp.database.entity.DeliveredProduct;
 import csci4060.project.aimsmobileapp.database.entity.Delivery;
 import csci4060.project.aimsmobileapp.database.entity.Driver;
 import csci4060.project.aimsmobileapp.database.entity.Load;
+import csci4060.project.aimsmobileapp.database.entity.SiteInput;
+import csci4060.project.aimsmobileapp.database.entity.SourceInput;
 import csci4060.project.aimsmobileapp.database.entity.Trip;
 import csci4060.project.aimsmobileapp.database.entity.Vendor;
 
@@ -130,6 +134,18 @@ public class DataRepository {
     public void addDelivery(Delivery delivery) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             deliveryDao.addDelivery(delivery);
+        });
+    }
+
+    public void addSiteInput(SiteInput siteInput) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.addSiteInput(siteInput);
+        });
+    }
+
+    public void addSourceInput(SourceInput sourceInput) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.addSourceInput(sourceInput);
         });
     }
 
@@ -339,25 +355,25 @@ public class DataRepository {
         });
     }
 
-    public void setStart_date(long start_date, int trip_id, int sequence_id) {
+    public void setStart_date(String start_date, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             siteInputDao.setStart_date(start_date, trip_id, sequence_id);
         });
     }
 
-    public void setStart_time(long start_time, int trip_id, int sequence_id) {
+    public void setStart_time(String start_time, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             siteInputDao.setStart_time(start_time, trip_id, sequence_id);
         });
     }
 
-    public void setEnd_date(long end_date, int trip_id, int sequence_id) {
+    public void setEnd_date(String end_date, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             siteInputDao.setEnd_date(end_date, trip_id, sequence_id);
         });
     }
 
-    public void setEnd_time(long end_time, int trip_id, int sequence_id) {
+    public void setEnd_time(String end_time, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             siteInputDao.setEnd_time(end_time, trip_id, sequence_id);
         });
@@ -415,19 +431,19 @@ public class DataRepository {
         return siteInputDao.getProduct_type(trip_id, sequence_id);
     }
 
-    public long getStart_date(int trip_id, int sequence_id) {
+    public String getStart_date(int trip_id, int sequence_id) {
         return siteInputDao.getStart_date(trip_id, sequence_id);
     }
 
-    public long getStart_time(int trip_id, int sequence_id) {
+    public String getStart_time(int trip_id, int sequence_id) {
         return siteInputDao.getStart_time(trip_id, sequence_id);
     }
 
-    public long getEnd_date(int trip_id, int sequence_id) {
+    public String getEnd_date(int trip_id, int sequence_id) {
         return siteInputDao.getEnd_date(trip_id, sequence_id);
     }
 
-    public long getEnd_time(int trip_id, int sequence_id) {
+    public String getEnd_time(int trip_id, int sequence_id) {
         return siteInputDao.getEnd_time(trip_id, sequence_id);
     }
 
@@ -472,25 +488,25 @@ public class DataRepository {
         });
     }
 
-    public void setStart_dateSource(long start_date, int trip_id, int sequence_id) {
+    public void setStart_dateSource(String start_date, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             sourceInputDao.setStart_date(start_date, trip_id, sequence_id);
         });
     }
 
-    public void setStart_timeSource(long start_time, int trip_id, int sequence_id) {
+    public void setStart_timeSource(String start_time, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             sourceInputDao.setStart_time(start_time, trip_id, sequence_id);
         });
     }
 
-    public void setEnd_dateSource(long end_date, int trip_id, int sequence_id) {
+    public void setEnd_dateSource(String end_date, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             sourceInputDao.setEnd_date(end_date, trip_id, sequence_id);
         });
     }
 
-    public void setEnd_timeSource(long end_time, int trip_id, int sequence_id) {
+    public void setEnd_timeSource(String end_time, int trip_id, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             sourceInputDao.setEnd_time(end_time, trip_id, sequence_id);
         });
@@ -548,19 +564,19 @@ public class DataRepository {
         return sourceInputDao.getProduct_type(trip_id, sequence_id);
     }
 
-    public long getStart_dateSource(int trip_id, int sequence_id) {
+    public String getStart_dateSource(int trip_id, int sequence_id) {
         return sourceInputDao.getStart_date(trip_id, sequence_id);
     }
 
-    public long getStart_timeSource(int trip_id, int sequence_id) {
+    public String getStart_timeSource(int trip_id, int sequence_id) {
         return sourceInputDao.getStart_time(trip_id, sequence_id);
     }
 
-    public long getEnd_dateSource(int trip_id, int sequence_id) {
+    public String getEnd_dateSource(int trip_id, int sequence_id) {
         return sourceInputDao.getEnd_date(trip_id, sequence_id);
     }
 
-    public long getEnd_timeSource(int trip_id, int sequence_id) {
+    public String getEnd_timeSource(int trip_id, int sequence_id) {
         return sourceInputDao.getEnd_time(trip_id, sequence_id);
     }
 
