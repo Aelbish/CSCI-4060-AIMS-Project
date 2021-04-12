@@ -1,6 +1,7 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -82,11 +83,21 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     String pathToFile;
     String yourProduct;
     private Spinner spinnerProductType;
+    private final DataRepository repository = AIMSApp.repository;
 
+    int trip_id;
+    int load_id;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_site);
+
+        Bundle bundle = getIntent().getExtras();
+        trip_id = Integer.parseInt(bundle.getString("TripId"));
+        load_id = Integer.parseInt(bundle.getString("SeqNum"));
+
 
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
@@ -118,6 +129,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get start date**/
         editTextStartDate = (EditText) findViewById(R.id.editTextStartDate);
         editTextStartDate.setInputType(InputType.TYPE_NULL);
+        editTextStartDate.setText(repository.getStart_date(trip_id, load_id));
         editTextStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,6 +140,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get start time**/
         editTextStartTime = (EditText) findViewById(R.id.editTextStartTime);
         editTextStartTime.setInputType(InputType.TYPE_NULL);
+        editTextStartTime.setText(repository.getStart_time(trip_id, load_id));
         editTextStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +151,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get end date**/
         editTextEndDate = (EditText) findViewById(R.id.editTextEndDate);
         editTextEndDate.setInputType(InputType.TYPE_NULL);
+        editTextEndDate.setText(repository.getEnd_date(trip_id, load_id));
         editTextEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,19 +162,34 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get end time**/
         editTextEndTime = (EditText) findViewById(R.id.editTextEndTime);
         editTextEndTime.setInputType(InputType.TYPE_NULL);
+        editTextEndTime.setText(repository.getEnd_time(trip_id, load_id));
         editTextEndTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showTimeDialog(editTextEndTime);
             }
         });
+
         editTextTrailerGrossQuantity = (EditText) findViewById(R.id.editTextTrailerGrossQuantity);
+        editTextTrailerGrossQuantity.setText(Double.toString(repository.getTrailer_gross_quantity(trip_id, load_id)));
+
         editTextTrailerNetQuantity = (EditText) findViewById(R.id.editTextTrailerNetQuantity);
+        editTextTrailerNetQuantity.setText(Double.toString(repository.getTrailer_net_quantity(trip_id, load_id)));
+
         editTextStartMeterReading = (EditText) findViewById(R.id.editTextStartMeterReading);
+        editTextStartMeterReading.setText(Double.toString(repository.getStart_meter_reading(trip_id, load_id)));
+
         editTextEndMeterReading = (EditText) findViewById(R.id.editTextEndMeterReading);
+        editTextEndMeterReading.setText(Double.toString(repository.getEnd_meter_reading(trip_id, load_id)));
+
         editTextPickupGrossQuantity = (EditText) findViewById(R.id.editTextPickupGrossQuantity);
+        editTextPickupGrossQuantity.setText(Double.toString(repository.getPickup_gross_quantity(trip_id, load_id)));
+
         editTextPickupNetQuantity = (EditText) findViewById(R.id.editTextPickupNetQuantity);
+        editTextPickupNetQuantity.setText(Double.toString(repository.getPickup_net_quantity(trip_id, load_id)));
+
         editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
+        editTextBOLNumber.setText(Integer.toString(repository.getBOLNumber(trip_id, load_id)));
 
         /**Camera Button**/
         buttonTakePicture = findViewById(R.id.buttonTakePicture);
@@ -402,12 +431,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     }
 
     private void addSiteInputToDatabase(){
-        Bundle bundle = getIntent().getExtras();
-        DataRepository repository = AIMSApp.repository;
-
-        int trip_id = Integer.parseInt(bundle.getString("TripId"));
-        int load_id = Integer.parseInt(bundle.getString("SeqNum"));
-
         repository.addSiteInput(new SiteInput(trip_id, load_id));
         repository.setProductType(yourProduct, trip_id, load_id);
         repository.setStart_date(startDate, trip_id, load_id);
