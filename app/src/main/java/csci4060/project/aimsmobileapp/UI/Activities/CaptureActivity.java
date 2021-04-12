@@ -1,13 +1,7 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 /**Class required for the barcode scanner in DriverInputSiteActivity.java**/
-public class CaptureActivity extends AppCompatActivity {
+public class CaptureActivity extends com.journeyapps.barcodescanner.CaptureActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 }
