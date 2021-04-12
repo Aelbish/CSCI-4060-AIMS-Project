@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UI.Activities.DriverInputSourceActivity">
+    tools:context=".UI.Activities.DriverInputSiteActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
             android:padding="10dp">
             <TextView
                 android:id="@+id/textView"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Product Type" />
@@ -36,11 +35,9 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Start Date"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -52,11 +49,9 @@
                 android:focusable="false"/>
             <TextView
                 android:id="@+id/textView7"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Start Time"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -69,11 +64,9 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="End Date"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -86,11 +79,9 @@
 
             <TextView
                 android:id="@+id/textView10"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="End Time"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -103,16 +94,13 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Beginning Site Container Reading"
-                android:gravity="bottom"
+                android:text="Trailer Gross Quantity"
                 />
 
             <EditText
-                android:id="@+id/editTextBeginSiteContainerReading"
-                android:textColor="@color/black"
+                android:id="@+id/editTextTrailerGrossQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
@@ -121,15 +109,13 @@
 
             <TextView
                 android:id="@+id/textView12"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Ending Site Container Reading"
-                android:gravity="bottom"
+                android:text="Trailer Net Quantity"
                 />
 
             <EditText
-                android:id="@+id/editTextEndSiteContainerReading"
+                android:id="@+id/editTextTrailerNetQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
@@ -138,11 +124,9 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Beginning Trailer Meter Reading"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -155,11 +139,9 @@
 
             <TextView
                 android:id="@+id/textView19"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Ending Trailer Meter Reading"
-                android:gravity="bottom"
                 />
 
             <EditText
@@ -172,15 +154,13 @@
 
             <TextView
                 android:id="@+id/textView20"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Delivered Gross Quantity"
-                android:gravity="bottom"
+                android:text="Pickup Gross Quantity"
                 />
 
             <EditText
-                android:id="@+id/editTextDeliveredGrossQuantity"
+                android:id="@+id/editTextPickupGrossQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
@@ -189,15 +169,13 @@
 
             <TextView
                 android:id="@+id/textView21"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Delivered Net Quantity"
-                android:gravity="bottom"
+                android:text="Pickup Net Quantity"
                 />
 
             <EditText
-                android:id="@+id/editTextDeliveredNetQuantity"
+                android:id="@+id/editTextPickupNetQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
@@ -206,98 +184,43 @@
 
             <TextView
                 android:id="@+id/textView22"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Delivery Ticket Number"
-                android:gravity="bottom"
+                android:text="Bill of Lading Number"
                 />
 
             <EditText
-                android:id="@+id/editTextDeliveryTicketNumber"
+                android:id="@+id/editTextBOLNumber"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="Enter delivery ticket number"
+                android:hint="Enter BOL Number"
                 android:inputType="number"
                 />
 
-            <TextView
-                android:id="@+id/textView25"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Site Barcode"
-                />
-
-            <EditText
-                android:id="@+id/editTextBarcode"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="Scan Barcode"
-                android:inputType="none"
-                android:focusable="false"
-                />
-
             <Button
-                android:id="@+id/buttonScan"
+                android:id="@+id/buttonTakePicture"
                 android:drawableRight="@drawable/ic_baseline_camera_alt_24"
-                android:text="Scan"
+                android:text="Take BOL Picture"
                 android:theme="@style/AppTheme"
-                android:layout_width="wrap_content"
+                android:layout_width="196dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Customer E-Signature"
                 />
 
             <ImageView
                 android:background="@drawable/image_view_border"
-                android:id ="@+id/imageSignature"
-                android:layout_width="match_parent"
-                android:layout_height="156dp"
+                android:id ="@+id/image"
+                android:layout_width="196dp"
+                android:layout_height="226dp"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"/>
 
             <Button
-                android:id="@+id/buttonSignature"
-                android:drawableRight="@drawable/ic_baseline_edit_24"
-                android:text="Sign"
-                android:theme="@style/AppTheme"
+                android:id="@+id/btnSubmitInputSiteData"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                />
-            <TextView
-                android:id="@+id/textView23"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Delivery Comments"
-                />
-
-            <EditText
-                android:id="@+id/editTextDeliveryComment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Enter delivery comments or remarks if any"
-                android:inputType="textMultiLine" />
-
-            <Button
-                android:id="@+id/buttonFormSubmit"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:onClick="clickFunction"
                 android:text="Submit"
-                android:layout_margin="24dp"
                 android:theme="@style/AppTheme" />
 
         </LinearLayout>

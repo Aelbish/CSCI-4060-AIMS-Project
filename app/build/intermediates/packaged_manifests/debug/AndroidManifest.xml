@@ -10,8 +10,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- For taking picture of BOL -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- For taking picture of BOL -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -48,6 +47,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light" >
+        <activity android:name="csci4060.project.aimsmobileapp.UI.SignatureCapture" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity" />
@@ -58,9 +58,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Barcode Scanner -->
+        </activity> <!-- Barcode Scanner -->
         <activity
             android:name="csci4060.project.aimsmobileapp.UI.Activities.Capture"
             android:screenOrientation="portrait"

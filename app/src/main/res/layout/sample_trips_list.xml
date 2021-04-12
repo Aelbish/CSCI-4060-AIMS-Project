@@ -23,21 +23,10 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txtTripId"
-                android:layout_width="150dp"
+                android:id="@+id/txtTripName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trip id" />
-
-            <TextView
-                android:id="@+id/txtTripWaypoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtTripId"
-                android:layout_alignRight="@+id/txtTripName"
-                android:layout_marginTop="1dp"
-                android:layout_marginRight="-239dp"
-                android:text="Waypoint" />
-
+                android:text="Trip Name" />
 
         </LinearLayout>
 
@@ -48,23 +37,43 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txtTripName"
-                android:layout_width="150dp"
+                android:id="@+id/txtDestinationName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtTripId"
-                android:text="TripName"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtTripSeq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/txtTripId"
-                android:layout_marginRight="-256dp"
-                android:text="SeqNum" />
+                android:layout_below="@id/txtTripName"
+                android:text="Destination"/>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTripName"
+                android:text="Address"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtTripWaypoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtAddress"
+                android:text="Location Type"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,7 +93,7 @@
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Summary"
+                android:text="Trip Summary"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
@@ -98,7 +107,7 @@
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Start"
+                android:text=" Start Trip "
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
@@ -122,7 +131,7 @@
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Pickup Input Form "
+                android:text=" Pickup Form  "
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
@@ -136,7 +145,7 @@
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Site Input Form "
+                android:text="Dropoff Form"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
