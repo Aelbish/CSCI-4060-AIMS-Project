@@ -1,93 +1,104 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
-import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
 
-import java.io.File;
-import java.io.IOException;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
+import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
-
-import static android.os.Environment.getExternalStoragePublicDirectory;
+import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
 
     String
-            //productType,
             startDate,
             startTime,
             endDate,
             endTime,
-            trailerGrossQuantity,
-            trailerNetQuantity,
+            beginSiteContainerReading,
+            endSiteContainerReading,
             startMeterReading,
             endMeterReading,
-            pickupGrossQuantity,
-            pickupNetQuantity,
-            bolNumber;
+            deliveredGrossQuantity,
+            deliveredNetQuantity,
+            deliveryTicketNumber,
+            deliveryComment,
+            barcode;
 
-    int pickupGrossToNetRatio;
+    double pickupGrossToNetRatio;
 
     EditText
-            //editTextProductType,
             editTextStartDate,
             editTextStartTime,
             editTextEndDate,
             editTextEndTime,
-            editTextTrailerGrossQuantity,
-            editTextTrailerNetQuantity,
+            editTextBeginSiteContainerReading,
+            editTextEndSiteContainerReading,
             editTextStartMeterReading,
             editTextEndMeterReading,
-            editTextPickupGrossQuantity,
-            editTextPickupNetQuantity,
-            editTextBOLNumber;
+            editTextDeliveredGrossQuantity,
+            editTextDeliveredNetQuantity,
+            editTextDeliveryTicketNumber,
+            editTextDeliveryComment,
+            editTextBarcode;
 
-    Button buttonTakePicture, btnSubmit;
-    ImageView imageView;
-    String pathToFile;
+    Button btnSubmit;
+
+    /**Scan button for barcode scanner**/
+    Button buttonScan;
+
     String yourProduct;
+
     private Spinner spinnerProductType;
 
+    private final DataRepository repository = AIMSApp.repository;
+    public static final int SIGNATURE_ACTIVITY = 1;
+
+    int trip_id;
+    int load_id;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_site);
 
+        Bundle bundle = getIntent().getExtras();
+        trip_id = Integer.parseInt(bundle.getString("TripId"));
+        load_id = Integer.parseInt(bundle.getString("SeqNum"));
+
+
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
         List<String> productType = new ArrayList<>();
-        //TODO force user to select one
-        productType.add("select product type");
+
+        productType.add("Select product type");
         productType.add("87 AKI");
         productType.add("89 AKI");
         productType.add("92 AKI");
@@ -108,11 +119,11 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
             }
         });
-        //editTextProductType = (EditText) findViewById(R.id.editTextProductType);
 
         /**Get start date**/
         editTextStartDate = (EditText) findViewById(R.id.editTextStartDate);
         editTextStartDate.setInputType(InputType.TYPE_NULL);
+        editTextStartDate.setText(repository.getStart_date(trip_id, load_id));
         editTextStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +134,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get start time**/
         editTextStartTime = (EditText) findViewById(R.id.editTextStartTime);
         editTextStartTime.setInputType(InputType.TYPE_NULL);
+        editTextStartTime.setText(repository.getStart_time(trip_id, load_id));
         editTextStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +145,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get end date**/
         editTextEndDate = (EditText) findViewById(R.id.editTextEndDate);
         editTextEndDate.setInputType(InputType.TYPE_NULL);
+        editTextEndDate.setText(repository.getEnd_date(trip_id, load_id));
         editTextEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,34 +156,86 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Get end time**/
         editTextEndTime = (EditText) findViewById(R.id.editTextEndTime);
         editTextEndTime.setInputType(InputType.TYPE_NULL);
+        editTextEndTime.setText(repository.getEnd_time(trip_id, load_id));
         editTextEndTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showTimeDialog(editTextEndTime);
             }
         });
-        editTextTrailerGrossQuantity = (EditText) findViewById(R.id.editTextTrailerGrossQuantity);
-        editTextTrailerNetQuantity = (EditText) findViewById(R.id.editTextTrailerNetQuantity);
-        editTextStartMeterReading = (EditText) findViewById(R.id.editTextStartMeterReading);
-        editTextEndMeterReading = (EditText) findViewById(R.id.editTextEndMeterReading);
-        editTextPickupGrossQuantity = (EditText) findViewById(R.id.editTextPickupGrossQuantity);
-        editTextPickupNetQuantity = (EditText) findViewById(R.id.editTextPickupNetQuantity);
-        editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
 
-        /**Camera Button**/
-        buttonTakePicture = findViewById(R.id.buttonTakePicture);
-        if (Build.VERSION.SDK_INT >= 23) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-        }
-        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dispatchPictureTakerAction();
-            }
-        });
-        imageView = findViewById(R.id.image);
+        editTextBeginSiteContainerReading = (EditText) findViewById(R.id.editTextBeginSiteContainerReading);
+        editTextBeginSiteContainerReading.setText(Double.toString(repository.getBegin_site_container_reading(trip_id, load_id)));
+
+        editTextEndSiteContainerReading = (EditText) findViewById(R.id.editTextEndSiteContainerReading);
+        editTextEndSiteContainerReading.setText(Double.toString(repository.getEnd_site_container_reading(trip_id, load_id)));
+
+        editTextStartMeterReading = (EditText) findViewById(R.id.editTextStartMeterReading);
+        editTextStartMeterReading.setText(Double.toString(repository.getStart_meter_reading(trip_id, load_id)));
+
+        editTextEndMeterReading = (EditText) findViewById(R.id.editTextEndMeterReading);
+        editTextEndMeterReading.setText(Double.toString(repository.getEnd_meter_reading(trip_id, load_id)));
+
+        editTextDeliveredGrossQuantity = (EditText) findViewById(R.id.editTextDeliveredGrossQuantity);
+        editTextDeliveredGrossQuantity.setText(Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id)));
+
+        editTextDeliveredNetQuantity = (EditText) findViewById(R.id.editTextDeliveredNetQuantity);
+        editTextDeliveredNetQuantity.setText(Double.toString(repository.getDelivered_net_quantity(trip_id, load_id)));
+
+        editTextDeliveryTicketNumber = (EditText) findViewById(R.id.editTextDeliveryTicketNumber);
+        editTextDeliveryTicketNumber.setText(Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id)));
+
+        editTextDeliveryComment = (EditText) findViewById(R.id.editTextDeliveryComment);
+        editTextDeliveryComment.setText(repository.getDeliveryComment(trip_id, load_id));
+
+        editTextBarcode = (EditText) findViewById(R.id.editTextBarcode);
+
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
+
+        /**Barcode Scanner Button**/
+        buttonScan = findViewById(R.id.buttonScan);
+        buttonScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentIntegrator intentIntegrator = new IntentIntegrator(
+                        DriverInputSiteActivity.this
+                );
+                intentIntegrator.setPrompt("Use volume up key for flash");
+                intentIntegrator.setBeepEnabled(true);
+                intentIntegrator.setOrientationLocked(true);
+                intentIntegrator.setCaptureActivity(CaptureActivity.class);
+                intentIntegrator.initiateScan();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        /**Scan barcode**/
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(
+                requestCode, resultCode, data
+        );
+        if (intentResult.getContents()!= null){
+            AlertDialog.Builder builder = new AlertDialog.Builder(
+                    DriverInputSiteActivity.this
+            );
+            builder.setTitle("Result");
+            builder.setMessage(intentResult.getContents());
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    barcode = intentResult.getContents();
+                    editTextBarcode.setText(barcode);
+                }
+            });
+            builder.show();
+        }else {
+            Toast.makeText(getApplicationContext()
+                    , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /***Start and End Date*/
@@ -206,47 +271,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
     }
 
-    /**
-     * Camera functions below
-     **/
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
-                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                imageView.setImageBitmap(bitmap);
-            }
-        }
-    }
-
-    private void dispatchPictureTakerAction() {
-        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePicture.resolveActivity(getPackageManager()) != null) {
-            File photoFile = null;
-            photoFile = createPhotoFile();
-
-            if (photoFile != null) {
-                pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(DriverInputSiteActivity.this, "com.csci4060.project.aimsmobileapp.fileprovider", photoFile);
-                takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePicture, 1);
-            }
-        }
-    }
-
-    private File createPhotoFile() {
-        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File storageDirectory = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File image = null;
-        try {
-            image = File.createTempFile(name, ".jpg", storageDirectory);
-        } catch (IOException e) {
-            Log.d("errorLog", "Exception: " + e.toString());
-        }
-        return image;
-    }
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnSubmitInputSiteData) {
@@ -254,23 +278,24 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         }
     }
 
+    //TODO rewrite if statements to something more performance friendly
+    //TODO check input validation after changing inputs to numberDoubles
     public void validateAndSubmitFormData() {
-        //TODO Need to add validation for driver input before allowing the driver to press submit button
-        //productType = editTextProductType.getText().toString();
         startDate = editTextStartDate.getText().toString();
         startTime = editTextStartTime.getText().toString();
         endDate = editTextEndDate.getText().toString();
         endTime = editTextEndTime.getText().toString();
-        trailerGrossQuantity = editTextTrailerGrossQuantity.getText().toString();
-        trailerNetQuantity = editTextTrailerNetQuantity.getText().toString();
+        beginSiteContainerReading = editTextBeginSiteContainerReading.getText().toString();
+        endSiteContainerReading = editTextEndSiteContainerReading.getText().toString();
         startMeterReading = editTextStartMeterReading.getText().toString();
         endMeterReading = editTextEndMeterReading.getText().toString();
-        pickupGrossQuantity = editTextPickupGrossQuantity.getText().toString();
-        pickupNetQuantity = editTextPickupNetQuantity.getText().toString();
-        bolNumber = editTextBOLNumber.getText().toString();
+        deliveredGrossQuantity = editTextDeliveredGrossQuantity.getText().toString();
+        deliveredNetQuantity = editTextDeliveredNetQuantity.getText().toString();
+        deliveryTicketNumber = editTextDeliveryTicketNumber.getText().toString();
+        deliveryComment = editTextDeliveryComment.getText().toString();
 
 //        Validate product type
-        if (yourProduct.equals("") || yourProduct.equals("select product type")) {
+        if (yourProduct.equals("") || yourProduct.equals("Select product type")) {
             Toast.makeText(this, "Please select product type", Toast.LENGTH_SHORT).show();
             spinnerProductType.requestFocus();
         }
@@ -297,22 +322,22 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
 
 //        validation of fields for value in gal
-        else if (trailerGrossQuantity.equals("")) {
-            Toast.makeText(this, "Please enter trailer gross quantity", Toast.LENGTH_SHORT).show();
-            editTextTrailerGrossQuantity.setError("Please enter trailer gross quantity");
-            editTextTrailerGrossQuantity.requestFocus();
-        } else if (!trailerGrossQuantity.matches("[0-9]+")) {
-            Toast.makeText(this, "Please enter valid trailer gross quantity", Toast.LENGTH_SHORT).show();
-            editTextTrailerGrossQuantity.setError("Please enter trailer valid gross quantity");
-            editTextTrailerGrossQuantity.requestFocus();
-        } else if (trailerNetQuantity.equals("")) {
-            Toast.makeText(this, "Please enter trailer net quantity", Toast.LENGTH_SHORT).show();
-            editTextTrailerNetQuantity.setError("Please enter trailer net quantity");
-            editTextTrailerNetQuantity.requestFocus();
-        } else if (!trailerNetQuantity.matches("[0-9]+")) {
-            Toast.makeText(this, "Please enter valid net quantity", Toast.LENGTH_SHORT).show();
-            editTextTrailerNetQuantity.setError("Please enter valid net quantity");
-            editTextTrailerNetQuantity.requestFocus();
+        else if (beginSiteContainerReading.equals("")) {
+            Toast.makeText(this, "Please enter site container reading before dropoff", Toast.LENGTH_SHORT).show();
+            editTextBeginSiteContainerReading.setError("Please enter site container reading before dropoff");
+            editTextBeginSiteContainerReading.requestFocus();
+        } else if (!beginSiteContainerReading.matches("[0-9]+\\.?[0-9]*")) {
+            Toast.makeText(this, "Please enter valid site container reading", Toast.LENGTH_SHORT).show();
+            editTextBeginSiteContainerReading.setError("Please enter valid site container reading");
+            editTextBeginSiteContainerReading.requestFocus();
+        } else if (endSiteContainerReading.equals("")) {
+            Toast.makeText(this, "Please enter site container reading after dropoff", Toast.LENGTH_SHORT).show();
+            editTextEndSiteContainerReading.setError("Please enter site container reading after dropoff");
+            editTextEndSiteContainerReading.requestFocus();
+        } else if (!endSiteContainerReading.matches("[0-9]+\\.?[0-9]*")) {
+            Toast.makeText(this, "Please enter valid site container reading", Toast.LENGTH_SHORT).show();
+            editTextEndSiteContainerReading.setError("Please enter valid site container reading");
+            editTextEndSiteContainerReading.requestFocus();
         }
 
 
@@ -321,7 +346,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter beginning meter reading");
             editTextStartMeterReading.requestFocus();
-        } else if (!startMeterReading.matches("[0-9]+")) {
+        } else if (!startMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter valid beginning meter reading");
             editTextStartMeterReading.requestFocus();
@@ -332,7 +357,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Please enter ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter ending meter reading");
             editTextEndMeterReading.requestFocus();
-        } else if (!endMeterReading.matches("[0-9]+")) {
+        } else if (!endMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter valid ending meter reading");
             editTextEndMeterReading.requestFocus();
@@ -340,56 +365,94 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
 
 //        pickup gross quantity
-        else if (pickupGrossQuantity.equals("")) {
-            Toast.makeText(this, "Please enter pickup gross quantity", Toast.LENGTH_SHORT).show();
-            editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
-            editTextPickupGrossQuantity.requestFocus();
-        } else if (!pickupGrossQuantity.matches("[0-9]+")) {
-            Toast.makeText(this, "Please enter valid pickup gross quantity", Toast.LENGTH_SHORT).show();
-            editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
-            editTextPickupGrossQuantity.requestFocus();
+        else if (deliveredGrossQuantity.equals("")) {
+            Toast.makeText(this, "Please enter delivered gross quantity", Toast.LENGTH_SHORT).show();
+            editTextDeliveredGrossQuantity.setError("Please enter delivered gross quantity");
+            editTextDeliveredGrossQuantity.requestFocus();
+        } else if (!deliveredGrossQuantity.matches("[0-9]+\\.?[0-9]*") || deliveredGrossQuantity.matches("[0]+.*")) {
+            Toast.makeText(this, "Please enter valid delivered gross quantity", Toast.LENGTH_SHORT).show();
+            editTextDeliveredGrossQuantity.setError("Please enter valid delivered gross quantity");
+            editTextDeliveredGrossQuantity.requestFocus();
         }
 
 
 //        pickup net quantity
-        else if (pickupNetQuantity.equals("")) {
+        else if (deliveredNetQuantity.equals("")) {
             Toast.makeText(this, "Please enter pickup net quantity", Toast.LENGTH_SHORT).show();
-            editTextPickupNetQuantity.setError("Please enter pickup net quantity");
-            editTextPickupNetQuantity.requestFocus();
-        } else if (!pickupNetQuantity.matches("[0-9]+")) {
+            editTextDeliveredNetQuantity.setError("Please enter pickup net quantity");
+            editTextDeliveredNetQuantity.requestFocus();
+        } else if (!deliveredNetQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup net quantity", Toast.LENGTH_SHORT).show();
-            editTextPickupNetQuantity.setError("Please enter pickup net quantity");
-            editTextPickupNetQuantity.requestFocus();
+            editTextDeliveredNetQuantity.setError("Please enter pickup net quantity");
+            editTextDeliveredNetQuantity.requestFocus();
         }
 
 //      bill of lading number
-        else if (bolNumber.equals("")) {
-            Toast.makeText(this, "Please enter BOL number", Toast.LENGTH_SHORT).show();
-            editTextBOLNumber.setError("Please enter BOL number");
-            editTextBOLNumber.requestFocus();
-        } else if (!bolNumber.matches("[0-9]+")) {
-            Toast.makeText(this, "Please enter valid BOL number", Toast.LENGTH_SHORT).show();
-            editTextBOLNumber.setError("Please enter valid BOL number");
-            editTextBOLNumber.requestFocus();
+        else if (deliveryTicketNumber.equals("")) {
+            Toast.makeText(this, "Please enter delivery ticket number", Toast.LENGTH_SHORT).show();
+            editTextDeliveryTicketNumber.setError("Please enter delivery ticket number");
+            editTextDeliveryTicketNumber.requestFocus();
+        } else if (!deliveryTicketNumber.matches("[0-9]+")) {
+            Toast.makeText(this, "Please enter valid delivery ticket number", Toast.LENGTH_SHORT).show();
+            editTextDeliveryTicketNumber.setError("Please enter valid delivery ticket number");
+            editTextDeliveryTicketNumber.requestFocus();
         } else {
 //            set null free after validation
             editTextStartTime.setError(null);
             editTextEndTime.setError(null);
             editTextStartDate.setError(null);
             editTextEndDate.setError(null);
-            editTextTrailerGrossQuantity.setError(null);
-            editTextTrailerNetQuantity.setError(null);
+            editTextBeginSiteContainerReading.setError(null);
+            editTextEndSiteContainerReading.setError(null);
             editTextStartMeterReading.setError(null);
             editTextEndMeterReading.setError(null);
-            editTextPickupGrossQuantity.setError(null);
-            editTextPickupNetQuantity.setError(null);
-            editTextBOLNumber.setError(null);
+            editTextDeliveredGrossQuantity.setError(null);
+            editTextDeliveredNetQuantity.setError(null);
+            editTextDeliveryTicketNumber.setError(null);
 
-            pickupGrossToNetRatio = Integer.parseInt(pickupNetQuantity) / Integer.parseInt(pickupGrossQuantity);
+            pickupGrossToNetRatio = Double.parseDouble(deliveredNetQuantity) / Double.parseDouble(deliveredGrossQuantity);
+
+            addSiteInputToDatabase();
+            tempToastToShowInput();
 
 //            callApiAndSendData();
 
         }
 
+    }
+
+    private void addSiteInputToDatabase(){
+        repository.addSiteInput(new SiteInput(trip_id, load_id));
+        repository.setProductType(yourProduct, trip_id, load_id);
+        repository.setStart_date(startDate, trip_id, load_id);
+        repository.setStart_time(startTime, trip_id, load_id);
+        repository.setEnd_date(endDate, trip_id, load_id);
+        repository.setEnd_time(endTime, trip_id, load_id);
+        repository.setBegin_site_container_reading(Double.parseDouble(beginSiteContainerReading), trip_id, load_id);
+        repository.setEnd_site_container_reading(Double.parseDouble(endSiteContainerReading), trip_id, load_id);
+        repository.setStart_meter_reading(Double.parseDouble(startMeterReading), trip_id, load_id);
+        repository.setEnd_meter_reading(Double.parseDouble(endMeterReading), trip_id, load_id);
+        repository.setDelivered_gross_quantity(Double.parseDouble(deliveredGrossQuantity), trip_id, load_id);
+        repository.setDelivered_net_quantity(Double.parseDouble(deliveredNetQuantity), trip_id, load_id);
+        repository.setDelivery_ticket_number(Integer.parseInt(deliveryTicketNumber), trip_id, load_id);
+        repository.setDeliveryComment(deliveryComment, trip_id, load_id);
+        repository.setPickup_ratio(pickupGrossToNetRatio, trip_id, load_id);
+    }
+
+    private void tempToastToShowInput(){
+        Toast.makeText(this,
+                   "Product Type: " + repository.getProduct_type(trip_id, load_id)+"\n" +
+                        "Start Date: " + repository.getStart_date(trip_id, load_id)+"\n" +
+                        "Start Time: " + repository.getStart_time(trip_id, load_id)+"\n" +
+                        "End Date: " + repository.getEnd_date(trip_id, load_id)+"\n" +
+                        "End Time: " + repository.getEnd_time(trip_id, load_id)+"\n" +
+                        "Container Before Dropoff: " + Double.toString(repository.getBegin_site_container_reading(trip_id, load_id))+"\n" +
+                        "Container After Dropoff: " + Double.toString(repository.getEnd_site_container_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading Before Dropoff: " + Double.toString(repository.getStart_meter_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading After Dropoff: " + Double.toString(repository.getEnd_meter_reading(trip_id, load_id))+"\n" +
+                        "Delivered Gross: " + Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id))+"\n" +
+                        "Delivered Net: " + Double.toString(repository.getDelivered_net_quantity(trip_id, load_id))+"\n" +
+                        "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id))+"\n" +
+                        "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
     }
 }
