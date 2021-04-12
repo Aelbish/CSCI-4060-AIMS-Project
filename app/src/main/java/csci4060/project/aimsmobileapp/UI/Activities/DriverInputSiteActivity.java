@@ -54,15 +54,12 @@ import static android.os.Environment.getExternalStoragePublicDirectory;
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
 
     String
-            //productType,
             startDate,
             startTime,
             endDate,
             endTime,
             beginSiteContainerReading,
             endSiteContainerReading,
-            //trailerGrossQuantity,
-            //trailerNetQuantity,
             startMeterReading,
             endMeterReading,
             deliveredGrossQuantity,
@@ -70,22 +67,16 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             deliveryTicketNumber,
             deliveryComment,
             barcode;
-            //pickupGrossQuantity,
-            //pickupNetQuantity,
-            //bolNumber;
 
     double pickupGrossToNetRatio;
 
     EditText
-            //editTextProductType,
             editTextStartDate,
             editTextStartTime,
             editTextEndDate,
             editTextEndTime,
             editTextBeginSiteContainerReading,
             editTextEndSiteContainerReading,
-            //editTextTrailerGrossQuantity,
-            //editTextTrailerNetQuantity,
             editTextStartMeterReading,
             editTextEndMeterReading,
             editTextDeliveredGrossQuantity,
@@ -93,18 +84,11 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextDeliveryTicketNumber,
             editTextDeliveryComment,
             editTextBarcode;
-            //editTextPickupGrossQuantity,
-            //editTextPickupNetQuantity,
-            //editTextBOLNumber;
 
-    Button buttonTakePicture, btnSubmit;
-    String pathToFile;
-    ImageView imageView;
+    Button btnSubmit;
+
     /**Scan button for barcode scanner**/
     Button buttonScan;
-
-
-
 
     String yourProduct;
 
@@ -152,7 +136,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
             }
         });
-        //editTextProductType = (EditText) findViewById(R.id.editTextProductType);
 
         /**Get start date**/
         editTextStartDate = (EditText) findViewById(R.id.editTextStartDate);
@@ -204,27 +187,11 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         editTextEndSiteContainerReading = (EditText) findViewById(R.id.editTextEndSiteContainerReading);
         editTextEndSiteContainerReading.setText(Double.toString(repository.getEnd_site_container_reading(trip_id, load_id)));
 
-
-        /*editTextTrailerGrossQuantity = (EditText) findViewById(R.id.editTextTrailerGrossQuantity);
-        editTextTrailerGrossQuantity.setText(Double.toString(repository.getTrailer_gross_quantity(trip_id, load_id)));*/
-
-        /*editTextTrailerNetQuantity = (EditText) findViewById(R.id.editTextTrailerNetQuantity);
-        editTextTrailerNetQuantity.setText(Double.toString(repository.getTrailer_net_quantity(trip_id, load_id)));*/
-
         editTextStartMeterReading = (EditText) findViewById(R.id.editTextStartMeterReading);
         editTextStartMeterReading.setText(Double.toString(repository.getStart_meter_reading(trip_id, load_id)));
 
         editTextEndMeterReading = (EditText) findViewById(R.id.editTextEndMeterReading);
         editTextEndMeterReading.setText(Double.toString(repository.getEnd_meter_reading(trip_id, load_id)));
-
-        /*editTextPickupGrossQuantity = (EditText) findViewById(R.id.editTextPickupGrossQuantity);
-        editTextPickupGrossQuantity.setText(Double.toString(repository.getPickup_gross_quantity(trip_id, load_id)));
-
-        editTextPickupNetQuantity = (EditText) findViewById(R.id.editTextPickupNetQuantity);
-        editTextPickupNetQuantity.setText(Double.toString(repository.getPickup_net_quantity(trip_id, load_id)));
-
-        editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
-        editTextBOLNumber.setText(Integer.toString(repository.getBOLNumber(trip_id, load_id)));*/
 
         editTextDeliveredGrossQuantity = (EditText) findViewById(R.id.editTextDeliveredGrossQuantity);
         editTextDeliveredGrossQuantity.setText(Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id)));
@@ -240,18 +207,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
         editTextBarcode = (EditText) findViewById(R.id.editTextBarcode);
 
-        /**Camera Button**/
-        /*buttonTakePicture = findViewById(R.id.buttonTakePicture);
-        if (Build.VERSION.SDK_INT >= 23) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-        }
-        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dispatchPictureTakerAction();
-            }
-        });
-        imageView = findViewById(R.id.image);*/
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 
@@ -333,47 +288,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
     }
 
-    /**
-     * Camera functions below
-     **/
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
-                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                imageView.setImageBitmap(bitmap);
-            }
-        }
-    }*/
-
-    /*private void dispatchPictureTakerAction() {
-        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePicture.resolveActivity(getPackageManager()) != null) {
-            File photoFile = null;
-            photoFile = createPhotoFile();
-
-            if (photoFile != null) {
-                pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(DriverInputSiteActivity.this, "com.csci4060.project.aimsmobileapp.fileprovider", photoFile);
-                takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePicture, 1);
-            }
-        }
-    }*/
-
-    /*private File createPhotoFile() {
-        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File storageDirectory = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File image = null;
-        try {
-            image = File.createTempFile(name, ".jpg", storageDirectory);
-        } catch (IOException e) {
-            Log.d("errorLog", "Exception: " + e.toString());
-        }
-        return image;
-    }*/
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnSubmitInputSiteData) {
@@ -384,19 +298,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     //TODO rewrite if statements to something more performance friendly
     //TODO check input validation after changing inputs to numberDoubles
     public void validateAndSubmitFormData() {
-        //productType = editTextProductType.getText().toString();
-        /*startDate = editTextStartDate.getText().toString();
-        startTime = editTextStartTime.getText().toString();
-        endDate = editTextEndDate.getText().toString();
-        endTime = editTextEndTime.getText().toString();
-        trailerGrossQuantity = editTextTrailerGrossQuantity.getText().toString();
-        trailerNetQuantity = editTextTrailerNetQuantity.getText().toString();
-        startMeterReading = editTextStartMeterReading.getText().toString();
-        endMeterReading = editTextEndMeterReading.getText().toString();
-        pickupGrossQuantity = editTextPickupGrossQuantity.getText().toString();
-        pickupNetQuantity = editTextPickupNetQuantity.getText().toString();
-        bolNumber = editTextBOLNumber.getText().toString();*/
-
         startDate = editTextStartDate.getText().toString();
         startTime = editTextStartTime.getText().toString();
         endDate = editTextEndDate.getText().toString();
@@ -520,8 +421,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextEndDate.setError(null);
             editTextBeginSiteContainerReading.setError(null);
             editTextEndSiteContainerReading.setError(null);
-            /*editTextTrailerGrossQuantity.setError(null);
-            editTextTrailerNetQuantity.setError(null);*/
             editTextStartMeterReading.setError(null);
             editTextEndMeterReading.setError(null);
             editTextDeliveredGrossQuantity.setError(null);
@@ -531,6 +430,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             pickupGrossToNetRatio = Double.parseDouble(deliveredNetQuantity) / Double.parseDouble(deliveredGrossQuantity);
 
             addSiteInputToDatabase();
+            tempToastToShowInput();
 
 //            callApiAndSendData();
 
@@ -547,8 +447,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         repository.setEnd_time(endTime, trip_id, load_id);
         repository.setBegin_site_container_reading(Double.parseDouble(beginSiteContainerReading), trip_id, load_id);
         repository.setEnd_site_container_reading(Double.parseDouble(endSiteContainerReading), trip_id, load_id);
-        /*repository.setTrailer_gross_quantity(Double.parseDouble(trailerGrossQuantity), trip_id, load_id);
-        repository.setTrailer_net_quantity(Double.parseDouble(trailerNetQuantity), trip_id, load_id);*/
         repository.setStart_meter_reading(Double.parseDouble(startMeterReading), trip_id, load_id);
         repository.setEnd_meter_reading(Double.parseDouble(endMeterReading), trip_id, load_id);
         repository.setDelivered_gross_quantity(Double.parseDouble(deliveredGrossQuantity), trip_id, load_id);
@@ -556,5 +454,22 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         repository.setDelivery_ticket_number(Integer.parseInt(deliveryTicketNumber), trip_id, load_id);
         repository.setDeliveryComment(deliveryComment, trip_id, load_id);
         repository.setPickup_ratio(pickupGrossToNetRatio, trip_id, load_id);
+    }
+
+    private void tempToastToShowInput(){
+        Toast.makeText(this,
+                   "Product Type: " + repository.getProduct_type(trip_id, load_id)+"\n" +
+                        "Start Date: " + repository.getStart_date(trip_id, load_id)+"\n" +
+                        "Start Time: " + repository.getStart_time(trip_id, load_id)+"\n" +
+                        "End Date: " + repository.getEnd_date(trip_id, load_id)+"\n" +
+                        "End Time: " + repository.getEnd_time(trip_id, load_id)+"\n" +
+                        "Container Before Dropoff: " + Double.toString(repository.getBegin_site_container_reading(trip_id, load_id))+"\n" +
+                        "Container After Dropoff: " + Double.toString(repository.getEnd_site_container_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading Before Dropoff: " + Double.toString(repository.getStart_meter_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading After Dropoff: " + Double.toString(repository.getEnd_meter_reading(trip_id, load_id))+"\n" +
+                        "Delivered Gross: " + Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id))+"\n" +
+                        "Delivered Net: " + Double.toString(repository.getDelivered_net_quantity(trip_id, load_id))+"\n" +
+                        "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id))+"\n" +
+                        "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
     }
 }

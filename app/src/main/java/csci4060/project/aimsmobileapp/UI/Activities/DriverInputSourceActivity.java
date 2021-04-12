@@ -257,7 +257,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
 
             if (photoFile != null) {
                 pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(DriverInputSourceActivity.this, "com.csci4060.project.aimsmobileapp.fileprovider", photoFile);
+                Uri photoURI = FileProvider.getUriForFile(DriverInputSourceActivity.this, "csci4060.project.aimsmobileapp.fileprovider", photoFile);
                 takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePicture, 1);
             }
@@ -418,6 +418,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             pickupGrossToNetRatio = Double.parseDouble(pickupNetQuantity) / Double.parseDouble(pickupGrossQuantity);
 
             addSourceInputToDatabase();
+            tempToastToShowInput();
 
 //            callApiAndSendData();
 
@@ -442,6 +443,22 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         repository.setPickup_ratioSource(pickupGrossToNetRatio, trip_id, load_id);
     }
 
+    private void tempToastToShowInput(){
+        Toast.makeText(this,
+                "Product Type: " + repository.getProduct_typeSource(trip_id, load_id)+"\n" +
+                        "Start Date: " + repository.getStart_date(trip_id, load_id)+"\n" +
+                        "Start Time: " + repository.getStart_time(trip_id, load_id)+"\n" +
+                        "End Date: " + repository.getEnd_date(trip_id, load_id)+"\n" +
+                        "End Time: " + repository.getEnd_time(trip_id, load_id)+"\n" +
+                        "Trailer Gross: " + Double.toString(repository.getTrailer_gross_quantitySource(trip_id, load_id)) +"\n" +
+                        "Trailer Net: " + Double.toString(repository.getTrailer_net_quantitySource(trip_id, load_id)) +"\n" +
+                        "Meter Reading Before Dropoff: " + Double.toString(repository.getStart_meter_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading After Dropoff: " + Double.toString(repository.getEnd_meter_reading(trip_id, load_id))+"\n" +
+                        "Pickup Gross: " + Double.toString(repository.getPickup_gross_quantitySource(trip_id, load_id)) +"\n" +
+                        "Pickup Net: " + Double.toString(repository.getPickup_net_quantitySource(trip_id, load_id)) +"\n" +
+                        "BOL Num: " + Integer.toString(repository.getBOLNumberSource(trip_id, load_id))
+                        , Toast.LENGTH_LONG).show();
+    }
 
 }
 
