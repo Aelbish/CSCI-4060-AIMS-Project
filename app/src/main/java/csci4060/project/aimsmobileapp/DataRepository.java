@@ -728,51 +728,183 @@ public class DataRepository {
     }
 
     public String getProduct_typeSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getProduct_type(trip_id, sequence_id);
+        Callable<String> start_date = () -> {
+            return sourceInputDao.getProduct_type(trip_id, sequence_id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public String getStart_dateSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getStart_date(trip_id, sequence_id);
+        Callable<String> start_date = () -> {
+            return sourceInputDao.getStart_date(trip_id, sequence_id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public String getStart_timeSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getStart_time(trip_id, sequence_id);
+        Callable<String> start_date = () -> {
+            return sourceInputDao.getStart_time(trip_id, sequence_id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public String getEnd_dateSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getEnd_date(trip_id, sequence_id);
+        Callable<String> start_date = () -> {
+            return sourceInputDao.getEnd_date(trip_id, sequence_id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public String getEnd_timeSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getEnd_time(trip_id, sequence_id);
+        Callable<String> start_date = () -> {
+            return sourceInputDao.getEnd_time(trip_id, sequence_id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public double getTrailer_gross_quantitySource(int trip_id, int sequence_id) {
-        return sourceInputDao.getTrailer_gross_quantity(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getTrailer_gross_quantity(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public double getTrailer_net_quantitySource(int trip_id, int sequence_id) {
-        return sourceInputDao.getTrailer_net_quantity(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getTrailer_net_quantity(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public double getStart_meter_readingSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getStart_meter_reading(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getStart_meter_reading(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public double getEnd_meter_readingSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getEnd_meter_reading(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getEnd_meter_reading(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public double getPickup_gross_quantitySource(int trip_id, int sequence_id) {
-        return sourceInputDao.getPickup_gross_quantity(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getPickup_gross_quantity(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public double getPickup_net_quantitySource(int trip_id, int sequence_id) {
-        return sourceInputDao.getPickup_net_quantity(trip_id, sequence_id);
+        Callable<Double> start_date = () -> {
+            return sourceInputDao.getPickup_net_quantity(trip_id, sequence_id);
+        };
+
+        Future<Double> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
     }
 
     public int getBOLNumberSource(int trip_id, int sequence_id) {
-        return sourceInputDao.getBol_number(trip_id, sequence_id);
+        Callable<Integer> start_date = () -> {
+            return sourceInputDao.getBol_number(trip_id, sequence_id);
+        };
+
+        Future<Integer> future = AppDatabase.databaseWriteExecutor.submit(start_date);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public double getPickup_ratioSource(int trip_id, int sequence_id) {
