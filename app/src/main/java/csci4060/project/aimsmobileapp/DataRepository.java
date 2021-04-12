@@ -34,6 +34,7 @@ public class DataRepository {
     private DeliveryDao deliveryDao;
     private DeliveredProductDao deliveredProductDao;
     private SiteInputDao siteInputDao;
+    private SourceInputDao sourceInputDao;
 
     private static DataRepository instance;
     private static AppDatabase db;
@@ -49,6 +50,7 @@ public class DataRepository {
         deliveryDao = db.deliveryDao();
         deliveredProductDao = db.deliveredProductDao();
         siteInputDao = db.siteInputDao();
+        sourceInputDao = db.sourceInputDao();
     }
 
     /**
@@ -459,5 +461,138 @@ public class DataRepository {
 
     public double getPickup_ratio(int trip_id, int sequence_id) {
         return siteInputDao.getPickup_ratio(trip_id, sequence_id);
+    }
+
+    /**********************************
+     *     SourceInput Table Methods    *
+     **********************************/
+    public void setProductTypeSource(String product_type, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setProduct_type(product_type, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_dateSource(long start_date, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setStart_date(start_date, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_timeSource(long start_time, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setStart_time(start_time, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_dateSource(long end_date, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setEnd_date(end_date, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_timeSource(long end_time, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setEnd_time(end_time, trip_id, sequence_id);
+        });
+    }
+
+    public void setTrailer_gross_quantitySource(double trailer_gross_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setTrailer_gross_quantity(trailer_gross_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setTrailer_net_quantitySource(double trailer_net_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setTrailer_net_quantity(trailer_net_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_meter_readingSource(double start_meter_reading, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setStart_meter_reading(start_meter_reading, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_meter_readingSource(double end_meter_reading, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setEnd_meter_reading(end_meter_reading, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_gross_quantitySource(double pickup_gross_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setPickup_gross_quantity(pickup_gross_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_net_quantitySource(double pickup_net_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setPickup_net_quantity(pickup_net_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setBol_numberSource(int bol_number, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setBol_number(bol_number, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_ratioSource(double pickup_ratio, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            sourceInputDao.setPickup_ratio(pickup_ratio, trip_id, sequence_id);
+        });
+    }
+
+    public String getProduct_typeSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getProduct_type(trip_id, sequence_id);
+    }
+
+    public long getStart_dateSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getStart_date(trip_id, sequence_id);
+    }
+
+    public long getStart_timeSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getStart_time(trip_id, sequence_id);
+    }
+
+    public long getEnd_dateSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getEnd_date(trip_id, sequence_id);
+    }
+
+    public long getEnd_timeSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getEnd_time(trip_id, sequence_id);
+    }
+
+    public double getTrailer_gross_quantitySource(int trip_id, int sequence_id) {
+        return sourceInputDao.getTrailer_gross_quantity(trip_id, sequence_id);
+    }
+
+    public double getTrailer_net_quantitySource(int trip_id, int sequence_id) {
+        return sourceInputDao.getTrailer_net_quantity(trip_id, sequence_id);
+    }
+
+    public double getStart_meter_readingSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getStart_meter_reading(trip_id, sequence_id);
+    }
+
+    public double getEnd_meter_readingSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getEnd_meter_reading(trip_id, sequence_id);
+    }
+
+    public double getPickup_gross_quantitySource(int trip_id, int sequence_id) {
+        return sourceInputDao.getPickup_gross_quantity(trip_id, sequence_id);
+    }
+
+    public double getPickup_net_quantitySource(int trip_id, int sequence_id) {
+        return sourceInputDao.getPickup_net_quantity(trip_id, sequence_id);
+    }
+
+    public int getBOLNumberSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getBol_number(trip_id, sequence_id);
+    }
+
+    public double getPickup_ratioSource(int trip_id, int sequence_id) {
+        return sourceInputDao.getPickup_ratio(trip_id, sequence_id);
     }
 }
