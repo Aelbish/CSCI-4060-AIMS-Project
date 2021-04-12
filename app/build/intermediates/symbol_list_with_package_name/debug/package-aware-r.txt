@@ -209,6 +209,7 @@ attr chipStyle
 attr chipSurfaceColor
 attr circleRadius
 attr circularProgressIndicatorStyle
+attr clearOnDoubleClick
 attr clickAction
 attr clockFaceBackgroundColor
 attr clockHandColor
@@ -677,6 +678,9 @@ attr passwordToggleTint
 attr passwordToggleTintMode
 attr pathMotionArc
 attr path_percent
+attr penColor
+attr penMaxWidth
+attr penMinWidth
 attr percentHeight
 attr percentWidth
 attr percentX
@@ -909,6 +913,7 @@ attr ttcIndex
 attr useCompatPadding
 attr useMaterialThemeColors
 attr values
+attr velocityFilterWeight
 attr verticalOffset
 attr viewInflaterClass
 attr visibilityMode
@@ -1859,6 +1864,7 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id clearButton
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1876,6 +1882,7 @@ id counterclockwise
 id custom
 id customPanel
 id cut
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2049,6 +2056,8 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id outline
 id outward
 id packed
@@ -2077,6 +2086,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2104,6 +2114,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signaturePad
 id sin
 id skipCollapsed
 id slide
@@ -2166,6 +2177,7 @@ id textView22
 id textView5
 id textView7
 id textView8
+id textWatcher
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2194,9 +2206,9 @@ id triangle
 id trip_heading_relative_layout
 id trip_info_relative_layout
 id trip_info_scroll_view
-id txtTripId
+id txtAddress
+id txtDestinationName
 id txtTripName
-id txtTripSeq
 id txtTripWaypoint
 id unchecked
 id uniform
@@ -2286,6 +2298,7 @@ layout activity_driver_input_site
 layout activity_driver_input_source
 layout activity_main
 layout activity_main_screen
+layout activity_signature_capture2
 layout activity_trip
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3327,6 +3340,7 @@ styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeableImageView contentPadding contentPaddingBottom contentPaddingEnd contentPaddingLeft contentPaddingRight contentPaddingStart contentPaddingTop shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
+styleable SignaturePad clearOnDoubleClick penColor penMaxWidth penMinWidth velocityFilterWeight
 styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius thumbStrokeColor thumbStrokeWidth tickColor tickColorActive tickColorInactive tickVisible trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth

@@ -46,10 +46,12 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         final TripInfoModel tripInfoModel = tripInfoModelList.get(i);
 
 
-        itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
+        //itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
         itemsViewHolder.txtTripName.setText("Trip name: " + tripInfoModel.getTripName());
-        itemsViewHolder.txtTripWaypoint.setText("Location: " + tripInfoModel.getWaypoint());
-        itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
+        itemsViewHolder.txtTripWaypoint.setText("Location Type: " + tripInfoModel.getWaypoint());
+        //itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
+        itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
+        itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
 
         itemsViewHolder.btnSourceInput.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,17 +119,20 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
     public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtTripId, txtTripName, txtTripWaypoint, txtTripSeq;
+        public TextView txtTripId, txtTripName, txtTripWaypoint, txtTripSeq, txtDestinationName, txtAddress;
         public Button btnSummary, btnStart, btnSourceInput, btnSiteInput;
 
         public ItemsViewHolder(@NonNull View itemView) {
 
             super(itemView);
 
-            txtTripId = itemView.findViewById(R.id.txtTripId);
+            //txtTripId = itemView.findViewById(R.id.txtTripId);
             txtTripName = itemView.findViewById(R.id.txtTripName);
             txtTripWaypoint = itemView.findViewById(R.id.txtTripWaypoint);
-            txtTripSeq = itemView.findViewById(R.id.txtTripSeq);
+            //txtTripSeq = itemView.findViewById(R.id.txtTripSeq);
+            txtDestinationName = itemView.findViewById(R.id.txtDestinationName);
+            txtAddress = itemView.findViewById(R.id.txtAddress);
+
             btnSummary = itemView.findViewById(R.id.btn_summary);
             btnStart=itemView.findViewById(R.id.btn_start);
             btnSourceInput=itemView.findViewById(R.id.btn_source_input);

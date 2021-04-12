@@ -12,6 +12,10 @@
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_signature_capture2.xml.flat",
+        "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_signature_capture2.xml"
+    },
+    {
         "merged": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\bijay\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },

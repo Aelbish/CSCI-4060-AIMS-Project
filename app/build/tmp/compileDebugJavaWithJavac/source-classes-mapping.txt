@@ -24,6 +24,11 @@ csci4060/project/aimsmobileapp/database/dao/DeliveredProductDao.java
  csci4060.project.aimsmobileapp.database.dao.DeliveredProductDao
 csci4060/project/aimsmobileapp/database/dao/CustomerDao.java
  csci4060.project.aimsmobileapp.database.dao.CustomerDao
+csci4060/project/aimsmobileapp/UI/SignatureCapture.java
+ csci4060.project.aimsmobileapp.UI.SignatureCapture
+ csci4060.project.aimsmobileapp.UI.SignatureCapture$1
+ csci4060.project.aimsmobileapp.UI.SignatureCapture$2
+ csci4060.project.aimsmobileapp.UI.SignatureCapture$3
 csci4060/project/aimsmobileapp/database/dao/DriverDao.java
  csci4060.project.aimsmobileapp.database.dao.DriverDao
 csci4060/project/aimsmobileapp/database/dao/SiteInputDao.java
