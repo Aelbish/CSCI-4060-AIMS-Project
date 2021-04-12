@@ -11,13 +11,14 @@ public class SiteInput {
     String start_time;
     String end_date;
     String end_time;
-    double trailer_gross_quantity;
-    double trailer_net_quantity;
+    double begin_site_container_reading;
+    double end_site_container_reading;
     double start_meter_reading;
     double end_meter_reading;
-    double pickup_gross_quantity;
-    double pickup_net_quantity;
-    int bol_number;
+    double delivered_gross_quantity;
+    double delivered_net_quantity;
+    int delivery_ticket_number;
+    String deliveryComment;
     double pickup_ratio;
 
     public SiteInput(int trip_id, int sequence_id) {
@@ -81,20 +82,20 @@ public class SiteInput {
         this.end_time = end_time;
     }
 
-    public double getTrailer_gross_quantity() {
-        return trailer_gross_quantity;
+    public double getBegin_site_container_reading() {
+        return begin_site_container_reading;
     }
 
-    public void setTrailer_gross_quantity(double trailer_gross_quantity) {
-        this.trailer_gross_quantity = trailer_gross_quantity;
+    public void setBegin_site_container_reading(double begin_site_container_reading) {
+        this.begin_site_container_reading = begin_site_container_reading;
     }
 
-    public double getTrailer_net_quantity() {
-        return trailer_net_quantity;
+    public double getEnd_site_container_reading() {
+        return end_site_container_reading;
     }
 
-    public void setTrailer_net_quantity(double trailer_net_quantity) {
-        this.trailer_net_quantity = trailer_net_quantity;
+    public void setEnd_site_container_reading(double end_site_container_reading) {
+        this.end_site_container_reading = end_site_container_reading;
     }
 
     public double getStart_meter_reading() {
@@ -113,28 +114,36 @@ public class SiteInput {
         this.end_meter_reading = end_meter_reading;
     }
 
-    public double getPickup_gross_quantity() {
-        return pickup_gross_quantity;
+    public double getDelivered_gross_quantity() {
+        return delivered_gross_quantity;
     }
 
-    public void setPickup_gross_quantity(double pickup_gross_quantity) {
-        this.pickup_gross_quantity = pickup_gross_quantity;
+    public void setDelivered_gross_quantity(double delivered_gross_quantity) {
+        this.delivered_gross_quantity = delivered_gross_quantity;
     }
 
-    public double getPickup_net_quantity() {
-        return pickup_net_quantity;
+    public double getDelivered_net_quantity() {
+        return delivered_net_quantity;
     }
 
-    public void setPickup_net_quantity(double pickup_net_quantity) {
-        this.pickup_net_quantity = pickup_net_quantity;
+    public void setDelivered_net_quantity(double delivered_net_quantity) {
+        this.delivered_net_quantity = delivered_net_quantity;
     }
 
-    public int getBol_number() {
-        return bol_number;
+    public int getDelivery_ticket_number() {
+        return delivery_ticket_number;
     }
 
-    public void setBol_number(int bol_number) {
-        this.bol_number = bol_number;
+    public void setDelivery_ticket_number(int delivery_ticket_number) {
+        this.delivery_ticket_number = delivery_ticket_number;
+    }
+
+    public String getDeliveryComment() {
+        return deliveryComment;
+    }
+
+    public void setDeliveryComment(String deliveryComment) {
+        this.deliveryComment = deliveryComment;
     }
 
     public double getPickup_ratio() {
