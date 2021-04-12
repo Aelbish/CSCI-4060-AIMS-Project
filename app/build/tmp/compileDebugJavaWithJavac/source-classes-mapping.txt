@@ -10,6 +10,8 @@ csci4060/project/aimsmobileapp/UI/Activities/DriverInputSourceActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$6
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$7
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity$8
+csci4060/project/aimsmobileapp/database/entity/SiteInput.java
+ csci4060.project.aimsmobileapp.database.entity.SiteInput
 csci4060/project/aimsmobileapp/UI/Fragments/TripFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.TripFragment
  csci4060.project.aimsmobileapp.UI.Fragments.TripFragment$1
@@ -24,6 +26,8 @@ csci4060/project/aimsmobileapp/database/dao/CustomerDao.java
  csci4060.project.aimsmobileapp.database.dao.CustomerDao
 csci4060/project/aimsmobileapp/database/dao/DriverDao.java
  csci4060.project.aimsmobileapp.database.dao.DriverDao
+csci4060/project/aimsmobileapp/database/dao/SiteInputDao.java
+ csci4060.project.aimsmobileapp.database.dao.SiteInputDao
 csci4060/project/aimsmobileapp/adapter/TripListAdapter.java
  csci4060.project.aimsmobileapp.adapter.TripListAdapter
  csci4060.project.aimsmobileapp.adapter.TripListAdapter$1
@@ -36,6 +40,8 @@ csci4060/project/aimsmobileapp/database/AppDatabase.java
  csci4060.project.aimsmobileapp.database.AppDatabase
 csci4060/project/aimsmobileapp/UI/Activities/Capture.java
  csci4060.project.aimsmobileapp.UI.Activities.Capture
+csci4060/project/aimsmobileapp/database/entity/SourceInput.java
+ csci4060.project.aimsmobileapp.database.entity.SourceInput
 csci4060/project/aimsmobileapp/UI/Fragments/RouteFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.RouteFragment
 csci4060/project/aimsmobileapp/database/entity/Vendor.java
@@ -44,6 +50,8 @@ csci4060/project/aimsmobileapp/UI/Activities/MainActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.MainActivity
 csci4060/project/aimsmobileapp/DataRepository.java
  csci4060.project.aimsmobileapp.DataRepository
+csci4060/project/aimsmobileapp/database/dao/SourceInputDao.java
+ csci4060.project.aimsmobileapp.database.dao.SourceInputDao
 csci4060/project/aimsmobileapp/UI/Fragments/AlertFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.AlertFragment
 csci4060/project/aimsmobileapp/database/entity/Trip.java
@@ -60,7 +68,6 @@ csci4060/project/aimsmobileapp/UI/Activities/DriverInputSiteActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$6
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$7
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$8
- csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$9
 csci4060/project/aimsmobileapp/BuildConfig.java
  csci4060.project.aimsmobileapp.BuildConfig
 csci4060/project/aimsmobileapp/AIMSApp.java
