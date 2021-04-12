@@ -56,7 +56,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             pickupNetQuantity,
             bolNumber;
 
-    int pickupGrossToNetRatio;
+    double pickupGrossToNetRatio;
 
     EditText
             //editTextProductType,
@@ -86,8 +86,8 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
         List<String> productType = new ArrayList<>();
-        //TODO force user to select one
-        productType.add("select product type");
+
+        productType.add("Select product type");
         productType.add("87 AKI");
         productType.add("89 AKI");
         productType.add("92 AKI");
@@ -254,8 +254,9 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         }
     }
 
+    //TODO rewrite if statements to something more performance friendly
+    //TODO check input validation after changing inputs to numberDoubles
     public void validateAndSubmitFormData() {
-        //TODO Need to add validation for driver input before allowing the driver to press submit button
         //productType = editTextProductType.getText().toString();
         startDate = editTextStartDate.getText().toString();
         startTime = editTextStartTime.getText().toString();
@@ -270,7 +271,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         bolNumber = editTextBOLNumber.getText().toString();
 
 //        Validate product type
-        if (yourProduct.equals("") || yourProduct.equals("select product type")) {
+        if (yourProduct.equals("") || yourProduct.equals("Select product type")) {
             Toast.makeText(this, "Please select product type", Toast.LENGTH_SHORT).show();
             spinnerProductType.requestFocus();
         }
@@ -385,7 +386,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextPickupNetQuantity.setError(null);
             editTextBOLNumber.setError(null);
 
-            pickupGrossToNetRatio = Integer.parseInt(pickupNetQuantity) / Integer.parseInt(pickupGrossQuantity);
+            pickupGrossToNetRatio = Double.parseDouble(pickupNetQuantity) / Double.parseDouble(pickupGrossQuantity);
 
 //            callApiAndSendData();
 

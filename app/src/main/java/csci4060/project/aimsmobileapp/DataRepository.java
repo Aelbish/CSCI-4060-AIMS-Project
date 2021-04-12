@@ -33,6 +33,7 @@ public class DataRepository {
     //private BillOfLadingDao billOfLadingDao;
     private DeliveryDao deliveryDao;
     private DeliveredProductDao deliveredProductDao;
+    private SiteInputDao siteInputDao;
 
     private static DataRepository instance;
     private static AppDatabase db;
@@ -47,6 +48,7 @@ public class DataRepository {
         vendorDao = db.vendorDao();
         deliveryDao = db.deliveryDao();
         deliveredProductDao = db.deliveredProductDao();
+        siteInputDao = db.siteInputDao();
     }
 
     /**
@@ -173,6 +175,9 @@ public class DataRepository {
         });
     }
 
+    /****************************************
+     *    DeliveredProduct Table Methods    *
+     ****************************************/
     public void setBOLNumber(int bolNumber, int sequence_id) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             deliveredProductDao.setBol_number(bolNumber, sequence_id);
@@ -321,5 +326,138 @@ public class DataRepository {
 
     public String getDeliveryComments(int sequence_num) {
         return deliveredProductDao.getDelivery_comments(sequence_num);
+    }
+
+    /**********************************
+     *     SiteInput Table Methods    *
+     **********************************/
+    public void setProductType(String product_type, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setProduct_type(product_type, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_date(long start_date, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setStart_date(start_date, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_time(long start_time, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setStart_time(start_time, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_date(long end_date, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setEnd_date(end_date, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_time(long end_time, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setEnd_time(end_time, trip_id, sequence_id);
+        });
+    }
+
+    public void setTrailer_gross_quantity(double trailer_gross_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setTrailer_gross_quantity(trailer_gross_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setTrailer_net_quantity(double trailer_net_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setTrailer_net_quantity(trailer_net_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setStart_meter_reading(double start_meter_reading, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setStart_meter_reading(start_meter_reading, trip_id, sequence_id);
+        });
+    }
+
+    public void setEnd_meter_reading(double end_meter_reading, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setEnd_meter_reading(end_meter_reading, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_gross_quantity(double pickup_gross_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setPickup_gross_quantity(pickup_gross_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_net_quantity(double pickup_net_quantity, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setPickup_net_quantity(pickup_net_quantity, trip_id, sequence_id);
+        });
+    }
+
+    public void setBol_number(int bol_number, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setBol_number(bol_number, trip_id, sequence_id);
+        });
+    }
+
+    public void setPickup_ratio(double pickup_ratio, int trip_id, int sequence_id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            siteInputDao.setPickup_ratio(pickup_ratio, trip_id, sequence_id);
+        });
+    }
+
+    public String getProduct_type(int trip_id, int sequence_id) {
+        return siteInputDao.getProduct_type(trip_id, sequence_id);
+    }
+
+    public long getStart_date(int trip_id, int sequence_id) {
+        return siteInputDao.getStart_date(trip_id, sequence_id);
+    }
+
+    public long getStart_time(int trip_id, int sequence_id) {
+        return siteInputDao.getStart_time(trip_id, sequence_id);
+    }
+
+    public long getEnd_date(int trip_id, int sequence_id) {
+        return siteInputDao.getEnd_date(trip_id, sequence_id);
+    }
+
+    public long getEnd_time(int trip_id, int sequence_id) {
+        return siteInputDao.getEnd_time(trip_id, sequence_id);
+    }
+
+    public double getTrailer_gross_quantity(int trip_id, int sequence_id) {
+        return siteInputDao.getTrailer_gross_quantity(trip_id, sequence_id);
+    }
+
+    public double getTrailer_net_quantity(int trip_id, int sequence_id) {
+        return siteInputDao.getTrailer_net_quantity(trip_id, sequence_id);
+    }
+
+    public double getStart_meter_reading(int trip_id, int sequence_id) {
+        return siteInputDao.getStart_meter_reading(trip_id, sequence_id);
+    }
+
+    public double getEnd_meter_reading(int trip_id, int sequence_id) {
+        return siteInputDao.getEnd_meter_reading(trip_id, sequence_id);
+    }
+
+    public double getPickup_gross_quantity(int trip_id, int sequence_id) {
+        return siteInputDao.getPickup_gross_quantity(trip_id, sequence_id);
+    }
+
+    public double getPickup_net_quantity(int trip_id, int sequence_id) {
+        return siteInputDao.getPickup_net_quantity(trip_id, sequence_id);
+    }
+
+    public int getBOLNumber(int trip_id, int sequence_id) {
+        return siteInputDao.getBol_number(trip_id, sequence_id);
+    }
+
+    public double getPickup_ratio(int trip_id, int sequence_id) {
+        return siteInputDao.getPickup_ratio(trip_id, sequence_id);
     }
 }

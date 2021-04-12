@@ -85,8 +85,8 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
         List<String> productType = new ArrayList<>();
-        //TODO force user to select one
-        productType.add("select product type");
+
+        productType.add("Select product type");
         productType.add("87 AKI");
         productType.add("89 AKI");
         productType.add("92 AKI");
@@ -253,8 +253,9 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         }
     }
 
+    //TODO rewrite if statements to something more performance friendly
+    //TODO check input validation after changing inputs to numberDoubles
     public void validateAndSubmitFormData() {
-        //TODO Need to add validation for driver input before allowing the driver to press submit button
         //productType = editTextProductType.getText().toString();
         startDate = editTextStartDate.getText().toString();
         startTime = editTextStartTime.getText().toString();
@@ -269,7 +270,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         bolNumber = editTextBOLNumber.getText().toString();
 
 //        Validate product type
-        if (yourProduct.equals("") || yourProduct.equals("select product type")) {
+        if (yourProduct.equals("") || yourProduct.equals("Select product type")) {
             Toast.makeText(this, "Please select product type", Toast.LENGTH_SHORT).show();
             spinnerProductType.requestFocus();
         }
