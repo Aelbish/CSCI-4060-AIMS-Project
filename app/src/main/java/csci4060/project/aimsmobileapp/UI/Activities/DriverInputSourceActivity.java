@@ -1,6 +1,7 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -80,11 +81,19 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
     String pathToFile;
     String yourProduct;
     private Spinner spinnerProductType;
+    private final DataRepository repository = AIMSApp.repository;
+    int trip_id;
+    int load_id;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_source);
+
+        Bundle bundle = getIntent().getExtras();
+        trip_id = Integer.parseInt(bundle.getString("TripId"));
+        load_id = Integer.parseInt(bundle.getString("SeqNum"));
 
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
@@ -116,6 +125,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         /**Get start date**/
         editTextStartDate = (EditText) findViewById(R.id.editTextStartDate);
         editTextStartDate.setInputType(InputType.TYPE_NULL);
+        editTextStartDate.setText(repository.getStart_dateSource(trip_id, load_id));
         editTextStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +136,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         /**Get start time**/
         editTextStartTime = (EditText) findViewById(R.id.editTextStartTime);
         editTextStartTime.setInputType(InputType.TYPE_NULL);
+        editTextStartTime.setText(repository.getStart_timeSource(trip_id, load_id));
         editTextStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +147,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         /**Get end date**/
         editTextEndDate = (EditText) findViewById(R.id.editTextEndDate);
         editTextEndDate.setInputType(InputType.TYPE_NULL);
+        editTextEndDate.setText(repository.getEnd_dateSource(trip_id, load_id));
         editTextEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +158,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         /**Get end time**/
         editTextEndTime = (EditText) findViewById(R.id.editTextEndTime);
         editTextEndTime.setInputType(InputType.TYPE_NULL);
+        editTextEndTime.setText(repository.getEnd_timeSource(trip_id, load_id));
         editTextEndTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,12 +166,25 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             }
         });
         editTextTrailerGrossQuantity = (EditText) findViewById(R.id.editTextTrailerGrossQuantity);
+        editTextTrailerGrossQuantity.setText(Double.toString(repository.getTrailer_gross_quantitySource(trip_id, load_id)));
+
         editTextTrailerNetQuantity = (EditText) findViewById(R.id.editTextTrailerNetQuantity);
+        editTextTrailerNetQuantity.setText(Double.toString(repository.getTrailer_net_quantitySource(trip_id, load_id)));
+
         editTextStartMeterReading = (EditText) findViewById(R.id.editTextStartMeterReading);
+        editTextStartMeterReading.setText(Double.toString(repository.getStart_meter_readingSource(trip_id, load_id)));
+
         editTextEndMeterReading = (EditText) findViewById(R.id.editTextEndMeterReading);
+        editTextEndMeterReading.setText(Double.toString(repository.getEnd_meter_readingSource(trip_id, load_id)));
+
         editTextPickupGrossQuantity = (EditText) findViewById(R.id.editTextPickupGrossQuantity);
+        editTextPickupGrossQuantity.setText(Double.toString(repository.getPickup_gross_quantitySource(trip_id, load_id)));
+
         editTextPickupNetQuantity = (EditText) findViewById(R.id.editTextPickupNetQuantity);
+        editTextPickupNetQuantity.setText(Double.toString(repository.getPickup_net_quantitySource(trip_id, load_id)));
+
         editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
+        editTextBOLNumber.setText(Integer.toString(repository.getBOLNumberSource(trip_id, load_id)));
 
         /**Camera Button**/
         buttonTakePicture = findViewById(R.id.buttonTakePicture);
@@ -305,7 +331,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter trailer gross quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerGrossQuantity.setError("Please enter trailer gross quantity");
             editTextTrailerGrossQuantity.requestFocus();
-        } else if (!trailerGrossQuantity.matches("[0-9]+")) {
+        } else if (!trailerGrossQuantity.matches("[0-9]+\\.*[0-9]*")) {
             Toast.makeText(this, "Please enter valid trailer gross quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerGrossQuantity.setError("Please enter trailer valid gross quantity");
             editTextTrailerGrossQuantity.requestFocus();
@@ -313,7 +339,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter trailer net quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerNetQuantity.setError("Please enter trailer net quantity");
             editTextTrailerNetQuantity.requestFocus();
-        } else if (!trailerNetQuantity.matches("[0-9]+")) {
+        } else if (!trailerNetQuantity.matches("[0-9]+\\.[0-9]*")) {
             Toast.makeText(this, "Please enter valid net quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerNetQuantity.setError("Please enter valid net quantity");
             editTextTrailerNetQuantity.requestFocus();
@@ -325,7 +351,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter beginning meter reading");
             editTextStartMeterReading.requestFocus();
-        } else if (!startMeterReading.matches("[0-9]+")) {
+        } else if (!startMeterReading.matches("[0-9]+\\.[0-9]*")) {
             Toast.makeText(this, "Please enter valid beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter valid beginning meter reading");
             editTextStartMeterReading.requestFocus();
@@ -336,7 +362,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter ending meter reading");
             editTextEndMeterReading.requestFocus();
-        } else if (!endMeterReading.matches("[0-9]+")) {
+        } else if (!endMeterReading.matches("[0-9]+\\.[0-9]*")) {
             Toast.makeText(this, "Please enter valid ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter valid ending meter reading");
             editTextEndMeterReading.requestFocus();
@@ -348,7 +374,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter pickup gross quantity", Toast.LENGTH_SHORT).show();
             editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
             editTextPickupGrossQuantity.requestFocus();
-        } else if (!pickupGrossQuantity.matches("[0-9]+")) {
+        } else if (!pickupGrossQuantity.matches("[0-9]+\\.[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup gross quantity", Toast.LENGTH_SHORT).show();
             editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
             editTextPickupGrossQuantity.requestFocus();
@@ -360,7 +386,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextPickupNetQuantity.setError("Please enter pickup net quantity");
             editTextPickupNetQuantity.requestFocus();
-        } else if (!pickupNetQuantity.matches("[0-9]+")) {
+        } else if (!pickupNetQuantity.matches("[0-9]+\\.[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextPickupNetQuantity.setError("Please enter pickup net quantity");
             editTextPickupNetQuantity.requestFocus();
@@ -392,6 +418,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             pickupGrossToNetRatio = Double.parseDouble(pickupNetQuantity) / Double.parseDouble(pickupGrossQuantity);
 
             addSourceInputToDatabase();
+
 //            callApiAndSendData();
 
         }
@@ -399,12 +426,6 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
     }
 
     private void addSourceInputToDatabase(){
-        Bundle bundle = getIntent().getExtras();
-        DataRepository repository = AIMSApp.repository;
-
-        int trip_id = Integer.parseInt(bundle.getString("TripId"));
-        int load_id = Integer.parseInt(bundle.getString("SeqNum"));
-
         repository.addSourceInput(new SourceInput(trip_id, load_id));
         repository.setProductTypeSource(yourProduct, trip_id, load_id);
         repository.setStart_dateSource(startDate, trip_id, load_id);
