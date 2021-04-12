@@ -61,7 +61,7 @@ public final class AppDatabase_Impl extends AppDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(10) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(11) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Driver` (`driver_code` TEXT NOT NULL, `driver_name` TEXT, `truck_id` INTEGER NOT NULL, `truck_code` TEXT, `truck_description` TEXT, `trailer_id` INTEGER NOT NULL, `trailer_code` TEXT, `trailer_description` TEXT, PRIMARY KEY(`driver_code`))");
@@ -71,10 +71,10 @@ public final class AppDatabase_Impl extends AppDatabase {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Vendor` (`destination_code` TEXT NOT NULL, `destination_name` TEXT, `address_1` TEXT, `address_2` TEXT, `city` TEXT, `state_short` TEXT, `postal_code` INTEGER NOT NULL, `number` INTEGER NOT NULL, PRIMARY KEY(`destination_code`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Delivery` (`number` INTEGER NOT NULL, `delivery_req_number` INTEGER NOT NULL, `delivery_req_line_number` INTEGER NOT NULL, `product_id` INTEGER NOT NULL, `product_code` TEXT, `product_description` TEXT, `requested_quantity` REAL NOT NULL, `unit_of_measurement` TEXT, `fill` TEXT, PRIMARY KEY(`number`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `DeliveredProduct` (`sequence_number` INTEGER NOT NULL, `bol_number` INTEGER NOT NULL, `fuel_product` TEXT, `start_load` INTEGER NOT NULL, `end_load` INTEGER NOT NULL, `gross_picked_up` REAL NOT NULL, `net_picked_up` REAL NOT NULL, `product_name` TEXT, `gross_delivered` REAL NOT NULL, `net_delivered` REAL NOT NULL, `ticket_num` INTEGER NOT NULL, `start_truck_meter` REAL NOT NULL, `end_truck_meter` REAL NOT NULL, `start_stick_meter` REAL NOT NULL, `end_stick_meter` REAL NOT NULL, `delivery_comments` TEXT, PRIMARY KEY(`sequence_number`))");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `SiteInput` (`trip_id` INTEGER NOT NULL, `sequence_id` INTEGER NOT NULL, `product_type` TEXT, `start_date` INTEGER NOT NULL, `start_time` INTEGER NOT NULL, `end_date` INTEGER NOT NULL, `end_time` INTEGER NOT NULL, `trailer_gross_quantity` REAL NOT NULL, `trailer_net_quantity` REAL NOT NULL, `start_meter_reading` REAL NOT NULL, `end_meter_reading` REAL NOT NULL, `pickup_gross_quantity` REAL NOT NULL, `pickup_net_quantity` REAL NOT NULL, `bol_number` INTEGER NOT NULL, `pickup_ratio` REAL NOT NULL, PRIMARY KEY(`trip_id`, `sequence_id`))");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `SourceInput` (`trip_id` INTEGER NOT NULL, `sequence_id` INTEGER NOT NULL, `product_type` TEXT, `start_date` INTEGER NOT NULL, `start_time` INTEGER NOT NULL, `end_date` INTEGER NOT NULL, `end_time` INTEGER NOT NULL, `trailer_gross_quantity` REAL NOT NULL, `trailer_net_quantity` REAL NOT NULL, `start_meter_reading` REAL NOT NULL, `end_meter_reading` REAL NOT NULL, `pickup_gross_quantity` REAL NOT NULL, `pickup_net_quantity` REAL NOT NULL, `bol_number` INTEGER NOT NULL, `pickup_ratio` REAL NOT NULL, PRIMARY KEY(`trip_id`, `sequence_id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `SiteInput` (`trip_id` INTEGER NOT NULL, `sequence_id` INTEGER NOT NULL, `product_type` TEXT, `start_date` TEXT, `start_time` TEXT, `end_date` TEXT, `end_time` TEXT, `begin_site_container_reading` REAL NOT NULL, `end_site_container_reading` REAL NOT NULL, `start_meter_reading` REAL NOT NULL, `end_meter_reading` REAL NOT NULL, `delivered_gross_quantity` REAL NOT NULL, `delivered_net_quantity` REAL NOT NULL, `delivery_ticket_number` INTEGER NOT NULL, `deliveryComment` TEXT, `pickup_ratio` REAL NOT NULL, PRIMARY KEY(`trip_id`, `sequence_id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `SourceInput` (`trip_id` INTEGER NOT NULL, `sequence_id` INTEGER NOT NULL, `product_type` TEXT, `start_date` TEXT, `start_time` TEXT, `end_date` TEXT, `end_time` TEXT, `trailer_gross_quantity` REAL NOT NULL, `trailer_net_quantity` REAL NOT NULL, `start_meter_reading` REAL NOT NULL, `end_meter_reading` REAL NOT NULL, `pickup_gross_quantity` REAL NOT NULL, `pickup_net_quantity` REAL NOT NULL, `bol_number` INTEGER NOT NULL, `pickup_ratio` REAL NOT NULL, PRIMARY KEY(`trip_id`, `sequence_id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ee9d88ec97ed1c39544f8c2e75d149fa')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '64106c494362ea2e49179675d64b398f')");
       }
 
       @Override
@@ -257,21 +257,22 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoDeliveredProduct + "\n"
                   + " Found:\n" + _existingDeliveredProduct);
         }
-        final HashMap<String, TableInfo.Column> _columnsSiteInput = new HashMap<String, TableInfo.Column>(15);
+        final HashMap<String, TableInfo.Column> _columnsSiteInput = new HashMap<String, TableInfo.Column>(16);
         _columnsSiteInput.put("trip_id", new TableInfo.Column("trip_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSiteInput.put("sequence_id", new TableInfo.Column("sequence_id", "INTEGER", true, 2, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSiteInput.put("product_type", new TableInfo.Column("product_type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("start_date", new TableInfo.Column("start_date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("start_time", new TableInfo.Column("start_time", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("end_date", new TableInfo.Column("end_date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("end_time", new TableInfo.Column("end_time", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("trailer_gross_quantity", new TableInfo.Column("trailer_gross_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("trailer_net_quantity", new TableInfo.Column("trailer_net_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("start_date", new TableInfo.Column("start_date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("start_time", new TableInfo.Column("start_time", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("end_date", new TableInfo.Column("end_date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("end_time", new TableInfo.Column("end_time", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("begin_site_container_reading", new TableInfo.Column("begin_site_container_reading", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("end_site_container_reading", new TableInfo.Column("end_site_container_reading", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSiteInput.put("start_meter_reading", new TableInfo.Column("start_meter_reading", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSiteInput.put("end_meter_reading", new TableInfo.Column("end_meter_reading", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("pickup_gross_quantity", new TableInfo.Column("pickup_gross_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("pickup_net_quantity", new TableInfo.Column("pickup_net_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSiteInput.put("bol_number", new TableInfo.Column("bol_number", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("delivered_gross_quantity", new TableInfo.Column("delivered_gross_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("delivered_net_quantity", new TableInfo.Column("delivered_net_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("delivery_ticket_number", new TableInfo.Column("delivery_ticket_number", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSiteInput.put("deliveryComment", new TableInfo.Column("deliveryComment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSiteInput.put("pickup_ratio", new TableInfo.Column("pickup_ratio", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysSiteInput = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesSiteInput = new HashSet<TableInfo.Index>(0);
@@ -286,10 +287,10 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsSourceInput.put("trip_id", new TableInfo.Column("trip_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSourceInput.put("sequence_id", new TableInfo.Column("sequence_id", "INTEGER", true, 2, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSourceInput.put("product_type", new TableInfo.Column("product_type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSourceInput.put("start_date", new TableInfo.Column("start_date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSourceInput.put("start_time", new TableInfo.Column("start_time", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSourceInput.put("end_date", new TableInfo.Column("end_date", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSourceInput.put("end_time", new TableInfo.Column("end_time", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSourceInput.put("start_date", new TableInfo.Column("start_date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSourceInput.put("start_time", new TableInfo.Column("start_time", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSourceInput.put("end_date", new TableInfo.Column("end_date", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSourceInput.put("end_time", new TableInfo.Column("end_time", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSourceInput.put("trailer_gross_quantity", new TableInfo.Column("trailer_gross_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSourceInput.put("trailer_net_quantity", new TableInfo.Column("trailer_net_quantity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSourceInput.put("start_meter_reading", new TableInfo.Column("start_meter_reading", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -309,7 +310,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "ee9d88ec97ed1c39544f8c2e75d149fa", "7f0f62f613a9420bfc2b53545b320ed6");
+    }, "64106c494362ea2e49179675d64b398f", "946ded555ab7c20ef4a4e7c2a41c5b39");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

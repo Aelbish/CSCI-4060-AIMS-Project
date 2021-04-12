@@ -43,8 +43,6 @@ csci4060/project/aimsmobileapp/database/entity/Driver.java
  csci4060.project.aimsmobileapp.database.entity.Driver
 csci4060/project/aimsmobileapp/database/AppDatabase.java
  csci4060.project.aimsmobileapp.database.AppDatabase
-csci4060/project/aimsmobileapp/UI/Activities/Capture.java
- csci4060.project.aimsmobileapp.UI.Activities.Capture
 csci4060/project/aimsmobileapp/database/entity/SourceInput.java
  csci4060.project.aimsmobileapp.database.entity.SourceInput
 csci4060/project/aimsmobileapp/UI/Fragments/RouteFragment.java
@@ -66,6 +64,7 @@ csci4060/project/aimsmobileapp/database/dao/VendorDao.java
 csci4060/project/aimsmobileapp/UI/Activities/DriverInputSiteActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$1
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$10
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$2
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$3
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$4
@@ -73,6 +72,7 @@ csci4060/project/aimsmobileapp/UI/Activities/DriverInputSiteActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$6
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$7
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$8
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$9
 csci4060/project/aimsmobileapp/BuildConfig.java
  csci4060.project.aimsmobileapp.BuildConfig
 csci4060/project/aimsmobileapp/AIMSApp.java
@@ -92,6 +92,8 @@ csci4060/project/aimsmobileapp/UI/Activities/MainScreenActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity$1
 csci4060/project/aimsmobileapp/database/dao/DeliveryDao.java
  csci4060.project.aimsmobileapp.database.dao.DeliveryDao
+csci4060/project/aimsmobileapp/UI/Activities/CaptureActivity.java
+ csci4060.project.aimsmobileapp.UI.Activities.CaptureActivity
 csci4060/project/aimsmobileapp/UI/Activities/TripActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.TripActivity
  csci4060.project.aimsmobileapp.UI.Activities.TripActivity$1

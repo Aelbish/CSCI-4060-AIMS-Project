@@ -32,6 +32,7 @@ import java.util.List;
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.SignatureCapture;
 import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
@@ -72,6 +73,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
     /**Scan button for barcode scanner**/
     Button buttonScan;
+    Button buttonSignature;
 
     String yourProduct;
 
@@ -193,6 +195,16 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 
+        /**For signature**/
+        buttonSignature = findViewById(R.id.buttonSignature);
+        buttonSignature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DriverInputSiteActivity.this, SignatureCapture.class);
+                startActivity(intent);
+            }
+        });
+        
         /**Barcode Scanner Button**/
         buttonScan = findViewById(R.id.buttonScan);
         buttonScan.setOnClickListener(new View.OnClickListener() {
@@ -209,6 +221,8 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             }
         });
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
