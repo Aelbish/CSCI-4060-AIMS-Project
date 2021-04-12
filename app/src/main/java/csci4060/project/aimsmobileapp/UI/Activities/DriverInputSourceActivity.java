@@ -331,7 +331,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter trailer gross quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerGrossQuantity.setError("Please enter trailer gross quantity");
             editTextTrailerGrossQuantity.requestFocus();
-        } else if (!trailerGrossQuantity.matches("[0-9]+\\.*[0-9]*")) {
+        } else if (!trailerGrossQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid trailer gross quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerGrossQuantity.setError("Please enter trailer valid gross quantity");
             editTextTrailerGrossQuantity.requestFocus();
@@ -339,7 +339,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter trailer net quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerNetQuantity.setError("Please enter trailer net quantity");
             editTextTrailerNetQuantity.requestFocus();
-        } else if (!trailerNetQuantity.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!trailerNetQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid net quantity", Toast.LENGTH_SHORT).show();
             editTextTrailerNetQuantity.setError("Please enter valid net quantity");
             editTextTrailerNetQuantity.requestFocus();
@@ -351,7 +351,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter beginning meter reading");
             editTextStartMeterReading.requestFocus();
-        } else if (!startMeterReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!startMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid beginning meter reading", Toast.LENGTH_SHORT).show();
             editTextStartMeterReading.setError("Please enter valid beginning meter reading");
             editTextStartMeterReading.requestFocus();
@@ -362,7 +362,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter ending meter reading");
             editTextEndMeterReading.requestFocus();
-        } else if (!endMeterReading.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!endMeterReading.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid ending meter reading", Toast.LENGTH_SHORT).show();
             editTextEndMeterReading.setError("Please enter valid ending meter reading");
             editTextEndMeterReading.requestFocus();
@@ -374,7 +374,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter pickup gross quantity", Toast.LENGTH_SHORT).show();
             editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
             editTextPickupGrossQuantity.requestFocus();
-        } else if (!pickupGrossQuantity.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!pickupGrossQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup gross quantity", Toast.LENGTH_SHORT).show();
             editTextPickupGrossQuantity.setError("Please enter pickup gross quantity");
             editTextPickupGrossQuantity.requestFocus();
@@ -386,7 +386,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             Toast.makeText(this, "Please enter pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextPickupNetQuantity.setError("Please enter pickup net quantity");
             editTextPickupNetQuantity.requestFocus();
-        } else if (!pickupNetQuantity.matches("[0-9]+\\.[0-9]*")) {
+        } else if (!pickupNetQuantity.matches("[0-9]+\\.?[0-9]*")) {
             Toast.makeText(this, "Please enter valid pickup net quantity", Toast.LENGTH_SHORT).show();
             editTextPickupNetQuantity.setError("Please enter pickup net quantity");
             editTextPickupNetQuantity.requestFocus();
