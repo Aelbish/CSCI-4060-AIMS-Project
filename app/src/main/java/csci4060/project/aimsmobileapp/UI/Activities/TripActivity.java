@@ -28,10 +28,10 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             txtTripId,
             txtDriverCode,
             txtDriverName,
-            txtTruckId,
+            //txtTruckId,
             txtTruckCode,
             txtTruckDesc,
-            txtTrailerId,
+            //txtTrailerId,
             txtTrailerCode,
             txtTrailerDesc,
             txtTripName,
@@ -41,7 +41,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             txtAddress,
             txtCity,
             txtPostalCode,
-            txtProductId,
+            //txtProductId,
             txtProductCode,
             txtProductDesc,
             txtRequestedQty,
@@ -52,10 +52,10 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             TripId,
             DriverCode,
             DriverName,
-            TruckId,
+            //TruckId,
             TruckCode,
             TruckDesc,
-            TrailerId,
+            //TrailerId,
             TrailerCode,
             TrailerDesc,
             TripName,
@@ -65,7 +65,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             Address,
             City,
             PostalCode,
-            ProductId,
+            //ProductId,
             ProductCode,
             ProductDesc,
             RequestedQty,
@@ -83,10 +83,10 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtTripId = findViewById(R.id.TripId);
         txtDriverCode = findViewById(R.id.DriverCode);
         txtDriverName = findViewById(R.id.DriverName);
-        txtTruckId = findViewById(R.id.TruckId);
+        //txtTruckId = findViewById(R.id.TruckId);
         txtTruckCode = findViewById(R.id.TruckCode);
         txtTruckDesc = findViewById(R.id.TruckDesc);
-        txtTrailerId = findViewById(R.id.TrailerId);
+       // txtTrailerId = findViewById(R.id.TrailerId);
         txtTrailerCode = findViewById(R.id.TrailerCode);
         txtTrailerDesc = findViewById(R.id.TrailerDesc);
         txtTripName = findViewById(R.id.TripName);
@@ -96,7 +96,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtAddress = findViewById(R.id.Address1);
         txtCity = findViewById(R.id.City);
         txtPostalCode = findViewById(R.id.PostalCode);
-        txtProductId = findViewById(R.id.ProductId);
+        //txtProductId = findViewById(R.id.ProductId);
         txtProductCode = findViewById(R.id.ProductCode);
         txtProductDesc = findViewById(R.id.ProductDesc);
         txtRequestedQty = findViewById(R.id.RequestedQty);
@@ -121,10 +121,10 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         TripId = bundle.getString("TripId");
         DriverCode = bundle.getString("DriverCode");
         DriverName = bundle.getString("DriverName");
-        TruckId = bundle.getString("TruckId");
+        //TruckId = bundle.getString("TruckId");
         TruckCode = bundle.getString("TruckCode");
         TruckDesc = bundle.getString("TruckDesc");
-        TrailerId = bundle.getString("TrailerId");
+        //TrailerId = bundle.getString("TrailerId");
         TrailerCode = bundle.getString("TrailerCode");
         TrailerDesc = bundle.getString("TrailerDesc");
         TripName = bundle.getString("TripName");
@@ -134,7 +134,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         Address = bundle.getString("Address");
         City = bundle.getString("City");
         PostalCode = bundle.getString("PostalCode");
-        ProductId = bundle.getString("ProductId");
+        //ProductId = bundle.getString("ProductId");
         ProductCode = bundle.getString("ProductCode");
         ProductDesc = bundle.getString("ProductDesc");
         RequestedQty = bundle.getString("RequestedQty");
@@ -147,10 +147,10 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtTripId.setText("Trip id: " + TripId);
         txtDriverCode.setText("Driver code: " + DriverCode);
         txtDriverName.setText("Driver name: " + DriverName);
-        txtTruckId.setText("Truck id: " + TruckId);
+        //txtTruckId.setText("Truck id: " + TruckId);
         txtTruckCode.setText("Truck code: " + TruckCode);
         txtTruckDesc.setText("Truck Desc: " + TruckDesc);
-        txtTrailerId.setText("Trailer id: " + TrailerId);
+        //txtTrailerId.setText("Trailer id: " + TrailerId);
         txtTrailerCode.setText("Trailer code: " + TrailerCode);
         txtTrailerDesc.setText("Trailer Desc: " + TrailerDesc);
         txtTripName.setText("Trip name: " + TripName);
@@ -160,7 +160,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtAddress.setText("Address1: " + Address);
         txtCity.setText("City: " + City);
         txtPostalCode.setText("Postal code: " + PostalCode);
-        txtProductId.setText("Product id: " + ProductId);
+        //txtProductId.setText("Product id: " + ProductId);
         txtProductCode.setText("Product code: " + ProductCode);
         txtProductDesc.setText("Product desc: " + ProductDesc);
         txtRequestedQty.setText("Request qunatity: " + RequestedQty);
