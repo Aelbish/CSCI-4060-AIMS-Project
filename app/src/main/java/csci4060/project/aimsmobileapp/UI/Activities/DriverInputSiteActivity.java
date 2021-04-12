@@ -205,6 +205,19 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
         editTextBarcode = (EditText) findViewById(R.id.editTextBarcode);
 
+        editTextStartDate.setSelectAllOnFocus(true);
+        editTextStartTime.setSelectAllOnFocus(true);
+        editTextEndDate.setSelectAllOnFocus(true);
+        editTextEndTime.setSelectAllOnFocus(true);
+        editTextBeginSiteContainerReading.setSelectAllOnFocus(true);
+        editTextEndSiteContainerReading.setSelectAllOnFocus(true);
+        editTextStartMeterReading.setSelectAllOnFocus(true);
+        editTextEndMeterReading.setSelectAllOnFocus(true);
+        editTextDeliveredGrossQuantity.setSelectAllOnFocus(true);
+        editTextDeliveredNetQuantity.setSelectAllOnFocus(true);
+        editTextDeliveryTicketNumber.setSelectAllOnFocus(true);
+        editTextDeliveryComment.setSelectAllOnFocus(true);
+
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 

@@ -199,6 +199,18 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         editTextBOLNumber = (EditText) findViewById(R.id.editTextBOLNumber);
         editTextBOLNumber.setText(Integer.toString(repository.getBOLNumberSource(trip_id, load_id)));
 
+        editTextStartDate.setSelectAllOnFocus(true);
+        editTextStartTime.setSelectAllOnFocus(true);
+        editTextEndDate.setSelectAllOnFocus(true);
+        editTextEndTime.setSelectAllOnFocus(true);
+        editTextTrailerGrossQuantity.setSelectAllOnFocus(true);
+        editTextTrailerNetQuantity.setSelectAllOnFocus(true);
+        editTextStartMeterReading.setSelectAllOnFocus(true);
+        editTextEndMeterReading.setSelectAllOnFocus(true);
+        editTextPickupGrossQuantity.setSelectAllOnFocus(true);
+        editTextPickupNetQuantity.setSelectAllOnFocus(true);
+        editTextBOLNumber.setSelectAllOnFocus(true);
+
         /**Camera Button**/
         buttonTakePicture = findViewById(R.id.buttonTakePicture);
         if (Build.VERSION.SDK_INT >= 23) {
