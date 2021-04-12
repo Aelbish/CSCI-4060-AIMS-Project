@@ -110,6 +110,19 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         ArrayAdapter<String> productTypeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, productType);
         productTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerProductType.setAdapter(productTypeAdapter);
+
+        int spinnerPosition;
+        String productTypeDatabaseEntry = repository.getProduct_type(trip_id, load_id);
+
+        int i = 0;
+        for (String s : productType) {
+            if (productTypeDatabaseEntry != null && productTypeDatabaseEntry.equals(s)) {
+                spinnerPosition = i;
+                spinnerProductType.setSelection(spinnerPosition);
+            }
+            i++;
+        }
+
         spinnerProductType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
