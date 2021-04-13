@@ -75,22 +75,13 @@ public class SignatureCapture extends AppCompatActivity {
                 Bitmap signatureBitmap = signaturePad.getSignatureBitmap();
                 if (isSigned && addJpgSignatureToGallery(signatureBitmap)) {
                     Toast.makeText(SignatureCapture.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-                    //backtoform();
-
-                    Intent intent  = new Intent(Intent.ACTION_SEND);
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    signatureBitmap.compress(Bitmap.CompressFormat.PNG, 50, bs);
-                    intent.putExtra("byteArray", bs.toByteArray());
-                    intent.putExtra("status","done");
-                    setResult(RESULT_OK,intent);
-                    finish();
+                    backtoform(signatureBitmap);
 
                 } else {
                     Toast.makeText(SignatureCapture.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
                 }
                 if (isSigned && addSvgSignatureToGallery(signaturePad.getSignatureSvg())) {
                     Toast.makeText(SignatureCapture.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-                    //backtoform();
 
                 } else {
                     Toast.makeText(SignatureCapture.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
@@ -109,15 +100,16 @@ public class SignatureCapture extends AppCompatActivity {
 
     }
 
-//    public void backtoform()
-//    {
-//        Bundle b =new Bundle();
-//        b.putString("status","done");
-//        Intent intent  = new Intent(Intent.ACTION_SEND);
-//        intent.putExtras(b);
-//        setResult(RESULT_OK,intent);
-//        finish();
-//    }
+    public void backtoform(Bitmap bm)
+    {
+        Intent intent  = new Intent(Intent.ACTION_SEND);
+        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        intent.putExtra("byteArray", bs.toByteArray());
+        intent.putExtra("status","done");
+        setResult(RESULT_OK,intent);
+        finish();
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String permissions[], @NonNull int[] grantResults) {
