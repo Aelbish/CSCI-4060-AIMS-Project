@@ -42,6 +42,8 @@ import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+        private IntentIntegrator intentIntegrator;
     String
             startDate,
             startTime,
@@ -240,12 +242,11 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         
         /**Barcode Scanner Button**/
         buttonScan = findViewById(R.id.buttonScan);
+         intentIntegrator = new IntentIntegrator(this);
         buttonScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentIntegrator intentIntegrator = new IntentIntegrator(
-                        DriverInputSiteActivity.this
-                );
+
                 intentIntegrator.setPrompt("Use volume up key for flash");
                 intentIntegrator.setBeepEnabled(true);
                 intentIntegrator.setOrientationLocked(true);
@@ -260,54 +261,55 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /**Signature**/
-        switch(requestCode) {
-            case SIGNATURE_ACTIVITY:
-                if (resultCode == RESULT_OK) {
 
-                    String status = data.getStringExtra("status").toString().trim();
-                    if (status.equalsIgnoreCase("done")) {
-                        Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.TOP, 105, 50);
 
-                        if(data.hasExtra("byteArray")) {
-                            Bitmap b = BitmapFactory.decodeByteArray(
-                                    data.getByteArrayExtra("byteArray"),0,data.getByteArrayExtra("byteArray").length);
-                            imageSignature.setImageBitmap(b);
-                            toast.show();
-                        }
 
+        if(requestCode==SIGNATURE_ACTIVITY) {
+
+            /**Signature**/
+
+            if (resultCode == RESULT_OK) {
+                String status = data.getStringExtra("status").toString().trim();
+                if (status.equalsIgnoreCase("done")) {
+                    Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 105, 50);
+                    if (data.hasExtra("byteArray")) {
+                        Bitmap b = BitmapFactory.decodeByteArray(
+                                data.getByteArrayExtra("byteArray"), 0, data.getByteArrayExtra("byteArray").length);
+                        imageSignature.setImageBitmap(b);
+                        toast.show();
                     }
-                    break;
                 }
+            }
+        }
+        if(requestCode==intentIntegrator.REQUEST_CODE){
 
-
-            case BARCODE_ACTIVITY:
                 /**Scan barcode**/
                 IntentResult intentResult = IntentIntegrator.parseActivityResult(
                         requestCode, resultCode, data
                 );
-                if (intentResult.getContents() != null) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(
-                            DriverInputSiteActivity.this
-                    );
-                    builder.setTitle("Result");
-                    builder.setMessage(intentResult.getContents());
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                            barcode = intentResult.getContents();
-                            editTextBarcode.setText(barcode);
-                        }
-                    });
-                    builder.show();
-                } else {
-                    Toast.makeText(getApplicationContext()
-                            , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+
+                    if (intentResult.getContents() != null) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                DriverInputSiteActivity.this
+                        );
+                        builder.setTitle("Result");
+                        builder.setMessage(intentResult.getContents());
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                barcode = intentResult.getContents();
+                                editTextBarcode.setText(barcode);
+                            }
+                        });
+                        builder.show();
+                    } else {
+                        Toast.makeText(getApplicationContext()
+                                , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                break;
-        }
+
     }
 
     /***Start and End Date*/
@@ -527,4 +529,5 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                         "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id))+"\n" +
                         "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
     }
+
 }
