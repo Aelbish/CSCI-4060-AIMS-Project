@@ -10,9 +10,13 @@
     <com.github.gcacace.signaturepad.views.SignaturePad
         android:id="@+id/signaturePad"
         android:layout_width="393dp"
-        android:layout_height="634dp"
+        android:layout_height="659dp"
         sign:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        sign:layout_constraintEnd_toEndOf="parent"
+        sign:layout_constraintHorizontal_bias="0.0"
         sign:layout_constraintStart_toStartOf="parent"
+        sign:layout_constraintTop_toTopOf="parent"
+        sign:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout

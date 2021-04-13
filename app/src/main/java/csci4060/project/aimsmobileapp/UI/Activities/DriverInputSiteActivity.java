@@ -6,6 +6,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Gravity;
@@ -15,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -74,7 +78,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
     /**Scan button for barcode scanner**/
     Button buttonScan;
-    Button buttonSignature;
+    ImageView imageSignature;
 
     String yourProduct;
 
@@ -223,9 +227,8 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 
-        //TODO need to be able to capture the customer signature
-
         /**Signature Button**/
+        imageSignature= (ImageView) findViewById(R.id.imageSignature);
         Button buttonSignature = findViewById(R.id.buttonSignature);
         buttonSignature.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,12 +264,18 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         switch(requestCode) {
             case SIGNATURE_ACTIVITY:
                 if (resultCode == RESULT_OK) {
-                    Bundle bundle = data.getExtras();
-                    String status = bundle.getString("status").toString().trim();
+
+                    String status = data.getStringExtra("status").toString().trim();
                     if (status.equalsIgnoreCase("done")) {
                         Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.TOP, 105, 50);
-                        toast.show();
+
+                        if(data.hasExtra("byteArray")) {
+                            Bitmap b = BitmapFactory.decodeByteArray(
+                                    data.getByteArrayExtra("byteArray"),0,data.getByteArrayExtra("byteArray").length);
+                            imageSignature.setImageBitmap(b);
+                            toast.show();
+                        }
 
                     }
                     break;

@@ -7,16 +7,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +44,7 @@ public class SignatureCapture extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.saveButton);
         clearButton = (Button) findViewById(R.id.clearButton);
 
-        //change screen orientation to landscape mode
+        //change screen orientation to portrait mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -68,6 +64,7 @@ public class SignatureCapture extends AppCompatActivity {
                 saveButton.setEnabled(false);
                 clearButton.setEnabled(false);
                 isSigned=false;
+
             }
         });
 
@@ -78,14 +75,23 @@ public class SignatureCapture extends AppCompatActivity {
                 Bitmap signatureBitmap = signaturePad.getSignatureBitmap();
                 if (isSigned && addJpgSignatureToGallery(signatureBitmap)) {
                     Toast.makeText(SignatureCapture.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-                    backtoform();
+                    //backtoform();
+
+                    Intent intent  = new Intent(Intent.ACTION_SEND);
+                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                    signatureBitmap.compress(Bitmap.CompressFormat.PNG, 50, bs);
+                    intent.putExtra("byteArray", bs.toByteArray());
+                    intent.putExtra("status","done");
+                    setResult(RESULT_OK,intent);
+                    finish();
 
                 } else {
                     Toast.makeText(SignatureCapture.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
                 }
                 if (isSigned && addSvgSignatureToGallery(signaturePad.getSignatureSvg())) {
                     Toast.makeText(SignatureCapture.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-                    backtoform();
+                    //backtoform();
+
                 } else {
                     Toast.makeText(SignatureCapture.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
                 }
@@ -97,20 +103,21 @@ public class SignatureCapture extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signaturePad.clear();
+                isSigned=false;
             }
         });
 
     }
 
-    public void backtoform()
-    {
-        Bundle b =new Bundle();
-        b.putString("status","done");
-        Intent intent  = new Intent();
-        intent.putExtras(b);
-        setResult(RESULT_OK,intent);
-        SignatureCapture.this.finish();
-    }
+//    public void backtoform()
+//    {
+//        Bundle b =new Bundle();
+//        b.putString("status","done");
+//        Intent intent  = new Intent(Intent.ACTION_SEND);
+//        intent.putExtras(b);
+//        setResult(RESULT_OK,intent);
+//        finish();
+//    }
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String permissions[], @NonNull int[] grantResults) {
@@ -203,6 +210,5 @@ public class SignatureCapture extends AppCompatActivity {
             );
         }
     }
-
 
 }

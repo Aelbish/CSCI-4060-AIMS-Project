@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_signature_capture2.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\src\\main\\res\\layout\\activity_signature_capture2.xml"
-    },
-    {
         "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_signature_capture2.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\src\\main\\res\\layout\\activity_signature_capture2.xml"
     },
     {
         "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectbeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_aims_logo.png.flat",
