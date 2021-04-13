@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -80,7 +81,8 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     private Spinner spinnerProductType;
 
     private final DataRepository repository = AIMSApp.repository;
-    public static final int SIGNATURE_ACTIVITY = 1;
+    public static final int SIGNATURE_ACTIVITY = 10;
+    public static final int BARCODE_ACTIVITY = 20;
 
     int trip_id;
     int load_id;
@@ -221,13 +223,15 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 
-        /**For signature**/
-        buttonSignature = findViewById(R.id.buttonSignature);
+        //TODO need to be able to capture the customer signature
+
+        /**Signature Button**/
+        Button buttonSignature = findViewById(R.id.buttonSignature);
         buttonSignature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DriverInputSiteActivity.this, SignatureCapture.class);
-                startActivity(intent);
+                startActivityForResult(intent, SIGNATURE_ACTIVITY);
             }
         });
         
@@ -253,28 +257,47 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /**Scan barcode**/
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(
-                requestCode, resultCode, data
-        );
-        if (intentResult.getContents()!= null){
-            AlertDialog.Builder builder = new AlertDialog.Builder(
-                    DriverInputSiteActivity.this
-            );
-            builder.setTitle("Result");
-            builder.setMessage(intentResult.getContents());
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    barcode = intentResult.getContents();
-                    editTextBarcode.setText(barcode);
+        /**Signature**/
+        switch(requestCode) {
+            case SIGNATURE_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+                    Bundle bundle = data.getExtras();
+                    String status = bundle.getString("status").toString().trim();
+                    if (status.equalsIgnoreCase("done")) {
+                        Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.TOP, 105, 50);
+                        toast.show();
+
+                    }
+                    break;
                 }
-            });
-            builder.show();
-        }else {
-            Toast.makeText(getApplicationContext()
-                    , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+
+
+            case BARCODE_ACTIVITY:
+                /**Scan barcode**/
+                IntentResult intentResult = IntentIntegrator.parseActivityResult(
+                        requestCode, resultCode, data
+                );
+                if (intentResult.getContents() != null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            DriverInputSiteActivity.this
+                    );
+                    builder.setTitle("Result");
+                    builder.setMessage(intentResult.getContents());
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            barcode = intentResult.getContents();
+                            editTextBarcode.setText(barcode);
+                        }
+                    });
+                    builder.show();
+                } else {
+                    Toast.makeText(getApplicationContext()
+                            , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     }
 
