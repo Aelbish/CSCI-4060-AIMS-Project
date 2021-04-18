@@ -2006,6 +2006,7 @@ id linear
 id linearLayout
 id listMode
 id list_item
+id map_view
 id masked
 id material_clock_display
 id material_clock_face

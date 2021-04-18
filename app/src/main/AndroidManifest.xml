@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="csci4060.project.aimsmobileapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- For taking picture of BOL -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,7 +17,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/Theme.AppCompat.Light"
+        android:hardwareAccelerated="true">
+        <meta-data android:name="com.here.sdk.access_key_id" android:value="ufAS_-dPdTNOoycydR8MeQ"/>
+        <meta-data android:name="com.here.sdk.access_key_secret" android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw"/>
         <activity android:name=".UI.SignatureCapture" />
         <activity android:name=".UI.Activities.DriverInputSiteActivity" />
         <activity android:name=".UI.Activities.DriverInputSourceActivity" />

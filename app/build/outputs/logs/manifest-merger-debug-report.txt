@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\723282c7994550298e26d567cb0e519b\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\9570f34841c72a34d773388f89286f55\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\0cb9ff486f5edb59977e253831b932c8\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -21,6 +21,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\sushant kunw
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b031f14a13aa85262b548d6b8b8f6c30\lifecycle-livedata-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\23425d6657fb029542ee4d374143963c\jetified-volley-1.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\22df6733212b0b2ed870f8f0f4308017\jetified-signature-pad-1.2.1\AndroidManifest.xml:2:1-13:12
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5dbc57b58024a8f25b5db3778841ef05\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\47185ad723d232e6208c03e6fdcb34a4\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\f76237f51a0f7e63bcb3c74d5b185ef8\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -52,47 +53,59 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\sushant kunwar\.
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\7b69e6173655717e69f5c7f6f1302d3b\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\8fe2a3deec1ef3dd659aa5f55d73edd7\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\adf8d4ec58c98f5b37616cb4b06b74f4\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
 	package
 		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:1-53:12
 		INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:2:11-69
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:5:5-79
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:5:5-78
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:11:5-79
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:7:5-75
+	android:name
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:7:22-73
 uses-permission#android.permission. ACCESS_COARSE_LOCATION
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:6:5-82
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:8:5-82
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:6:22-79
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:8:22-79
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:7:5-67
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:9:5-67
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:12:5-67
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:7:22-64
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:8:5-81
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:8:22-78
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:9:5-65
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:11:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:9:22-62
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:11:22-62
 application
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:11:5-46:19
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:13:5-51:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\723282c7994550298e26d567cb0e519b\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\723282c7994550298e26d567cb0e519b\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\9570f34841c72a34d773388f89286f55\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -103,6 +116,8 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunw
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:45:5-53:19
 MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\22df6733212b0b2ed870f8f0f4308017\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
 MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\22df6733212b0b2ed870f8f0f4308017\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:14:5-21:19
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:14:5-21:19
 MERGED from [androidx.core:core:1.3.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\90ecde5404179819368e2359ab771b50\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -110,79 +125,93 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\su
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:17:9-41
+	android:hardwareAccelerated
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:21:9-43
 	android:roundIcon
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:16:9-54
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:18:9-54
 	android:icon
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:18:9-53
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:20:9-53
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:12:9-32
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:14:9-32
+meta-data#com.here.sdk.access_key_id
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:22:9-102
+	android:value
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:22:62-100
+	android:name
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:22:20-61
+meta-data#com.here.sdk.access_key_secret
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:23:9-170
+	android:value
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:23:66-168
+	android:name
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:23:20-65
 activity#csci4060.project.aimsmobileapp.UI.SignatureCapture
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:19:9-57
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:24:9-57
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:19:19-54
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:24:19-54
 activity#csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:20:9-75
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:25:9-75
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:20:19-72
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:25:19-72
 activity#csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:21:9-77
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:26:9-77
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:21:19-74
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:26:19-74
 activity#csci4060.project.aimsmobileapp.UI.Activities.TripActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:22:9-64
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:27:9-64
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:22:19-61
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:27:19-61
 activity#csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:23:9-70
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:28:9-70
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:23:19-67
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:28:19-67
 activity#csci4060.project.aimsmobileapp.UI.Activities.MainActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:24:9-30:20
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:29:9-35:20
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:24:19-61
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:29:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:33:27-74
 activity#csci4060.project.aimsmobileapp.UI.Activities.CaptureActivity
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:31:9-35:57
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:36:9-40:57
 	android:screenOrientation
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:33:13-49
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:38:13-49
 	android:stateNotNeeded
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:34:13-42
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:39:13-42
 	android:theme
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:35:13-54
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:40:13-54
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:32:13-58
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:37:13-58
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:37:9-45:20
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:42:9-50:20
 	android:grantUriPermissions
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:41:13-47
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:46:13-47
 	android:authorities
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:39:13-78
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:44:13-78
 	android:exported
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:40:13-37
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:38:13-62
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:43:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:42:13-44:54
+ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:47:13-49:54
 	android:resource
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:44:17-51
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:49:17-51
 	android:name
-		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:43:17-67
+		ADDED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml:48:17-67
 uses-sdk
 INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectbeta2\app\src\main\AndroidManifest.xml
@@ -221,6 +250,8 @@ MERGED from [com.android.volley:volley:1.2.0] C:\Users\sushant kunwar\.gradle\ca
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\23425d6657fb029542ee4d374143963c\jetified-volley-1.2.0\AndroidManifest.xml:5:5-43
 MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\22df6733212b0b2ed870f8f0f4308017\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\22df6733212b0b2ed870f8f0f4308017\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:7:5-9:41
+MERGED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5dbc57b58024a8f25b5db3778841ef05\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5dbc57b58024a8f25b5db3778841ef05\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\47185ad723d232e6208c03e6fdcb34a4\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
@@ -351,3 +382,11 @@ ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwa
 		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
 	android:name
 		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
+provider#com.here.sdk.engine.InitProvider
+ADDED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:17:9-20:40
+	android:authorities
+		ADDED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:19:13-84
+	android:exported
+		ADDED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:20:13-37
+	android:name
+		ADDED from [:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:18:13-60

@@ -11,7 +11,11 @@
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/f802018735841d22852429ab3fde2dae/jetified-signature-pad-1.2.1/AndroidManifest.xml" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/f802018735841d22852429ab3fde2dae/jetified-signature-pad-1.2.1/res" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.github.gcacace/signature-pad/1.2.1/f247b3c6c7d6f5771c2c1b7c4d99ba204d4bbd1c/signature-pad-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.github.gcacace/signature-pad/1.2.1/2e71531a3aca16eba2f1e62a6fc0447806a44498/signature-pad-1.2.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

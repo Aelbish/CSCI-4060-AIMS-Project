@@ -33,8 +33,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
 dependencies {
+
+    implementation fileTree(dir: 'libs', includes: ['*.jar', '*.arr'])
+
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
 
     // Dependencies for working with Architecture components
@@ -73,4 +81,7 @@ dependencies {
 
     //Signature Capture
     implementation 'com.github.gcacace:signature-pad:1.2.1'
+
+    //map
+    implementation(name:'HERE-sdk', ext:'aar')
 }
