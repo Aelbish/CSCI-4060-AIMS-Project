@@ -27,20 +27,18 @@ import com.here.sdk.mapview.MapScene;
 import com.here.sdk.mapview.MapScheme;
 import com.here.sdk.mapview.MapView;
 
-import java.util.Map;
-
 import csci4060.project.aimsmobileapp.R;
-import csci4060.project.aimsmobileapp.UI.Activities.MainActivity;
-import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
 
 import static android.content.ContentValues.TAG;
-import static android.content.Context.LOCATION_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
 
 //This is route screen
 public class RouteFragment extends Fragment {
 
     private MapView mapView;
+    private LocationManager locationManager;
+    private LocationListener locationListner;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,7 +46,6 @@ public class RouteFragment extends Fragment {
 
         return inflater.inflate(R.layout.fragment_route, container, false);
     }
-
 
 
     @Override
@@ -71,24 +68,73 @@ public class RouteFragment extends Fragment {
 
 
         loadMapScene();
+
     }
 
     private void loadMapScene() {
 
         // Load a scene from the HERE SDK to render the map with a map scheme.
         mapView.getMapScene().loadScene(MapScheme.NORMAL_DAY, new MapScene.LoadSceneCallback() {
+            double latitude;
+            double longitude;
             @Override
             public void onLoadScene(@Nullable MapError mapError) {
-                if (mapError == null) {
-                    double distanceInMeters = 1000 * 10;
-                    mapView.getCamera().lookAt(
-                            new GeoCoordinates(32.5267,-92.0732), distanceInMeters);
-                } else {
-                    Log.d(TAG, "Loading map failed: mapError: " + mapError.name());
+                locationManager = (LocationManager) getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+                locationListner = new LocationListener() {
+                    @Override
+                    public void onLocationChanged(@NonNull Location location) {
+                        latitude = location.getLatitude();
+                        longitude = location.getLongitude();
+
+                        //live location
+                        if (mapError == null) {
+                            double distanceInMeters = 1000 * 10;
+                            mapView.getCamera().lookAt(
+                                    new GeoCoordinates(latitude, longitude), distanceInMeters);
+                        } else {
+                            Log.d(TAG, "Loading map failed: mapError: " + mapError.name());
+                        }
+
+                    }
+
+                    @Override
+                    public void onProviderDisabled(@NonNull String provider) {
+                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(intent);
+                    }
+                };
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                            ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET}, 1);
+                        configureButton();
+                    } else {
+                        configureButton();
+
+                    }
+
                 }
+
+
             }
         });
     }
+    @SuppressLint("MissingPermission")
+    private void configureButton() {
+
+                locationManager.requestLocationUpdates("gps", 100, 1, locationListner);
+            }
+
+    public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                    configureButton();
+                    return;
+        }
+
+    }
+
 
     @Override
     public void onPause() {
@@ -107,6 +153,5 @@ public class RouteFragment extends Fragment {
         super.onDestroy();
         mapView.onDestroy();
     }
-
 
 }
