@@ -1721,10 +1721,11 @@ int drawable notification_template_icon_bg 0x7f070099
 int drawable notification_template_icon_low_bg 0x7f07009a
 int drawable notification_tile_bg 0x7f07009b
 int drawable notify_panel_notification_icon_bg 0x7f07009c
-int drawable test_custom_background 0x7f07009d
-int drawable tooltip_frame_dark 0x7f07009e
-int drawable tooltip_frame_light 0x7f07009f
-int drawable trip_info 0x7f0700a0
+int drawable small_pin 0x7f07009d
+int drawable test_custom_background 0x7f07009e
+int drawable tooltip_frame_dark 0x7f07009f
+int drawable tooltip_frame_light 0x7f0700a0
+int drawable trip_info 0x7f0700a1
 int id ALT 0x7f080000
 int id Address1 0x7f080001
 int id Address1Title 0x7f080002

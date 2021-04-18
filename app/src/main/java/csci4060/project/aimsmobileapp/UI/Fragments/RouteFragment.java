@@ -23,6 +23,9 @@ import androidx.fragment.app.Fragment;
 
 import com.here.sdk.core.GeoCoordinates;
 import com.here.sdk.mapview.MapError;
+import com.here.sdk.mapview.MapImage;
+import com.here.sdk.mapview.MapImageFactory;
+import com.here.sdk.mapview.MapMarker;
 import com.here.sdk.mapview.MapScene;
 import com.here.sdk.mapview.MapScheme;
 import com.here.sdk.mapview.MapView;
@@ -38,12 +41,9 @@ public class RouteFragment extends Fragment {
     private LocationManager locationManager;
     private LocationListener locationListner;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
         return inflater.inflate(R.layout.fragment_route, container, false);
     }
 
@@ -51,8 +51,6 @@ public class RouteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         // Get a MapView instance from the layout.
         mapView = getView().findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
@@ -66,9 +64,7 @@ public class RouteFragment extends Fragment {
             }
         });
 
-
         loadMapScene();
-
     }
 
     private void loadMapScene() {
@@ -91,10 +87,14 @@ public class RouteFragment extends Fragment {
                             double distanceInMeters = 1000 * 10;
                             mapView.getCamera().lookAt(
                                     new GeoCoordinates(latitude, longitude), distanceInMeters);
+
+                            MapImage mapImage = MapImageFactory.fromResource(getActivity().getResources(), R.drawable.small_pin);
+                            MapMarker mapMarker = new MapMarker(new GeoCoordinates(latitude, longitude), mapImage);
+
+                            mapView.getMapScene().addMapMarker(mapMarker);
                         } else {
                             Log.d(TAG, "Loading map failed: mapError: " + mapError.name());
                         }
-
                     }
 
                     @Override
@@ -110,18 +110,14 @@ public class RouteFragment extends Fragment {
                         configureButton();
                     } else {
                         configureButton();
-
                     }
-
                 }
-
-
             }
         });
     }
+
     @SuppressLint("MissingPermission")
     private void configureButton() {
-
                 locationManager.requestLocationUpdates("gps", 100, 1, locationListner);
             }
 
@@ -132,7 +128,6 @@ public class RouteFragment extends Fragment {
                     configureButton();
                     return;
         }
-
     }
 
 
@@ -153,5 +148,4 @@ public class RouteFragment extends Fragment {
         super.onDestroy();
         mapView.onDestroy();
     }
-
 }
