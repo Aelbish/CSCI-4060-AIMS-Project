@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Fragments.AlertFragment;
-import csci4060.project.aimsmobileapp.UI.Fragments.RouteFragment;
+import csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment;
 import csci4060.project.aimsmobileapp.UI.Fragments.TripFragment;
 
 //This is the main screen

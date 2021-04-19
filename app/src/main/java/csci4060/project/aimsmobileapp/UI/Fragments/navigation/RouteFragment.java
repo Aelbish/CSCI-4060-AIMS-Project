@@ -1,4 +1,4 @@
-package csci4060.project.aimsmobileapp.UI.Fragments;
+package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -73,28 +73,32 @@ public class RouteFragment extends Fragment {
         mapView.getMapScene().loadScene(MapScheme.NORMAL_DAY, new MapScene.LoadSceneCallback() {
             double latitude;
             double longitude;
+            MapImage mapImage = MapImageFactory.fromResource(getActivity().getResources(), R.drawable.small_pin);
             @Override
             public void onLoadScene(@Nullable MapError mapError) {
                 locationManager = (LocationManager) getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+
                 locationListner = new LocationListener() {
                     @Override
                     public void onLocationChanged(@NonNull Location location) {
                         latitude = location.getLatitude();
                         longitude = location.getLongitude();
-
+                        GeoCoordinates geo = new GeoCoordinates(latitude, longitude);
+                        MapMarker mapMarker = new MapMarker(geo, mapImage);
                         //live location
                         if (mapError == null) {
                             double distanceInMeters = 1000 * 10;
                             mapView.getCamera().lookAt(
-                                    new GeoCoordinates(latitude, longitude), distanceInMeters);
-
-                            MapImage mapImage = MapImageFactory.fromResource(getActivity().getResources(), R.drawable.small_pin);
-                            MapMarker mapMarker = new MapMarker(new GeoCoordinates(latitude, longitude), mapImage);
-
+                                    geo, distanceInMeters);
                             mapView.getMapScene().addMapMarker(mapMarker);
+
                         } else {
                             Log.d(TAG, "Loading map failed: mapError: " + mapError.name());
                         }
+
+
+
+
                     }
 
                     @Override
@@ -112,6 +116,7 @@ public class RouteFragment extends Fragment {
                         configureButton();
                     }
                 }
+
             }
         });
     }
