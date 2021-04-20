@@ -41,6 +41,8 @@ repositories {
 
 dependencies {
 
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+
     implementation fileTree(dir: 'libs', includes: ['*.jar', '*.arr'])
 
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"

@@ -3,6 +3,7 @@ package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -12,14 +13,19 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ToggleButton;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
 
 import com.here.sdk.core.GeoCoordinates;
 import com.here.sdk.mapview.MapError;
@@ -29,10 +35,9 @@ import com.here.sdk.mapview.MapMarker;
 import com.here.sdk.mapview.MapScene;
 import com.here.sdk.mapview.MapScheme;
 import com.here.sdk.mapview.MapView;
+import com.here.sdk.mapview.WatermarkPlacement;
 
 import csci4060.project.aimsmobileapp.R;
-
-import static android.content.ContentValues.TAG;
 
 //This is route screen
 public class RouteFragment extends Fragment {
@@ -40,6 +45,10 @@ public class RouteFragment extends Fragment {
     private MapView mapView;
     private LocationManager locationManager;
     private LocationListener locationListner;
+    private App app;
+    private static final String TAG = RouteFragment.class.getSimpleName();
+
+    private PermissionsRequestor permissionsRequestor;
 
     @Nullable
     @Override
@@ -51,6 +60,13 @@ public class RouteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        // Keeping the screen alive is essential for a car navigation app.
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        Toolbar myToolbar = getActivity().findViewById(R.id.toolbar);
+        getActivity().setActionBar(myToolbar);
+
         // Get a MapView instance from the layout.
         mapView = getView().findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
@@ -63,8 +79,65 @@ public class RouteFragment extends Fragment {
                 Log.d(TAG, "HERE Rendering Engine attached.");
             }
         });
+        // Reposition HERE logo, so it's not hidden by Android's Snackbar.
+        long bottomCenterMarginInPixels = (long) (getResources().getDisplayMetrics().density * 80);
+        mapView.setWatermarkPosition(WatermarkPlacement.BOTTOM_CENTER, bottomCenterMarginInPixels);
 
-        loadMapScene();
+        handleAndroidPermissions();
+
+        ToggleButton toggleTrackingButton = getActivity().findViewById(R.id.toggleTrackingButton);
+        toggleTrackingButton.setTextOn("Camera Tracking: ON");
+        toggleTrackingButton.setTextOff("Camera Tracking: OFF");
+        toggleTrackingButton.setChecked(true);
+        toggleTrackingButton.setOnClickListener(v -> {
+            if (toggleTrackingButton.isChecked()) {
+                app.toggleTrackingButtonOnClicked();
+            } else {
+                app.toggleTrackingButtonOffClicked();
+            }
+        });
+        //loadMapScene();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.about:
+                // Required by HERE positioning.
+                // User must be able to see & to change his consent to collect data.
+                Intent intent = new Intent(getActivity(), ConsentStateActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void handleAndroidPermissions() {
+        permissionsRequestor = new PermissionsRequestor(getActivity());
+        permissionsRequestor.request(new PermissionsRequestor.ResultListener(){
+
+            @Override
+            public void permissionsGranted() {
+                loadMapScene();
+            }
+
+            @Override
+            public void permissionsDenied() {
+                Log.e(TAG, "Permissions denied by user.");
+            }
+        });
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        permissionsRequestor.onRequestPermissionsResult(requestCode, grantResults);
     }
 
     private void loadMapScene() {
@@ -91,6 +164,12 @@ public class RouteFragment extends Fragment {
                             mapView.getCamera().lookAt(
                                     geo, distanceInMeters);
                             mapView.getMapScene().addMapMarker(mapMarker);
+                            // Start the app that contains the logic to calculate routes & start TBT guidance.
+                            app = new App(getActivity(), mapView);
+
+                            // Enable traffic flows by default.
+                            mapView.getMapScene().setLayerState(MapScene.Layers.TRAFFIC_FLOW, MapScene.LayerState.VISIBLE);
+
 
                         } else {
                             Log.d(TAG, "Loading map failed: mapError: " + mapError.name());
@@ -136,6 +215,18 @@ public class RouteFragment extends Fragment {
     }
 
 
+    public void addRouteSimulatedLocationButtonClicked(View view) {
+        app.addRouteSimulatedLocation();
+    }
+
+    public void addRouteDeviceLocationButtonClicked(View view) {
+        app.addRouteDeviceLocation();
+    }
+
+    public void clearMapButtonClicked(View view) {
+        app.clearMapButtonPressed();
+    }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -151,6 +242,9 @@ public class RouteFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if (app != null) {
+            app.stopLocating();
+        }
         mapView.onDestroy();
     }
 }

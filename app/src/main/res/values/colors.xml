@@ -12,4 +12,7 @@
     <color name="myOrange2">#F39420</color>
     <color name="myRed">#E53935</color>
     <color name="myGrey">#545454</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
 </resources>
