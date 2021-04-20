@@ -41,6 +41,7 @@ repositories {
 
 dependencies {
 
+    implementation(name:'HERE-sdk', ext:'aar')
     implementation fileTree(dir: 'libs', includes: ['*.jar', '*.arr'])
 
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"

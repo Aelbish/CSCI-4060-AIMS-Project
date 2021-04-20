@@ -79,6 +79,9 @@ csci4060/project/aimsmobileapp/database/entity/Customer.java
  csci4060.project.aimsmobileapp.database.entity.Customer
 csci4060/project/aimsmobileapp/model/TripInfoModel.java
  csci4060.project.aimsmobileapp.model.TripInfoModel
+csci4060/project/aimsmobileapp/UI/Fragments/navigation/LaneInfoUtils.java
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.LaneInfoUtils
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.LaneInfoUtils$1
 csci4060/project/aimsmobileapp/database/entity/DeliveredProduct.java
  csci4060.project.aimsmobileapp.database.entity.DeliveredProduct
 csci4060/project/aimsmobileapp/database/entity/Delivery.java
@@ -95,8 +98,16 @@ csci4060/project/aimsmobileapp/UI/Activities/CaptureActivity.java
 csci4060/project/aimsmobileapp/UI/Fragments/navigation/RouteFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$1
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$1$1
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$10
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$2
- csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$2$1
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$3
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$4
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$5
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$6
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$7
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$8
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$9
 csci4060/project/aimsmobileapp/UI/Activities/TripActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.TripActivity
  csci4060.project.aimsmobileapp.UI.Activities.TripActivity$1

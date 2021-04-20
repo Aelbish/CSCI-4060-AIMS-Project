@@ -1,146 +1,314 @@
 [
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_navbar.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\menu\\bottom_navbar.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_3.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_3.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_trip.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_trip.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_64.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_64.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_trip.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_trip.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_button.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\my_button.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_alerts.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\fragment_alerts.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_small_pin.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\small_pin.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_192.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_192.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_view_border.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\image_view_border.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_small_pin.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\small_pin.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_button.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\my_button.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_signature_capture2.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_signature_capture2.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_aims_logo.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable-v24\\aims_logo.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_sample_trips_list.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\sample_trips_list.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_site.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_driver_input_site.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_aims_logo.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable-v24\\aims_logo.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_196.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_196.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_source.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_driver_input_source.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_location_on_24.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_baseline_location_on_24.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_edit_24.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_baseline_edit_24.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_view_border.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\image_view_border.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_textsms_24.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_baseline_textsms_24.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_6.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_6.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_location_on_24.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_baseline_location_on_24.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_80.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_80.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_signature_capture2.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_signature_capture2.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_route.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\fragment_route.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_208.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_208.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_trips.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\fragment_trips.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_route.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\fragment_route.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_68.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_68.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_format_list_bulleted_24.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_baseline_format_list_bulleted_24.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_512.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_512.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_2048.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_2048.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_97.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_97.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_screen.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\activity_main_screen.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_65.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_65.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_33.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_33.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\xml\\file_paths.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_trips.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\fragment_trips.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_trip_info.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\trip_info.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_alerts.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\fragment_alerts.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_4.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_4.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_131.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_131.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\layout_sample_trips_list.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\layout\\sample_trips_list.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_camera_alt_24.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\ic_baseline_camera_alt_24.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gps_position.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\gps_position.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_144.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_144.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_source.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_driver_input_source.xml"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_trip_info.xml.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\drawable\\trip_info.xml"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_0.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_0.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_128.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_128.png"
     },
     {
-        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_69.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_69.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_134.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_134.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_7.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_7.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_160.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_160.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_96.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_96.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_66.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_66.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_format_list_bulleted_24.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_baseline_format_list_bulleted_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_129.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_129.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_5.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_5.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_13.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_13.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_navbar.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\menu\\bottom_navbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_32.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_32.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_edit_24.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_baseline_edit_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_256.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_256.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_10.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_10.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_8.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_8.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_133.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_133.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_17.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_17.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_130.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_130.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_1.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_1.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_12.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_12.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_1024.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_1024.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_132.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_132.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_textsms_24.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_baseline_textsms_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_camera_alt_24.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\ic_baseline_camera_alt_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_screen.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_main_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_site.xml.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\layout\\activity_driver_input_site.xml"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_16.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_16.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_2.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_2.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_laneinfo_193.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\drawable\\laneinfo_193.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     }
 ]

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-ProjectBeta2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\Users\\sushant kunwar\\CSCI-4060-AIMS-Projectnavigate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sushant kunwar\\.gradle\\caches\\transforms-2\\files-2.1\\cc413be5919e774f3bd34b5429e16600\\jetified-zxing-android-embedded-3.4.0\\res\\values-de\\values-de.xml",

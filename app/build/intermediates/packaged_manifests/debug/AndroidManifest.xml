@@ -55,11 +55,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light" >
         <meta-data
-            android:name="com.here.sdk.access_key_id"
-            android:value="ufAS_-dPdTNOoycydR8MeQ" />
+            android:name="com.here.android.maps.appid"
+            android:value="j7LEff64FIbJ4Goo7b5P" />
         <meta-data
-            android:name="com.here.sdk.access_key_secret"
-            android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw" />
+            android:name="com.here.android.maps.apptoken"
+            android:value="hLyqY-6CXVS-6L6ppVI8Kw" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="TW/zZRjmbhgIlc5TjeQPMaxBksoB0ZMEqPKHr9uWQpSsYWwydgpiZ0fL4Y+yiwB2HjkuVybF+BmFH3fyGgT3TGhg51YpN9oQ7JUSa9OJgMPeqH3zrfOHmozcpIBJFvBpr4rZv9br/EXF+2a5aDjxthI0XXV69/DQRLKnawRFouy0Zn3XRX7fRoWj0mG/3zfng8ucUiK7khFzAQCo0OzS5xdAfHW5x01PKizdXnsCxgtPm86CDAjXGhrPmJX1LA3GZnMwrSOTRjtJFmjb7dVg+FgeEfNpfOqSDHWssWMUSBIGHkCC2zmKi6Qhd4gfx24bSHI3zD8Tb+2OCWENGL6zZitSHB8Yb/sU4wqdACqHtRY3VkBLRnrzET2ppdpqgfXkB9Ht0fo7ilrI0S4uy2O74jfMcKzcxzVpwgX+mA0R1PXqF25Ceb7byugKSaT7TiZzoIsMHzp3R/6JQ9UMqJRTWeOPqQJg6ibTaF7WBwJn3+atUyCOkmBEotNvSxUFJXUOKC3zF70+fs+tGE98BX4uws3+eX4hcYz7H7HDuzrNCEVhiApfyegrmfoXMJo5n3EKgiYI8F747s0ZWTC14d1Yvauq0Zy49FlppC6aMbtxSgSyHiLjrzesmsbCjEUZPHenP9QQBKyE2v5fS7kVj19B2sG+VDvYblr7/xUGk0ZPLrM=" />
 
         <activity android:name="csci4060.project.aimsmobileapp.UI.SignatureCapture" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity" />
@@ -90,6 +93,9 @@
         </provider>
 
         <service
+            android:name="com.nokia.maps.MapServiceInternal"
+            android:exported="false" />
+        <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
@@ -100,11 +106,7 @@
             android:screenOrientation="sensorLandscape"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- ${applicationId} will be replaced to ${applicationId} after the manifest merge. -->
-        <provider
-            android:name="com.here.sdk.engine.InitProvider"
-            android:authorities="csci4060.project.aimsmobileapp.com.here.sdk.engine.InitProvider"
-            android:exported="false" />
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>
