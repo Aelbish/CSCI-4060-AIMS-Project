@@ -63,6 +63,7 @@ csci4060/project/aimsmobileapp/UI/Activities/DriverInputSiteActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$1
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$10
+ csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$11
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$2
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$3
  csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity$4

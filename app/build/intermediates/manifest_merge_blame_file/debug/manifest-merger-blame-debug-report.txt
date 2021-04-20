@@ -6,208 +6,211 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="28"
-8-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml
+8-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml
+9-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:5:5-78
-11-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:5:22-76
+11-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:5:5-78
+11-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:5:22-76
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:6:22-76
+12-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:7:5-75
-13-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:7:22-73
+13-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:7:5-75
+13-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:7:22-73
 14    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
-14-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:8:5-82
-14-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:8:22-79
+14-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:8:5-82
+14-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:8:22-79
 15    <uses-permission android:name="android.permission.INTERNET" /> <!-- For taking picture of BOL -->
-15-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:9:5-67
-15-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:9:22-64
-16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:10:5-81
-16-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:10:22-78
-17    <uses-permission android:name="android.permission.CAMERA" />
-17-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:11:5-65
-17-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:11:22-62
-18    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-18-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:12:5-79
-18-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:12:22-76
-19    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-19-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:13:5-76
-19-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:13:22-73
-20    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-20-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:14:5-75
-20-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:14:22-72
-21    <uses-permission android:name="android.permission.WAKE_LOCK" />
-21-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:15:5-68
-21-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:15:22-65
-22
-23    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
-24    <uses-feature
-24-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:24:5-26:36
-25        android:name="android.hardware.camera"
-25-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:25:9-47
-26        android:required="false" />
-26-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:26:9-33
-27    <uses-feature
-27-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:27:5-29:36
-28        android:name="android.hardware.camera.front"
-28-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:28:9-53
-29        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-29-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:29:9-33
-30    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
-31    <uses-feature
-31-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:32:5-34:36
-32        android:name="android.hardware.camera.autofocus"
-32-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:33:9-57
-33        android:required="false" />
-33-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:34:9-33
-34    <uses-feature
-34-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:35:5-37:36
-35        android:name="android.hardware.camera.flash"
-35-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:36:9-53
-36        android:required="false" />
-36-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:37:9-33
-37    <uses-feature
-37-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:38:5-40:36
-38        android:name="android.hardware.screen.landscape"
-38-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:39:9-57
-39        android:required="false" />
-39-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:40:9-33
-40    <uses-feature
-40-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:41:5-43:36
-41        android:name="android.hardware.wifi"
-41-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:42:9-45
-42        android:required="false" />
-42-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:43:9-33
-43
-44    <application
-44-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:17:5-55:19
-45        android:name="csci4060.project.aimsmobileapp.AIMSApp"
-45-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:18:9-32
-46        android:allowBackup="true"
-46-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:19:9-35
-47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-47-->[androidx.core:core:1.3.1] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:18-86
-48        android:debuggable="true"
-49        android:extractNativeLibs="false"
-50        android:hardwareAccelerated="true"
-50-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:25:9-43
-51        android:icon="@mipmap/ic_launcher"
-51-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:20:9-43
-52        android:label="@string/app_name"
-52-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:21:9-41
-53        android:roundIcon="@mipmap/ic_launcher_round"
-53-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:22:9-54
-54        android:supportsRtl="true"
-54-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:23:9-35
-55        android:testOnly="true"
-56        android:theme="@style/Theme.AppCompat.Light" >
-56-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:24:9-53
-57        <meta-data
-57-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:26:9-102
-58            android:name="com.here.sdk.access_key_id"
-58-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:26:20-61
-59            android:value="ufAS_-dPdTNOoycydR8MeQ" />
-59-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:26:62-100
-60        <meta-data
-60-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:27:9-170
-61            android:name="com.here.sdk.access_key_secret"
-61-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:27:20-65
-62            android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw" />
-62-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:27:66-168
-63
-64        <activity android:name="csci4060.project.aimsmobileapp.UI.SignatureCapture" />
-64-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:28:9-57
-64-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:28:19-54
-65        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity" />
-65-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:29:9-75
-65-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:29:19-72
-66        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity" />
-66-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:30:9-77
-66-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:30:19-74
-67        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity" />
-67-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:31:9-64
-67-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:31:19-61
-68        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity" />
-68-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:32:9-70
-68-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:32:19-67
-69        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainActivity" >
-69-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:33:9-39:20
-69-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:33:19-61
-70            <intent-filter>
-70-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:34:13-38:29
-71                <action android:name="android.intent.action.MAIN" />
-71-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:35:17-69
-71-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:35:25-66
-72
-73                <category android:name="android.intent.category.LAUNCHER" />
-73-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:37:17-77
-73-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:37:27-74
-74            </intent-filter>
-75        </activity> <!-- Barcode Scanner -->
-76        <activity
-76-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:40:9-44:57
-77            android:name="csci4060.project.aimsmobileapp.UI.Activities.CaptureActivity"
-77-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:41:13-58
-78            android:screenOrientation="portrait"
-78-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:42:13-49
-79            android:stateNotNeeded="true"
-79-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:43:13-42
-80            android:theme="@style/zxing_CaptureTheme" />
-80-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:44:13-54
-81
-82        <provider
-82-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:46:9-54:20
-83            android:name="androidx.core.content.FileProvider"
-83-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:47:13-62
-84            android:authorities="csci4060.project.aimsmobileapp.fileprovider"
-84-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:48:13-78
-85            android:exported="false"
-85-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:49:13-37
-86            android:grantUriPermissions="true" >
-86-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:50:13-47
-87            <meta-data
-87-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:51:13-53:54
-88                android:name="android.support.FILE_PROVIDER_PATHS"
-88-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:52:17-67
-89                android:resource="@xml/file_paths" />
-89-->C:\Users\sushant kunwar\CSCI-4060-AIMS-ProjectBeta2\app\src\main\AndroidManifest.xml:53:17-51
-90        </provider>
-91
-92        <service
-92-->[androidx.room:room-runtime:2.2.6] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
-93            android:name="androidx.room.MultiInstanceInvalidationService"
-93-->[androidx.room:room-runtime:2.2.6] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
-94            android:directBootAware="true"
-94-->[androidx.room:room-runtime:2.2.6] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
-95            android:exported="false" />
-95-->[androidx.room:room-runtime:2.2.6] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
-96
-97        <activity
-97-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:46:9-52:63
-98            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-98-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
-99            android:clearTaskOnLaunch="true"
-99-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:48:13-45
-100            android:screenOrientation="sensorLandscape"
-100-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:49:13-56
-101            android:stateNotNeeded="true"
-101-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:50:13-42
-102            android:theme="@style/zxing_CaptureTheme"
-102-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
-103            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- ${applicationId} will be replaced to ${applicationId} after the manifest merge. -->
-103-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\cc413be5919e774f3bd34b5429e16600\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:52:13-60
-104        <provider
-104-->[:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:17:9-20:40
-105            android:name="com.here.sdk.engine.InitProvider"
-105-->[:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:18:13-60
-106            android:authorities="csci4060.project.aimsmobileapp.com.here.sdk.engine.InitProvider"
-106-->[:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:19:13-84
-107            android:exported="false" />
-107-->[:HERE-sdk:] C:\Users\sushant kunwar\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:20:13-37
-108    </application>
-109
-110</manifest>
+15-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:9:5-67
+15-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:9:22-64
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:10:5-79
+16-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:10:22-77
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:11:5-81
+17-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:11:22-78
+18    <uses-permission android:name="android.permission.CAMERA" />
+18-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:12:5-65
+18-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:12:22-62
+19    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+19-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:13:5-79
+19-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:13:22-76
+20    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+20-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:14:5-76
+20-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:14:22-73
+21    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+21-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:15:5-75
+21-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:15:22-72
+22    <uses-permission android:name="android.permission.WAKE_LOCK" />
+22-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:16:5-68
+22-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:16:22-65
+23
+24    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+25    <uses-feature
+25-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:24:5-26:36
+26        android:name="android.hardware.camera"
+26-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:25:9-47
+27        android:required="false" />
+27-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:26:9-33
+28    <uses-feature
+28-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:27:5-29:36
+29        android:name="android.hardware.camera.front"
+29-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:28:9-53
+30        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+30-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:29:9-33
+31    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+32    <uses-feature
+32-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:32:5-34:36
+33        android:name="android.hardware.camera.autofocus"
+33-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:33:9-57
+34        android:required="false" />
+34-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:34:9-33
+35    <uses-feature
+35-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:35:5-37:36
+36        android:name="android.hardware.camera.flash"
+36-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:36:9-53
+37        android:required="false" />
+37-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:37:9-33
+38    <uses-feature
+38-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:38:5-40:36
+39        android:name="android.hardware.screen.landscape"
+39-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:39:9-57
+40        android:required="false" />
+40-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:40:9-33
+41    <uses-feature
+41-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:41:5-43:36
+42        android:name="android.hardware.wifi"
+42-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:42:9-45
+43        android:required="false" />
+43-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:43:9-33
+44
+45    <application
+45-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:18:5-56:19
+46        android:name="csci4060.project.aimsmobileapp.AIMSApp"
+46-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:19:9-32
+47        android:allowBackup="true"
+47-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:20:9-35
+48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+48-->[androidx.core:core:1.3.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:18-86
+49        android:debuggable="true"
+50        android:extractNativeLibs="false"
+51        android:hardwareAccelerated="true"
+51-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:26:9-43
+52        android:icon="@mipmap/ic_launcher"
+52-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:21:9-43
+53        android:label="@string/app_name"
+53-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:22:9-41
+54        android:roundIcon="@mipmap/ic_launcher_round"
+54-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:23:9-54
+55        android:supportsRtl="true"
+55-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:24:9-35
+56        android:testOnly="true"
+57        android:theme="@style/Theme.AppCompat.Light" >
+57-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:25:9-53
+58        <meta-data
+58-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:27:9-102
+59            android:name="com.here.sdk.access_key_id"
+59-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:27:20-61
+60            android:value="ufAS_-dPdTNOoycydR8MeQ" />
+60-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:27:62-100
+61        <meta-data
+61-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:28:9-170
+62            android:name="com.here.sdk.access_key_secret"
+62-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:28:20-65
+63            android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw" />
+63-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:28:66-168
+64
+65        <activity android:name="csci4060.project.aimsmobileapp.UI.SignatureCapture" />
+65-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:29:9-57
+65-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:29:19-54
+66        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity" />
+66-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:30:9-75
+66-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:30:19-72
+67        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity" />
+67-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:31:9-77
+67-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:31:19-74
+68        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity" />
+68-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:32:9-64
+68-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:32:19-61
+69        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity" />
+69-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:33:9-70
+69-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:33:19-67
+70        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainActivity" >
+70-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:34:9-40:20
+70-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:34:19-61
+71            <intent-filter>
+71-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:35:13-39:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:36:17-69
+72-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:36:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:38:17-77
+74-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:38:27-74
+75            </intent-filter>
+76        </activity> <!-- Barcode Scanner -->
+77        <activity
+77-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:41:9-45:57
+78            android:name="csci4060.project.aimsmobileapp.UI.Activities.CaptureActivity"
+78-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:42:13-58
+79            android:screenOrientation="portrait"
+79-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:43:13-49
+80            android:stateNotNeeded="true"
+80-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:44:13-42
+81            android:theme="@style/zxing_CaptureTheme" />
+81-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:45:13-54
+82
+83        <provider
+83-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:47:9-55:20
+84            android:name="androidx.core.content.FileProvider"
+84-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:48:13-62
+85            android:authorities="csci4060.project.aimsmobileapp.fileprovider"
+85-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:49:13-78
+86            android:exported="false"
+86-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:50:13-37
+87            android:grantUriPermissions="true" >
+87-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:51:13-47
+88            <meta-data
+88-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:52:13-54:54
+89                android:name="android.support.FILE_PROVIDER_PATHS"
+89-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:53:17-67
+90                android:resource="@xml/file_paths" />
+90-->C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:54:17-51
+91        </provider>
+92
+93        <service
+93-->[androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+94            android:name="androidx.room.MultiInstanceInvalidationService"
+94-->[androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
+95            android:directBootAware="true"
+95-->[androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+96            android:exported="false" />
+96-->[androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+97
+98        <activity
+98-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:46:9-52:63
+99            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+99-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
+100            android:clearTaskOnLaunch="true"
+100-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:48:13-45
+101            android:screenOrientation="sensorLandscape"
+101-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:49:13-56
+102            android:stateNotNeeded="true"
+102-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:50:13-42
+103            android:theme="@style/zxing_CaptureTheme"
+103-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
+104            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- ${applicationId} will be replaced to ${applicationId} after the manifest merge. -->
+104-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:52:13-60
+105        <provider
+105-->[:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:17:9-20:40
+106            android:name="com.here.sdk.engine.InitProvider"
+106-->[:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:18:13-60
+107            android:authorities="csci4060.project.aimsmobileapp.com.here.sdk.engine.InitProvider"
+107-->[:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:19:13-84
+108            android:exported="false" />
+108-->[:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:20:13-37
+109    </application>
+110
+111</manifest>

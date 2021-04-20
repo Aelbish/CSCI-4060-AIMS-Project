@@ -231,6 +231,62 @@
                 android:theme="@style/AppTheme" />
 
             <TextView
+                android:id="@+id/textView26"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Delivery Ticket Picture"
+                />
+
+            <!--            <ImageView-->
+            <!--                android:background="@drawable/image_view_border"-->
+            <!--                android:id ="@+id/image"-->
+            <!--                android:layout_width="196dp"-->
+            <!--                android:layout_height="226dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_margin="8dp"/>-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/buttonTakePicture"-->
+            <!--                android:drawableRight="@drawable/ic_baseline_camera_alt_24"-->
+            <!--                android:text="Capture"-->
+            <!--                android:onClick="takePicture"-->
+            <!--                android:theme="@style/AppTheme"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                />-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/buttonViewPicture"-->
+            <!--                android:drawableRight="@drawable/ic_baseline_camera_alt_24"-->
+            <!--                android:text="View"-->
+            <!--                android:onClick="displayPicture"-->
+            <!--                android:theme="@style/AppTheme"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                />-->
+
+            <ImageView
+                android:background="@drawable/image_view_border"
+                android:id ="@+id/image"
+                android:layout_width="196dp"
+                android:layout_height="226dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/buttonTakePicture"
+                android:drawableRight="@drawable/ic_baseline_camera_alt_24"
+                android:text="Capture"
+                android:theme="@style/AppTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                />
+
+            <TextView
                 android:id="@+id/textView24"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -274,6 +330,7 @@
                 android:id="@+id/btnSubmitInputSiteData"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:layout_margin="24dp"
                 android:layout_gravity="center"
                 android:text="Submit"
                 android:theme="@style/AppTheme" />

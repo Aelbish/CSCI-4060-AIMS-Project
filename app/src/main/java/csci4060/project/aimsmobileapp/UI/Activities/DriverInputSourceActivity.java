@@ -291,10 +291,10 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
 
     private File createPhotoFile() {
         String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File storageDirectory = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = null;
         try {
-            image = File.createTempFile(name, ".jpg", storageDirectory);
+            image = File.createTempFile("BOL_" + name, ".jpg", storageDirectory);
         } catch (IOException e) {
             Log.d("errorLog", "Exception: " + e.toString());
         }
@@ -482,7 +482,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
                         "Pickup Gross: " + Double.toString(repository.getPickup_gross_quantitySource(trip_id, load_id)) +"\n" +
                         "Pickup Net: " + Double.toString(repository.getPickup_net_quantitySource(trip_id, load_id)) +"\n" +
                         "BOL Num: " + Integer.toString(repository.getBOLNumberSource(trip_id, load_id))
-                        , Toast.LENGTH_LONG).show();
+                , Toast.LENGTH_LONG).show();
     }
 
 }
