@@ -1,4 +1,5 @@
 package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -30,8 +31,6 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
-
-
 import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.common.GeoPosition;
 import com.here.android.mpa.common.Image;
@@ -41,7 +40,6 @@ import com.here.android.mpa.common.RoadElement;
 import com.here.android.mpa.common.ViewObject;
 import com.here.android.mpa.guidance.LaneInformation;
 import com.here.android.mpa.guidance.NavigationManager;
-
 
 import com.here.android.mpa.mapping.MapGesture;
 import com.here.android.mpa.mapping.MapState;
@@ -53,14 +51,20 @@ import com.here.android.mpa.routing.RouteResult;
 import com.here.android.mpa.routing.RouteWaypoint;
 import com.here.android.mpa.routing.RoutingError;
 
-
 import java.util.List;
-
 
 import csci4060.project.aimsmobileapp.R;
 
 //This is route screen
 public class RouteFragment extends Fragment {
+
+    double destinationLat;
+    double destinationLon;
+
+    public void setDestination(double lat, double lon){
+        destinationLat = lat;
+        destinationLon = lon;
+    }
 
     private final static int REQUEST_CODE_ASK_PERMISSIONS = 1;
     private static final String[] RUNTIME_PERMISSIONS = {
@@ -127,7 +131,7 @@ public class RouteFragment extends Fragment {
                         m_mapFragment.getMapGesture().addOnGestureListener(gestureListener, 100, true);
                         // retrieve a reference of the map from the map fragment
                         m_map = m_mapFragment.getMap();
-                        m_map.setCenter(new GeoCoordinate(32.50279,-92.11625,1),Map.Animation.NONE);
+                        m_map.setCenter(new GeoCoordinate(32.5270 ,-92.0740,1),Map.Animation.NONE);
                         m_map.setZoomLevel(19);
                         m_map.addTransformListener(onTransformListener);
 
@@ -207,8 +211,8 @@ public class RouteFragment extends Fragment {
         }
         final RoutePlan routePlan = new RoutePlan();
         // these two waypoints cover suburban roads
-        routePlan.addWaypoint(new RouteWaypoint(new GeoCoordinate(32.50279,-92.11625)));
-        routePlan.addWaypoint(new RouteWaypoint(new GeoCoordinate(32.51322, -92.15787)));
+        routePlan.addWaypoint(new RouteWaypoint(new GeoCoordinate(32.5270,-92.0740)));
+        routePlan.addWaypoint(new RouteWaypoint(new GeoCoordinate(destinationLat, destinationLon)));
 
         // calculate a route for navigation
         CoreRouter coreRouter = new CoreRouter();
@@ -286,7 +290,6 @@ public class RouteFragment extends Fragment {
                     Toast.makeText(getActivity(),
                             "Error:route calculation returned error code: " + routingError,
                             Toast.LENGTH_LONG).show();
-
                 }
             }
 
@@ -521,14 +524,10 @@ public class RouteFragment extends Fragment {
                         }
                     }
                 }
-
-
                 break;
             }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-
-
 }

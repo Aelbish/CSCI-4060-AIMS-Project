@@ -147,7 +147,7 @@ public class TripFragment extends Fragment {
 
                                 tripInfoModelList.add(new TripInfoModel(TripId, DriverCode, DriverName, TruckId, TruckCode, TruckDesc, TrailerId,
                                         TrailerCode, TrailerDesc, TripName, TripDate, SeqNum, WaypointTypeDescription, DestinationCode, DestinationName, Address1, City, PostalCode, ProductId,
-                                        ProductCode, ProductDesc, RequestedQty, UOM, Fill));
+                                        ProductCode, ProductDesc, RequestedQty, UOM, Fill, Latitude, Longitude));
                             }
 
                             if (tripInfoModelList.size() > 0) {

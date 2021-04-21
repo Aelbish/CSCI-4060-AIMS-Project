@@ -26,6 +26,17 @@ public class TripInfoModel {
     private String UOM;
     private String Fill;
 
+    private double Latitude;
+    private double Longitude;
+
+    public double getLatitude(){return Latitude;}
+
+    public void setLatitude(double latitude){Latitude = latitude;}
+
+    public double getLongitude(){return Longitude;}
+
+    public void setLongitude(double longitude){Longitude = longitude;}
+
     public int getSeqNum() {
         return SeqNum;
     }
@@ -34,7 +45,7 @@ public class TripInfoModel {
         SeqNum = seqNum;
     }
 
-    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, int seqNum, String waypoint, String destinationCode, String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill) {
+    public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, int seqNum, String waypoint, String destinationCode, String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill, Double latitude, Double longitude) {
         setTripId(tripId);
         setDriverCode(driverCode);
         setDriverName(driverName);
@@ -59,6 +70,8 @@ public class TripInfoModel {
         setRequestedQty(requestedQty);
         setUOM(UOM);
         setFill(fill);
+        setLatitude(latitude);
+        setLongitude(longitude);
     }
 
     public String getWaypoint() {

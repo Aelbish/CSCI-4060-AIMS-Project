@@ -38,6 +38,7 @@ csci4060/project/aimsmobileapp/adapter/TripListAdapter.java
  csci4060.project.aimsmobileapp.adapter.TripListAdapter$1
  csci4060.project.aimsmobileapp.adapter.TripListAdapter$2
  csci4060.project.aimsmobileapp.adapter.TripListAdapter$3
+ csci4060.project.aimsmobileapp.adapter.TripListAdapter$4
  csci4060.project.aimsmobileapp.adapter.TripListAdapter$ItemsViewHolder
 csci4060/project/aimsmobileapp/database/entity/Driver.java
  csci4060.project.aimsmobileapp.database.entity.Driver
