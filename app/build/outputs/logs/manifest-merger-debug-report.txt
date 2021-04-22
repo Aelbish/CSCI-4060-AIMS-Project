@@ -9,7 +9,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\aelbi\.g
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\0cb9ff486f5edb59977e253831b932c8\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\939730d5a02951a4e6900dbf39441da5\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:17:1-55:12
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\647215dad2189bf7ccc8bedb88622434\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\9a6fa3c553e02b3a07c8a8565588eb54\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\7dc97d5beadbae66ede9b95e497a48ab\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -20,7 +20,7 @@ MERGED from [androidx.activity:activity:1.0.0] C:\Users\aelbi\.gradle\caches\tra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\c2b317ea70d0e20e2ad2488d992076fe\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b031f14a13aa85262b548d6b8b8f6c30\lifecycle-livedata-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\23425d6657fb029542ee4d374143963c\jetified-volley-1.2.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\f802018735841d22852429ab3fde2dae\jetified-signature-pad-1.2.1\AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\3d32097f618cb9cc2324b60a54bb23e7\jetified-signature-pad-1.2.1\AndroidManifest.xml:2:1-13:12
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5dbc57b58024a8f25b5db3778841ef05\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\47185ad723d232e6208c03e6fdcb34a4\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -94,18 +94,14 @@ MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:12:5-67
 	android:name
 		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:9:22-64
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:10:5-79
-	android:name
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:12:5-65
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:21:5-65
 	android:name
 		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:12:22-62
 uses-permission#android.permission.CHANGE_NETWORK_STATE
@@ -132,10 +128,10 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\aelbi\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\9570f34841c72a34d773388f89286f55\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:45:5-53:19
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:45:5-53:19
-MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\f802018735841d22852429ab3fde2dae\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
-MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\f802018735841d22852429ab3fde2dae\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:45:5-53:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:45:5-53:19
+MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\3d32097f618cb9cc2324b60a54bb23e7\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
+MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\3d32097f618cb9cc2324b60a54bb23e7\jetified-signature-pad-1.2.1\AndroidManifest.xml:11:5-20
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:14:5-21:19
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:14:5-21:19
 MERGED from [androidx.core:core:1.3.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:5-89
@@ -216,22 +212,6 @@ ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\m
 		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:45:13-54
 	android:name
 		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:42:13-58
-provider#androidx.core.content.FileProvider
-ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:47:9-55:20
-	android:grantUriPermissions
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:51:13-47
-	android:authorities
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:49:13-78
-	android:exported
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:50:13-37
-	android:name
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:48:13-62
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:52:13-54:54
-	android:resource
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:54:17-51
-	android:name
-		ADDED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml:53:17-67
 uses-sdk
 INJECTED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project\app\src\main\AndroidManifest.xml
@@ -246,8 +226,8 @@ MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\tra
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\939730d5a02951a4e6900dbf39441da5\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\939730d5a02951a4e6900dbf39441da5\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:19:5-43
-MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:19:5-43
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\647215dad2189bf7ccc8bedb88622434\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\647215dad2189bf7ccc8bedb88622434\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\9a6fa3c553e02b3a07c8a8565588eb54\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -268,8 +248,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\aelbi\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b031f14a13aa85262b548d6b8b8f6c30\lifecycle-livedata-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\23425d6657fb029542ee4d374143963c\jetified-volley-1.2.0\AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.2.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\23425d6657fb029542ee4d374143963c\jetified-volley-1.2.0\AndroidManifest.xml:5:5-43
-MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\f802018735841d22852429ab3fde2dae\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\f802018735841d22852429ab3fde2dae\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\3d32097f618cb9cc2324b60a54bb23e7\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.gcacace:signature-pad:1.2.1] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\3d32097f618cb9cc2324b60a54bb23e7\jetified-signature-pad-1.2.1\AndroidManifest.xml:7:5-9:41
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:7:5-9:41
 MERGED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5dbc57b58024a8f25b5db3778841ef05\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
@@ -353,55 +333,55 @@ ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\tran
 	android:name
 		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\5656c15061bb6c9a45f2785c725710a9\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
 uses-feature#android.hardware.camera
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:24:5-26:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:24:5-26:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:26:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:26:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:25:9-47
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:25:9-47
 uses-feature#android.hardware.camera.front
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:27:5-29:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:27:5-29:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:29:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:29:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:28:9-53
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:28:9-53
 uses-feature#android.hardware.camera.autofocus
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:32:5-34:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:32:5-34:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:34:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:34:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:33:9-57
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:33:9-57
 uses-feature#android.hardware.camera.flash
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:35:5-37:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:35:5-37:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:37:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:37:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:36:9-53
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:36:9-53
 uses-feature#android.hardware.screen.landscape
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:38:5-40:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:38:5-40:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:40:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:40:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:39:9-57
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:39:9-57
 uses-feature#android.hardware.wifi
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:41:5-43:36
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:41:5-43:36
 	android:required
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:43:9-33
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:43:9-33
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:42:9-45
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:42:9-45
 activity#com.journeyapps.barcodescanner.CaptureActivity
-ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:46:9-52:63
+ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:46:9-52:63
 	android:screenOrientation
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:49:13-56
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:49:13-56
 	android:clearTaskOnLaunch
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:48:13-45
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:48:13-45
 	android:stateNotNeeded
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:50:13-42
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:50:13-42
 	android:windowSoftInputMode
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:52:13-60
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:52:13-60
 	android:theme
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
 	android:name
-		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\4dfde1b299b1290c5f6c57728f53c2c1\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
+		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\194a6755dddaad657b929f94622ebe36\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
 provider#com.here.sdk.engine.InitProvider
 ADDED from [:HERE-sdk:] C:\Users\aelbi\.gradle\caches\transforms-2\files-2.1\b8ade9f9af2b52458ddffc381f61f586\jetified-HERE-sdk\AndroidManifest.xml:17:9-20:40
 	android:authorities

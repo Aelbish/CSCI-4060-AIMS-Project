@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_driver_input_source.xml.flat",
         "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\layout\\activity_driver_input_source.xml"
+    },
+    {
+        "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\aelbi\\AndroidStudioProjects\\CSCI-4060-AIMS-Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",

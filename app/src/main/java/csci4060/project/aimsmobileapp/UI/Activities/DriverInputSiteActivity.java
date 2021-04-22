@@ -5,8 +5,10 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -28,6 +30,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -89,9 +92,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextDeliveryComment,
             editTextBarcode;
 
-    Button buttonTakePicture, btnSubmit;
-    ImageView imageView;
-    String pathToFile;
+    Button btnSubmit;
 
     /**
      * Scan button for barcode scanner
@@ -106,10 +107,18 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     private final DataRepository repository = AIMSApp.repository;
     public static final int SIGNATURE_ACTIVITY = 10;
     public static final int BARCODE_ACTIVITY = 20;
-    public static final int PICTURE_ACTIVITY = 30;
 
     int trip_id;
     int load_id;
+
+    /**Camera button for Delivery Ticket Picture**/
+    Button buttonTakePicture;
+    ImageView imageView;
+    public static final int IMAGE_CAPTURE_CODE = 31;
+    public static final int PERMISSION_CODE = 30;
+    Uri image_uri;
+    //String pathToFile;
+   // public static final int PICTURE_ACTIVITY = 30;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -275,24 +284,128 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
         /**Camera Button**/
         buttonTakePicture = findViewById(R.id.buttonTakePicture);
-        if (Build.VERSION.SDK_INT >= 23) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-        }
+        imageView = findViewById(R.id.image);
         buttonTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchPictureTakerAction();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ||
+                            checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                        String [] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                        requestPermissions(permission, PERMISSION_CODE);
+                    } else {
+                        openCamera();
+                    }
+                } else {
+                    openCamera();
+                }
             }
         });
-        imageView = findViewById(R.id.image);
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
+//        }
+//        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dispatchPictureTakerAction();
+//            }
+//        });
+
+
+
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
     }
 
+    /***Start and End Date*/
+    private void showDateDialog(EditText editText) {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
+                editText.setText(simpleDateFormat.format(calendar.getTime()));
+            }
+        };
+        new DatePickerDialog(DriverInputSiteActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
+    /**
+     * Start and End Time
+     **/
+    private void showTimeDialog(EditText editText) {
+        Calendar calendar = Calendar.getInstance();
+        TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                calendar.set(Calendar.MINUTE, minute);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                editText.setText(simpleDateFormat.format(calendar.getTime()));
+            }
+        };
+        new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+    }
+
+    /**
+     * Camera functions below
+     **/
+    private void openCamera() {
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, "New Picture");
+        values.put(MediaStore.Images.Media.DESCRIPTION, "From the camera");
+        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
+        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_CODE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    openCamera();
+                } else {
+                    Toast.makeText(this, "PERMISSION DENIED", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+//    private void dispatchPictureTakerAction() {
+//        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        if (takePicture.resolveActivity(getPackageManager()) != null) {
+//            File photoFile = null;
+//            photoFile = createPhotoFile();
+//
+//            if (photoFile != null) {
+//                pathToFile = photoFile.getAbsolutePath();
+//                Uri photoURI = FileProvider.getUriForFile(DriverInputSiteActivity.this, "csci4060.project.aimsmobileapp.fileprovider", photoFile);
+//                takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+//                startActivityForResult(takePicture, PICTURE_ACTIVITY);
+//            }
+//        }
+//    }
+//
+//    private File createPhotoFile() {
+//        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//        File image = null;
+//        try {
+//            image = File.createTempFile("DT_" + name, ".jpg", storageDirectory);
+//        } catch (IOException e) {
+//            Log.d("errorLog", "Exception: " + e.toString());
+//        }
+//        return image;
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        //super.onActivityResult(requestCode, resultCode, data);
 
 
         if (requestCode == SIGNATURE_ACTIVITY) {
@@ -343,75 +456,12 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
         /**Scan Delivery Ticket**/
         if (resultCode == RESULT_OK) {
-            if (requestCode == PICTURE_ACTIVITY) {
-                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                imageView.setImageBitmap(bitmap);
-            }
+            imageView.setImageURI(image_uri);
         }
-
-    }
-
-    /**
-     * Camera functions below
-     **/
-    private void dispatchPictureTakerAction() {
-        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePicture.resolveActivity(getPackageManager()) != null) {
-            File photoFile = null;
-            photoFile = createPhotoFile();
-
-            if (photoFile != null) {
-                pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(DriverInputSiteActivity.this, "csci4060.project.aimsmobileapp.fileprovider", photoFile);
-                takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePicture, PICTURE_ACTIVITY);
-            }
-        }
-    }
-
-    private File createPhotoFile() {
-        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = null;
-        try {
-            image = File.createTempFile("DT_" + name, ".jpg", storageDirectory);
-        } catch (IOException e) {
-            Log.d("errorLog", "Exception: " + e.toString());
-        }
-        return image;
-    }
-
-    /***Start and End Date*/
-    private void showDateDialog(EditText editText) {
-        Calendar calendar = Calendar.getInstance();
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR, year);
-                calendar.set(Calendar.MONTH, month);
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
-                editText.setText(simpleDateFormat.format(calendar.getTime()));
-            }
-        };
-        new DatePickerDialog(DriverInputSiteActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-    }
-
-    /**
-     * Start and End Time
-     **/
-    private void showTimeDialog(EditText editText) {
-        Calendar calendar = Calendar.getInstance();
-        TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                calendar.set(Calendar.MINUTE, minute);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-                editText.setText(simpleDateFormat.format(calendar.getTime()));
-            }
-        };
-        new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+//            if (requestCode == PICTURE_ACTIVITY) {
+//                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
+//                imageView.setImageBitmap(bitmap);
+//            }
     }
 
     @Override

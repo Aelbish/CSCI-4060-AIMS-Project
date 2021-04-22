@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\aelbi\\.gradle\\caches\\transforms-2\\files-2.1\\194a6755dddaad657b929f94622ebe36\\jetified-zxing-android-embedded-3.4.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,151,244",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "99,146,239,309"
+                    },
+                    "to": {
+                        "startLines": "89,90,91,92",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "6763,6812,6859,6952",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "6807,6854,6947,7017"
+                    }
+                },
+                {
                     "source": "C:\\Users\\aelbi\\.gradle\\caches\\transforms-2\\files-2.1\\b234a824af7fd98a5c54fc0522824a91\\core-1.3.1\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "6662",
                         "endColumns": "100",
                         "endOffsets": "6758"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aelbi\\.gradle\\caches\\transforms-2\\files-2.1\\4dfde1b299b1290c5f6c57728f53c2c1\\jetified-zxing-android-embedded-3.4.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,104,151,244",
-                        "endColumns": "48,46,92,69",
-                        "endOffsets": "99,146,239,309"
-                    },
-                    "to": {
-                        "startLines": "89,90,91,92",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "6763,6812,6859,6952",
-                        "endColumns": "48,46,92,69",
-                        "endOffsets": "6807,6854,6947,7017"
                     }
                 },
                 {
