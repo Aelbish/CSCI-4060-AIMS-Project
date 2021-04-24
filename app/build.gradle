@@ -41,6 +41,7 @@ repositories {
 
 dependencies {
 
+    //map
     implementation(name:'HERE-sdk', ext:'aar')
     implementation fileTree(dir: 'libs', includes: ['*.jar', '*.arr'])
 
@@ -65,7 +66,7 @@ dependencies {
 
     //Dependency for bottom navigation bar
     implementation 'com.google.android.material:material:1.2.1'
-
+    implementation 'com.google.android.material:material:1.1.0-beta01'
     // Testing
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
@@ -83,6 +84,6 @@ dependencies {
     //Signature Capture
     implementation 'com.github.gcacace:signature-pad:1.2.1'
 
-    //map
-    implementation(name:'HERE-sdk', ext:'aar')
+
+
 }

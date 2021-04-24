@@ -92,6 +92,8 @@ csci4060/project/aimsmobileapp/database/entity/Load.java
 csci4060/project/aimsmobileapp/UI/Activities/MainScreenActivity.java
  csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity
  csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity$1
+csci4060/project/aimsmobileapp/UI/Fragments/navigation/ForegroundService.java
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.ForegroundService
 csci4060/project/aimsmobileapp/database/dao/DeliveryDao.java
  csci4060.project.aimsmobileapp.database.dao.DeliveryDao
 csci4060/project/aimsmobileapp/UI/Activities/CaptureActivity.java
@@ -101,6 +103,9 @@ csci4060/project/aimsmobileapp/UI/Fragments/navigation/RouteFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$1
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$1$1
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$10
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$10$1
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$11
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$12
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$2
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$3
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$4

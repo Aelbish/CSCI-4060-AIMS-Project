@@ -3,12 +3,13 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/res" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/res" />
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/b8ade9f9af2b52458ddffc381f61f586/jetified-HERE-sdk/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
