@@ -125,7 +125,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_site);
-
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));
         load_id = Integer.parseInt(bundle.getString("SeqNum"));

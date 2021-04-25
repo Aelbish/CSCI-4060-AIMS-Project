@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UI.Activities.DriverInputSourceActivity">
+    tools:context=".UI.Activities.DriverInputSiteActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Product Type"
-                android:textColor="@color/black" />
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
             <!--            <EditText-->
             <!--                android:id="@+id/editTextProductType"-->
             <!--                android:layout_width="match_parent"-->
@@ -34,7 +36,14 @@
             <Spinner
                 android:id="@+id/spinnerProductType"
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                />
 
             <TextView
                 android:id="@+id/textView5"
@@ -42,7 +51,8 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Start Date"
-                android:textColor="@color/black" />
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/editTextStartDate"
@@ -50,7 +60,14 @@
                 android:layout_height="40dp"
                 android:focusable="false"
                 android:hint="Select start date"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                />
 
             <TextView
                 android:id="@+id/textView7"
@@ -58,6 +75,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Start Time"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -66,7 +84,14 @@
                 android:layout_height="40dp"
                 android:focusable="false"
                 android:hint="Select start time"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                />
 
             <TextView
                 android:id="@+id/textView8"
@@ -74,6 +99,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="End Date"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -82,7 +108,13 @@
                 android:layout_height="40dp"
                 android:focusable="false"
                 android:hint="Select end date"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView10"
@@ -90,6 +122,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="End Time"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -98,7 +131,13 @@
                 android:layout_height="40dp"
                 android:focusable="false"
                 android:hint="Select end time"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView11"
@@ -106,6 +145,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Beginning Site Container Reading"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -114,13 +154,20 @@
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
                 android:inputType="numberDecimal"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Ending Site Container Reading"
                 android:textColor="@color/black" />
 
@@ -129,13 +176,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Beginning Trailer Meter Reading"
                 android:textColor="@color/black" />
 
@@ -144,13 +198,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Ending Trailer Meter Reading"
                 android:textColor="@color/black" />
 
@@ -159,13 +220,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Delivered Gross Quantity"
                 android:textColor="@color/black" />
 
@@ -174,13 +242,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Delivered Net Quantity"
                 android:textColor="@color/black" />
 
@@ -189,13 +264,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textSize="22sp"
                 android:text="Delivery Ticket Number"
                 android:textColor="@color/black" />
 
@@ -204,13 +286,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter delivery ticket number"
-                android:inputType="number" />
+                android:inputType="number"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Site Barcode"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -219,7 +308,11 @@
                 android:layout_height="40dp"
                 android:focusable="false"
                 android:hint="Scan Barcode"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_margin="8dp"
+                />
 
             <Button
                 android:id="@+id/buttonScan"
@@ -228,13 +321,15 @@
                 android:layout_gravity="center"
                 android:drawableRight="@drawable/ic_baseline_camera_alt_24"
                 android:text="Scan"
-                android:theme="@style/AppTheme" />
+                android:theme="@style/AppTheme"
+                android:layout_marginBottom="18dp"/>
 
             <TextView
                 android:id="@+id/textView26"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:textSize="22sp"
                 android:text="Delivery Ticket Picture"
                 />
 
@@ -284,12 +379,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="18dp"
                 />
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:textSize="22sp"
                 android:text="Customer E-Signature"
                 android:textColor="@color/black" />
 
@@ -298,7 +395,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="156dp"
                 android:layout_gravity="center"
-                android:layout_margin="12dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/image_view_border" />
 
             <Button
@@ -308,13 +405,15 @@
                 android:layout_gravity="center"
                 android:drawableRight="@drawable/ic_baseline_edit_24"
                 android:text="Sign"
-                android:theme="@style/AppTheme" />
+                android:theme="@style/AppTheme"
+                android:layout_marginBottom="18dp"/>
 
             <TextView
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Delivery Comments"
+                android:textSize="22sp"
                 android:textColor="@color/black" />
 
             <EditText
@@ -324,7 +423,13 @@
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="Enter delivery comments or remarks if any"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:background="@drawable/textfield"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
 
             <Button
                 android:id="@+id/btnSubmitInputSiteData"

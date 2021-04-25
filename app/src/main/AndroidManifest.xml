@@ -27,9 +27,12 @@
         <meta-data android:name="com.here.sdk.access_key_id" android:value="ufAS_-dPdTNOoycydR8MeQ"/>
         <meta-data android:name="com.here.sdk.access_key_secret" android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw"/>
         <activity android:name=".UI.SignatureCapture" />
-        <activity android:name=".UI.Activities.DriverInputSiteActivity" />
-        <activity android:name=".UI.Activities.DriverInputSourceActivity" />
-        <activity android:name=".UI.Activities.TripActivity" />
+        <activity android:name=".UI.Activities.DriverInputSiteActivity"
+            android:label="Delivery Form"/>
+        <activity android:name=".UI.Activities.DriverInputSourceActivity"
+            android:label="Pickup Form"/>
+        <activity android:name=".UI.Activities.TripActivity"
+            android:label="Trip Summary"/>
         <activity android:name=".UI.Activities.MainScreenActivity" />
         <activity android:name=".UI.Activities.MainActivity">
             <intent-filter>

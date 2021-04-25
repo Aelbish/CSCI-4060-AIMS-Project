@@ -63,9 +63,15 @@
             android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw" />
 
         <activity android:name="csci4060.project.aimsmobileapp.UI.SignatureCapture" />
-        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity" />
-        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity" />
-        <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity" />
+        <activity
+            android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity"
+            android:label="Delivery Form" />
+        <activity
+            android:name="csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity"
+            android:label="Pickup Form" />
+        <activity
+            android:name="csci4060.project.aimsmobileapp.UI.Activities.TripActivity"
+            android:label="Trip Summary" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity" />
         <activity android:name="csci4060.project.aimsmobileapp.UI.Activities.MainActivity" >
             <intent-filter>
