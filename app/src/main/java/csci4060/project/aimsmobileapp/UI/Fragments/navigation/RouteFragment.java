@@ -29,6 +29,7 @@ import com.here.android.mpa.common.OnEngineInitListener;
 import com.here.android.mpa.common.PositioningManager;
 import com.here.android.mpa.guidance.AudioPlayerDelegate;
 
+import com.here.android.mpa.guidance.TrafficUpdater;
 import com.here.android.mpa.guidance.VoiceCatalog;
 import com.here.android.mpa.guidance.VoiceGuidanceOptions;
 import com.here.android.mpa.guidance.VoicePackage;
@@ -56,6 +57,7 @@ import com.here.android.mpa.routing.Route;
 import com.here.android.mpa.routing.RouteOptions;
 import com.here.android.mpa.routing.RoutePlan;
 import com.here.android.mpa.routing.RouteResult;
+import com.here.android.mpa.routing.RouteTta;
 import com.here.android.mpa.routing.RouteWaypoint;
 import com.here.android.mpa.routing.Router;
 import com.here.android.mpa.routing.RoutingError;
@@ -66,6 +68,7 @@ import java.util.List;
 import java.util.Objects;
 
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -76,6 +79,7 @@ public class RouteFragment extends Fragment {
     TextView instructions;
     double destinationLat;
     double destinationLon;
+    private TrafficUpdater.RequestInfo m_requestInfo;
 
     private MapRoute m_mapRoute;
 
@@ -266,6 +270,7 @@ public class RouteFragment extends Fragment {
                                         Map.MOVE_PRESERVE_ORIENTATION);
 
                                 startNavigation();
+
                             } else {
                                 Toast.makeText(getActivity(),
                                         "Error:route results returned is not valid",
@@ -414,6 +419,8 @@ public class RouteFragment extends Fragment {
         m_navigationManager.getAudioPlayer().setDelegate(m_audioPlayerDelegate);
 
         m_navigationManager.addLaneInformationListener(new WeakReference<NavigationManager.LaneInformationListener>(m_laneInformationListener));
+
+        m_navigationManager.addRerouteListener(new WeakReference<NavigationManager.RerouteListener>(rerouteListener));
     }
 
     final private NavigationManager.LaneInformationListener
@@ -438,6 +445,22 @@ public class RouteFragment extends Fragment {
             m_navigationManager.getTta(Route.TrafficPenaltyMode.DISABLED, true);
             m_navigationManager.getDestinationDistance();
         }
+    };
+    private NavigationManager.RerouteListener rerouteListener=new NavigationManager.RerouteListener() {
+        @Override
+        public void onRerouteBegin() {
+            Toast.makeText(getActivity(), "reroute begin", Toast.LENGTH_SHORT).show();
+
+            super.onRerouteBegin();
+        }
+
+
+        @Override
+        public void onRerouteEnd(@NonNull RouteResult routeResult, RoutingError routingError) {
+            Toast.makeText(getActivity(), "reroute end", Toast.LENGTH_SHORT).show();
+            super.onRerouteEnd(routeResult, routingError);
+        }
+
     };
     private NavigationManager.NewInstructionEventListener instructListener
             = new NavigationManager.NewInstructionEventListener() {
@@ -465,6 +488,7 @@ public class RouteFragment extends Fragment {
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
             Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             stopForegroundService();
+            m_naviControlButton.setText(R.string.start_navi);
 
         }
 
@@ -476,6 +500,12 @@ public class RouteFragment extends Fragment {
 
         @Override
         public void onRouteUpdated(Route route) {
+            // remove old MapRoute object from the map
+            m_map.removeMapObject(m_mapRoute);
+            // create a new MapRoute object
+            m_mapRoute = new MapRoute(route);
+            // display new route on the map
+            m_map.addMapObject(m_mapRoute);
             Toast.makeText(getActivity(), "Route updated", Toast.LENGTH_SHORT).show();
         }
 
@@ -642,6 +672,8 @@ public class RouteFragment extends Fragment {
         voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
 
     }
+
+
 
 }
 
