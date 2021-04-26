@@ -1,11 +1,18 @@
 package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.PointF;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,31 +21,38 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.here.android.mpa.common.GeoBoundingBox;
+import com.here.android.mpa.common.Image;
 import com.here.android.mpa.common.OnEngineInitListener;
 import com.here.android.mpa.common.PositioningManager;
+import com.here.android.mpa.common.ViewObject;
 import com.here.android.mpa.guidance.AudioPlayerDelegate;
 
-import com.here.android.mpa.guidance.TrafficUpdater;
+
 import com.here.android.mpa.guidance.VoiceCatalog;
 import com.here.android.mpa.guidance.VoiceGuidanceOptions;
 import com.here.android.mpa.guidance.VoicePackage;
 import com.here.android.mpa.mapping.AndroidXMapFragment;
 import com.here.android.mpa.mapping.Map;
+import com.here.android.mpa.mapping.MapGesture;
 import com.here.android.mpa.mapping.MapMarker;
 import com.here.android.mpa.mapping.MapRoute;
 
 import java.io.File;;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 import com.here.android.mpa.common.GeoCoordinate;
@@ -52,6 +66,7 @@ import com.here.android.mpa.guidance.LaneInformation;
 import com.here.android.mpa.guidance.NavigationManager;
 
 
+import com.here.android.mpa.mapping.PositionIndicator;
 import com.here.android.mpa.routing.CoreRouter;
 import com.here.android.mpa.routing.Route;
 import com.here.android.mpa.routing.RouteOptions;
@@ -61,16 +76,15 @@ import com.here.android.mpa.routing.RouteTta;
 import com.here.android.mpa.routing.RouteWaypoint;
 import com.here.android.mpa.routing.Router;
 import com.here.android.mpa.routing.RoutingError;
-import com.here.services.Api;
 
 
 import java.util.List;
 import java.util.Objects;
 
 import csci4060.project.aimsmobileapp.R;
-import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity;
 
 import static android.content.ContentValues.TAG;
+import static android.content.Context.LOCATION_SERVICE;
 
 
 //This is route screen
@@ -79,13 +93,13 @@ public class RouteFragment extends Fragment {
     TextView instructions;
     double destinationLat;
     double destinationLon;
-    private TrafficUpdater.RequestInfo m_requestInfo;
+    private LocationManager locationManager;
+    private LocationListener locationListner;
+    double latitude;
+    double longitude;
 
     private MapRoute m_mapRoute;
 
-    private static final int ITEM_ID_SHOW_ZONES = 1;
-    private static final int ITEM_ID_EXCLUDE_IN_ROUTING = 2;
-    private static final int ITEM_ID_ADD_AVOIDED_AREAS = 3;
 
     public void setDestination(double lat, double lon) {
         destinationLat = lat;
@@ -119,14 +133,22 @@ public class RouteFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 
+        @SuppressLint("MissingPermission")
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
         return inflater.inflate(R.layout.fragment_route, container, false);
+
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
 
         m_mapFragment = getMapFragment();
         m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
@@ -136,11 +158,13 @@ public class RouteFragment extends Fragment {
             initNaviControlButton();
 
 
+
         } else {
             ActivityCompat
                     .requestPermissions(getActivity(), RUNTIME_PERMISSIONS, REQUEST_CODE_ASK_PERMISSIONS);
             initMapFragment();
             initNaviControlButton();
+
 
         }
 
@@ -151,6 +175,8 @@ public class RouteFragment extends Fragment {
     }
 
     private void initMapFragment() {
+
+
 
 
         /* Locate the mapFragment UI element */
@@ -164,18 +190,22 @@ public class RouteFragment extends Fragment {
         // This method will throw IllegalArgumentException if provided path is not writable
         com.here.android.mpa.common.MapSettings.setDiskCacheRootPath(path);
         if (m_mapFragment != null) {
+
+
             /* Initialize the AndroidXMapFragment, results will be given via the called back. */
             m_mapFragment.init(new OnEngineInitListener() {
                 @Override
                 public void onEngineInitializationCompleted(Error error) {
 
                     if (error == OnEngineInitListener.Error.NONE) {
-                        m_map = m_mapFragment.getMap();
-                        m_map.setCenter(PositioningManager.getInstance().getPosition().getCoordinate(), Map
-                                .Animation.BOW);
 
-                        m_map.setCenter(new GeoCoordinate(32.527180 ,-92.078880),
-                                Map.Animation.NONE);
+                        m_mapFragment.getMapGesture().addOnGestureListener(gestureListener, 100, true);
+                        m_map = m_mapFragment.getMap();
+
+
+
+                        m_map.setCenter(new GeoCoordinate(latitude ,longitude),Map.Animation.NONE);
+                        m_mapFragment.getPositionIndicator().setVisible(true);
 
                         //Put this call in Map.onTransformListener if the animation(Linear/Bow)
                         //is used in setCenter()
@@ -227,7 +257,7 @@ public class RouteFragment extends Fragment {
         routePlan.setRouteOptions(routeOptions);
 
 
-        RouteWaypoint startPoint = new RouteWaypoint(new GeoCoordinate(32.527180, -92.078880));
+        RouteWaypoint startPoint = new RouteWaypoint(new GeoCoordinate(latitude, longitude));
 
         RouteWaypoint destination = new RouteWaypoint(new GeoCoordinate(destinationLat, destinationLon));
 
@@ -421,7 +451,133 @@ public class RouteFragment extends Fragment {
         m_navigationManager.addLaneInformationListener(new WeakReference<NavigationManager.LaneInformationListener>(m_laneInformationListener));
 
         m_navigationManager.addRerouteListener(new WeakReference<NavigationManager.RerouteListener>(rerouteListener));
+
+        m_navigationManager.setRealisticViewMode(NavigationManager.RealisticViewMode.DAY);
+       m_navigationManager.addRealisticViewAspectRatio(NavigationManager.AspectRatio.AR_16x9);
+        m_navigationManager.addRealisticViewListener(new WeakReference<NavigationManager.RealisticViewListener>(realisticViewListener));
+
+
     }
+    ImageView img ;
+
+    private NavigationManager.RealisticViewListener realisticViewListener = new NavigationManager.RealisticViewListener() {
+
+        @Override
+        public void onRealisticViewShow(NavigationManager.AspectRatio aspectRatio, @Nullable Image image, @Nullable Image image1) {
+            img= getActivity().findViewById(R.id.imageView2);
+
+            if (image1.getType() == Image.Type.SVG) {
+                // full size is too big (will cover most of the screen), so cut the size in half
+                Bitmap bmpImage = image1.getBitmap((int) (image1.getWidth() * 0.5),
+                        (int) (image1.getHeight() * 0.5));
+                if (bmpImage != null) {
+                    //
+                    // show bmpImage on-screen
+                    //
+                    img.setImageBitmap(bmpImage);
+                    img.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+        }
+
+
+
+
+    };
+    // application design suggestion: pause roadview when user gesture is detected.
+    private MapGesture.OnGestureListener gestureListener = new MapGesture.OnGestureListener() {
+        @Override
+        public void onPanStart() {
+            pauseRoadView();
+        }
+
+        @Override
+        public void onPanEnd() {
+
+        }
+
+        @Override
+        public void onMultiFingerManipulationStart() {
+        }
+
+        @Override
+        public void onMultiFingerManipulationEnd() {
+        }
+
+        @Override
+        public boolean onMapObjectsSelected(@NonNull List<ViewObject> list) {
+            return false;
+        }
+
+        @Override
+        public boolean onTapEvent(@NonNull PointF pointF) {
+            NavigationManager.getInstance().setMapUpdateMode(NavigationManager.MapUpdateMode.ROADVIEW);
+            return false;
+        }
+
+        @Override
+        public boolean onDoubleTapEvent(PointF p) {
+            return false;
+        }
+
+        @Override
+        public void onPinchLocked() {
+        }
+
+        @Override
+        public boolean onPinchZoomEvent(float scaleFactor, PointF p) {
+            pauseRoadView();
+            return false;
+        }
+
+        @Override
+        public void onRotateLocked() {
+        }
+
+        @Override
+        public boolean onRotateEvent(float rotateAngle) {
+            return false;
+        }
+
+        @Override
+        public boolean onTiltEvent(float angle) {
+            pauseRoadView();
+            return false;
+        }
+
+        @Override
+        public boolean onLongPressEvent(PointF p) {
+            return false;
+        }
+
+        @Override
+        public void onLongPressRelease() {
+        }
+
+        @Override
+        public boolean onTwoFingerTapEvent(PointF p) {
+            // Reset the map view
+            double level = m_map.getMinZoomLevel() + m_map.getMaxZoomLevel() / 2;
+            m_map.setZoomLevel(level);
+            return false;
+
+        }
+    };
+
+    private void pauseRoadView() {
+        // pause RoadView so that map will stop moving, the map marker will use updates from
+        // PositionManager callback to update its position.
+
+        if (NavigationManager.getInstance().getMapUpdateMode().equals(NavigationManager.MapUpdateMode.ROADVIEW)) {
+            NavigationManager.getInstance().setMapUpdateMode(NavigationManager.MapUpdateMode.NONE);
+            m_lastZoomLevelInRoadViewMode = m_map.getZoomLevel();
+        }
+    }
+
+
+
 
     final private NavigationManager.LaneInformationListener
             m_laneInformationListener = new NavigationManager.LaneInformationListener() {
@@ -444,8 +600,11 @@ public class RouteFragment extends Fragment {
             // fetched from navigation manager
             m_navigationManager.getTta(Route.TrafficPenaltyMode.DISABLED, true);
             m_navigationManager.getDestinationDistance();
+
         }
     };
+
+
     private NavigationManager.RerouteListener rerouteListener=new NavigationManager.RerouteListener() {
         @Override
         public void onRerouteBegin() {
@@ -487,8 +646,9 @@ public class RouteFragment extends Fragment {
         @Override
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
             Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
-            stopForegroundService();
             m_naviControlButton.setText(R.string.start_navi);
+            stopForegroundService();
+
 
         }
 
@@ -521,15 +681,15 @@ public class RouteFragment extends Fragment {
         super.onDestroy();
         if (m_map != null) {
             m_map.removeMapObject(m_positionIndicatorFixed);
-            stopForegroundService();
-            m_navigationManager.stop();
 
         }
         if (MapEngine.isInitialized()) {
             NavigationManager.getInstance().stop();
             PositioningManager.getInstance().stop();
         }
-
+        NavigationManager.getInstance().removeLaneInformationListener(m_laneInformationListener);
+        NavigationManager.getInstance()
+                .removeRerouteListener(rerouteListener);
     }
 
 
@@ -672,8 +832,6 @@ public class RouteFragment extends Fragment {
         voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
 
     }
-
-
 
 }
 
