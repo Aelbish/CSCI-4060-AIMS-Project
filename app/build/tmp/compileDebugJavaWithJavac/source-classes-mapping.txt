@@ -108,7 +108,7 @@ csci4060/project/aimsmobileapp/UI/Fragments/navigation/RouteFragment.java
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$13
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$13$1
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$14
- csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$15
+ csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$14$1
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$2
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$3
  csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment$4

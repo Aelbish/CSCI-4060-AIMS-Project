@@ -78,6 +78,7 @@ import com.here.android.mpa.routing.Router;
 import com.here.android.mpa.routing.RoutingError;
 
 
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -142,14 +143,12 @@ public class RouteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         m_mapFragment = getMapFragment();
         m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
         // Get a MapView instance from the layout.
         if (hasPermissions(getActivity(), RUNTIME_PERMISSIONS)) {
             initMapFragment();
             initNaviControlButton();
-
 
 
         } else {
@@ -168,6 +167,7 @@ public class RouteFragment extends Fragment {
     }
 
     private void initMapFragment() {
+
 
         /* Locate the mapFragment UI element */
         m_mapFragment = getMapFragment();
@@ -192,14 +192,12 @@ public class RouteFragment extends Fragment {
 
                         m_mapFragment.getMapGesture().addOnGestureListener(gestureListener, 100, true);
                         m_map = m_mapFragment.getMap();
-
                         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-                        @SuppressLint("MissingPermission")
-                        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                        @SuppressLint("MissingPermission") Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                         longitude = location.getLongitude();
                         latitude = location.getLatitude();
 
-                        m_map.setCenter(new GeoCoordinate(latitude ,longitude),Map.Animation.NONE);
+                        m_map.setCenter(new GeoCoordinate(latitude, longitude), Map.Animation.NONE);
                         m_mapFragment.getPositionIndicator().setVisible(true);
 
                         //Put this call in Map.onTransformListener if the animation(Linear/Bow)
@@ -305,6 +303,8 @@ public class RouteFragment extends Fragment {
                             Toast.makeText(getActivity(),
                                     "Error:route calculation returned error code: " + routingError,
                                     Toast.LENGTH_LONG).show();
+                            m_navigationManager.setMap(null);
+                            return;
 
                         }
                     }
@@ -387,7 +387,7 @@ public class RouteFragment extends Fragment {
         alertDialogBuilder.setNegativeButton("Navigation", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialoginterface, int i) {
                 m_navigationManager.startNavigation(m_route);
-                initVoicePackages();
+
                 m_map.setTilt(60);
                 startForegroundService();
             }
@@ -398,7 +398,7 @@ public class RouteFragment extends Fragment {
             public void onClick(DialogInterface dialoginterface, int i) {
                 m_navigationManager.simulate(m_route, 60);//Simualtion speed is set to 60 m/s
 
-                initVoicePackages();
+
                 m_map.setTilt(60);
                 startForegroundService();
             }
@@ -418,6 +418,7 @@ public class RouteFragment extends Fragment {
          * Sets the measuring unit system that is used by voice guidance.
          */
         m_navigationManager.setDistanceUnit(NavigationManager.UnitSystem.IMPERIAL_US);
+
 
         addNavigationListeners();
     }
@@ -440,6 +441,8 @@ public class RouteFragment extends Fragment {
         m_navigationManager.addPositionListener(
                 new WeakReference<NavigationManager.PositionListener>(m_positionListener));
 
+
+
         /* Register a AudioPlayerDelegate to monitor TTS text */
         m_navigationManager.getAudioPlayer().setDelegate(m_audioPlayerDelegate);
 
@@ -448,18 +451,19 @@ public class RouteFragment extends Fragment {
         m_navigationManager.addRerouteListener(new WeakReference<NavigationManager.RerouteListener>(rerouteListener));
 
         m_navigationManager.setRealisticViewMode(NavigationManager.RealisticViewMode.DAY);
-       m_navigationManager.addRealisticViewAspectRatio(NavigationManager.AspectRatio.AR_16x9);
+        m_navigationManager.addRealisticViewAspectRatio(NavigationManager.AspectRatio.AR_16x9);
         m_navigationManager.addRealisticViewListener(new WeakReference<NavigationManager.RealisticViewListener>(realisticViewListener));
-
+        initVoicePackages();
 
     }
-    ImageView img ;
+
+    ImageView img;
 
     private NavigationManager.RealisticViewListener realisticViewListener = new NavigationManager.RealisticViewListener() {
 
         @Override
         public void onRealisticViewShow(NavigationManager.AspectRatio aspectRatio, @Nullable Image image, @Nullable Image image1) {
-            img= getActivity().findViewById(R.id.imageView2);
+            img = getActivity().findViewById(R.id.imageView2);
 
             if (image1.getType() == Image.Type.SVG) {
                 // full size is too big (will cover most of the screen), so cut the size in half
@@ -476,8 +480,6 @@ public class RouteFragment extends Fragment {
             }
 
         }
-
-
 
 
     };
@@ -572,8 +574,6 @@ public class RouteFragment extends Fragment {
     }
 
 
-
-
     final private NavigationManager.LaneInformationListener
             m_laneInformationListener = new NavigationManager.LaneInformationListener() {
         @Override
@@ -600,7 +600,7 @@ public class RouteFragment extends Fragment {
     };
 
 
-    private NavigationManager.RerouteListener rerouteListener=new NavigationManager.RerouteListener() {
+    private NavigationManager.RerouteListener rerouteListener = new NavigationManager.RerouteListener() {
         @Override
         public void onRerouteBegin() {
             Toast.makeText(getActivity(), "reroute begin", Toast.LENGTH_SHORT).show();
@@ -642,6 +642,7 @@ public class RouteFragment extends Fragment {
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
             Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             m_naviControlButton.setText(R.string.start_navi);
+            m_navigationManager.stop();
             stopForegroundService();
 
 
@@ -710,8 +711,6 @@ public class RouteFragment extends Fragment {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
             for (int index = 0; index < permissions.length; index++) {
                 if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
-
-
                     /*
                      * If the user turned down the permission request in the past and chose the
                      * Don't ask again option in the permission request system dialog.
@@ -774,61 +773,130 @@ public class RouteFragment extends Fragment {
 
 
     private void initVoicePackages() {
-
+        m_navigationManager = NavigationManager.getInstance();
+        // Retrieve the VoiceCatalog and download the latest updates
         VoiceCatalog voiceCatalog = VoiceCatalog.getInstance();
 
-        // Download the catalog of voices if we haven't done so already.
-        if (voiceCatalog.getCatalogList().isEmpty()) {
+        if (!voiceCatalog.isLocalCatalogAvailable()) {
+            Log.d(TAG, "Voice catalog is not available in local storage.");
+
+
             voiceCatalog.downloadCatalog(new VoiceCatalog.OnDownloadDoneListener() {
                 @Override
                 public void onDownloadDone(VoiceCatalog.Error error) {
-
                     if (error == VoiceCatalog.Error.NONE) {
+                        // catalog download successful
+                        Log.d(TAG, "Download voice catalog successfully.");
+                        Toast.makeText(getActivity().getApplicationContext(), "Voice catalog is not available in local storage.", Toast.LENGTH_LONG).show();
+
 
                     } else {
-                        Toast.makeText(getActivity(),
-                                "Download catalog failed: " + error.toString(),
-                                Toast.LENGTH_LONG).show();
+                        Log.d(TAG, "Download voice catalog failed.");
+
+                        Toast.makeText(getActivity().getApplicationContext(), "Voice catalog download error.", Toast.LENGTH_LONG).show();
                     }
+
+                    // Get the list of voice packages from the voice catalog list
+                    List<VoicePackage> voicePackages =
+                            VoiceCatalog.getInstance().getCatalogList();
+                    if (voicePackages.size() == 0) {
+                        Log.d(TAG, "Voice catalog size is 0.");
+
+                        Toast.makeText(getActivity().getApplicationContext(), "Voice catalog size is 0.", Toast.LENGTH_LONG).show();
+                    }
+
+                    long id = -1;
+                    // select
+                    for (VoicePackage voicePackage : voicePackages) {
+                        if (voicePackage.getMarcCode().compareToIgnoreCase("eng") == 0) {
+                            if (voicePackage.isTts()) // TODO: need to figure out why always return false
+                            {
+                                id = voicePackage.getId();
+                                break;
+                            }
+                        }
+                    }
+
+                    if (!VoiceCatalog.getInstance().isLocalVoiceSkin(id)) {
+                        final long finalId = id;
+
+                        VoiceCatalog.getInstance().downloadVoice(id, new VoiceCatalog.OnDownloadDoneListener() {
+                            @Override
+                            public void onDownloadDone(VoiceCatalog.Error error) {
+                                if (error == VoiceCatalog.Error.NONE) {
+                                    //voice skin download successful
+                                    Log.d(TAG, "Download voice skin successfully.");
+
+                                    Toast.makeText(getActivity().getApplicationContext(), "Voice skin download successful.", Toast.LENGTH_LONG).show();
+
+                                    // set the voice skin for use by navigation manager
+                                    if (VoiceCatalog.getInstance().getLocalVoiceSkin(finalId) != null) {
+                                        // obtain VoiceGuidanceOptions object
+                                        VoiceGuidanceOptions voiceGuidanceOptions = m_navigationManager.getVoiceGuidanceOptions();
+
+                                        // set the voice skin for use by navigation manager
+                                        voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(finalId));
+
+                                    } else {
+                                        Log.d(TAG, "Get local voice skin error.");
+
+                                        Toast.makeText(getActivity().getApplicationContext(), "Navi manager set voice skin error.", Toast.LENGTH_LONG).show();
+                                    }
+
+                                } else {
+                                    Log.d(TAG, "Download voice skin failed.");
+                                    Toast.makeText(getActivity().getApplicationContext(), "Voice skin download error.", Toast.LENGTH_LONG).show();
+                                }
+
+                            }
+                        });
+                    } else {
+                        // set the voice skin for use by navigation manager
+                        if (VoiceCatalog.getInstance().getLocalVoiceSkin(id) != null) {
+                            // obtain VoiceGuidanceOptions object
+                            VoiceGuidanceOptions voiceGuidanceOptions = m_navigationManager.getVoiceGuidanceOptions();
+
+                            // set the voice skin for use by navigation manager
+                            voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
+
+                        } else {
+                            Log.d(TAG, "Get local voice skin error.");
+                            Toast.makeText(getActivity().getApplicationContext(), "Navi manager set voice skin error.", Toast.LENGTH_LONG).show();
+                        }
+
+
+                    }
+
                 }
+
             });
-
         }
-        // Get the list of voice packages from the voice catalog list
-        List<VoicePackage> voicePackages = VoiceCatalog.getInstance().getCatalogList();
-
-        long id = -1;
-
-// select
-        for (VoicePackage vPackage : voicePackages) {
-            if (vPackage.getMarcCode().compareToIgnoreCase("eng") == 0) {
-                if (vPackage.isTts()) {
-                    id = vPackage.getId();
-                    break;
+        else{
+            // Get the list of voice packages from the voice catalog list
+            List<VoicePackage> voicePackages =
+                    VoiceCatalog.getInstance().getCatalogList();
+            long id = -1;
+            // select
+            for (VoicePackage voicePackage : voicePackages) {
+                if (voicePackage.getMarcCode().compareToIgnoreCase("eng") == 0) {
+                    if (voicePackage.isTts()) // TODO: need to figure out why always return false
+                    {
+                        id = voicePackage.getId();
+                        break;
+                    }
                 }
             }
+            // obtain VoiceGuidanceOptions object
+            VoiceGuidanceOptions voiceGuidanceOptions = m_navigationManager.getVoiceGuidanceOptions();
+
+            // set the voice skin for use by navigation manager
+            voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
         }
-        if (!voiceCatalog.isLocalVoiceSkin(id))
-        {
-            voiceCatalog.downloadVoice(id, new VoiceCatalog.OnDownloadDoneListener() {
-                @Override
-                public void onDownloadDone(VoiceCatalog.Error error) {
-
-                    if (error == VoiceCatalog.Error.NONE) {
-
-                    }
-                }
-            });
-        }
-        // obtain VoiceGuidanceOptions object
-        VoiceGuidanceOptions voiceGuidanceOptions = m_navigationManager.getVoiceGuidanceOptions();
-
-// set the voice skin for use by navigation manager
-        voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
-
     }
 
 }
+
+
 
 
 
