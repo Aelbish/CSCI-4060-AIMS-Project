@@ -133,12 +133,7 @@ public class RouteFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 
-        @SuppressLint("MissingPermission")
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
         return inflater.inflate(R.layout.fragment_route, container, false);
 
     }
@@ -147,8 +142,6 @@ public class RouteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
 
         m_mapFragment = getMapFragment();
         m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
@@ -176,9 +169,6 @@ public class RouteFragment extends Fragment {
 
     private void initMapFragment() {
 
-
-
-
         /* Locate the mapFragment UI element */
         m_mapFragment = getMapFragment();
 
@@ -199,10 +189,15 @@ public class RouteFragment extends Fragment {
 
                     if (error == OnEngineInitListener.Error.NONE) {
 
+
                         m_mapFragment.getMapGesture().addOnGestureListener(gestureListener, 100, true);
                         m_map = m_mapFragment.getMap();
 
-
+                        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                        @SuppressLint("MissingPermission")
+                        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                        longitude = location.getLongitude();
+                        latitude = location.getLatitude();
 
                         m_map.setCenter(new GeoCoordinate(latitude ,longitude),Map.Animation.NONE);
                         m_mapFragment.getPositionIndicator().setVisible(true);
