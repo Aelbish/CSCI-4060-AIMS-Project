@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <TextView
@@ -60,241 +60,388 @@
         <RelativeLayout
             android:id="@+id/trip_info_relative_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
+
+            <!--            Driver code-->
+            <TextView
+                android:id="@+id/DriverCodeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DRIVER CODE:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
                 android:id="@+id/DriverCode"
-                android:text="DriverCode : Hello"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DriverCodeTitle"
+                android:text="123"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/DriverName"
-                android:text="DriverName : Hello"
+                android:textSize="15sp" />
+
+            <View
+                style="@style/Divider"
+                android:layout_below="@id/DriverCode" />
+
+            <!--            End of driver code-->
+
+
+            <!--            driver name-->
+            <TextView
+                android:id="@+id/DriverNameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/DriverCode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="DRIVER NAME:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/DriverName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DriverNameTitle"
+                android:text="John Doe"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TruckId"
-                android:text="TruckId : Hello"
+                android:textSize="15sp" />
+
+            <View
+                style="@style/Divider"
+                android:layout_below="@id/DriverName" />
+
+            <!--            End of driver name-->
+
+
+            <!--            Truck description-->
+            <TextView
+                android:id="@+id/TruckDescTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/DriverName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="TRUCK DESCRIPTION:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TruckCode"
-                android:text="TruckCode : Hello"
-                android:layout_below="@id/TruckId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
                 android:id="@+id/TruckDesc"
-                android:text="TruckDesc : Hello"
-                android:layout_below="@id/TruckCode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TruckDescTitle"
+                android:text="This is truck description"
+                android:textColor="#515151"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/TruckDesc"/>
+
+            <!--End of truck description-->
+
+
+            <!--            Trailer Description -->
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TrailerId"
-                android:text="TrailerId : Hello"
+                android:id="@+id/TrailerDescTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/TruckDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="TRAILER DESCRIPTION:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TrailerCode"
-                android:text="TrailerCode : Hello"
-                android:layout_below="@id/TrailerId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
                 android:id="@+id/TrailerDesc"
-                android:text="TrailerDesc : Hello"
-                android:layout_below="@id/TrailerCode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TrailerDescTitle"
+                android:text="This is trailer description"
+                android:textColor="#515151"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/TrailerDesc"/>
+
+            <!--            End of trailer description-->
+
+
+            <!--            Trip name-->
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TripName"
-                android:text="TripName : Hello"
+                android:id="@+id/TripNameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/TrailerDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="TRIP NAME:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/TripName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TripNameTitle"
+                android:text="This is trip name"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/TripDate"
-                android:text="TripDate : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/TripName"/>
+
+            <!--            End of trip name-->
+
+
+            <!--            Trip date-->
+
+            <TextView
+                android:id="@+id/TripDateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/TripName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="TRIP DATE:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/TripDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TripDateTitle"
+                android:text="2020/12/12"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/DestinationCode"
-                android:text="DestinationCode : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/TripDate"/>
+
+            <!--            End of trip date-->
+
+
+            <!--            Trip destination-->
+
+            <TextView
+                android:id="@+id/DestinationNameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/TripDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="DESTINATION NAME:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
                 android:id="@+id/DestinationName"
-                android:text="DestinationName : Hello"
-                android:layout_below="@id/DestinationCode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DestinationNameTitle"
+                android:text="This is destination name"
+                android:textColor="#515151"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/DestinationName"/>
+
+            <!--            End of trip destination-->
+
+
+            <!--            Address 1 -->
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/Address1"
-                android:text="Address1 : Hello"
+                android:id="@+id/Address1Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/DestinationName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="ADDRESS 1:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/Address1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Address1Title"
+                android:text="This is address 1"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/City"
-                android:text="City : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/Address1"/>
+
+            <!--            End of address 1-->
+
+
+            <!--            City-->
+
+            <TextView
+                android:id="@+id/CityTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/Address1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="CITY:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/City"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CityTitle"
+                android:text="This is city"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/PostalCode"
-                android:text="PostalCode : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/City"/>
+
+            <!--            End of city-->
+
+            <!--            Postal code-->
+
+            <TextView
+                android:id="@+id/PostalCodeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/City"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="POSTAL CODE:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/PostalCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/PostalCodeTitle"
+                android:text="74456"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/ProductId"
-                android:text="ProductId : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/PostalCode"/>
+
+            <!--            End of postal code-->
+
+
+            <!--            Product description-->
+
+            <TextView
+                android:id="@+id/ProductDescTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/PostalCode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="PRODUCT DESCRIPTION:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/ProductCode"
-                android:text="ProductCode : Hello"
-                android:layout_below="@id/ProductId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
                 android:id="@+id/ProductDesc"
-                android:text="ProductDesc : Hello"
-                android:layout_below="@id/ProductCode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ProductDescTitle"
+                android:text="This is product description"
+                android:textColor="#515151"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/ProductDesc"/>
+            <!--            End of product description-->
+
+
+            <!--            Request quantity-->
 
             <TextView
-                android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/RequestedQty"
-                android:text="RequestedQty : Hello"
+                android:id="@+id/RequestedQtyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/ProductDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="REQUEST QUANTITY:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/RequestedQty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RequestedQtyTitle"
+                android:text="21"
                 android:textColor="#515151"
-                android:textSize="15sp"
-                android:id="@+id/UOM"
-                android:text="UOM : Hello"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/RequestedQty"/>
+
+            <!--            End of request quantity-->
+
+            <!--            UOM-->
+
+            <TextView
+                android:id="@+id/UOMTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/RequestedQty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="20dp"
+                android:text="UOM:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/UOM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/UOMTitle"
+                android:text="This is UOM"
+                android:textColor="#515151"
+                android:textSize="15sp" />
+
+            <View style="@style/Divider"
+                android:layout_below="@id/UOM"/>
+
+
+            <!--            End of UOM-->
+
+            <!--            Fill-->
+
+            <TextView
+                android:id="@+id/FillTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/UOM"
+                android:layout_marginTop="20dp"
+                android:text="FILL:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/Fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/FillTitle"
+                android:text="This is fill"
                 android:textColor="#515151"
                 android:textSize="15sp"
-                android:id="@+id/Fill"
-                android:text="Fill : Hello"
-                android:layout_below="@id/UOM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginBottom="20dp"/>
 
+            <View style="@style/Divider"
+                android:layout_below="@id/Fill"/>
+
+            <!--            End of fill-->
 
 
         </RelativeLayout>
 
 
     </ScrollView>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/trip_info_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <Button
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:id="@+id/btn_source_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/my_button"
-            android:clickable="true"
-            android:paddingLeft="5dp"
-            android:text="Source input"
-            android:textAllCaps="false"
-            android:textColor="#ffffff" />
-
-        <Button
-            android:layout_marginLeft="5dp"
-            android:id="@+id/btn_site_info"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/my_button"
-            android:clickable="true"
-            android:paddingLeft="5dp"
-            android:text="Site input"
-            android:textAllCaps="false"
-            android:textColor="#ffffff" />
-
-    </LinearLayout>
 
 
 </RelativeLayout>
