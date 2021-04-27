@@ -1,23 +1,15 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.text.InputType;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,21 +22,16 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
@@ -55,11 +42,8 @@ import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 
 public class DriverInputSiteActivity extends AppCompatActivity implements View.OnClickListener {
 
-    /** (NOT USED)Camera variables to capture delivery ticket picture which uses DisplayPictureActivity.java and activity_display_picture.xml, currently not used **/
-//    String picturePath;
-//    private static final int PICTURE_REQUEST = 30;
 
-    private IntentIntegrator intentIntegrator;
+        private IntentIntegrator intentIntegrator;
     String
             startDate,
             startTime,
@@ -94,9 +78,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
     Button btnSubmit;
 
-    /**
-     * Scan button for barcode scanner
-     **/
+    /**Scan button for barcode scanner**/
     Button buttonScan;
     ImageView imageSignature;
 
@@ -111,20 +93,12 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     int trip_id;
     int load_id;
 
-    /**Camera button for Delivery Ticket Picture**/
-    Button buttonTakePicture;
-    ImageView imageView;
-    public static final int IMAGE_CAPTURE_CODE = 31;
-    public static final int PERMISSION_CODE = 30;
-    Uri image_uri;
-    //String pathToFile;
-   // public static final int PICTURE_ACTIVITY = 30;
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_site);
+
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));
         load_id = Integer.parseInt(bundle.getString("SeqNum"));
@@ -256,7 +230,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         btnSubmit.setOnClickListener(this);
 
         /**Signature Button**/
-        imageSignature = (ImageView) findViewById(R.id.imageSignature);
+        imageSignature= (ImageView) findViewById(R.id.imageSignature);
         Button buttonSignature = findViewById(R.id.buttonSignature);
         buttonSignature.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -265,10 +239,10 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                 startActivityForResult(intent, SIGNATURE_ACTIVITY);
             }
         });
-
+        
         /**Barcode Scanner Button**/
         buttonScan = findViewById(R.id.buttonScan);
-        intentIntegrator = new IntentIntegrator(this);
+         intentIntegrator = new IntentIntegrator(this);
         buttonScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -280,40 +254,62 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                 intentIntegrator.initiateScan();
             }
         });
+    }
 
-        /**Camera Button**/
-        buttonTakePicture = findViewById(R.id.buttonTakePicture);
-        imageView = findViewById(R.id.image);
-        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ||
-                            checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-                        String [] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        requestPermissions(permission, PERMISSION_CODE);
-                    } else {
-                        openCamera();
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+
+        if(requestCode==SIGNATURE_ACTIVITY) {
+
+            /**Signature**/
+
+            if (resultCode == RESULT_OK) {
+                String status = data.getStringExtra("status").toString().trim();
+                if (status.equalsIgnoreCase("done")) {
+                    Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 105, 50);
+                    if (data.hasExtra("byteArray")) {
+                        Bitmap b = BitmapFactory.decodeByteArray(
+                                data.getByteArrayExtra("byteArray"), 0, data.getByteArrayExtra("byteArray").length);
+                        imageSignature.setImageBitmap(b);
+                        toast.show();
                     }
-                } else {
-                    openCamera();
                 }
             }
-        });
-//        if (Build.VERSION.SDK_INT >= 23) {
-//            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-//        }
-//        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dispatchPictureTakerAction();
-//            }
-//        });
+        }
+        if(requestCode==intentIntegrator.REQUEST_CODE){
 
+                /**Scan barcode**/
+                IntentResult intentResult = IntentIntegrator.parseActivityResult(
+                        requestCode, resultCode, data
+                );
 
+                    if (intentResult.getContents() != null) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                DriverInputSiteActivity.this
+                        );
+                        builder.setTitle("Result");
+                        builder.setMessage(intentResult.getContents());
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                barcode = intentResult.getContents();
+                                editTextBarcode.setText(barcode);
+                            }
+                        });
+                        builder.show();
+                    } else {
+                        Toast.makeText(getApplicationContext()
+                                , "Please scan the barcode", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
-        btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
-        btnSubmit.setOnClickListener(this);
     }
 
     /***Start and End Date*/
@@ -347,120 +343,6 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             }
         };
         new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
-    }
-
-    /**
-     * Camera functions below
-     **/
-    private void openCamera() {
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.Media.TITLE, "New Picture");
-        values.put(MediaStore.Images.Media.DESCRIPTION, "From the camera");
-        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
-        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case PERMISSION_CODE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openCamera();
-                } else {
-                    Toast.makeText(this, "PERMISSION DENIED", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
-
-//    private void dispatchPictureTakerAction() {
-//        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        if (takePicture.resolveActivity(getPackageManager()) != null) {
-//            File photoFile = null;
-//            photoFile = createPhotoFile();
-//
-//            if (photoFile != null) {
-//                pathToFile = photoFile.getAbsolutePath();
-//                Uri photoURI = FileProvider.getUriForFile(DriverInputSiteActivity.this, "csci4060.project.aimsmobileapp.fileprovider", photoFile);
-//                takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-//                startActivityForResult(takePicture, PICTURE_ACTIVITY);
-//            }
-//        }
-//    }
-//
-//    private File createPhotoFile() {
-//        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-//        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//        File image = null;
-//        try {
-//            image = File.createTempFile("DT_" + name, ".jpg", storageDirectory);
-//        } catch (IOException e) {
-//            Log.d("errorLog", "Exception: " + e.toString());
-//        }
-//        return image;
-//    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        //super.onActivityResult(requestCode, resultCode, data);
-
-
-        if (requestCode == SIGNATURE_ACTIVITY) {
-
-            /**Signature**/
-
-            if (resultCode == RESULT_OK) {
-                String status = data.getStringExtra("status").toString().trim();
-                if (status.equalsIgnoreCase("done")) {
-                    Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.TOP, 105, 50);
-                    if (data.hasExtra("byteArray")) {
-                        Bitmap b = BitmapFactory.decodeByteArray(
-                                data.getByteArrayExtra("byteArray"), 0, data.getByteArrayExtra("byteArray").length);
-                        imageSignature.setImageBitmap(b);
-                        toast.show();
-                    }
-                }
-            }
-        }
-        if (requestCode == intentIntegrator.REQUEST_CODE) {
-
-            /**Scan barcode**/
-            IntentResult intentResult = IntentIntegrator.parseActivityResult(
-                    requestCode, resultCode, data
-            );
-
-            if (intentResult.getContents() != null) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(
-                        DriverInputSiteActivity.this
-                );
-                builder.setTitle("Result");
-                builder.setMessage(intentResult.getContents());
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        barcode = intentResult.getContents();
-                        editTextBarcode.setText(barcode);
-                    }
-                });
-                builder.show();
-            } else {
-                Toast.makeText(getApplicationContext()
-                        , "Please scan the barcode", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        /**Scan Delivery Ticket**/
-        if (resultCode == RESULT_OK) {
-            imageView.setImageURI(image_uri);
-        }
-//            if (requestCode == PICTURE_ACTIVITY) {
-//                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-//                imageView.setImageBitmap(bitmap);
-//            }
     }
 
     @Override
@@ -613,7 +495,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
     }
 
-    private void addSiteInputToDatabase() {
+    private void addSiteInputToDatabase(){
         repository.addSiteInput(new SiteInput(trip_id, load_id));
         repository.setProductType(yourProduct, trip_id, load_id);
         repository.setStart_date(startDate, trip_id, load_id);
@@ -631,56 +513,21 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         repository.setPickup_ratio(pickupGrossToNetRatio, trip_id, load_id);
     }
 
-    private void tempToastToShowInput() {
+    private void tempToastToShowInput(){
         Toast.makeText(this,
-                "Product Type: " + repository.getProduct_type(trip_id, load_id) + "\n" +
-                        "Start Date: " + repository.getStart_date(trip_id, load_id) + "\n" +
-                        "Start Time: " + repository.getStart_time(trip_id, load_id) + "\n" +
-                        "End Date: " + repository.getEnd_date(trip_id, load_id) + "\n" +
-                        "End Time: " + repository.getEnd_time(trip_id, load_id) + "\n" +
-                        "Container Before Dropoff: " + Double.toString(repository.getBegin_site_container_reading(trip_id, load_id)) + "\n" +
-                        "Container After Dropoff: " + Double.toString(repository.getEnd_site_container_reading(trip_id, load_id)) + "\n" +
-                        "Meter Reading Before Dropoff: " + Double.toString(repository.getStart_meter_reading(trip_id, load_id)) + "\n" +
-                        "Meter Reading After Dropoff: " + Double.toString(repository.getEnd_meter_reading(trip_id, load_id)) + "\n" +
-                        "Delivered Gross: " + Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id)) + "\n" +
-                        "Delivered Net: " + Double.toString(repository.getDelivered_net_quantity(trip_id, load_id)) + "\n" +
-                        "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id)) + "\n" +
+                   "Product Type: " + repository.getProduct_type(trip_id, load_id)+"\n" +
+                        "Start Date: " + repository.getStart_date(trip_id, load_id)+"\n" +
+                        "Start Time: " + repository.getStart_time(trip_id, load_id)+"\n" +
+                        "End Date: " + repository.getEnd_date(trip_id, load_id)+"\n" +
+                        "End Time: " + repository.getEnd_time(trip_id, load_id)+"\n" +
+                        "Container Before Dropoff: " + Double.toString(repository.getBegin_site_container_reading(trip_id, load_id))+"\n" +
+                        "Container After Dropoff: " + Double.toString(repository.getEnd_site_container_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading Before Dropoff: " + Double.toString(repository.getStart_meter_reading(trip_id, load_id))+"\n" +
+                        "Meter Reading After Dropoff: " + Double.toString(repository.getEnd_meter_reading(trip_id, load_id))+"\n" +
+                        "Delivered Gross: " + Double.toString(repository.getDelivered_gross_quantity(trip_id, load_id))+"\n" +
+                        "Delivered Net: " + Double.toString(repository.getDelivered_net_quantity(trip_id, load_id))+"\n" +
+                        "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id))+"\n" +
                         "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
     }
 
-
-    /** (NOT USED) Camera functions to capture delivery ticket picture which uses DisplayPictureActivity.java and activity_display_picture.xml, currently not used **/
-//    public void takePicture(View view) {
-//        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//
-//        if (cameraIntent.resolveActivity(getPackageManager()) != null){
-//            File pictureFile = null;
-//            try {
-//                pictureFile = getPictureFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            if (pictureFile != null){
-//                Uri pictureUri = FileProvider.getUriForFile(this, "csci4060.project.aimsmobileapp.fileprovider", pictureFile);
-//                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
-//                startActivityForResult(cameraIntent, PICTURE_REQUEST);
-//            }
-//        }
-//    }
-//
-//    public void displayPicture(View view) {
-//        Intent intent = new Intent(this, DisplayPictureActivity.class);
-//        intent.putExtra("picture_path", picturePath);
-//        startActivity(intent);
-//    }
-//
-//    private File getPictureFile() throws IOException {
-//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-//        String pictureName = "DT_" + timeStamp + "_";
-//        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//        File pictureFile = File.createTempFile(pictureName, ".jpg", storageDir);
-//        picturePath = pictureFile.getAbsolutePath();
-//        return pictureFile;
-//    }
 }

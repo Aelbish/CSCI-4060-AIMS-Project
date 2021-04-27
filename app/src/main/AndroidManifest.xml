@@ -7,14 +7,18 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- For taking picture of BOL -->
-<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
     <application
         android:name=".AIMSApp"
         android:allowBackup="true"
@@ -24,15 +28,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         android:hardwareAccelerated="true">
-        <meta-data android:name="com.here.sdk.access_key_id" android:value="ufAS_-dPdTNOoycydR8MeQ"/>
-        <meta-data android:name="com.here.sdk.access_key_secret" android:value="0oSYUz_O1bkNTqO5Z-p-lnmKRNKtk6eC93N3GMNUS6OrCn4u0Z14e0vroQnkikr1l1kY8lpmueGJM-EVKrjynw"/>
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="j7LEff64FIbJ4Goo7b5P" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="hLyqY-6CXVS-6L6ppVI8Kw" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="TW/zZRjmbhgIlc5TjeQPMaxBksoB0ZMEqPKHr9uWQpSsYWwydgpiZ0fL4Y+yiwB2HjkuVybF+BmFH3fyGgT3TGhg51YpN9oQ7JUSa9OJgMPeqH3zrfOHmozcpIBJFvBpr4rZv9br/EXF+2a5aDjxthI0XXV69/DQRLKnawRFouy0Zn3XRX7fRoWj0mG/3zfng8ucUiK7khFzAQCo0OzS5xdAfHW5x01PKizdXnsCxgtPm86CDAjXGhrPmJX1LA3GZnMwrSOTRjtJFmjb7dVg+FgeEfNpfOqSDHWssWMUSBIGHkCC2zmKi6Qhd4gfx24bSHI3zD8Tb+2OCWENGL6zZitSHB8Yb/sU4wqdACqHtRY3VkBLRnrzET2ppdpqgfXkB9Ht0fo7ilrI0S4uy2O74jfMcKzcxzVpwgX+mA0R1PXqF25Ceb7byugKSaT7TiZzoIsMHzp3R/6JQ9UMqJRTWeOPqQJg6ibTaF7WBwJn3+atUyCOkmBEotNvSxUFJXUOKC3zF70+fs+tGE98BX4uws3+eX4hcYz7H7HDuzrNCEVhiApfyegrmfoXMJo5n3EKgiYI8F747s0ZWTC14d1Yvauq0Zy49FlppC6aMbtxSgSyHiLjrzesmsbCjEUZPHenP9QQBKyE2v5fS7kVj19B2sG+VDvYblr7/xUGk0ZPLrM=" />
         <activity android:name=".UI.SignatureCapture" />
-        <activity android:name=".UI.Activities.DriverInputSiteActivity"
-            android:label="Delivery Form"/>
-        <activity android:name=".UI.Activities.DriverInputSourceActivity"
-            android:label="Pickup Form"/>
-        <activity android:name=".UI.Activities.TripActivity"
-            android:label="Trip Summary"/>
+        <activity android:name=".UI.Activities.DriverInputSiteActivity" />
+        <activity android:name=".UI.Activities.DriverInputSourceActivity" />
+        <activity android:name=".UI.Activities.TripActivity" />
         <activity android:name=".UI.Activities.MainScreenActivity" />
         <activity android:name=".UI.Activities.MainActivity">
             <intent-filter>
@@ -47,15 +55,15 @@
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme" />
 
-<!--        <provider-->
-<!--            android:name="androidx.core.content.FileProvider"-->
-<!--            android:authorities="csci4060.project.aimsmobileapp.fileprovider"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/file_paths" />-->
-<!--        </provider>-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="csci4060.project.aimsmobileapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <external-path
-        name="my_images"
-        path="Android/data/csci4060.project.aimsmobileapp/files/Pictures"/>
+        name="aimsapp_image"
+        path="Pictures/"/>
 </paths>

@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -18,6 +21,7 @@ import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity;
 import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity;
 import csci4060.project.aimsmobileapp.UI.Activities.TripActivity;
+import csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment;
 import csci4060.project.aimsmobileapp.model.TripInfoModel;
 public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsViewHolder> {
 
@@ -52,6 +56,20 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         //itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
         itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
         itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
+
+        itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId()==R.id.btn_start){
+
+
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    Fragment myFragment = new RouteFragment();
+                    ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+                }
+            }
+        });
 
         itemsViewHolder.btnSourceInput.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +126,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                     intent.putExtra("RequestedQty", Double.toString(tripInfoModel.getRequestedQty()));
                     intent.putExtra("UOM", tripInfoModel.getUOM());
                     intent.putExtra("Fill", tripInfoModel.getFill());
+
+                    intent.putExtra("Latitude", tripInfoModel.getLatitude());
+                    intent.putExtra("Longitude", tripInfoModel.getLongitude());
 
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mcontext.startActivity(intent);

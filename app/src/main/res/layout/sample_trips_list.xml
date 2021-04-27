@@ -26,8 +26,7 @@
                 android:id="@+id/txtTripName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trip Name"
-                android:textColor="@color/black"/>
+                android:text="Trip Name" />
 
         </LinearLayout>
 
@@ -42,8 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripName"
-                android:text="Destination"
-                android:textColor="@color/black"/>
+                android:text="Destination"/>
 
         </LinearLayout>
 
@@ -58,8 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripName"
-                android:text="Address"
-                android:textColor="@color/black"/>
+                android:text="Address"/>
 
         </LinearLayout>
 
@@ -74,8 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtAddress"
-                android:text="Location Type"
-                android:textColor="@color/black"/>
+                android:text="Location Type"/>
 
         </LinearLayout>
 
@@ -92,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_margin="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
@@ -106,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
@@ -121,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/trip_info_scroll_view"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -130,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_margin="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
@@ -144,12 +140,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Delivery Form"
+                android:text="Dropoff Form"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
