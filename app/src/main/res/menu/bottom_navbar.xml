@@ -10,6 +10,6 @@
         android:title="@string/second_navButton"/>
     <item
         android:id="@+id/nav_alerts"
-        android:icon="@drawable/ic_baseline_textsms_24"
+        android:icon="@drawable/ic_baseline_person_24"
         android:title="@string/third_navButton"/>
 </menu>

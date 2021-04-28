@@ -1,5 +1,6 @@
 package csci4060.project.aimsmobileapp.UI.Fragments;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,8 @@ import androidx.room.RoomDatabase;
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.Activities.MainActivity;
+import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
 import csci4060.project.aimsmobileapp.database.AppDatabase;
 import csci4060.project.aimsmobileapp.database.dao.DriverDao;
 import csci4060.project.aimsmobileapp.model.TripInfoModel;
@@ -41,5 +44,10 @@ public class AlertFragment extends Fragment{
         String driverName = repository.getDriver_name();
 
         txtDriverName.setText(driverName);
+    }
+
+    public void logout(View view){
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
     }
 }

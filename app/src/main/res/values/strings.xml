@@ -2,7 +2,7 @@
     <string name="app_name">Fuel Dispatcher</string>
     <string name="first_navButton">Trips</string>
     <string name="second_navButton">Route</string>
-    <string name="third_navButton">Alerts</string>
+    <string name="third_navButton">Profile</string>
 
 
     <string name="action_settings">Settings</string>
