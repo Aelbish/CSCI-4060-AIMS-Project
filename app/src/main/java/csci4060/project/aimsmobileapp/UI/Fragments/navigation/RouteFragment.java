@@ -907,6 +907,3 @@ public class RouteFragment extends Fragment {
 
 
 
-
-
-

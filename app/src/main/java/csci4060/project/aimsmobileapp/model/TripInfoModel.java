@@ -1,6 +1,6 @@
 package csci4060.project.aimsmobileapp.model;
 
-public class TripInfoModel {
+public class TripInfoModel{
     private int TripId;
     private String DriverCode;
     private String DriverName;
@@ -44,7 +44,6 @@ public class TripInfoModel {
     public void setSeqNum(int seqNum) {
         SeqNum = seqNum;
     }
-
     public TripInfoModel(int tripId, String driverCode, String driverName, int truckId, String truckCode, String truckDesc, int trailerId, String trailerCode, String trailerDesc, String tripName, String tripDate, int seqNum, String waypoint, String destinationCode, String destinationName, String address, String city, int postalCode, int productId, String productCode, String productDesc, double requestedQty, String UOM, String fill, Double latitude, Double longitude) {
         setTripId(tripId);
         setDriverCode(driverCode);

@@ -916,9 +916,9 @@ public class DataRepository {
      * Driver Methods
      */
 
-    public String getDriver_name(String driver_code){
+    public String getDriver_name(){
         Callable<String> driver_name = () -> {
-            return driverDao.getDriverName(driver_code);
+            return driverDao.getDriverName();
         };
 
         Future<String> future = AppDatabase.databaseWriteExecutor.submit(driver_name);
