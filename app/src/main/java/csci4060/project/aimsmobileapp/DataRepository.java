@@ -910,4 +910,24 @@ public class DataRepository {
     public double getPickup_ratioSource(int trip_id, int sequence_id) {
         return sourceInputDao.getPickup_ratio(trip_id, sequence_id);
     }
+
+
+    /*************
+     * Driver Methods
+     */
+
+    public String getDriver_name(String driver_code){
+        Callable<String> driver_name = () -> {
+            return driverDao.getDriverName(driver_code);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(driver_name);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
