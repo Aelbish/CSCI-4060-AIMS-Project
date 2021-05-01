@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".UI.Activities.MainScreenActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <FrameLayout
+        android:layout_below="@id/toolbar"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/botom_navbar"/>
+        android:layout_above="@id/botom_navbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botom_navbar"
@@ -18,8 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@drawable/navbar_icon"
-        app:itemTextColor="@drawable/navbar_icon"
-        android:background="@drawable/navbar"
+        android:layout_marginBottom="2dp"
+        android:background="@color/myOrange"
         app:menu="@menu/bottom_navbar" />
 </RelativeLayout>
