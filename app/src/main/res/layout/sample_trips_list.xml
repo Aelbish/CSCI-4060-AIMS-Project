@@ -5,7 +5,7 @@
     android:padding="5dp">
 
     <LinearLayout
-        android:id="@+id/color"
+        android:id="@+id/cardViewForTrips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -84,7 +84,7 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_summary"
+                android:id="@+id/btn_display_form"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -93,7 +93,7 @@
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text="Trip Summary"
+                android:text="Completion Form"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
@@ -112,28 +112,8 @@
                 android:textColor="#ffffff" />
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/trip_info_scroll_view"
-            android:layout_marginTop="10dp">
 
-            <Button
-                android:id="@+id/btn_display_form"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_weight="1"
-                android:background="@drawable/my_button"
-                android:clickable="true"
-                android:paddingLeft="5dp"
-                android:text="Completion Form"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:layout_marginLeft="75dp"
-                android:layout_marginRight="75dp"/>
         </LinearLayout>
     </LinearLayout>
 

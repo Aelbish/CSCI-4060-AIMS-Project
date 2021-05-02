@@ -11,45 +11,12 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/aims_logo" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="48dp"
-        android:backgroundTint="@color/myOrange"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColorHighlight="@color/myOrange2"
-        android:textColorLink="@color/myOrange"
-        android:textCursorDrawable="@color/myRed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextAccountId"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="56dp"
-        android:backgroundTint="@color/myOrange"
-        android:ems="10"
-        android:hint="Account ID"
-        android:inputType="number"
-        android:textColorHighlight="@color/myOrange2"
-        android:textColorLink="@color/myOrange"
-        android:textCursorDrawable="@color/myRed"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:src="@drawable/aims_logo"
+        android:layout_centerHorizontal="true"
+        />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,7 +34,7 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
->>>>>>> beta_demo_2
+
 
 
     <com.google.android.material.textfield.TextInputLayout

@@ -87,7 +87,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
 
 //        Setting on click listener to buttons
         btnStart.setOnClickListener(this);
-        btnStart.setOnClickListener(this);
 
         getSingleTripDetails();
 

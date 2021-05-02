@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -98,10 +99,10 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             }
         });
 
-        itemsViewHolder.btnSummary.setOnClickListener(new View.OnClickListener() {
+        itemsViewHolder.cardViewForTrips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (view.getId() == R.id.btn_summary) {
+                if (view.getId() == R.id.cardViewForTrips) {
                     Intent intent = new Intent(mcontext, TripActivity.class);
                     intent.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                     intent.putExtra("DriverCode", tripInfoModel.getDriverCode());
@@ -146,11 +147,18 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
     public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
         public TextView txtTripName, txtTripWaypoint, txtDestinationName, txtAddress;
-        public Button btnSummary, btnStart, btnDisplayForm;
+        public Button  btnStart, btnDisplayForm;
+        public LinearLayout cardViewForTrips;
 
         public ItemsViewHolder(@NonNull View itemView) {
 
             super(itemView);
+
+            cardViewForTrips=itemView.findViewById(R.id.cardViewForTrips);
+
+
+
+
 
             //txtTripId = itemView.findViewById(R.id.txtTripId);
             txtTripName = itemView.findViewById(R.id.txtTripName);
@@ -160,7 +168,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
             btnSummary = itemView.findViewById(R.id.btn_summary);
-            btnStart = itemView.findViewById(R.id.btn_start);
+//            btnStart = itemView.findViewById(R.id.btn_start);
             btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
 
         }

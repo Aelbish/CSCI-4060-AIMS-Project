@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Fragments.TripFragment">
+    tools:context=".UI.Fragments.TripFragment"
+    android:theme="@style/ThemeOverlay.AppCompat.Light"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
