@@ -113,46 +113,28 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/trip_info_scroll_view"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_marginTop="10dp">
 
             <Button
-                android:id="@+id/btn_source_input"
+                android:id="@+id/btn_display_form"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
                 android:paddingLeft="5dp"
-                android:text=" Pickup Form  "
+                android:text="Completion Form"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btn_site_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/my_button"
-                android:clickable="true"
-                android:paddingLeft="5dp"
-                android:text="Dropoff Form"
-                android:textAllCaps="false"
-                android:textColor="#ffffff" />
-
-
+                android:textColor="#ffffff"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"/>
         </LinearLayout>
-
-
     </LinearLayout>
 
 

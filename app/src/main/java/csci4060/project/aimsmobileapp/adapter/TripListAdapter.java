@@ -3,6 +3,7 @@ package csci4060.project.aimsmobileapp.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
     private List<TripInfoModel> tripInfoModelList;
     private Context mcontext;
+    private String DestinationType;
 
     public TripListAdapter(List<TripInfoModel> tripInfoModelList, Context context) {
         this.tripInfoModelList = tripInfoModelList;
@@ -49,7 +51,6 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
     public void onBindViewHolder(@NonNull final ItemsViewHolder itemsViewHolder, int i) {
         final TripInfoModel tripInfoModel = tripInfoModelList.get(i);
 
-
         //itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
         itemsViewHolder.txtTripName.setText("Trip name: " + tripInfoModel.getTripName());
         itemsViewHolder.txtTripWaypoint.setText("Location Type: " + tripInfoModel.getWaypoint());
@@ -61,8 +62,6 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             @Override
             public void onClick(View v) {
                 if(v.getId()==R.id.btn_start){
-
-
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     Fragment myFragment = new RouteFragment();
                     ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
@@ -71,30 +70,30 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             }
         });
 
-        itemsViewHolder.btnSourceInput.setOnClickListener(new View.OnClickListener() {
+        itemsViewHolder.btnDisplayForm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v.getId()==R.id.btn_source_input){
-                    Intent driverSourceInput= new Intent(mcontext, DriverInputSourceActivity.class);
-                    driverSourceInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
-                    driverSourceInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
+                DestinationType = tripInfoModel.getWaypoint();
+                Log.i("Destination", DestinationType);
+                if(DestinationType.equals("Source")){
+                    if(v.getId()==R.id.btn_display_form){
+                        Intent driverSourceInput= new Intent(mcontext, DriverInputSourceActivity.class);
+                        driverSourceInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
+                        driverSourceInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
 
-                    driverSourceInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    mcontext.startActivity(driverSourceInput);
+                        driverSourceInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        mcontext.startActivity(driverSourceInput);
+                    }
                 }
-            }
-        });
+                else if(DestinationType.equals("Site Container")){
+                    if(v.getId()==R.id.btn_display_form){
+                        Intent driverSiteInput= new Intent(mcontext, DriverInputSiteActivity.class);
+                        driverSiteInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
+                        driverSiteInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
 
-        itemsViewHolder.btnSiteInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(v.getId()==R.id.btn_site_input){
-                    Intent driverSiteInput= new Intent(mcontext, DriverInputSiteActivity.class);
-                    driverSiteInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
-                    driverSiteInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
-
-                    driverSiteInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    mcontext.startActivity(driverSiteInput);
+                        driverSiteInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        mcontext.startActivity(driverSiteInput);
+                    }
                 }
             }
         });
@@ -146,8 +145,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
     public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtTripId, txtTripName, txtTripWaypoint, txtTripSeq, txtDestinationName, txtAddress;
-        public Button btnSummary, btnStart, btnSourceInput, btnSiteInput;
+        public TextView txtTripName, txtTripWaypoint, txtDestinationName, txtAddress;
+        public Button btnSummary, btnStart, btnDisplayForm;
 
         public ItemsViewHolder(@NonNull View itemView) {
 
@@ -161,10 +160,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
             btnSummary = itemView.findViewById(R.id.btn_summary);
-            btnStart=itemView.findViewById(R.id.btn_start);
-            btnSourceInput=itemView.findViewById(R.id.btn_source_input);
-            btnSiteInput=itemView.findViewById(R.id.btn_site_input);
-
+            btnStart = itemView.findViewById(R.id.btn_start);
+            btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
 
         }
 
