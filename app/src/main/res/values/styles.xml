@@ -15,6 +15,17 @@
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
 
+    <style name="AppTheme.NoActionBar"
+        parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="buttonStyle">@style/Button</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#FFA114</item>
+        <item name="colorAccent">#FFA114</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!--    Custom Button Style by Aelbish-->
     <style name="Button" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/my_button</item>

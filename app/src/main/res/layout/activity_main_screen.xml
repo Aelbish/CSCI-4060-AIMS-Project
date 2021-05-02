@@ -7,11 +7,16 @@
     android:background="#FFFFFF"
     tools:context=".UI.Activities.MainScreenActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <FrameLayout
+        android:layout_below="@id/toolbar"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/botom_navbar"/>
+        android:layout_above="@id/botom_navbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botom_navbar"
