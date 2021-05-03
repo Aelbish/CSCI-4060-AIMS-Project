@@ -2,6 +2,7 @@ package csci4060.project.aimsmobileapp.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,17 +60,19 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
         itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
 
-//        itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(v.getId() == R.id.btn_start){
-//                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
-//                    Fragment myFragment = new RouteFragment();
-//                    ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
-//                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
-//                }
-//            }
-//        });
+        itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId()==R.id.btn_start){
+
+
+                    AppCompatActivity activity = unwrap(v.getContext());
+                    Fragment myFragment = new RouteFragment();
+                    ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+                }
+            }
+        });
 
         itemsViewHolder.btnDisplayForm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +141,14 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
     }
 
+    private AppCompatActivity unwrap(Context context) {
+        while (!(context instanceof AppCompatActivity) && context instanceof ContextWrapper) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+
+        return (AppCompatActivity) context;
+    }
+
     @Override
     public int getItemCount() {
         return tripInfoModelList.size();
@@ -168,7 +179,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
 //            btnSummary = itemView.findViewById(R.id.btn_summary);
-//            btnStart = itemView.findViewById(R.id.btn_start);
+            btnStart = itemView.findViewById(R.id.btn_start);
             btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
 
         }

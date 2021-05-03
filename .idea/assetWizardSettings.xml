@@ -23,11 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-<<<<<<< HEAD
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/person/baseline_person_24.xml" />
-=======
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/account_circle/baseline_account_circle_24.xml" />
->>>>>>> beta_demo_2
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../sushant%20kunwar/AppData/Local/Android/Sdk/icons/material/materialicons/location_on/baseline_location_on_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -37,13 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-<<<<<<< HEAD
-                            <entry key="outputName" value="ic_baseline_person_24" />
-=======
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="user" />
->>>>>>> beta_demo_2
-                            <entry key="sourceFile" value="C:\Users\aelbi\AndroidStudioProjects\CSCI-4060-AIMS-Project" />
+                            <entry key="color" value="fa2226" />
+                            <entry key="outputName" value="location" />
+                            <entry key="sourceFile" value="C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectmaindebug" />
                           </map>
                         </option>
                       </PersistentState>

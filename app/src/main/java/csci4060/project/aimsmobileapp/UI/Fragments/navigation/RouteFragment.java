@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -103,6 +105,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     private LocationListener locationListner;
 
 
+
     private MapRoute m_mapRoute;
     FloatingActionButton center_navi;
     FloatingActionButton volume;
@@ -149,6 +152,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         m_mapFragment = getMapFragment();
         m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
         // Get a MapView instance from the layout.
@@ -315,6 +319,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
                                 m_geoBoundingBox = routeResults.get(0).getRoute().getBoundingBox();
                                 m_map.zoomTo(m_geoBoundingBox, Map.Animation.NONE,
                                         Map.MOVE_PRESERVE_ORIENTATION);
+                                map_marker(destinationLat,destinationLon, R.drawable.pin);
 
                                 startNavigation();
 
@@ -790,7 +795,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
                 @Override
                 public void run() {
                     instructions = getActivity().findViewById(R.id.instructions);
-                    instructions.setText(s);
+                    if(instructions!=null){
+                        instructions.setText(s);}
                     //Toast.makeText(getActivity(), "TTS output: " + s, Toast.LENGTH_SHORT).show();
 
                 }
@@ -806,9 +812,11 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
 
     private void initVoicePackages() {
-        volume.setImageResource(R.drawable.unmute);
-        volume.setTooltipText("on");
-
+        if(m_navigationManager.getAudioPlayer().getVolume()!=0f) {
+            volume.setImageResource(R.drawable.unmute);
+            volume.setTooltipText("on");
+            m_navigationManager.getAudioPlayer().setVolume(1f);
+        }
         m_navigationManager = NavigationManager.getInstance();
 
         // Retrieve the VoiceCatalog and download the latest updates
@@ -959,10 +967,17 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
 
     }
+    public void map_marker(double d1,double d2,int i)  {
+        Image image = new Image();
+        try {
+            image.setImageResource(i);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MapMarker custom = new MapMarker(new GeoCoordinate(d1,d2,0),image);
+        m_map.addMapObject(custom);
+    }
 }
-
-
-
 
 
 
