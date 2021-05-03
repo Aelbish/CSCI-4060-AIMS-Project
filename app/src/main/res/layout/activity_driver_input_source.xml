@@ -12,11 +12,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp">
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -24,13 +26,6 @@
                 android:text="Product Type"
                 android:textSize="22sp"
                 android:textColor="@color/black"/>
-            <!--            <EditText-->
-            <!--                android:id="@+id/editTextProductType"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="40dp"-->
-            <!--                android:hint="Type product type"-->
-            <!--                android:inputType="textPersonName"-->
-            <!--                />-->
 
             <Spinner
                 android:id="@+id/spinnerProductType"
@@ -50,8 +45,7 @@
                 android:layout_height="40dp"
                 android:text="Start Date"
                 android:gravity="bottom"
-                android:textSize="22sp"
-                />
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/editTextStartDate"
@@ -66,6 +60,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+
             <TextView
                 android:id="@+id/textView7"
                 android:textColor="@color/black"
@@ -250,13 +245,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
+                android:background="@drawable/textfield"
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                />
+                android:layout_marginRight="8dp" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -303,6 +298,9 @@
                 android:id="@+id/buttonTakePicture"
                 android:drawableRight="@drawable/ic_baseline_camera_alt_24"
                 android:text="Capture"
+                android:textSize="22sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
                 android:theme="@style/AppTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -341,6 +339,9 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:text="Submit"
+                android:textSize="22sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
                 android:theme="@style/AppTheme" />
 
         </LinearLayout>

@@ -59,17 +59,17 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
         itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
 
-        itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(v.getId()==R.id.btn_start){
-                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                    Fragment myFragment = new RouteFragment();
-                    ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
-                }
-            }
-        });
+//        itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(v.getId() == R.id.btn_start){
+//                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//                    Fragment myFragment = new RouteFragment();
+//                    ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
+//                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+//                }
+//            }
+//        });
 
         itemsViewHolder.btnDisplayForm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,7 +167,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             txtDestinationName = itemView.findViewById(R.id.txtDestinationName);
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
-            btnSummary = itemView.findViewById(R.id.btn_summary);
+//            btnSummary = itemView.findViewById(R.id.btn_summary);
 //            btnStart = itemView.findViewById(R.id.btn_start);
             btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
 

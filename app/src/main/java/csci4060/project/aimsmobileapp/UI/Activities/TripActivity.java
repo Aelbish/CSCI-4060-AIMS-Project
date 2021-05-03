@@ -67,7 +67,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
 
 //        Reference for text views
         txtTripId = findViewById(R.id.TripId);
-        txtDriverCode = findViewById(R.id.DriverCode);
         txtDriverName = findViewById(R.id.DriverName);
         txtTruckDesc = findViewById(R.id.TruckDesc);
         txtTrailerDesc = findViewById(R.id.TrailerDesc);
@@ -80,12 +79,11 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtProductDesc = findViewById(R.id.ProductDesc);
         txtRequestedQty = findViewById(R.id.RequestedQty);
         txtUOM = findViewById(R.id.UOM);
-        txtFill = findViewById(R.id.Fill);
 
-//        reference for buttons
+//      reference for buttons
         btnStart = findViewById(R.id.btn_start_trip);
 
-//        Setting on click listener to buttons
+//      Setting on click listener to buttons
         btnStart.setOnClickListener(this);
 
         getSingleTripDetails();
@@ -116,7 +114,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
 
 //       Rendering the subscribed data from recycler view into text views
         txtTripId.setText("TRIP ID: "+ TripId);
-        txtDriverCode.setText(DriverCode);
         txtDriverName.setText(DriverName);
         txtTruckDesc.setText(TruckDesc);
         txtTrailerDesc.setText(TrailerDesc);
@@ -129,7 +126,6 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtProductDesc.setText(ProductDesc);
         txtRequestedQty.setText(RequestedQty);
         txtUOM.setText(UOM);
-        txtFill.setText(Fill);
 
 
     }

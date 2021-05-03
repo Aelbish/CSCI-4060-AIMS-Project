@@ -11,6 +11,7 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="0dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/trip_info"
         android:orientation="vertical"
         android:padding="20dp">
@@ -26,7 +27,9 @@
                 android:id="@+id/txtTripName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trip Name" />
+                android:text="Trip Name"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -41,7 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripName"
-                android:text="Destination"/>
+                android:text="Destination"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -56,7 +61,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripName"
-                android:text="Address"/>
+                android:text="Address"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -71,7 +78,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtAddress"
-                android:text="Location Type"/>
+                android:text="Location Type"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -84,37 +93,35 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_display_form"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/my_button"
-                android:clickable="true"
-                android:paddingLeft="5dp"
-                android:text="Completion Form"
-                android:textAllCaps="false"
-                android:textColor="#ffffff" />
-
-            <Button
                 android:id="@+id/btn_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_button"
                 android:clickable="true"
-                android:paddingLeft="5dp"
                 android:text=" Start Trip "
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:layout_marginRight="10dp"/>
 
-
-
+            <Button
+                android:id="@+id/btn_display_form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:background="@drawable/my_button"
+                android:clickable="true"
+                android:text="Completion Form"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
+
     </LinearLayout>
 
 
