@@ -35,8 +35,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract LoadDao loadDao();
     public abstract CustomerDao customerDao();
     public abstract VendorDao vendorDao();
-    //public abstract ContainerDao containerDao();
-    //public abstract BillOfLadingDao billOfLadingDao();
     public abstract DeliveryDao deliveryDao();
     public abstract DeliveredProductDao deliveredProductDao();
     public abstract SiteInputDao siteInputDao();
