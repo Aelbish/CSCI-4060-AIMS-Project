@@ -36,8 +36,6 @@ public class DataRepository {
     private LoadDao loadDao;
     private CustomerDao customerDao;
     private VendorDao vendorDao;
-    //private ContainerDao containerDao;
-    //private BillOfLadingDao billOfLadingDao;
     private DeliveryDao deliveryDao;
     private DeliveredProductDao deliveredProductDao;
     private SiteInputDao siteInputDao;
