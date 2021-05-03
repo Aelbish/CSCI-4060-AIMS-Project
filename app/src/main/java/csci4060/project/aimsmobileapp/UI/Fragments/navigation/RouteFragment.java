@@ -10,9 +10,11 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PointF;
+import android.graphics.drawable.Animatable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.here.android.mpa.common.GeoBoundingBox;
 import com.here.android.mpa.common.Image;
 import com.here.android.mpa.common.OnEngineInitListener;
@@ -89,17 +92,20 @@ import static android.content.Context.LOCATION_SERVICE;
 
 
 //This is route screen
-public class RouteFragment extends Fragment {
+public class RouteFragment<afChangeListener> extends Fragment {
 
+    double longitude;
+    double latitude;
     TextView instructions;
     double destinationLat;
     double destinationLon;
     private LocationManager locationManager;
     private LocationListener locationListner;
-    double latitude;
-    double longitude;
+
 
     private MapRoute m_mapRoute;
+    FloatingActionButton center_navi;
+    FloatingActionButton volume;
 
 
     public void setDestination(double lat, double lon) {
@@ -149,6 +155,8 @@ public class RouteFragment extends Fragment {
         if (hasPermissions(getActivity(), RUNTIME_PERMISSIONS)) {
             initMapFragment();
             initNaviControlButton();
+            click();
+            volumesettings();
 
 
         } else {
@@ -156,7 +164,8 @@ public class RouteFragment extends Fragment {
                     .requestPermissions(getActivity(), RUNTIME_PERMISSIONS, REQUEST_CODE_ASK_PERMISSIONS);
             initMapFragment();
             initNaviControlButton();
-
+            click();
+            volumesettings();
 
         }
 
@@ -192,13 +201,11 @@ public class RouteFragment extends Fragment {
 
                         m_mapFragment.getMapGesture().addOnGestureListener(gestureListener, 100, true);
                         m_map = m_mapFragment.getMap();
-                        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-                        @SuppressLint("MissingPermission") Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                        longitude = location.getLongitude();
-                        latitude = location.getLatitude();
+
 
                         m_map.setCenter(new GeoCoordinate(latitude, longitude), Map.Animation.NONE);
                         m_mapFragment.getPositionIndicator().setVisible(true);
+                        m_map.setTilt(60);
 
                         //Put this call in Map.onTransformListener if the animation(Linear/Bow)
                         //is used in setCenter()
@@ -224,7 +231,24 @@ public class RouteFragment extends Fragment {
                     }
                 }
             });
+
         }
+    }
+
+    private void click() {
+        center_navi = (FloatingActionButton) getActivity().findViewById(R.id.center_navi);
+        center_navi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                m_map.setCenter(new GeoCoordinate(latitude, longitude), Map.Animation.BOW);
+                m_map.setZoomLevel(15);
+                NavigationManager.getInstance().setMapUpdateMode(NavigationManager.MapUpdateMode.ROADVIEW);
+
+
+            }
+        });
     }
 
     private void createRoute() {
@@ -455,6 +479,7 @@ public class RouteFragment extends Fragment {
         m_navigationManager.addRealisticViewListener(new WeakReference<NavigationManager.RealisticViewListener>(realisticViewListener));
         initVoicePackages();
 
+
     }
 
     ImageView img;
@@ -590,6 +615,8 @@ public class RouteFragment extends Fragment {
             geoPosition.getCoordinate();
             geoPosition.getHeading();
             geoPosition.getSpeed();
+            latitude = geoPosition.getCoordinate().getLatitude();
+            longitude = geoPosition.getCoordinate().getLongitude();
 
             // also remaining time and distance can be
             // fetched from navigation manager
@@ -686,6 +713,8 @@ public class RouteFragment extends Fragment {
         NavigationManager.getInstance().removeLaneInformationListener(m_laneInformationListener);
         NavigationManager.getInstance()
                 .removeRerouteListener(rerouteListener);
+
+
     }
 
 
@@ -693,7 +722,7 @@ public class RouteFragment extends Fragment {
      * Only when the app's target SDK is 23 or higher, it requests each dangerous permissions it
      * needs when the app is running.
      */
-    private static boolean hasPermissions(Context context, String... permissions) {
+    private boolean hasPermissions(Context context, String... permissions) {
         if (permissions != null) {
             for (String permission : permissions) {
                 if (ActivityCompat.checkSelfPermission(context, permission)
@@ -702,6 +731,10 @@ public class RouteFragment extends Fragment {
                 }
             }
         }
+        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
         return true;
     }
 
@@ -773,7 +806,11 @@ public class RouteFragment extends Fragment {
 
 
     private void initVoicePackages() {
+        volume.setImageResource(R.drawable.unmute);
+        volume.setTooltipText("on");
+
         m_navigationManager = NavigationManager.getInstance();
+
         // Retrieve the VoiceCatalog and download the latest updates
         VoiceCatalog voiceCatalog = VoiceCatalog.getInstance();
 
@@ -870,8 +907,7 @@ public class RouteFragment extends Fragment {
                 }
 
             });
-        }
-        else{
+        } else {
             // Get the list of voice packages from the voice catalog list
             List<VoicePackage> voicePackages =
                     VoiceCatalog.getInstance().getCatalogList();
@@ -892,8 +928,37 @@ public class RouteFragment extends Fragment {
             // set the voice skin for use by navigation manager
             voiceGuidanceOptions.setVoiceSkin(voiceCatalog.getLocalVoiceSkin(id));
         }
+
+
     }
 
+    public void volumesettings() {
+        volume = (FloatingActionButton) getActivity().findViewById(R.id.volume);
+        volume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (volume.getTooltipText().toString().equals("off")){
+
+                    volume.setImageResource(R.drawable.unmute);
+                    volume.setTooltipText("on");
+                    m_navigationManager.getAudioPlayer().setVolume(1f);
+                }
+                else
+                {
+                    volume.setImageResource(R.drawable.mute);
+                    volume.setTooltipText("off");
+                    m_navigationManager.getAudioPlayer().stop();
+                    m_navigationManager.getAudioPlayer().setVolume(0f);
+
+
+
+                }
+            }
+        });
+
+
+    }
 }
 
 

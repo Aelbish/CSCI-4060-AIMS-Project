@@ -46,8 +46,5 @@ public class AlertFragment extends Fragment{
         txtDriverName.setText(driverName);
     }
 
-    public void logout(View view){
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
-    }
+
 }
