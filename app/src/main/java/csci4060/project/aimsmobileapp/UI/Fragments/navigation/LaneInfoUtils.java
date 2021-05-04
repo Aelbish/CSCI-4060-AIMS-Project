@@ -17,7 +17,6 @@ import java.util.List;
 
 public class LaneInfoUtils {
 
-    @SuppressWarnings("deprecation")
     private static Drawable getDrawable(int resourceId, Context context) {
         return context.getResources().getDrawable(resourceId);
     }

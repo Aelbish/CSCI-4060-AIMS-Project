@@ -20,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.DataRepository;
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSiteActivity;
 import csci4060.project.aimsmobileapp.UI.Activities.DriverInputSourceActivity;
@@ -48,7 +50,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         return new ItemsViewHolder(itemView);
     }
 
-    @SuppressLint("SetTextI18n")
+//    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull final ItemsViewHolder itemsViewHolder, int i) {
         final TripInfoModel tripInfoModel = tripInfoModelList.get(i);
