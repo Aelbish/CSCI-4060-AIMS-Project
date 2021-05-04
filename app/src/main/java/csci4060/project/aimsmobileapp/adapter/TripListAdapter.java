@@ -55,10 +55,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
     public void onBindViewHolder(@NonNull final ItemsViewHolder itemsViewHolder, int i) {
         final TripInfoModel tripInfoModel = tripInfoModelList.get(i);
 
-        //itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
         itemsViewHolder.txtTripName.setText("Trip name: " + tripInfoModel.getTripName());
         itemsViewHolder.txtTripWaypoint.setText("Location Type: " + tripInfoModel.getWaypoint());
-        //itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
         itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
         itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
 
@@ -169,21 +167,13 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
             cardViewForTrips=itemView.findViewById(R.id.cardViewForTrips);
 
-
-
-
-
-            //txtTripId = itemView.findViewById(R.id.txtTripId);
             txtTripName = itemView.findViewById(R.id.txtTripName);
             txtTripWaypoint = itemView.findViewById(R.id.txtTripWaypoint);
-            //txtTripSeq = itemView.findViewById(R.id.txtTripSeq);
             txtDestinationName = itemView.findViewById(R.id.txtDestinationName);
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
-//            btnSummary = itemView.findViewById(R.id.btn_summary);
             btnStart = itemView.findViewById(R.id.btn_start);
             btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
-
         }
 
     }
