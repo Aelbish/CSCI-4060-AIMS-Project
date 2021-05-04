@@ -86,6 +86,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                         Intent driverSourceInput= new Intent(mcontext, DriverInputSourceActivity.class);
                         driverSourceInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                         driverSourceInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
+                        driverSourceInput.putExtra("DriverCode", tripInfoModel.getDriverCode());
+                        driverSourceInput.putExtra("DestinationCode", tripInfoModel.getDestinationCode());
+                        driverSourceInput.putExtra("ProductID", String.valueOf(tripInfoModel.getProductId()));
 
                         driverSourceInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mcontext.startActivity(driverSourceInput);
@@ -96,6 +99,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                         Intent driverSiteInput= new Intent(mcontext, DriverInputSiteActivity.class);
                         driverSiteInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                         driverSiteInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
+                        driverSiteInput.putExtra("DriverCode", tripInfoModel.getDriverCode());
+                        driverSiteInput.putExtra("DestinationCode", tripInfoModel.getDestinationCode());
+                        driverSiteInput.putExtra("ProductID", String.valueOf(tripInfoModel.getProductId()));
 
                         driverSiteInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mcontext.startActivity(driverSiteInput);

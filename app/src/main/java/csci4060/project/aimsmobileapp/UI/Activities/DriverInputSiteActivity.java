@@ -321,7 +321,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, month);
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 editText.setText(simpleDateFormat.format(calendar.getTime()));
             }
         };
@@ -338,7 +338,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                 calendar.set(Calendar.MINUTE, minute);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
                 editText.setText(simpleDateFormat.format(calendar.getTime()));
             }
         };
@@ -528,6 +528,9 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                         "Delivered Net: " + Double.toString(repository.getDelivered_net_quantity(trip_id, load_id))+"\n" +
                         "Delivery Ticket Num: " + Integer.toString(repository.getDelivery_ticket_number(trip_id, load_id))+"\n" +
                         "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
+
+
+
     }
 
 }
