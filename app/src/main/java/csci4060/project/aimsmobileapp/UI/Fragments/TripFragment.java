@@ -69,15 +69,6 @@ public class TripFragment extends Fragment {
 
         RequestQueue requestQueue;
 
-        // Instantiate the cache
-        //Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
-
-        // Set up the network to use HttpURLConnection as the HTTP client.
-        //Network network = new BasicNetwork(new HurlStack());
-
-        // Instantiate the RequestQueue with the cache and network.
-        //requestQueue = new RequestQueue(cache, network);
-
         requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
         // Start the queue
