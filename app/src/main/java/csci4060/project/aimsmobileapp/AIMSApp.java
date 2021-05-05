@@ -18,6 +18,7 @@ public class AIMSApp extends Application {
     public static Context appContext;
     public static AppDatabase database;
     public static DataRepository repository;
+    public static DataSender dataSender;
 
     public ExecutorService executorService = Executors.newFixedThreadPool(NUM_OF_EXECUTOR_THREADS);
 
@@ -28,6 +29,7 @@ public class AIMSApp extends Application {
         appContext = getApplicationContext();
         database = getDatabase();
         repository = getRepository();
+        dataSender = getDataSender();
     }
 
     private AppDatabase getDatabase() {
@@ -37,6 +39,8 @@ public class AIMSApp extends Application {
     public DataRepository getRepository() {
         return DataRepository.getInstance(database);
     }
+
+    public DataSender getDataSender() {return DataSender.getDataSender();}
 }
 
 
