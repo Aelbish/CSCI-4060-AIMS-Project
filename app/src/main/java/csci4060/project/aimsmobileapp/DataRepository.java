@@ -22,6 +22,7 @@ import csci4060.project.aimsmobileapp.database.entity.Load;
 import csci4060.project.aimsmobileapp.database.entity.SiteInput;
 import csci4060.project.aimsmobileapp.database.entity.SourceInput;
 import csci4060.project.aimsmobileapp.database.entity.Trip;
+import csci4060.project.aimsmobileapp.database.entity.TripJson;
 import csci4060.project.aimsmobileapp.database.entity.Vendor;
 
 /**
@@ -40,6 +41,7 @@ public class DataRepository {
     private DeliveredProductDao deliveredProductDao;
     private SiteInputDao siteInputDao;
     private SourceInputDao sourceInputDao;
+    private TripJsonDao tripJsonDao;
 
     private static DataRepository instance;
     private static AppDatabase db;
@@ -56,6 +58,7 @@ public class DataRepository {
         deliveredProductDao = db.deliveredProductDao();
         siteInputDao = db.siteInputDao();
         sourceInputDao = db.sourceInputDao();
+        tripJsonDao = db.tripJsonDao();
     }
 
     /**
@@ -147,6 +150,12 @@ public class DataRepository {
     public void addSourceInput(SourceInput sourceInput) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             sourceInputDao.addSourceInput(sourceInput);
+        });
+    }
+
+    public void addTripJson(TripJson tripJson) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            tripJsonDao.addTripJson(tripJson);
         });
     }
 
@@ -924,6 +933,58 @@ public class DataRepository {
             return future.get();
         }
         catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    /***********
+     * Trip/Load Methods
+     ***********/
+
+    public int getTripIsComplete(int trip_id){
+        Callable<Integer> is_complete = () -> {
+            return tripDao.getIsComplete(trip_id);
+        };
+
+        Future<Integer> future = AppDatabase.databaseWriteExecutor.submit(is_complete);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e){
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public int getLoadIsComplete(int seq_num){
+        Callable<Integer> is_complete = () -> {
+            return loadDao.getIsComplete(seq_num);
+        };
+
+        Future<Integer> future = AppDatabase.databaseWriteExecutor.submit(is_complete);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e){
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    /*************
+     * TripJson Methods
+     ************/
+    public String getJsonData(int id){
+        Callable<String> data = () -> {
+            return tripJsonDao.getJsonString(id);
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(data);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e){
             e.printStackTrace();
         }
         return "";

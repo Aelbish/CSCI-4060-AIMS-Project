@@ -16,6 +16,7 @@ public class Load {
     String waypoint_description;
     double latitude;
     double longitude;
+    int is_complete;
 
     //Foreign Key
     int trip_id;
@@ -67,5 +68,13 @@ public class Load {
 
     public void setTrip_id(int trip_id) {
         this.trip_id = trip_id;
+    }
+
+    public int getIs_complete() {
+        return is_complete;
+    }
+
+    public void setIs_complete(int is_complete) {
+        this.is_complete = is_complete;
     }
 }

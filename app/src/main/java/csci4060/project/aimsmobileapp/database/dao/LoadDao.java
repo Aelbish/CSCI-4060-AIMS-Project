@@ -33,4 +33,7 @@ public interface LoadDao {
 
     @Query("SELECT * FROM Load WHERE trip_id = :trip_id")
     LiveData<List<Load>> getLoads(int trip_id);
+
+    @Query("SELECT is_complete FROM Load WHERE sequence_number = :sequence_number")
+    int getIsComplete(int sequence_number);
 }

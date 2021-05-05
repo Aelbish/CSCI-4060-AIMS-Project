@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,12 +22,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.Fragments.TripFragment;
 
 public class TripActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView
             txtTripId,
-            txtDriverCode,
             txtDriverName,
             txtTruckDesc,
             txtTrailerDesc,
@@ -38,8 +39,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             txtPostalCode,
             txtProductDesc,
             txtRequestedQty,
-            txtUOM,
-            txtFill;
+            txtUOM;
 
     String
             TripId,
@@ -58,7 +58,7 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
             UOM,
             Fill;
 
-    Button btnStart, btnSiteInput, btnSourceInput;
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +81,18 @@ public class TripActivity extends AppCompatActivity implements View.OnClickListe
         txtUOM = findViewById(R.id.UOM);
 
 //      reference for buttons
-        btnStart = findViewById(R.id.btn_start_trip);
+        btnBack = findViewById(R.id.btn_start_trip);
 
 //      Setting on click listener to buttons
-        btnStart.setOnClickListener(this);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                ft.replace(R.id.container, new TripFragment());
+//                ft.commit();
+                finish();
+            }
+        });
 
         getSingleTripDetails();
 

@@ -55,10 +55,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
     public void onBindViewHolder(@NonNull final ItemsViewHolder itemsViewHolder, int i) {
         final TripInfoModel tripInfoModel = tripInfoModelList.get(i);
 
-        //itemsViewHolder.txtTripId.setText("Trip id: " + tripInfoModel.getTripId());
         itemsViewHolder.txtTripName.setText("Trip name: " + tripInfoModel.getTripName());
         itemsViewHolder.txtTripWaypoint.setText("Location Type: " + tripInfoModel.getWaypoint());
-        //itemsViewHolder.txtTripSeq.setText("Load: " + tripInfoModel.getSeqNum());
         itemsViewHolder.txtDestinationName.setText("Destination: " + tripInfoModel.getDestinationName());
         itemsViewHolder.txtAddress.setText("Address: " + tripInfoModel.getAddress());
 
@@ -86,6 +84,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                         Intent driverSourceInput= new Intent(mcontext, DriverInputSourceActivity.class);
                         driverSourceInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                         driverSourceInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
+                        driverSourceInput.putExtra("DriverCode", tripInfoModel.getDriverCode());
+                        driverSourceInput.putExtra("DestinationCode", tripInfoModel.getDestinationCode());
+                        driverSourceInput.putExtra("ProductID", String.valueOf(tripInfoModel.getProductId()));
 
                         driverSourceInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mcontext.startActivity(driverSourceInput);
@@ -96,6 +97,9 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                         Intent driverSiteInput= new Intent(mcontext, DriverInputSiteActivity.class);
                         driverSiteInput.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                         driverSiteInput.putExtra("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
+                        driverSiteInput.putExtra("DriverCode", tripInfoModel.getDriverCode());
+                        driverSiteInput.putExtra("DestinationCode", tripInfoModel.getDestinationCode());
+                        driverSiteInput.putExtra("ProductID", String.valueOf(tripInfoModel.getProductId()));
 
                         driverSiteInput.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mcontext.startActivity(driverSiteInput);
@@ -169,21 +173,13 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
 
             cardViewForTrips=itemView.findViewById(R.id.cardViewForTrips);
 
-
-
-
-
-            //txtTripId = itemView.findViewById(R.id.txtTripId);
             txtTripName = itemView.findViewById(R.id.txtTripName);
             txtTripWaypoint = itemView.findViewById(R.id.txtTripWaypoint);
-            //txtTripSeq = itemView.findViewById(R.id.txtTripSeq);
             txtDestinationName = itemView.findViewById(R.id.txtDestinationName);
             txtAddress = itemView.findViewById(R.id.txtAddress);
 
-//            btnSummary = itemView.findViewById(R.id.btn_summary);
             btnStart = itemView.findViewById(R.id.btn_start);
             btnDisplayForm = itemView.findViewById(R.id.btn_display_form);
-
         }
 
     }

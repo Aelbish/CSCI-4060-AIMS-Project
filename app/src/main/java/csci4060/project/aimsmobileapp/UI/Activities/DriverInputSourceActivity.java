@@ -29,6 +29,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -84,6 +91,9 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
     private final DataRepository repository = AIMSApp.repository;
     int trip_id;
     int load_id;
+    String driver_code;
+    String destination_code;
+    String product_id;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -94,6 +104,9 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));
         load_id = Integer.parseInt(bundle.getString("SeqNum"));
+        driver_code = bundle.getString("DriverCode");
+        destination_code = bundle.getString("DestinationCode");
+        product_id = bundle.getString("ProductID");
 
         /**Spinner for product types**/
         spinnerProductType = findViewById(R.id.spinnerProductType);
@@ -236,7 +249,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, month);
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 editText.setText(simpleDateFormat.format(calendar.getTime()));
             }
         };
@@ -253,7 +266,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                 calendar.set(Calendar.MINUTE, minute);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
                 editText.setText(simpleDateFormat.format(calendar.getTime()));
             }
         };
@@ -483,6 +496,20 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
                         "Pickup Net: " + Double.toString(repository.getPickup_net_quantitySource(trip_id, load_id)) +"\n" +
                         "BOL Num: " + Integer.toString(repository.getBOLNumberSource(trip_id, load_id))
                         , Toast.LENGTH_LONG).show();
+
+
+        RequestQueue requestQueue;
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.start();
+
+        String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/TripProductPickupPut/" + driver_code +  "/" + trip_id + "/" + destination_code + "/" + product_id + "/" + bolNumber + "/" + startDate + "%20" + startTime + "/" + endDate + "%20" + endTime + "/" + pickupGrossQuantity + "/" + pickupNetQuantity + "?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+
+        requestQueue.add(stringRequest);
     }
 
 }

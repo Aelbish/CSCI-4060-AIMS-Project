@@ -915,8 +915,10 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
+        if(location != null) {
+            longitude = location.getLongitude();
+            latitude = location.getLatitude();
+        }
         return true;
     }
 
