@@ -216,14 +216,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
                         m_map.setCenter(new GeoCoordinate(latitude, longitude), Map.Animation.NONE);
 
-//                        map_marker(latitude,longitude,R.drawable.navi);
-//                        Image image= new Image();
-//                        try {
-//                            image.setImageResource(R.drawable.navi);
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                        m_mapFragment.getPositionIndicator().setMarker(image).setVisible(true);
+
                         m_mapFragment.getPositionIndicator().setVisible(true);
                         m_map.setTilt(20);
 
@@ -449,7 +442,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
         });
         alertDialogBuilder.setPositiveButton("Simulation", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialoginterface, int i) {
-                m_navigationManager.simulate(m_route, 55);
+                m_navigationManager.simulate(m_route, 100);
 
 
                 m_map.setTilt(60);
@@ -629,7 +622,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
                 min=minutes+m; }
             else{
                 hours=h+1;
-                min=60-minutes+m;
+                min=minutes+m-60;
             }
         }
         else {
@@ -639,34 +632,45 @@ public class RouteFragment<afChangeListener> extends Fragment {
             }
             else{
                 hours=(minutes%60)+h+1;
-                min=60-minutes+m;
+                min=minutes+m-60;
 
             }
 
         }
         if (hours>11){
             if(min<10){
-                output=hours+":"+"0"+min+"PM";
+                if(hours>23){
+                    output="00"+":"+"0"+min+" PM";
+                }
+                else{
+                    output=hours+":"+"0"+min+" PM";
+                }
             }
             else{
-                output=hours+":"+min+"PM";
+                if(hours>23){
+                    output="00"+":"+min+" PM";
+                }
+                else{
+                    output=hours+":"+min+" PM";
+                }
+
             }
         }
         else{
             if(min<10){
                 if(hours==0){
-                    output="0"+hours+":"+"0"+min+"AM";
+                    output="0"+hours+":"+"0"+min+" AM";
                 }
                 else{
-                    output=hours+":"+"0"+min+"AM";
+                    output=hours+":"+"0"+min+" AM";
                 }
 
             }
             else{
                 if(hours==0){
-                    output="0"+hours+":"+min+"AM";
+                    output="0"+hours+":"+min+" AM";
                 }else{
-                    output=hours+":"+min+"AM";
+                    output=hours+":"+min+" AM";
                 }
 
             }
@@ -894,11 +898,12 @@ public class RouteFragment<afChangeListener> extends Fragment {
             PositioningManager.getInstance().stop();
 
 
+
         }
-        m_navigationManager.getAudioPlayer().stop();
+
         NavigationManager.getInstance()
                 .removeRerouteListener(rerouteListener);
-
+//        m_navigationManager.getAudioPlayer().stop();
 
 
     }
