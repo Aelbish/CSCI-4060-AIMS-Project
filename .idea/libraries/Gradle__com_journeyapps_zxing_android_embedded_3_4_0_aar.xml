@@ -7,14 +7,11 @@
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/cc413be5919e774f3bd34b5429e16600/jetified-zxing-android-embedded-3.4.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/cc413be5919e774f3bd34b5429e16600/jetified-zxing-android-embedded-3.4.0/res" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/cc413be5919e774f3bd34b5429e16600/jetified-zxing-android-embedded-3.4.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/ab6e26d631eb1235b3a973cfd8c0cd98/jetified-zxing-android-embedded-3.4.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.journeyapps/zxing-android-embedded/3.4.0/fbd59f49a0e7044be9751bc108ceec3c65aed849/zxing-android-embedded-3.4.0-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.journeyapps/zxing-android-embedded/3.4.0/fbd59f49a0e7044be9751bc108ceec3c65aed849/zxing-android-embedded-3.4.0-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

@@ -152,7 +152,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        time=(TextView) getActivity().findViewById(R.id.time);
+
         detail= getActivity().findViewById(R.id.detail);
         detail.setVisibility(View.GONE);
         turn = getActivity().findViewById(R.id.turn);
@@ -349,9 +349,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
 
                             m_navigationManager.setMap(null);
-                           if(getActivity()!=null) {
-                               Toast.makeText(getContext(), "Error:No trip selected", Toast.LENGTH_LONG).show();
-                           }
+                            if(getActivity()!=null) {
+                                Toast.makeText(getContext(), "Error:No trip selected", Toast.LENGTH_LONG).show();
+                            }
                             return;
 
                         }
@@ -634,8 +634,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
         else {
             if(minutes+m<60){
-            hours=(minutes%60)+h;
-            min=minutes-(60*(minutes%60));
+                hours=(minutes%60)+h;
+                min=minutes-(60*(minutes%60));
             }
             else{
                 hours=(minutes%60)+h+1;
@@ -719,10 +719,13 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
             int hours = Calendar.getInstance().getTime().getHours();
             int minute = Calendar.getInstance().getTime().getMinutes();
-            time.setText(time_converter(m_route.getTtaIncludingTraffic(0).getDuration(),hours,minute));
+
+
             if (maneuver != null) {
                 detail.setVisibility(View.VISIBLE);
-
+                int route=m_route.getTtaIncludingTraffic(0).getDuration();
+                time=(TextView) getActivity().findViewById(R.id.time);
+                time.setText(time_converter(route,hours,minute));
                 street.setText(maneuver.getNextRoadName());
                 //distance.setText(maneuver.getDistanceToNextManeuver()+" m");
 
@@ -834,7 +837,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     private NavigationManager.NavigationManagerEventListener m_navigationManagerEventListener = new NavigationManager.NavigationManagerEventListener() {
         @Override
         public void onRunningStateChanged() {
-           // Toast.makeText(getActivity(), "Running state changed", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getActivity(), "Running state changed", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -847,6 +850,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
             Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             m_naviControlButton.setText(R.string.start_navi);
             m_navigationManager.stop();
+            m_navigationManager.removeNewInstructionEventListener(instructListener);
             detail.setVisibility(View.GONE);
             stopForegroundService();
 
@@ -915,10 +919,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if(location != null) {
             longitude = location.getLongitude();
             latitude = location.getLatitude();
-        }
+
         return true;
     }
 
