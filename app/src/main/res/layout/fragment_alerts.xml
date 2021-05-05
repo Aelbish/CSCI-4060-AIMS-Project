@@ -47,7 +47,7 @@
             android:textColor="@color/black"
             android:textSize="22sp"
             android:paddingStart="20dp"
-            android:textStyle="bold"/>
+            />
 
         <TextView
             android:id="@+id/txtDriverName"

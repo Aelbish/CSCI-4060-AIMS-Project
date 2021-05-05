@@ -30,7 +30,6 @@
                 android:text="Trip Name"
                 android:textSize="22sp"
                 android:padding="10dp"
-                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -48,12 +47,12 @@
 
             <Button
                 android:id="@+id/btn_delivery_details"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:background="@drawable/my_button"
                 android:clickable="true"
-                android:text="Trip Summary"
+                android:text="Trip Detail"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
