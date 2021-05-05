@@ -39,10 +39,10 @@
             android:value="TW/zZRjmbhgIlc5TjeQPMaxBksoB0ZMEqPKHr9uWQpSsYWwydgpiZ0fL4Y+yiwB2HjkuVybF+BmFH3fyGgT3TGhg51YpN9oQ7JUSa9OJgMPeqH3zrfOHmozcpIBJFvBpr4rZv9br/EXF+2a5aDjxthI0XXV69/DQRLKnawRFouy0Zn3XRX7fRoWj0mG/3zfng8ucUiK7khFzAQCo0OzS5xdAfHW5x01PKizdXnsCxgtPm86CDAjXGhrPmJX1LA3GZnMwrSOTRjtJFmjb7dVg+FgeEfNpfOqSDHWssWMUSBIGHkCC2zmKi6Qhd4gfx24bSHI3zD8Tb+2OCWENGL6zZitSHB8Yb/sU4wqdACqHtRY3VkBLRnrzET2ppdpqgfXkB9Ht0fo7ilrI0S4uy2O74jfMcKzcxzVpwgX+mA0R1PXqF25Ceb7byugKSaT7TiZzoIsMHzp3R/6JQ9UMqJRTWeOPqQJg6ibTaF7WBwJn3+atUyCOkmBEotNvSxUFJXUOKC3zF70+fs+tGE98BX4uws3+eX4hcYz7H7HDuzrNCEVhiApfyegrmfoXMJo5n3EKgiYI8F747s0ZWTC14d1Yvauq0Zy49FlppC6aMbtxSgSyHiLjrzesmsbCjEUZPHenP9QQBKyE2v5fS7kVj19B2sG+VDvYblr7/xUGk0ZPLrM=" />
         <activity android:name=".UI.SignatureCapture" />
         <activity android:name=".UI.Activities.DriverInputSiteActivity" />
-        <activity android:name=".UI.Activities.DriverInputSourceActivity" />
+        <activity android:name=".UI.Activities.DriverInputSourceActivity"/>
         <activity android:name=".UI.Activities.TripActivity" />
-        <activity android:name=".UI.Activities.MainScreenActivity" />
-        <activity android:name=".UI.Activities.MainActivity">
+        <activity android:name=".UI.Activities.MainScreenActivity" android:theme="@style/DemoTheme"/>
+        <activity android:name=".UI.Activities.MainActivity" android:theme="@style/DemoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

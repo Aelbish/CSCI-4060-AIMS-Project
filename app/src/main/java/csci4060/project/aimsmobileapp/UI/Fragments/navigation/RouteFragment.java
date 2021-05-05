@@ -1,21 +1,16 @@
 package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.PointF;
-import android.graphics.drawable.Animatable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.media.AudioManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,15 +19,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
-import android.preference.PreferenceManager;
-import android.provider.Settings;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -71,26 +64,28 @@ import com.here.android.mpa.guidance.LaneInformation;
 import com.here.android.mpa.guidance.NavigationManager;
 
 
-import com.here.android.mpa.mapping.PositionIndicator;
 import com.here.android.mpa.routing.CoreRouter;
+import com.here.android.mpa.routing.Maneuver;
 import com.here.android.mpa.routing.Route;
 import com.here.android.mpa.routing.RouteOptions;
 import com.here.android.mpa.routing.RoutePlan;
 import com.here.android.mpa.routing.RouteResult;
-import com.here.android.mpa.routing.RouteTta;
 import com.here.android.mpa.routing.RouteWaypoint;
 import com.here.android.mpa.routing.Router;
 import com.here.android.mpa.routing.RoutingError;
 
 
-import java.util.EnumSet;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
 
 import csci4060.project.aimsmobileapp.R;
 
 import static android.content.ContentValues.TAG;
-import static android.content.Context.LOCATION_SERVICE;
 
 
 //This is route screen
@@ -103,7 +98,12 @@ public class RouteFragment<afChangeListener> extends Fragment {
     double destinationLon;
     private LocationManager locationManager;
     private LocationListener locationListner;
-
+    LinearLayout detail;
+    TextView turn;
+    TextView street;
+    TextView distance;
+    ImageView ex;
+    TextView time;
 
 
     private MapRoute m_mapRoute;
@@ -132,8 +132,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
     private boolean m_returningToRoadViewMode = false;
     private double m_lastZoomLevelInRoadViewMode = 0.0;
-    private MapRoute m_currentRoute;
-    private LinearLayout m_laneInfoView;
+
     private NavigationManager m_navigationManager;
     private GeoBoundingBox m_geoBoundingBox;
     private Route m_route;
@@ -153,8 +152,16 @@ public class RouteFragment<afChangeListener> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        time=(TextView) getActivity().findViewById(R.id.time);
+        detail= getActivity().findViewById(R.id.detail);
+        detail.setVisibility(View.GONE);
+        turn = getActivity().findViewById(R.id.turn);
+        street=getActivity().findViewById(R.id.street);
+        distance=getActivity().findViewById(R.id.distance);
+        ex=  (ImageView) getActivity().findViewById(R.id.ex);
+        volume = (FloatingActionButton) getActivity().findViewById(R.id.volume);
+
         m_mapFragment = getMapFragment();
-        m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
         // Get a MapView instance from the layout.
         if (hasPermissions(getActivity(), RUNTIME_PERMISSIONS)) {
             initMapFragment();
@@ -185,7 +192,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
         /* Locate the mapFragment UI element */
         m_mapFragment = getMapFragment();
 
-        m_laneInfoView = getActivity().findViewById(R.id.laneInfoLayout);
+
         // This will use external storage to save map cache data, it is also possible to set
         // private app's path
         String path = new File(getActivity().getExternalFilesDir(null), ".here-map-data")
@@ -208,8 +215,17 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
 
                         m_map.setCenter(new GeoCoordinate(latitude, longitude), Map.Animation.NONE);
+
+//                        map_marker(latitude,longitude,R.drawable.navi);
+//                        Image image= new Image();
+//                        try {
+//                            image.setImageResource(R.drawable.navi);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                        m_mapFragment.getPositionIndicator().setMarker(image).setVisible(true);
                         m_mapFragment.getPositionIndicator().setVisible(true);
-                        m_map.setTilt(60);
+                        m_map.setTilt(20);
 
                         //Put this call in Map.onTransformListener if the animation(Linear/Bow)
                         //is used in setCenter()
@@ -329,15 +345,19 @@ public class RouteFragment<afChangeListener> extends Fragment {
                                         Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            Toast.makeText(getActivity(),
-                                    "Error:route calculation returned error code: " + routingError,
-                                    Toast.LENGTH_LONG).show();
+
+
+
                             m_navigationManager.setMap(null);
+                           if(getActivity()!=null) {
+                               Toast.makeText(getContext(), "Error:No trip selected", Toast.LENGTH_LONG).show();
+                           }
                             return;
 
                         }
                     }
                 });
+
     }
 
     private void initNaviControlButton() {
@@ -361,8 +381,12 @@ public class RouteFragment<afChangeListener> extends Fragment {
                 if (m_route == null) {
                     createRoute();
 
+
                 } else {
+
                     m_navigationManager.stop();
+                    m_navigationManager.getAudioPlayer().stop();
+                    detail.setVisibility(View.GONE);
                     /*
                      * Restore the map orientation to show entire route on screen
                      */
@@ -425,7 +449,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
         });
         alertDialogBuilder.setPositiveButton("Simulation", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialoginterface, int i) {
-                m_navigationManager.simulate(m_route, 60);//Simualtion speed is set to 60 m/s
+                m_navigationManager.simulate(m_route, 55);
 
 
                 m_map.setTilt(60);
@@ -472,47 +496,14 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
 
 
-        /* Register a AudioPlayerDelegate to monitor TTS text */
-        m_navigationManager.getAudioPlayer().setDelegate(m_audioPlayerDelegate);
-
-        m_navigationManager.addLaneInformationListener(new WeakReference<NavigationManager.LaneInformationListener>(m_laneInformationListener));
 
         m_navigationManager.addRerouteListener(new WeakReference<NavigationManager.RerouteListener>(rerouteListener));
 
-        m_navigationManager.setRealisticViewMode(NavigationManager.RealisticViewMode.DAY);
-        m_navigationManager.addRealisticViewAspectRatio(NavigationManager.AspectRatio.AR_16x9);
-        m_navigationManager.addRealisticViewListener(new WeakReference<NavigationManager.RealisticViewListener>(realisticViewListener));
         initVoicePackages();
 
 
     }
 
-    ImageView img;
-
-    private NavigationManager.RealisticViewListener realisticViewListener = new NavigationManager.RealisticViewListener() {
-
-        @Override
-        public void onRealisticViewShow(NavigationManager.AspectRatio aspectRatio, @Nullable Image image, @Nullable Image image1) {
-            img = getActivity().findViewById(R.id.imageView2);
-
-            if (image1.getType() == Image.Type.SVG) {
-                // full size is too big (will cover most of the screen), so cut the size in half
-                Bitmap bmpImage = image1.getBitmap((int) (image1.getWidth() * 0.5),
-                        (int) (image1.getHeight() * 0.5));
-                if (bmpImage != null) {
-                    //
-                    // show bmpImage on-screen
-                    //
-                    img.setImageBitmap(bmpImage);
-                    img.setVisibility(View.VISIBLE);
-                }
-
-            }
-
-        }
-
-
-    };
     // application design suggestion: pause roadview when user gesture is detected.
     private MapGesture.OnGestureListener gestureListener = new MapGesture.OnGestureListener() {
         @Override
@@ -604,14 +595,6 @@ public class RouteFragment<afChangeListener> extends Fragment {
     }
 
 
-    final private NavigationManager.LaneInformationListener
-            m_laneInformationListener = new NavigationManager.LaneInformationListener() {
-        @Override
-        public void onLaneInformation(@NonNull List<LaneInformation> items,
-                                      @Nullable RoadElement roadElement) {
-            LaneInfoUtils.displayLaneInformation(m_laneInfoView, items);
-        }
-    };
     private NavigationManager.PositionListener m_positionListener = new NavigationManager.PositionListener() {
         @Override
         public void onPositionUpdated(GeoPosition geoPosition) {
@@ -625,13 +608,88 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
             // also remaining time and distance can be
             // fetched from navigation manager
-            m_navigationManager.getTta(Route.TrafficPenaltyMode.DISABLED, true);
-            m_navigationManager.getDestinationDistance();
+
+            distance.setText(meter_converter(m_navigationManager.getNextManeuverDistance()));
+
+
 
         }
+
     };
+    public String time_converter(int i,int h,int m){
+        int minutes= (int) i/60;
+        int hours;
+        int min;
+        String output;
+        String d;
+        if(minutes<60)
+        {
+            if(minutes+m<60){
+                hours=h;
+                min=minutes+m; }
+            else{
+                hours=h+1;
+                min=60-minutes+m;
+            }
+        }
+        else {
+            if(minutes+m<60){
+            hours=(minutes%60)+h;
+            min=minutes-(60*(minutes%60));
+            }
+            else{
+                hours=(minutes%60)+h+1;
+                min=60-minutes+m;
 
+            }
 
+        }
+        if (hours>11){
+            if(min<10){
+                output=hours+":"+"0"+min+"PM";
+            }
+            else{
+                output=hours+":"+min+"PM";
+            }
+        }
+        else{
+            if(min<10){
+                if(hours==0){
+                    output="0"+hours+":"+"0"+min+"AM";
+                }
+                else{
+                    output=hours+":"+"0"+min+"AM";
+                }
+
+            }
+            else{
+                if(hours==0){
+                    output="0"+hours+":"+min+"AM";
+                }else{
+                    output=hours+":"+min+"AM";
+                }
+
+            }
+        }
+
+        return output;
+    }
+
+    public String meter_converter(long i){
+        int feet= (int) (i*3.2804);
+        double miles=  (i*0.000621371192);
+        String output;
+        if(feet<1001){
+            output=feet+" ft";
+        }
+        else{
+            DecimalFormat df = new DecimalFormat("#.#");
+            df.setRoundingMode(RoundingMode.CEILING);
+
+            output=df.format(miles)+ " mi";
+        }
+        return output;
+    }
     private NavigationManager.RerouteListener rerouteListener = new NavigationManager.RerouteListener() {
         @Override
         public void onRerouteBegin() {
@@ -648,6 +706,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
 
     };
+
     private NavigationManager.NewInstructionEventListener instructListener
             = new NavigationManager.NewInstructionEventListener() {
 
@@ -655,19 +714,132 @@ public class RouteFragment<afChangeListener> extends Fragment {
         public void onNewInstructionEvent() {
             // Interpret and present the Maneuver object as it contains
             // turn by turn navigation instructions for the user.
-            m_navigationManager.getNextManeuver();
+            Maneuver maneuver = m_navigationManager.getNextManeuver();
+
+
+            int hours = Calendar.getInstance().getTime().getHours();
+            int minute = Calendar.getInstance().getTime().getMinutes();
+            time.setText(time_converter(m_route.getTtaIncludingTraffic(0).getDuration(),hours,minute));
+            if (maneuver != null) {
+                detail.setVisibility(View.VISIBLE);
+
+                street.setText(maneuver.getNextRoadName());
+                //distance.setText(maneuver.getDistanceToNextManeuver()+" m");
+
+                if(maneuver.getIcon().value() == Maneuver.Icon.END.value())
+                {
+                    ex.setImageResource(R.drawable.pin);
+                    turn.setText("Keep Straight");
+
+
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.KEEP_LEFT.value() || maneuver.getIcon().value() == Maneuver.Icon.QUITE_LEFT.value())
+                {
+                    ex.setImageResource( R.drawable.direction_continue_left);
+                    if(maneuver.getIcon().value() == Maneuver.Icon.KEEP_LEFT.value()) {
+                        turn.setText("Keep Left");
+                    }
+                    else{
+                        turn.setText("Turn Left");
+                    }
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.LIGHT_LEFT.value() || maneuver.getIcon().value() == Maneuver.Icon.HIGHWAY_KEEP_LEFT.value())
+                {
+                    ex.setImageResource(R.drawable.direction_new_name_slight_left);
+                    if(maneuver.getIcon().value() == Maneuver.Icon.LIGHT_LEFT.value()) {
+                        turn.setText("Light Left");
+                    }
+                    else{
+                        turn.setText("Highway Keep Left");
+                    }
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.HEAVY_LEFT.value()) {
+                    ex.setImageResource(R.drawable.direction_notification_sharp_left);
+                    turn.setText("Sharp Left");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.UTURN_LEFT.value() || maneuver.getIcon().value() == Maneuver.Icon.UTURN_RIGHT.value()) {
+                    ex.setImageResource(R.drawable.direction_uturn);
+                    turn.setText("Take U Turn On Left");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.ENTER_HIGHWAY_LEFT_LANE.value())
+                {
+                    ex.setImageResource(R.drawable.direction_merge_slight_left);
+                    turn.setText("Enter Highway Left Lane");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.LEAVE_HIGHWAY_LEFT_LANE.value())
+                {
+                    ex.setImageResource(R.drawable.direction_off_ramp_slight_left);
+                    turn.setText("Leave Highway Left Lane");
+                }
+
+
+                else if(maneuver.getIcon().value() == Maneuver.Icon.KEEP_RIGHT.value() || maneuver.getIcon().value() == Maneuver.Icon.QUITE_RIGHT.value())
+                {
+                    ex.setImageResource(R.drawable.direction_continue_right);
+                    if(maneuver.getIcon().value() == Maneuver.Icon.KEEP_RIGHT.value()) {
+                        turn.setText("Keep Right");
+                    }
+                    else{
+                        turn.setText("Turn Right");
+                    }
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.LIGHT_RIGHT.value() || maneuver.getIcon().value() == Maneuver.Icon.HIGHWAY_KEEP_RIGHT.value())
+                {
+                    ex.setImageResource(R.drawable.direction_new_name_slight_right);
+                    if(maneuver.getIcon().value() == Maneuver.Icon.LIGHT_RIGHT.value()) {
+                        turn.setText("Light Right");
+                    }
+                    else{
+                        turn.setText("Highway Keep Right");
+                    }
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.HEAVY_RIGHT.value()) {
+                    ex.setImageResource(R.drawable.direction_notificaiton_sharp_right);
+                    turn.setText("Sharp Right");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.ENTER_HIGHWAY_RIGHT_LANE.value())
+                {
+                    ex.setImageResource(R.drawable.direction_merge_slight_right);
+                    turn.setText("Enter Highway Right Lane");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.LEAVE_HIGHWAY_RIGHT_LANE.value())
+                {
+                    ex.setImageResource(R.drawable.direction_off_ramp_slight_right);
+                    turn.setText("Leave Highway Right Lane");
+                }
+                else if(maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_1.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_1_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_2.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_2_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_3.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_3_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_4.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_4_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_5.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_5_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_6.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_6_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_7.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_7_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_8.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_8_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_9.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_9_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_10.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_10_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_11.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_11_LH.value()||
+                        maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_12.value() || maneuver.getIcon().value() == Maneuver.Icon.ROUNDABOUT_12_LH.value()
+                ) {
+                    ex.setImageResource(R.drawable.direction_roundabout);
+                    turn.setText("Round About");
+                }
+                else {
+                    ex.setImageResource(R.drawable.direction_new_name_straight);
+                    turn.setText("Keep Straight");
+                }
+            }
         }
     };
 
     private NavigationManager.NavigationManagerEventListener m_navigationManagerEventListener = new NavigationManager.NavigationManagerEventListener() {
         @Override
         public void onRunningStateChanged() {
-            Toast.makeText(getActivity(), "Running state changed", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getActivity(), "Running state changed", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onNavigationModeChanged() {
-            Toast.makeText(getActivity(), "Navigation mode changed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "Navigation mode changed", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -675,6 +847,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
             Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             m_naviControlButton.setText(R.string.start_navi);
             m_navigationManager.stop();
+            detail.setVisibility(View.GONE);
             stopForegroundService();
 
 
@@ -712,12 +885,16 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
         }
         if (MapEngine.isInitialized()) {
+
             NavigationManager.getInstance().stop();
             PositioningManager.getInstance().stop();
+
+
         }
-        NavigationManager.getInstance().removeLaneInformationListener(m_laneInformationListener);
+        m_navigationManager.getAudioPlayer().stop();
         NavigationManager.getInstance()
                 .removeRerouteListener(rerouteListener);
+
 
 
     }
@@ -770,7 +947,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
     }
 
-    void onBackPressed() {
+
+    private void onBackPressed() {
         if (NavigationManager.getInstance().getMapUpdateMode().equals(NavigationManager
                 .MapUpdateMode.NONE)) {
             resumeRoadView();
@@ -788,28 +966,6 @@ public class RouteFragment<afChangeListener> extends Fragment {
         m_returningToRoadViewMode = true;
     }
 
-    private AudioPlayerDelegate m_audioPlayerDelegate = new AudioPlayerDelegate() {
-        @Override
-        public boolean playText(final String s) {
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    instructions = getActivity().findViewById(R.id.instructions);
-                    if(instructions!=null){
-                        instructions.setText(s);}
-                    //Toast.makeText(getActivity(), "TTS output: " + s, Toast.LENGTH_SHORT).show();
-
-                }
-            });
-            return false;
-        }
-
-        @Override
-        public boolean playFiles(String[] strings) {
-            return false;
-        }
-    };
-
 
     private void initVoicePackages() {
         if(m_navigationManager.getAudioPlayer().getVolume()!=0f) {
@@ -817,6 +973,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
             volume.setTooltipText("on");
             m_navigationManager.getAudioPlayer().setVolume(1f);
         }
+
         m_navigationManager = NavigationManager.getInstance();
 
         // Retrieve the VoiceCatalog and download the latest updates
@@ -941,7 +1098,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     }
 
     public void volumesettings() {
-        volume = (FloatingActionButton) getActivity().findViewById(R.id.volume);
+
         volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

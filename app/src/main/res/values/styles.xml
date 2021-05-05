@@ -41,4 +41,15 @@
 
     </style>
 
+    <!-- Defined a new style with three items of color. -->
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#FFBA00</item>
+    </style>#FFBA00
+
+
 </resources>

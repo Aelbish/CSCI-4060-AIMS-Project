@@ -1,15 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|top">
 
     <!-- Map Fragment embedded with the map object -->
+
     <fragment
-        class="com.here.android.mpa.mapping.AndroidXMapFragment"
         android:id="@+id/mapfragment"
+        class="com.here.android.mpa.mapping.AndroidXMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="-7dp" />
 
     <Button
         android:id="@+id/calculate"
@@ -18,61 +21,96 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/my_button"
         android:foregroundGravity="clip_vertical|center_horizontal|fill"
         android:text="@string/start_navi"
         app:backgroundTint="@color/myOrange" />
 
-    <LinearLayout
-        android:id="@+id/laneInfoLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal" />
 
     <LinearLayout
+        android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-9dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="0dp"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/instructions"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
+            android:layout_height="80dp"
+            android:background="#FFAE1A"
+            android:orientation="horizontal"
+            android:visibility="visible">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="103dp"
-            android:layout_height="72dp"
-            android:layout_marginBottom="-58dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/image_view_border" />
+            <ImageView
+                android:id="@+id/ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image_view_border" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/turn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFEFE" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/volume"
-        android:layout_width="65dp"
-        android:layout_height="67dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_above="@+id/center_navi"
         android:layout_alignStart="@+id/center_navi"
-
-
-        android:layout_alignEnd="@+id/center_navi"
-        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@id/center_navi"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         android:tooltipText="off"
         app:backgroundTint="#FFBA00"
@@ -80,16 +118,16 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/center_navi"
-        android:layout_width="95dp"
-        android:layout_height="79dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/calculate"
 
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
         android:clickable="true"
+        android:visibility="visible"
         app:backgroundTint="#FFBA00"
         app:srcCompat="@drawable/center" />
 
