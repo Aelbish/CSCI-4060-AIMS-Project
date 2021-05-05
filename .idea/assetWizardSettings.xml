@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../sushant%20kunwar/AppData/Local/Android/Sdk/icons/material/materialicons/navigation/baseline_navigation_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/navigate_next/baseline_navigate_next_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,8 +33,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="1686fa" />
-                            <entry key="outputName" value="navi" />
+                            <entry key="outputName" value="ic_baseline_navigate_next_24" />
                             <entry key="sourceFile" value="C:\Users\sushant kunwar\CSCI-4060-AIMS-Projectmaindebug" />
                           </map>
                         </option>

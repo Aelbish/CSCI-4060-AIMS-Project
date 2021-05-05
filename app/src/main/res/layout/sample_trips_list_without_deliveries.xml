@@ -29,6 +29,8 @@
                 android:layout_height="wrap_content"
                 android:text="Trip Name"
                 android:textSize="22sp"
+                android:padding="10dp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -36,31 +38,32 @@
 
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/trip_info_scroll_view"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            >
 
             <Button
                 android:id="@+id/btn_delivery_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_weight="1"
+                android:layout_centerInParent="true"
                 android:background="@drawable/my_button"
                 android:clickable="true"
-                android:text=" Details "
+                android:text="Trip Summary"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:layout_marginRight="10dp"/>
+                android:textSize="18sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
+                android:layout_marginBottom="10dp"/>
 
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 

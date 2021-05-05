@@ -20,14 +20,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/my_button"
         android:foregroundGravity="clip_vertical|center_horizontal|fill"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:text="@string/start_navi"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:backgroundTint="@color/myOrange" />
 
 
@@ -35,9 +39,15 @@
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="-13dp"
         android:orientation="vertical">
 
         <LinearLayout

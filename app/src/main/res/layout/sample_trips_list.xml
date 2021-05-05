@@ -16,12 +16,12 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/txtTripName"
@@ -29,7 +29,16 @@
                 android:layout_height="wrap_content"
                 android:text="Trip Name"
                 android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
                 android:textColor="@color/black"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:background="@drawable/ic_baseline_navigate_next_24"
+                />
 
         </LinearLayout>
 
@@ -46,6 +55,7 @@
                 android:layout_below="@id/txtTripName"
                 android:text="Destination"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -63,6 +73,7 @@
                 android:layout_below="@id/txtTripName"
                 android:text="Address"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -80,6 +91,7 @@
                 android:layout_below="@id/txtAddress"
                 android:text="Location Type"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -103,8 +115,12 @@
                 android:text=" Start Trip "
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:layout_marginRight="10dp"/>
+                android:textSize="18sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                />
 
             <Button
                 android:id="@+id/btn_display_form"
@@ -117,8 +133,11 @@
                 android:text="Completion Form"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="18sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
 
