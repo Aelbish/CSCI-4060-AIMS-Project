@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:padding="10dp">
 
     <com.github.gcacace.signaturepad.views.SignaturePad
         android:id="@+id/signaturePad"
-        android:layout_width="393dp"
-        android:layout_height="659dp"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
         sign:layout_constraintBottom_toTopOf="@+id/linearLayout"
         sign:layout_constraintEnd_toEndOf="parent"
         sign:layout_constraintHorizontal_bias="0.0"
@@ -36,6 +37,11 @@
             android:layout_weight="1"
             android:background="@drawable/my_button"
             android:text="Clear"
+            android:textAllCaps="false"
+            android:layout_margin="15dp"
+            android:textSize="18sp"
+            android:paddingRight="25dp"
+            android:paddingLeft="25dp"
             android:textColor="@color/white" />
 
         <Button
@@ -45,6 +51,11 @@
             android:layout_weight="1"
             android:background="@drawable/my_button"
             android:text="Save"
+            android:textAllCaps="false"
+            android:layout_margin="15dp"
+            android:textSize="18sp"
+            android:paddingRight="25dp"
+            android:paddingLeft="25dp"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

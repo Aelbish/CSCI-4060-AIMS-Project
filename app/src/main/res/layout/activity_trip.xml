@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="Trip Summary"
+        android:text="Trip Detail"
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:text="Trip id"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="22sp" />
 
@@ -47,7 +48,7 @@
             android:background="@drawable/my_button"
             android:clickable="true"
             android:text="Back"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:paddingRight="25dp"
             android:paddingLeft="25dp"
             android:textAllCaps="false"
@@ -84,9 +85,11 @@
                 android:id="@+id/DriverNameTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="DRIVER NAME: "
+                android:text="Driver Name :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -112,9 +115,11 @@
                 android:id="@+id/TruckDescTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TRUCK DESCRIPTION: "
+                android:text="Truck Description :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
 
@@ -142,9 +147,11 @@
                 android:id="@+id/TrailerDescTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TRAILER DESCRIPTION:"
+                android:text="Trailer Description :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -170,9 +177,11 @@
                 android:id="@+id/TripNameTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TRIP NAME:"
+                android:text="Trip Name :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -199,9 +208,11 @@
                 android:id="@+id/TripDateTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TRIP DATE:"
+                android:text="Trip Date :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -228,9 +239,11 @@
                 android:id="@+id/DestinationNameTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="DESTINATION NAME:"
+                android:text="Destination Name :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -257,9 +270,11 @@
                 android:id="@+id/Address1Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="ADDRESS Line 1:"
+                android:text="Address Line 1:"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -286,9 +301,11 @@
                 android:id="@+id/CityTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="CITY:"
+                android:text="City :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -313,9 +330,11 @@
                 android:id="@+id/PostalCodeTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="POSTAL CODE:"
+                android:text="Postal Code :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -341,9 +360,11 @@
                 android:id="@+id/ProductDescTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="PRODUCT DESCRIPTION:"
+                android:text="Product Description :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -368,9 +389,11 @@
                 android:id="@+id/RequestedQtyTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="REQUEST QUANTITY:"
+                android:text="Request Quantity :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -395,9 +418,11 @@
                 android:id="@+id/UOMTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Unit Of Measurement:"
+                android:text="Unit Of Measurement :"
                 android:textColor="@color/black"
-                android:textSize="22dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
                 android:layout_weight="1"/>
 
             <TextView

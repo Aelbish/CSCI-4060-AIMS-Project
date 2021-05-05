@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="2dp"
-        android:background="@color/myOrange"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bottombar"
         app:menu="@menu/bottom_navbar" />
+
 </RelativeLayout>
