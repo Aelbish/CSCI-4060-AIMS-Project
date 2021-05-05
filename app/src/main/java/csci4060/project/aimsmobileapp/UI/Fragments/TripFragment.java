@@ -27,7 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.DataRepository;
+import csci4060.project.aimsmobileapp.NetworkUtil;
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.database.entity.TripJson;
 import csci4060.project.aimsmobileapp.model.TripInfoModel;
 import csci4060.project.aimsmobileapp.adapter.TripListAdapter;
 import csci4060.project.aimsmobileapp.database.entity.Customer;
@@ -44,6 +47,40 @@ public class TripFragment extends Fragment {
 
     private List<TripInfoModel> tripInfoModelList = new ArrayList<>();
     private RecyclerView TripListRecyclerView;
+    private DataRepository repository = AIMSApp.repository;
+
+    String DriverCode;
+    String DriverName;
+    int TruckId;
+    String TruckCode;
+    String TruckDesc;
+    int TrailerId;
+    String TrailerCode;
+    String TrailerDesc;
+    int TripId;
+    String TripName;
+    String TripDate;
+    int SeqNum;
+    String WaypointTypeDescription;
+    double Latitude;
+    double Longitude;
+    String DestinationCode;
+    String DestinationName;
+    String SiteContainerCode;
+    String SiteContainerDescription;
+    String Address1;
+    String Address2;
+    String City;
+    String StateAbbrev;
+    int PostalCode;
+    int DelReqNum;
+    int DelReqLineNum;
+    int ProductId;
+    String ProductCode;
+    String ProductDesc;
+    double RequestedQty;
+    String UOM;
+    String Fill;
 
 
     @Nullable
@@ -55,9 +92,65 @@ public class TripFragment extends Fragment {
         TripListRecyclerView = view.findViewById(R.id.display_trips_list_recycler_view);
         TripListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        getDataForTripList();
+        if (NetworkUtil.getConnectivityStatus(this.getActivity().getApplicationContext()) == 1) {
+            getDataForTripList();
+        }
+        else getDataForTripListOffline();
 
         return view;
+    }
+
+    private void getDataForTripListOffline() {
+
+        try {
+            JSONObject data = new JSONObject(repository.getJsonData(1));
+            JSONArray resultSet1 = data.getJSONArray("resultSet1");
+
+            for (int i = 0; i < resultSet1.length(); i++) {
+                DriverCode = resultSet1.getJSONObject(i).getString("DriverCode");
+                DriverName = resultSet1.getJSONObject(i).getString("DriverName");
+                TruckId = resultSet1.getJSONObject(i).getInt("TruckId");
+                TruckCode = resultSet1.getJSONObject(i).getString("TruckCode");
+                TruckDesc = resultSet1.getJSONObject(i).getString("TruckDesc");
+                TrailerId = resultSet1.getJSONObject(i).getInt("TrailerId");
+                TrailerCode = resultSet1.getJSONObject(i).getString("TrailerCode");
+                TrailerDesc = resultSet1.getJSONObject(i).getString("TrailerDesc");
+                TripId = resultSet1.getJSONObject(i).getInt("TripId");
+                TripName = resultSet1.getJSONObject(i).getString("TripName");
+                TripDate = resultSet1.getJSONObject(i).getString("TripDate");
+                SeqNum = resultSet1.getJSONObject(i).getInt("SeqNum");
+                WaypointTypeDescription = resultSet1.getJSONObject(i).getString("WaypointTypeDescription");
+                Latitude = resultSet1.getJSONObject(i).getDouble("Latitude");
+                Longitude = resultSet1.getJSONObject(i).getDouble("Longitude");
+                DestinationCode = resultSet1.getJSONObject(i).getString("DestinationCode");
+                DestinationName = resultSet1.getJSONObject(i).getString("DestinationName");
+                SiteContainerCode = resultSet1.getJSONObject(i).getString("SiteContainerCode");
+                SiteContainerDescription = resultSet1.getJSONObject(i).getString("SiteContainerDescription");
+                Address1 = resultSet1.getJSONObject(i).getString("Address1");
+                Address2 = resultSet1.getJSONObject(i).getString("Address2");
+                City = resultSet1.getJSONObject(i).getString("City");
+                StateAbbrev = resultSet1.getJSONObject(i).getString("StateAbbrev");
+                PostalCode = resultSet1.getJSONObject(i).getInt("PostalCode");
+                DelReqNum = resultSet1.getJSONObject(i).optInt("DelReqNum");
+                DelReqLineNum = resultSet1.getJSONObject(i).optInt("DelReqLineNum");
+                ProductId = resultSet1.getJSONObject(i).optInt("ProductId");
+                ProductCode = resultSet1.getJSONObject(i).getString("ProductCode");
+                ProductDesc = resultSet1.getJSONObject(i).getString("ProductDesc");
+                RequestedQty = resultSet1.getJSONObject(i).optDouble("RequestedQty", 0.0);
+                UOM = resultSet1.getJSONObject(i).getString("UOM");
+                Fill = resultSet1.getJSONObject(i).getString("Fill");
+
+                tripInfoModelList.add(new TripInfoModel(TripId, DriverCode, DriverName, TruckId, TruckCode, TruckDesc, TrailerId,
+                        TrailerCode, TrailerDesc, TripName, TripDate, SeqNum, WaypointTypeDescription, DestinationCode, DestinationName, Address1, City, PostalCode, ProductId,
+                        ProductCode, ProductDesc, RequestedQty, UOM, Fill, Latitude, Longitude));
+            }
+
+            if (tripInfoModelList.size() > 0) {
+                TripListRecyclerView.setAdapter(new TripListAdapter(tripInfoModelList, getContext()));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -87,39 +180,41 @@ public class TripFragment extends Fragment {
                             JSONObject reader = new JSONObject(in);
                             JSONObject data = reader.getJSONObject("data");
                             JSONArray resultSet1 = data.getJSONArray("resultSet1");
+
+                            repository.addTripJson(new TripJson(1, data.toString()));
                             for(int i = 0; i < resultSet1.length(); i++) {
-                                String DriverCode = resultSet1.getJSONObject(i).getString("DriverCode");
-                                String DriverName = resultSet1.getJSONObject(i).getString("DriverName");
-                                int TruckId = resultSet1.getJSONObject(i).getInt("TruckId");
-                                String TruckCode = resultSet1.getJSONObject(i).getString("TruckCode");
-                                String TruckDesc = resultSet1.getJSONObject(i).getString("TruckDesc");
-                                int TrailerId = resultSet1.getJSONObject(i).getInt("TrailerId");
-                                String TrailerCode = resultSet1.getJSONObject(i).getString("TrailerCode");
-                                String TrailerDesc = resultSet1.getJSONObject(i).getString("TrailerDesc");
-                                int TripId = resultSet1.getJSONObject(i).getInt("TripId");
-                                String TripName = resultSet1.getJSONObject(i).getString("TripName");
-                                String TripDate = resultSet1.getJSONObject(i).getString("TripDate");
-                                int SeqNum = resultSet1.getJSONObject(i).getInt("SeqNum");
-                                String WaypointTypeDescription = resultSet1.getJSONObject(i).getString("WaypointTypeDescription");
-                                double Latitude = resultSet1.getJSONObject(i).getDouble("Latitude");
-                                double Longitude = resultSet1.getJSONObject(i).getDouble("Longitude");
-                                String DestinationCode = resultSet1.getJSONObject(i).getString("DestinationCode");
-                                String DestinationName = resultSet1.getJSONObject(i).getString("DestinationName");
-                                String SiteContainerCode = resultSet1.getJSONObject(i).getString("SiteContainerCode");
-                                String SiteContainerDescription = resultSet1.getJSONObject(i).getString("SiteContainerDescription");
-                                String Address1 = resultSet1.getJSONObject(i).getString("Address1");
-                                String Address2 = resultSet1.getJSONObject(i).getString("Address2");
-                                String City = resultSet1.getJSONObject(i).getString("City");
-                                String StateAbbrev = resultSet1.getJSONObject(i).getString("StateAbbrev");
-                                int PostalCode = resultSet1.getJSONObject(i).getInt("PostalCode");
-                                int DelReqNum = resultSet1.getJSONObject(i).optInt("DelReqNum");
-                                int DelReqLineNum = resultSet1.getJSONObject(i).optInt("DelReqLineNum");
-                                int ProductId = resultSet1.getJSONObject(i).optInt("ProductId");
-                                String ProductCode = resultSet1.getJSONObject(i).getString("ProductCode");
-                                String ProductDesc = resultSet1.getJSONObject(i).getString("ProductDesc");
-                                double RequestedQty = resultSet1.getJSONObject(i).optDouble("RequestedQty", 0.0);
-                                String UOM = resultSet1.getJSONObject(i).getString("UOM");
-                                String Fill = resultSet1.getJSONObject(i).getString("Fill");
+                                 DriverCode = resultSet1.getJSONObject(i).getString("DriverCode");
+                                 DriverName = resultSet1.getJSONObject(i).getString("DriverName");
+                                 TruckId = resultSet1.getJSONObject(i).getInt("TruckId");
+                                 TruckCode = resultSet1.getJSONObject(i).getString("TruckCode");
+                                 TruckDesc = resultSet1.getJSONObject(i).getString("TruckDesc");
+                                 TrailerId = resultSet1.getJSONObject(i).getInt("TrailerId");
+                                 TrailerCode = resultSet1.getJSONObject(i).getString("TrailerCode");
+                                 TrailerDesc = resultSet1.getJSONObject(i).getString("TrailerDesc");
+                                 TripId = resultSet1.getJSONObject(i).getInt("TripId");
+                                 TripName = resultSet1.getJSONObject(i).getString("TripName");
+                                 TripDate = resultSet1.getJSONObject(i).getString("TripDate");
+                                 SeqNum = resultSet1.getJSONObject(i).getInt("SeqNum");
+                                 WaypointTypeDescription = resultSet1.getJSONObject(i).getString("WaypointTypeDescription");
+                                 Latitude = resultSet1.getJSONObject(i).getDouble("Latitude");
+                                 Longitude = resultSet1.getJSONObject(i).getDouble("Longitude");
+                                 DestinationCode = resultSet1.getJSONObject(i).getString("DestinationCode");
+                                 DestinationName = resultSet1.getJSONObject(i).getString("DestinationName");
+                                 SiteContainerCode = resultSet1.getJSONObject(i).getString("SiteContainerCode");
+                                 SiteContainerDescription = resultSet1.getJSONObject(i).getString("SiteContainerDescription");
+                                 Address1 = resultSet1.getJSONObject(i).getString("Address1");
+                                 Address2 = resultSet1.getJSONObject(i).getString("Address2");
+                                 City = resultSet1.getJSONObject(i).getString("City");
+                                 StateAbbrev = resultSet1.getJSONObject(i).getString("StateAbbrev");
+                                 PostalCode = resultSet1.getJSONObject(i).getInt("PostalCode");
+                                 DelReqNum = resultSet1.getJSONObject(i).optInt("DelReqNum");
+                                 DelReqLineNum = resultSet1.getJSONObject(i).optInt("DelReqLineNum");
+                                 ProductId = resultSet1.getJSONObject(i).optInt("ProductId");
+                                 ProductCode = resultSet1.getJSONObject(i).getString("ProductCode");
+                                 ProductDesc = resultSet1.getJSONObject(i).getString("ProductDesc");
+                                 RequestedQty = resultSet1.getJSONObject(i).optDouble("RequestedQty", 0.0);
+                                 UOM = resultSet1.getJSONObject(i).getString("UOM");
+                                 Fill = resultSet1.getJSONObject(i).getString("Fill");
 
                                 Driver driver = new Driver(DriverCode, DriverName, TruckId, TruckCode,
                                         TruckDesc, TrailerId, TrailerCode, TrailerDesc);

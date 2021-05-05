@@ -17,6 +17,7 @@ public class Trip {
     String trip_name;
     String trip_date;
     int is_selected;
+    int is_complete;
 
     //Foreign Key
     String driver_code;
@@ -67,5 +68,13 @@ public class Trip {
 
     public void setIs_selected(int is_selected) {
         this.is_selected = is_selected;
+    }
+
+    public int getIs_complete() {
+        return is_complete;
+    }
+
+    public void setIs_complete(int is_complete) {
+        this.is_complete = is_complete;
     }
 }

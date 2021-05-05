@@ -33,4 +33,7 @@ public interface TripDao {
     //This method/query will set the is_selected field to 1 to show that the trip is updated
     @Query("UPDATE trip SET is_selected = 1 WHERE trip_id = :trip_id")
     void updateIsSelected(int trip_id);
+
+    @Query("SELECT is_complete FROM Trip WHERE trip_id = :trip_id")
+    int getIsComplete(int trip_id);
 }

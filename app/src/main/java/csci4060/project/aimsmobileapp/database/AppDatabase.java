@@ -21,7 +21,7 @@ import csci4060.project.aimsmobileapp.database.entity.*;
  */
 
 //If you need to add new entity classes or change any of the existing entity classes, then you will need to increment version = # by 1 each time
-@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class, DeliveredProduct.class, SiteInput.class, SourceInput.class}, version = 11)
+@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class, DeliveredProduct.class, SiteInput.class, SourceInput.class, TripJson.class}, version = 13)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -39,6 +39,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract DeliveredProductDao deliveredProductDao();
     public abstract SiteInputDao siteInputDao();
     public abstract SourceInputDao sourceInputDao();
+    public abstract TripJsonDao tripJsonDao();
 
     private static AppDatabase INSTANCE; //This hold an instance of the database to make sure we only ever have ONE database open
     private static final int NUM_OF_EXECUTOR_THREADS = 4; //The number of threads the database will use when writing data to the database
