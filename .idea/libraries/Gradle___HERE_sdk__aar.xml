@@ -13,6 +13,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03dae47d8118065223a0c638c9c657fd/jetified-HERE-sdk/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
