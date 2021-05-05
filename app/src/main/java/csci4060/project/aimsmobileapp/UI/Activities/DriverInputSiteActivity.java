@@ -25,6 +25,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -92,6 +98,9 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
     int trip_id;
     int load_id;
+    String driver_code;
+    String site_id;
+    String product_id;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -102,6 +111,9 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));
         load_id = Integer.parseInt(bundle.getString("SeqNum"));
+        driver_code = bundle.getString("DriverCode");
+        site_id = bundle.getString("DestinationCode");
+        product_id = bundle.getString("ProductID");
 
 
         /**Spinner for product types**/
@@ -530,7 +542,18 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
                         "Comments: " + repository.getDeliveryComment(trip_id, load_id), Toast.LENGTH_LONG).show();
 
 
+        RequestQueue requestQueue;
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.start();
 
+        String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/TripProductDeliveryInsert/" + driver_code +  "/" + trip_id + "/" + site_id + "/" + product_id + "/" + endDate + "%20" + endTime + "/" + deliveredGrossQuantity + "/" + deliveredNetQuantity + "?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+
+        requestQueue.add(stringRequest);
     }
 
 }
