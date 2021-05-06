@@ -1,6 +1,8 @@
 package csci4060.project.aimsmobileapp.UI.Fragments.navigation;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,7 +21,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 
-import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 
@@ -31,13 +32,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationMenu;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.here.android.mpa.common.GeoBoundingBox;
 import com.here.android.mpa.common.Image;
 import com.here.android.mpa.common.OnEngineInitListener;
 import com.here.android.mpa.common.PositioningManager;
 import com.here.android.mpa.common.ViewObject;
-import com.here.android.mpa.guidance.AudioPlayerDelegate;
+
 
 
 import com.here.android.mpa.guidance.VoiceCatalog;
@@ -58,9 +62,6 @@ import com.here.android.mpa.common.GeoPosition;
 
 import com.here.android.mpa.common.MapEngine;
 
-import com.here.android.mpa.common.RoadElement;
-
-import com.here.android.mpa.guidance.LaneInformation;
 import com.here.android.mpa.guidance.NavigationManager;
 
 
@@ -84,6 +85,7 @@ import java.util.Objects;
 
 
 import csci4060.project.aimsmobileapp.R;
+import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -104,6 +106,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     TextView distance;
     ImageView ex;
     TextView time;
+    BottomNavigationView bottomNavigationMenuView;
 
 
     private MapRoute m_mapRoute;
@@ -122,7 +125,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_WIFI_STATE,
-            Manifest.permission.ACCESS_NETWORK_STATE
+            Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.ACCESS_COARSE_LOCATION
     };
 
     private AndroidXMapFragment m_mapFragment;
@@ -133,7 +137,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     private boolean m_returningToRoadViewMode = false;
     private double m_lastZoomLevelInRoadViewMode = 0.0;
 
-    private NavigationManager m_navigationManager;
+    private NavigationManager m_navigationManager=null;
     private GeoBoundingBox m_geoBoundingBox;
     private Route m_route;
     private boolean m_foregroundServiceStarted;
@@ -142,7 +146,6 @@ public class RouteFragment<afChangeListener> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_route, container, false);
 
     }
@@ -151,7 +154,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        bottomNavigationMenuView= (BottomNavigationView) getActivity().findViewById(R.id.botom_navbar);
+        bottomNavigationMenuView.setVisibility(View.GONE);
 
         detail= getActivity().findViewById(R.id.detail);
         detail.setVisibility(View.GONE);
@@ -160,8 +164,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
         distance=getActivity().findViewById(R.id.distance);
         ex=  (ImageView) getActivity().findViewById(R.id.ex);
         volume = (FloatingActionButton) getActivity().findViewById(R.id.volume);
-
         m_mapFragment = getMapFragment();
+
         // Get a MapView instance from the layout.
         if (hasPermissions(getActivity(), RUNTIME_PERMISSIONS)) {
             initMapFragment();
@@ -169,16 +173,18 @@ public class RouteFragment<afChangeListener> extends Fragment {
             click();
             volumesettings();
 
-
-        } else {
+        } else{
             ActivityCompat
                     .requestPermissions(getActivity(), RUNTIME_PERMISSIONS, REQUEST_CODE_ASK_PERMISSIONS);
+
             initMapFragment();
             initNaviControlButton();
             click();
             volumesettings();
 
         }
+
+
 
     }
 
@@ -343,8 +349,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
                             m_navigationManager.setMap(null);
                             if(getActivity()!=null) {
-                                Toast.makeText(getContext(), "Error:No trip selected", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(), "Error: "+routingError, Toast.LENGTH_LONG).show();
                             }
+                            bottomNavigationMenuView.setVisibility(View.VISIBLE);
                             return;
 
                         }
@@ -373,12 +380,14 @@ public class RouteFragment<afChangeListener> extends Fragment {
                  */
                 if (m_route == null) {
                     createRoute();
+                    bottomNavigationMenuView.setVisibility(View.GONE);
 
 
                 } else {
 
                     m_navigationManager.stop();
                     m_navigationManager.getAudioPlayer().stop();
+                    m_navigationManager.removePositionListener(m_positionListener);
                     detail.setVisibility(View.GONE);
                     /*
                      * Restore the map orientation to show entire route on screen
@@ -601,6 +610,12 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
             // also remaining time and distance can be
             // fetched from navigation manager
+            int sec=m_navigationManager.getTta(Route.TrafficPenaltyMode.OPTIMAL,0).getDuration();
+            int hours = Calendar.getInstance().getTime().getHours();
+            int minute = Calendar.getInstance().getTime().getMinutes();
+            int route=m_route.getTtaIncludingTraffic(0).getDuration();
+            time=(TextView) getActivity().findViewById(R.id.time);
+            time.setText(second_converter(sec)+" . "+time_converter(sec,hours,minute));
 
             distance.setText(meter_converter(m_navigationManager.getNextManeuverDistance()));
 
@@ -609,6 +624,24 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
 
     };
+    public String second_converter(int i){
+        int minutes=i/60;
+        int hours=minutes/60;
+        String output="";
+        if(minutes<1){
+            output=i+" sec";
+        }
+        else if(minutes<60){
+            output=minutes+" min";
+        }
+        else if (minutes==60){
+            output=hours+" hr";
+        }
+        else{
+            output= hours+" hr "+minutes+" min";
+        }
+        return output;
+    }
     public String time_converter(int i,int h,int m){
         int minutes= (int) i/60;
         int hours;
@@ -721,15 +754,10 @@ public class RouteFragment<afChangeListener> extends Fragment {
             Maneuver maneuver = m_navigationManager.getNextManeuver();
 
 
-            int hours = Calendar.getInstance().getTime().getHours();
-            int minute = Calendar.getInstance().getTime().getMinutes();
-
 
             if (maneuver != null) {
                 detail.setVisibility(View.VISIBLE);
-                int route=m_route.getTtaIncludingTraffic(0).getDuration();
-                time=(TextView) getActivity().findViewById(R.id.time);
-                time.setText(time_converter(route,hours,minute));
+
                 street.setText(maneuver.getNextRoadName());
                 //distance.setText(maneuver.getDistanceToNextManeuver()+" m");
 
@@ -851,10 +879,10 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
         @Override
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
-            Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
+            bottomNavigationMenuView.setVisibility(View.VISIBLE);
             m_naviControlButton.setText(R.string.start_navi);
             m_navigationManager.stop();
-            m_navigationManager.removeNewInstructionEventListener(instructListener);
             detail.setVisibility(View.GONE);
             stopForegroundService();
 
@@ -863,8 +891,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
         @Override
         public void onMapUpdateModeChanged(NavigationManager.MapUpdateMode mapUpdateMode) {
-            Toast.makeText(getActivity(), "Map update mode is changed to " + mapUpdateMode,
-                    Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "Map update mode is changed to " + mapUpdateMode,Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -883,6 +910,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
             Toast.makeText(getActivity(), "Country info updated from " + s + " to " + s1,
                     Toast.LENGTH_SHORT).show();
         }
+
+
     };
 
 
@@ -903,7 +932,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
         NavigationManager.getInstance()
                 .removeRerouteListener(rerouteListener);
-//        m_navigationManager.getAudioPlayer().stop();
+
 
 
     }
@@ -924,8 +953,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
         }
         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            longitude = location.getLongitude();
-            latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        latitude = location.getLatitude();
 
         return true;
     }
@@ -934,6 +964,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+
             for (int index = 0; index < permissions.length; index++) {
                 if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
                     /*
@@ -951,10 +982,15 @@ public class RouteFragment<afChangeListener> extends Fragment {
                                 + " not granted", Toast.LENGTH_LONG).show();
                     }
                 }
+
+
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
         }
+
     }
 
 
@@ -1145,6 +1181,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
         m_map.addMapObject(custom);
     }
 }
+
 
 
 

@@ -44,6 +44,7 @@
                 android:layout_height="40dp"
                 android:text="Product Type"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black" />
 
             <Spinner
@@ -55,7 +56,14 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView5"
@@ -63,6 +71,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Start Date"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -75,10 +84,17 @@
                 android:focusable="false"
                 android:background="@drawable/textfield"
                 android:padding="10dp"
+                android:textStyle="bold"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView7"
@@ -86,6 +102,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Start Time"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -100,8 +117,15 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textColor="#515151"
+                android:textStyle="bold"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView8"
@@ -109,6 +133,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="End Date"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -123,8 +148,15 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView10"
@@ -132,6 +164,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="End Time"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -146,8 +179,15 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView11"
@@ -156,6 +196,7 @@
                 android:gravity="bottom"
                 android:text="Beginning Site Container Reading"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="22sp"/>
 
             <EditText
@@ -164,13 +205,19 @@
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
                 android:inputType="numberDecimal"
-                android:textColor="@color/black"
+                android:textColor="#515151"
                 android:background="@drawable/textfield"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView12"
@@ -179,6 +226,7 @@
                 android:gravity="bottom"
                 android:text="Ending Site Container Reading"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="22sp"/>
 
             <EditText
@@ -192,7 +240,15 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textColor="#515151"
+                android:textStyle="bold"
+
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView13"
@@ -201,6 +257,7 @@
                 android:gravity="bottom"
                 android:text="Beginning Trailer Meter Reading"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="22sp"/>
 
             <EditText
@@ -214,7 +271,15 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
+
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView19"
@@ -223,6 +288,8 @@
                 android:gravity="bottom"
                 android:text="Ending Trailer Meter Reading"
                 android:textColor="@color/black"
+                android:textStyle="bold"
+
                 android:textSize="22sp"/>
 
             <EditText
@@ -236,7 +303,14 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView20"
@@ -245,6 +319,7 @@
                 android:gravity="bottom"
                 android:text="Delivered Gross Quantity"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="22sp"/>
 
             <EditText
@@ -257,14 +332,23 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
+
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:text="Delivered Net Quantity"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
@@ -279,8 +363,15 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView22"
@@ -288,6 +379,7 @@
                 android:layout_height="40dp"
                 android:gravity="bottom"
                 android:text="Delivery Ticket Number"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -300,9 +392,16 @@
                 android:background="@drawable/textfield"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
+                android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView25"
@@ -310,6 +409,7 @@
                 android:layout_height="40dp"
                 android:text="Site Barcode"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="22sp"/>
 
             <EditText
@@ -324,6 +424,8 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
 
             <Button
@@ -338,12 +440,18 @@
                 android:paddingLeft="25dp"
                 android:layout_marginBottom="18dp"
                 android:theme="@style/AppTheme" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Customer E-Signature"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -367,12 +475,18 @@
                 android:paddingLeft="25dp"
                 android:layout_marginBottom="18dp"
                 android:theme="@style/AppTheme" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Delivery Comments"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"/>
 
@@ -388,8 +502,15 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <Button
                 android:id="@+id/btnSubmitInputSiteData"

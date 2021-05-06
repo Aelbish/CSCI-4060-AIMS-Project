@@ -1,9 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: :HERE-sdk:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/295c31413715d94fcb90c0a7501efc45/jetified-HERE-sdk/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/8e800027b8c8295fb8bc93c8e13a81fc/jetified-HERE-sdk/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

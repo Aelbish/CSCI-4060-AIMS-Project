@@ -64,6 +64,7 @@ dependencies {
     // UI
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.cardview:cardview:1.0.0"
 
     //Dependency for bottom navigation bar
     implementation 'com.google.android.material:material:1.2.1'

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void sendMessage(){
         Intent intent = new Intent(MainActivity.this, MainScreenActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
