@@ -33,10 +33,11 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
             <Button
+                android:id="@+id/forward"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:clickable="false"
+                android:backgroundTint="@color/myOrange2"
                 android:background="@drawable/ic_baseline_navigate_next_24"
                 />
 

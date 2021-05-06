@@ -86,7 +86,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
             editTextPickupNetQuantity,
             editTextBOLNumber;
 
-    Button buttonTakePicture, btnSubmit;
+    Button buttonTakePicture, btnSubmit, btnBack;
     ImageView imageView;
     String pathToFile;
     String yourProduct;
@@ -106,6 +106,15 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_source);
+        //      reference for buttons
+        btnBack = findViewById(R.id.btn_source_back);
+        //      Setting on click listener to buttons
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));
