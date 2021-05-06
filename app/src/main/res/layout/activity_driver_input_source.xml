@@ -44,6 +44,7 @@
                 android:layout_height="40dp"
                 android:text="Product Type"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
             <Spinner
@@ -52,10 +53,16 @@
                 android:layout_height="40dp"
                 android:background="@drawable/textfield"
                 android:padding="10dp"
+                android:textStyle="bold"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView5"
@@ -63,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Start Date"
+                android:textStyle="bold"
                 android:gravity="bottom"
                 android:textSize="22sp" />
 
@@ -73,12 +81,19 @@
                 android:hint="Select start date"
                 android:inputType="none"
                 android:focusable="false"
+                android:textStyle="bold"
                 android:background="@drawable/textfield"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView7"
@@ -87,6 +102,7 @@
                 android:layout_height="40dp"
                 android:text="Start Time"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -102,7 +118,14 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView8"
@@ -111,6 +134,7 @@
                 android:layout_height="40dp"
                 android:text="End Date"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -126,7 +150,14 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView10"
@@ -135,6 +166,7 @@
                 android:layout_height="40dp"
                 android:text="End Time"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -145,12 +177,20 @@
                 android:hint="Select end time"
                 android:inputType="none"
                 android:focusable="false"
+                android:textColor="#515151"
                 android:background="@drawable/textfield"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+
                 android:layout_marginRight="8dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView11"
@@ -159,12 +199,12 @@
                 android:layout_height="40dp"
                 android:text="Trailer Gross Quantity"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:gravity="bottom"
                 />
 
             <EditText
                 android:id="@+id/editTextTrailerGrossQuantity"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Enter in gal"
@@ -174,8 +214,15 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textColor="#515151"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView12"
@@ -184,6 +231,7 @@
                 android:layout_height="40dp"
                 android:text="Trailer Net Quantity"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -196,10 +244,17 @@
                 android:background="@drawable/textfield"
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
+                android:textColor="#515151"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView13"
@@ -208,6 +263,7 @@
                 android:layout_height="40dp"
                 android:text="Beginning Trailer Meter Reading"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -221,9 +277,16 @@
                 android:padding="10dp"
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
+                android:textColor="#515151"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView19"
@@ -232,6 +295,7 @@
                 android:layout_height="40dp"
                 android:text="Ending Trailer Meter Reading"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -246,8 +310,15 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textColor="#515151"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView20"
@@ -256,6 +327,7 @@
                 android:layout_height="40dp"
                 android:text="Pickup Gross Quantity"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -270,7 +342,14 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView21"
@@ -279,6 +358,7 @@
                 android:layout_height="40dp"
                 android:text="Pickup Net Quantity"
                 android:gravity="bottom"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 />
 
@@ -293,14 +373,22 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
                 android:layout_marginRight="8dp"
+                android:textColor="#515151"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView23"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:textStyle="bold"
                 android:text="Bill of Lading Picture"
                 android:textSize="22sp"
                 />
@@ -326,12 +414,18 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="18dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <TextView
                 android:id="@+id/textView22"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:textStyle="bold"
                 android:text="Bill of Lading Number"
                 android:textSize="22sp"
 
@@ -348,8 +442,15 @@
                 android:layout_marginBottom="18dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:textColor="#515151"
                 android:layout_marginRight="8dp"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
 
             <Button
                 android:id="@+id/btnSubmitInputSiteData"

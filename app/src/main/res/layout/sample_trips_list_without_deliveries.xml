@@ -30,6 +30,7 @@
                 android:text="Trip Name"
                 android:textSize="22sp"
                 android:padding="10dp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>

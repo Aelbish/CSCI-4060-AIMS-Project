@@ -30,6 +30,7 @@
                 android:text="Trip Name"
                 android:textSize="22sp"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
             <Button
                 android:layout_width="wrap_content"
@@ -53,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtTripName"
                 android:text="Destination"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 android:textColor="@color/black"/>
 
@@ -71,6 +73,7 @@
                 android:layout_below="@id/txtTripName"
                 android:text="Address"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -88,6 +91,7 @@
                 android:layout_below="@id/txtAddress"
                 android:text="Location Type"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
