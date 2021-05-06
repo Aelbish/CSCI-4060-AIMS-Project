@@ -20,6 +20,7 @@ import androidx.room.RoomDatabase;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.DataRepository;
+import csci4060.project.aimsmobileapp.DataSender;
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Activities.MainActivity;
 import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
@@ -38,13 +39,15 @@ public class AlertFragment extends Fragment{
 
     public void onViewCreated (View view, Bundle savedInstanceState){
         TextView txtDriverName = getView().findViewById(R.id.txtDriverName);
+        TextView txtDriverCode = getView().findViewById(R.id.driverID);
 
         final DataRepository repository = AIMSApp.repository;
 
         String driverName = repository.getDriver_name();
 
+        String driverCode = repository.getDriver_code();
+
         txtDriverName.setText(driverName);
+        txtDriverCode.setText(driverCode);
     }
-
-
 }

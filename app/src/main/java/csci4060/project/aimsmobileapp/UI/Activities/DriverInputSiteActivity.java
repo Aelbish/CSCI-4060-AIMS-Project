@@ -501,7 +501,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
 
             addSiteInputToDatabase();
             tempToastToShowInput();
-
+            finish();
 //            callApiAndSendData();
 
         }

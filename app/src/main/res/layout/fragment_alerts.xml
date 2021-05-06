@@ -106,7 +106,7 @@
                         android:id="@+id/completedTrips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="-"
                         android:textSize="22sp"
                         android:paddingTop="10dp"
                         android:layout_gravity="center"
@@ -198,7 +198,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Heading to Source"
+                android:text="Currently On Trip"
                 android:textStyle="bold"
                 android:textColor="@color/myGrey"
                 android:textSize="22sp"/>

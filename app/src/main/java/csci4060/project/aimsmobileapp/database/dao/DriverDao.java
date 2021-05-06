@@ -23,6 +23,9 @@ public interface DriverDao {
     @Query("SELECT driver_name FROM Driver")
     String getDriverName();
 
+    @Query("SELECT driver_code FROM Driver")
+    String getDriverCode();
+
     @Query("UPDATE Driver SET driver_name = :name WHERE driver_code = :driver_code")
     void setDriverName(String driver_code, String name);
 }

@@ -938,6 +938,51 @@ public class DataRepository {
         return "";
     }
 
+    public String getDriver_code(){
+        Callable<String> code = () -> {
+            return driverDao.getDriverCode();
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(code);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public String getTripId(){
+        Callable<String> tripId = () -> {
+            return String.valueOf(loadDao.getTripId());
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(tripId);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public String getWaypointDescription(){
+        Callable<String> waypoint = () -> {
+            return loadDao.getWaypointDescription();
+        };
+
+        Future<String> future = AppDatabase.databaseWriteExecutor.submit(waypoint);
+        try{
+            return future.get();
+        }
+        catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     /***********
      * Trip/Load Methods
      ***********/

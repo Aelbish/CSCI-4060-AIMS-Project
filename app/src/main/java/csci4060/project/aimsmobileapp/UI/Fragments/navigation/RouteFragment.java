@@ -32,6 +32,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -84,10 +90,14 @@ import java.util.List;
 import java.util.Objects;
 
 
+import csci4060.project.aimsmobileapp.AIMSApp;
+import csci4060.project.aimsmobileapp.DataRepository;
+import csci4060.project.aimsmobileapp.DataSender;
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
 
 import static android.content.ContentValues.TAG;
+import static csci4060.project.aimsmobileapp.AIMSApp.dataSender;
 
 
 //This is route screen
@@ -112,6 +122,8 @@ public class RouteFragment<afChangeListener> extends Fragment {
     private MapRoute m_mapRoute;
     FloatingActionButton center_navi;
     FloatingActionButton volume;
+
+    String driverCode, tripId, destination, statusCode, statusMessage;
 
 
     public void setDestination(double lat, double lon) {
@@ -421,6 +433,38 @@ public class RouteFragment<afChangeListener> extends Fragment {
     }
 
     private void startNavigation() {
+
+        final DataRepository repository = AIMSApp.repository;
+
+        driverCode = repository.getDriver_code();
+        tripId = repository.getTripId();
+        destination = repository.getWaypointDescription();
+
+        Long tsLong = System.currentTimeMillis()/1000;
+        String statusDate = tsLong.toString();
+
+        if(destination.equals("Source")){
+            statusCode = "LeaveSrc";
+            statusMessage = "Leaving Source";
+        }
+        else {
+            statusCode = "LeaveSite";
+            statusMessage = "Leaving Site";
+        }
+
+        RequestQueue requestQueue;
+        requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.start();
+
+        String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/TripProductDeliveryInsert/" + driverCode +  "/" + tripId + "/" + statusCode + "/" + statusMessage + "/1/" + statusDate + "?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+
+        requestQueue.add(stringRequest);
+
         m_naviControlButton.setText(R.string.stop_navi);
         /* Configure Navigation manager to launch navigation on current map */
         m_navigationManager.setMap(m_map);
@@ -879,6 +923,38 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
         @Override
         public void onEnded(NavigationManager.NavigationMode navigationMode) {
+
+            final DataRepository repository = AIMSApp.repository;
+
+            driverCode = repository.getDriver_code();
+            tripId = repository.getTripId();
+            destination = repository.getWaypointDescription();
+
+            Long tsLong = System.currentTimeMillis()/1000;
+            String statusDate = tsLong.toString();
+
+            if(destination.equals("Source")){
+                statusCode = "ArriveSrc";
+                statusMessage = "Arrive at Source";
+            }
+            else {
+                statusCode = "ArriveSite";
+                statusMessage = "Arrive at Site";
+            }
+
+            RequestQueue requestQueue;
+            requestQueue = Volley.newRequestQueue(getActivity());
+            requestQueue.start();
+
+            String url = "https://api.appery.io/rest/1/apiexpress/api/DispatcherMobileApp/TripProductDeliveryInsert/" + driverCode +  "/" + tripId + "/" + statusCode + "/" + statusMessage + "/1/" + statusDate + "?apiKey=f20f8b25-b149-481c-9d2c-41aeb76246ef";
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, null, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            });
+
+            requestQueue.add(stringRequest);
+
             // Toast.makeText(getActivity(), navigationMode + " was ended", Toast.LENGTH_SHORT).show();
             bottomNavigationMenuView.setVisibility(View.VISIBLE);
             m_naviControlButton.setText(R.string.start_navi);

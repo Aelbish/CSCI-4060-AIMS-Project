@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fuel Dispatcher</string>
+    <string name="app_name">AIMS Mobile App</string>
     <string name="first_navButton">Trips</string>
     <string name="second_navButton">Route</string>
     <string name="third_navButton">Profile</string>
