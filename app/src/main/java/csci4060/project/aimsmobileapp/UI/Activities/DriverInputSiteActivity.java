@@ -82,7 +82,7 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextDeliveryComment,
             editTextBarcode;
 
-    Button btnSubmit;
+    Button btnSubmit, btnBack;
 
     /**Scan button for barcode scanner**/
     Button buttonScan;
@@ -107,6 +107,15 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_input_site);
+        //      reference for buttons
+        btnBack = findViewById(R.id.btn_site_back);
+        //      Setting on click listener to buttons
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Bundle bundle = getIntent().getExtras();
         trip_id = Integer.parseInt(bundle.getString("TripId"));

@@ -108,10 +108,10 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
             }
         });
 
-        itemsViewHolder.cardViewForTrips.setOnClickListener(new View.OnClickListener() {
+        itemsViewHolder.btnForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (view.getId() == R.id.cardViewForTrips) {
+                if (view.getId() == R.id.forward) {
                     Intent intent = new Intent(mcontext, TripActivity.class);
                     intent.putExtra("TripId", String.valueOf(tripInfoModel.getTripId()));
                     intent.putExtra("DriverCode", tripInfoModel.getDriverCode());
@@ -164,13 +164,13 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
     public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
         public TextView txtTripName, txtTripWaypoint, txtDestinationName, txtAddress;
-        public Button  btnStart, btnDisplayForm;
+        public Button  btnStart, btnDisplayForm, btnForward;
         public LinearLayout cardViewForTrips;
 
         public ItemsViewHolder(@NonNull View itemView) {
 
             super(itemView);
-
+            btnForward = itemView.findViewById(R.id.forward);
             cardViewForTrips=itemView.findViewById(R.id.cardViewForTrips);
 
             txtTripName = itemView.findViewById(R.id.txtTripName);
