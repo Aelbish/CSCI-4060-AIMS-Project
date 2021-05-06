@@ -953,9 +953,9 @@ public class DataRepository {
         return "";
     }
 
-    public String getTripId(){
+    public String getTripId(int sequence_number){
         Callable<String> tripId = () -> {
-            return String.valueOf(loadDao.getTripId());
+            return String.valueOf(loadDao.getTripId(sequence_number));
         };
 
         Future<String> future = AppDatabase.databaseWriteExecutor.submit(tripId);
@@ -968,9 +968,9 @@ public class DataRepository {
         return "";
     }
 
-    public String getWaypointDescription(){
+    public String getWaypointDescription(int sequence_number){
         Callable<String> waypoint = () -> {
-            return loadDao.getWaypointDescription();
+            return loadDao.getWaypointDescription(sequence_number);
         };
 
         Future<String> future = AppDatabase.databaseWriteExecutor.submit(waypoint);

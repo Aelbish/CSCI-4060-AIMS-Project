@@ -28,9 +28,6 @@ public interface LoadDao {
     @Update
     void updateLoad(Load load);
 
-    @Query("SELECT trip_id FROM Load WHERE sequence_number = :sequence_number")
-    LiveData<Integer> getTripId(int sequence_number);
-
     @Query("SELECT * FROM Load WHERE trip_id = :trip_id")
     LiveData<List<Load>> getLoads(int trip_id);
 
@@ -41,8 +38,8 @@ public interface LoadDao {
     void setIsComplete(int sequence_number, int complete);
 
     @Query("SELECT trip_id FROM Load")
-    int getTripId();
+    int getTripId(int sequence_number);
 
     @Query("SELECT waypoint_description FROM Load")
-    String getWaypointDescription();
+    String getWaypointDescription(int sequence_number);
 }
