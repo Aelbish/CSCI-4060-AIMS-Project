@@ -69,7 +69,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
         if(repository.getLoadIsComplete(tripInfoModel.getSeqNum()) == 1){
             itemsViewHolder.btnStart.setVisibility(View.INVISIBLE);
             //itemsViewHolder.btnDisplayForm.setVisibility(View.INVISIBLE);
-            itemsViewHolder.cardViewForTrips.setBackgroundColor(Color.YELLOW);
+            itemsViewHolder.cardViewForTrips.setBackgroundColor(Color.GREEN);
         }
 
         itemsViewHolder.btnStart.setOnClickListener(new View.OnClickListener() {
