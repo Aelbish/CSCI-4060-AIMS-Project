@@ -3,6 +3,7 @@ package csci4060.project.aimsmobileapp.UI.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,15 +16,16 @@ import csci4060.project.aimsmobileapp.R;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnLogin;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getSupportActionBar().hide(); //hide the title bar
-
         setContentView(R.layout.activity_login);
+        sp=getSharedPreferences("login",MODE_PRIVATE);
+        if(sp.getBoolean("logged",false)){
+            this.sendMessage();
+        }
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         btnLogin= findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
@@ -33,13 +35,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void sendMessage(){
         Intent intent = new Intent(LoginActivity.this, MainScreenActivity.class);
         startActivity(intent);
-        finish();
     }
 
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.btnLogin){
+
             this.sendMessage();
+            sp.edit().putBoolean("logged",true).apply();
         }
     }
 }
