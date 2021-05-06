@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,12 +82,15 @@ public class TripFragment extends Fragment {
     double RequestedQty;
     String UOM;
     String Fill;
+    BottomNavigationView bottomNavigationMenuView;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_trips, container, false);
+        bottomNavigationMenuView= (BottomNavigationView) getActivity().findViewById(R.id.botom_navbar);
+        bottomNavigationMenuView.setVisibility(View.VISIBLE);
 
 //        Referencing the recycler view UI and setting the layout manager as linear layout
         TripListRecyclerView = view.findViewById(R.id.display_trips_list_recycler_view);

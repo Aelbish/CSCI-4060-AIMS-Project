@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import csci4060.project.aimsmobileapp.R;
 import csci4060.project.aimsmobileapp.UI.Fragments.AlertFragment;
-import csci4060.project.aimsmobileapp.UI.Fragments.TripsFragmentWithoutDeliveries;
+import csci4060.project.aimsmobileapp.UI.Fragments.TripFragment;
 import csci4060.project.aimsmobileapp.UI.Fragments.navigation.RouteFragment;
 
 //This is the main screen
@@ -25,10 +25,10 @@ public class MainScreenActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = new TripsFragmentWithoutDeliveries();
+            Fragment selectedFragment = new TripFragment();
             switch (item.getItemId()) {
                 case R.id.nav_trips:
-                    selectedFragment = new TripsFragmentWithoutDeliveries();
+                    selectedFragment = new TripFragment();
                     break;
                 case R.id.nav_route:
                     selectedFragment = new RouteFragment();
@@ -55,7 +55,7 @@ public class MainScreenActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TripsFragmentWithoutDeliveries()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TripFragment()).commit();
     }
 
     @Override
