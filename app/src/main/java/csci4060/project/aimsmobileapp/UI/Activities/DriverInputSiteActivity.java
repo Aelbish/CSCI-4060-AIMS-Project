@@ -1,14 +1,20 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
@@ -22,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -82,7 +89,8 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             editTextDeliveryComment,
             editTextBarcode;
 
-    Button btnSubmit, btnBack;
+    Button buttonTakePicture, btnSubmit, btnBack;
+    ImageView imageView;
 
     /**Scan button for barcode scanner**/
     Button buttonScan;
@@ -95,6 +103,9 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     private final DataRepository repository = AIMSApp.repository;
     public static final int SIGNATURE_ACTIVITY = 10;
     public static final int BARCODE_ACTIVITY = 20;
+    private static final int IMAGE_CAPTURE_CODE = 31;
+    private static final int PERMISSION_CODE = 30;
+    Uri image_uri;
 
     int trip_id;
     int load_id;
@@ -247,6 +258,26 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
         editTextDeliveryTicketNumber.setSelectAllOnFocus(true);
         editTextDeliveryComment.setSelectAllOnFocus(true);
 
+        /**Camera Button**/
+        buttonTakePicture = findViewById(R.id.buttonTakePicture);
+        imageView = findViewById(R.id.image);
+        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ||
+                            checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                        String [] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                        requestPermissions(permission, PERMISSION_CODE);
+                    } else {
+                        openCamera();
+                    }
+                } else {
+                    openCamera();
+                }
+            }
+        });
+
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
 
@@ -283,7 +314,10 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
+        /**Camera**/
+        if (resultCode == RESULT_OK) {
+            imageView.setImageURI(image_uri);
+        }
 
         if(requestCode==SIGNATURE_ACTIVITY) {
 
@@ -364,6 +398,32 @@ public class DriverInputSiteActivity extends AppCompatActivity implements View.O
             }
         };
         new TimePickerDialog(DriverInputSiteActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+    }
+
+    /**
+     * Camera functions below
+     **/
+    private void openCamera(){
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, "New Picture");
+        values.put(MediaStore.Images.Media.DESCRIPTION, "From the camera");
+        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
+        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_CODE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    openCamera();
+                } else {
+                    Toast.makeText(this, "Unable to open camera", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     @Override

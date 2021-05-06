@@ -88,7 +88,6 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
 
     Button buttonTakePicture, btnSubmit, btnBack;
     ImageView imageView;
-    String pathToFile;
     String yourProduct;
     private Spinner spinnerProductType;
     private final DataRepository repository = AIMSApp.repository;
@@ -258,6 +257,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
                 }
             }
         });
+
         btnSubmit = findViewById(R.id.btnSubmitInputSiteData);
         btnSubmit.setOnClickListener(this);
     }

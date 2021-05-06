@@ -182,8 +182,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
         if (hasPermissions(getActivity(), RUNTIME_PERMISSIONS)) {
             initMapFragment();
             initNaviControlButton();
-            click();
             volumesettings();
+            click();
+
 
         } else{
             ActivityCompat
@@ -191,8 +192,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
 
             initMapFragment();
             initNaviControlButton();
-            click();
             volumesettings();
+            click();
+
 
         }
 
@@ -1227,7 +1229,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (volume.getTooltipText().toString().equals("off")){
+                if (volume.getTooltipText().equals("off")){
 
                     volume.setImageResource(R.drawable.unmute);
                     volume.setTooltipText("on");

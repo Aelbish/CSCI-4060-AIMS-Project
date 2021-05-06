@@ -458,6 +458,43 @@
                 android:background="@color/myGrey"/>
 
             <TextView
+                android:id="@+id/textView33"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:text="Delivery Ticket Picture"
+                android:textSize="22sp"
+                />
+
+            <ImageView
+                android:background="@drawable/image_view_border"
+                android:id ="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/buttonTakePicture"
+                android:drawableRight="@drawable/ic_baseline_camera_alt_24"
+                android:text="Capture"
+                android:textSize="18sp"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp"
+                android:theme="@style/AppTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="18dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/myGrey"/>
+
+            <TextView
                 android:id="@+id/textView24"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
