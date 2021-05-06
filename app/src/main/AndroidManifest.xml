@@ -30,7 +30,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".UI.Activities.TripDeliveriesActivity"></activity>
+        <activity android:name=".UI.Activities.UserManualActivity"></activity>
+        <activity android:name=".UI.Activities.TripDeliveriesActivity" />
 
         <meta-data
             android:name="com.here.android.maps.appid"
@@ -47,11 +48,11 @@
         <activity android:name=".UI.Activities.DriverInputSourceActivity" />
         <activity android:name=".UI.Activities.TripActivity" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".UI.Activities.MainScreenActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/DemoTheme" />
         <activity
-            android:name=".UI.Activities.MainActivity"
+            android:name=".UI.Activities.LoginActivity"
             android:theme="@style/DemoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

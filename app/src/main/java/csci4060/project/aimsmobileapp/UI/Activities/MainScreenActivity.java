@@ -1,5 +1,6 @@
 package csci4060.project.aimsmobileapp.UI.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,12 +71,20 @@ public class MainScreenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.user_manual:
-                Toast.makeText(this, "Clicked on user manual", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Clicked on user manual", Toast.LENGTH_SHORT).show();
+                Intent userManaulIntent = new Intent(MainScreenActivity.this, UserManualActivity.class);
+                userManaulIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(userManaulIntent);
+                break;
+
+            case R.id.alert:
+                Toast.makeText(this, "You do not have any alerts right now", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
     }
-    public void logout(View view){
+
+    public void logout(View view) {
 
         finish();
     }

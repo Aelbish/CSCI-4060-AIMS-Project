@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/loginbackground"
     android:padding="25dp"
-    tools:context=".UI.Activities.MainActivity"
+    tools:context=".UI.Activities.LoginActivity"
     android:theme="@style/AppTheme.NoActionBar">
 
     <ImageView

@@ -12,7 +12,7 @@ import android.widget.Button;
 import csci4060.project.aimsmobileapp.R;
 
 //This is the Login Page
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnLogin;
     @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        getSupportActionBar().hide(); //hide the title bar
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         btnLogin= findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void sendMessage(){
-        Intent intent = new Intent(MainActivity.this, MainScreenActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainScreenActivity.class);
         startActivity(intent);
         finish();
     }

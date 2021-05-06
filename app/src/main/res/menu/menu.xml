@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/alert"
+        android:title="Alert" />
+
+    <item
         android:id="@+id/user_manual"
         android:title="User manual" />
 
-    <item
-        android:id="@+id/profile"
-        android:title="Settings" />
-
-    <item
-        android:id="@+id/help"
-        android:title="Help"
-        />
 
 </menu>

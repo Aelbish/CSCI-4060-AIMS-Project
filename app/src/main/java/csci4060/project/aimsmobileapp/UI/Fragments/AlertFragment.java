@@ -1,9 +1,6 @@
 package csci4060.project.aimsmobileapp.UI.Fragments;
 
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
-import androidx.room.Dao;
-import androidx.room.Query;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import csci4060.project.aimsmobileapp.AIMSApp;
 import csci4060.project.aimsmobileapp.DataRepository;
-import csci4060.project.aimsmobileapp.DataSender;
 import csci4060.project.aimsmobileapp.R;
-import csci4060.project.aimsmobileapp.UI.Activities.MainActivity;
-import csci4060.project.aimsmobileapp.UI.Activities.MainScreenActivity;
-import csci4060.project.aimsmobileapp.database.AppDatabase;
-import csci4060.project.aimsmobileapp.database.dao.DriverDao;
-import csci4060.project.aimsmobileapp.model.TripInfoModel;
 
 //This is alert screen
 public class AlertFragment extends Fragment{
