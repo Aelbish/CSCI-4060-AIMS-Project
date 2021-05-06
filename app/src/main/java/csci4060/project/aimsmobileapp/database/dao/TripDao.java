@@ -36,4 +36,7 @@ public interface TripDao {
 
     @Query("SELECT is_complete FROM Trip WHERE trip_id = :trip_id")
     int getIsComplete(int trip_id);
+
+    @Query("UPDATE trip SET is_complete = :complete WHERE trip_id = :trip_id")
+    void setIsComplete(int trip_id, int complete);
 }

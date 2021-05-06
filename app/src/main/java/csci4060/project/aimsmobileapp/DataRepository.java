@@ -957,6 +957,12 @@ public class DataRepository {
         return -1;
     }
 
+    public void setTripIsCompleted(int trip_id, int is_complete) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            tripDao.setIsComplete(trip_id, is_complete);
+        });
+    }
+
     public int getLoadIsComplete(int seq_num){
         Callable<Integer> is_complete = () -> {
             return loadDao.getIsComplete(seq_num);
@@ -970,6 +976,12 @@ public class DataRepository {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public void setLoadIsCompleted(int seq_num, int is_complete) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            loadDao.setIsComplete(seq_num, is_complete);
+        });
     }
 
     /*************

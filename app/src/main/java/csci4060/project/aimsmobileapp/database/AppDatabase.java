@@ -21,7 +21,7 @@ import csci4060.project.aimsmobileapp.database.entity.*;
  */
 
 //If you need to add new entity classes or change any of the existing entity classes, then you will need to increment version = # by 1 each time
-@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class, DeliveredProduct.class, SiteInput.class, SourceInput.class, TripJson.class}, version = 13)
+@Database(entities = {Driver.class, Trip.class, Load.class, Customer.class, Vendor.class,  Delivery.class, DeliveredProduct.class, SiteInput.class, SourceInput.class, TripJson.class}, version = 14)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
