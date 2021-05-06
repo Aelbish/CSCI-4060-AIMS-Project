@@ -322,6 +322,7 @@ public class DriverInputSourceActivity extends AppCompatActivity implements View
     public void onClick(View view) {
         if (view.getId() == R.id.btnSubmitInputSiteData) {
             validateAndSubmitFormData();
+            repository.setLoadIsCompleted(load_id, 1);
         }
     }
 
