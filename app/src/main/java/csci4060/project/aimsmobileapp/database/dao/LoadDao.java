@@ -37,6 +37,9 @@ public interface LoadDao {
     @Query("SELECT is_complete FROM Load WHERE sequence_number = :sequence_number")
     int getIsComplete(int sequence_number);
 
+    @Query("UPDATE Load SET is_complete = :complete WHERE sequence_number = :sequence_number")
+    void setIsComplete(int sequence_number, int complete);
+
     @Query("SELECT trip_id FROM Load")
     int getTripId();
 
