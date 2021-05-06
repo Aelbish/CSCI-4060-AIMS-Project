@@ -123,7 +123,7 @@ public class RouteFragment<afChangeListener> extends Fragment {
     FloatingActionButton center_navi;
     FloatingActionButton volume;
 
-    String driverCode, tripId, destination, statusCode, statusMessage;
+    String driverCode, tripId, destination, statusCode, statusMessage, sequence_id;
 
 
     public void setDestination(double lat, double lon) {
@@ -437,8 +437,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
         final DataRepository repository = AIMSApp.repository;
 
         driverCode = repository.getDriver_code();
-        tripId = repository.getTripId();
-        destination = repository.getWaypointDescription();
+        tripId = getArguments().getString("TripId");
+        sequence_id = getArguments().getString("SeqNum");
+        destination = repository.getWaypointDescription(Integer.valueOf(sequence_id));
 
         Long tsLong = System.currentTimeMillis()/1000;
         String statusDate = tsLong.toString();
@@ -927,8 +928,9 @@ public class RouteFragment<afChangeListener> extends Fragment {
             final DataRepository repository = AIMSApp.repository;
 
             driverCode = repository.getDriver_code();
-            tripId = repository.getTripId();
-            destination = repository.getWaypointDescription();
+            tripId = getArguments().getString("TripId");
+            sequence_id = getArguments().getString("SeqNum");
+            destination = repository.getWaypointDescription(Integer.valueOf(sequence_id));
 
             Long tsLong = System.currentTimeMillis()/1000;
             String statusDate = tsLong.toString();

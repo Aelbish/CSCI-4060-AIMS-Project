@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,9 +67,13 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ItemsV
                 if(v.getId()==R.id.btn_start){
 
 
+                    Bundle bundle = new Bundle();
+                    bundle.putString("TripId", String.valueOf(tripInfoModel.getTripId()));
+                    bundle.putString("SeqNum", String.valueOf(tripInfoModel.getSeqNum()));
                     AppCompatActivity activity = unwrap(v.getContext());
                     Fragment myFragment = new RouteFragment();
                     ((RouteFragment) myFragment).setDestination(tripInfoModel.getLatitude(), tripInfoModel.getLongitude());
+                    myFragment.setArguments(bundle);
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
                 }
             }
